@@ -1,0 +1,194 @@
+{
+  "fashionDNA": {
+    "traditionalism": 35,
+    "innovation": 88,
+    "sustainability": 55,
+    "luxuryIndex": 78,
+    "streetwearInfluence": 95,
+    "craftsmanship": 60,
+    "globalInfluence": 98
+  },
+  "eras": [
+    {
+      "id": "colonial-frontier-era",
+      "name": "Colonial & Frontier Era",
+      "yearRange": [
+        1770,
+        1850
+      ],
+      "description": "A period defined by practical, rugged attire for survival and westward expansion. Homespun fabrics and buckskin were common among settlers, while urban elites mimicked simplified European styles.",
+      "keyGarments": [
+        "Buckskin Frock Coat",
+        "Breeches",
+        "Mob Cap",
+        "Coonskin Hat"
+      ],
+      "aiImagePrompt": "Historical illustration of an American frontiersman in a fringed buckskin jacket and a woman in a simple blue homespun cotton dress with a white apron and mob cap, 1820s wilderness setting."
+    },
+    {
+      "id": "gilded-age-opulence",
+      "name": "The Gilded Age",
+      "yearRange": [
+        1870,
+        1900
+      ],
+      "description": "An era of extreme wealth and industrial growth, characterized by the 'S-bend' silhouette and the rise of the Gibson Girl. High fashion was dictated by social status and elaborate dress codes for different times of day.",
+      "keyGarments": [
+        "Bustle Dress",
+        "S-bend Corset",
+        "Top Hat",
+        "Morning Coat"
+      ],
+      "aiImagePrompt": "High-society New York ballroom scene in 1890, women in silk bustle gowns with intricate lace detailing and men in formal black tailcoats and white waistcoats."
+    },
+    {
+      "id": "jazz-age-modernism",
+      "name": "The Jazz Age & Flapper Era",
+      "yearRange": [
+        1920,
+        1929
+      ],
+      "description": "Post-war rebellion led to the abandonment of the corset in favor of straight, loose silhouettes. This era saw the birth of the 'modern woman' and the integration of sportswear into daily life.",
+      "keyGarments": [
+        "Flapper Dress",
+        "Cloche Hat",
+        "Oxford Bags",
+        "Zoot Suit"
+      ],
+      "aiImagePrompt": "Art Deco style depiction of a flapper woman in a beaded chemise dress with fringe and a cloche hat, standing next to a man in a wide-legged suit, 1920s jazz club background."
+    },
+    {
+      "id": "mid-century-americana",
+      "name": "Mid-Century Americana",
+      "yearRange": [
+        1945,
+        1960
+      ],
+      "description": "The rise of the American middle class and the 'New Look' influence. Fashion became gender-rigid but mass-produced, with the emergence of teenage culture and rock-and-roll style.",
+      "keyGarments": [
+        "Poodle Skirt",
+        "Letterman Jacket",
+        "Greaser Leather Jacket",
+        "Capri Pants"
+      ],
+      "aiImagePrompt": "1950s American diner scene, a girl in a pink poodle skirt and saddle shoes, a boy in a black leather motorcycle jacket and cuffed blue jeans."
+    },
+    {
+      "id": "disco-and-designer-denim",
+      "name": "Disco & The Designer Denim Revolution",
+      "yearRange": [
+        1970,
+        1985
+      ],
+      "description": "The transition from hippie counterculture to high-glam disco and the birth of designer branding. Jeans moved from workwear to high-fashion status symbols through brands like Calvin Klein.",
+      "keyGarments": [
+        "Wrap Dress",
+        "Bell Bottoms",
+        "Leisure Suit",
+        "Designer Jeans"
+      ],
+      "aiImagePrompt": "Studio 54 aesthetic, a woman in a jersey wrap dress and platform heels, a man in a wide-collared polyester leisure suit under disco lights."
+    },
+    {
+      "id": "grunge-and-minimalism",
+      "name": "Grunge & 90s Minimalism",
+      "yearRange": [
+        1990,
+        1999
+      ],
+      "description": "A rejection of 80s excess, characterized by Seattle-born grunge and New York's sleek, monochromatic minimalism. Streetwear began its ascent into the mainstream.",
+      "keyGarments": [
+        "Flannel Shirt",
+        "Slip Dress",
+        "Cargo Pants",
+        "Combat Boots"
+      ],
+      "aiImagePrompt": "1990s urban street style, a model in a silk slip dress over a white t-shirt, another person in an oversized plaid flannel shirt and ripped denim."
+    },
+    {
+      "id": "athleisure-digital-era",
+      "name": "Athleisure & The Digital Frontier",
+      "yearRange": [
+        2010,
+        2024
+      ],
+      "description": "The total blurring of lines between gym wear, street style, and luxury. Fashion is driven by social media trends, hype-culture, and a growing emphasis on inclusivity and tech-wear.",
+      "keyGarments": [
+        "Hoodie",
+        "Yoga Pants",
+        "Technical Sneakers",
+        "Oversized Blazer"
+      ],
+      "aiImagePrompt": "Modern New York street scene, an influencer wearing an oversized designer hoodie, cycling shorts, chunky luxury sneakers, and a small crossbody bag."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Denim",
+      "type": "Woven",
+      "description": "A sturdy cotton warp-faced textile in which the weft passes under two or more warp threads.",
+      "origin": "San Francisco, California",
+      "technique": "Indigo dyeing and twill weaving with copper rivet reinforcement."
+    },
+    {
+      "name": "Sea Island Cotton",
+      "type": "Woven",
+      "description": "An extra-long staple cotton known for its silk-like texture and high durability.",
+      "origin": "South Carolina/Georgia Islands",
+      "technique": "Selective breeding and high-count spinning."
+    },
+    {
+      "name": "Gore-Tex",
+      "type": "Synthetic",
+      "description": "A waterproof, breathable fabric membrane used extensively in American outdoor and techwear.",
+      "origin": "Newark, Delaware",
+      "technique": "Expanded polytetrafluoroethylene (ePTFE) lamination."
+    },
+    {
+      "name": "American Fleece",
+      "type": "Knitted",
+      "description": "A soft, thick fabric with a napped surface, synonymous with the American sweatshirt.",
+      "origin": "Massachusetts",
+      "technique": "Circular knitting followed by mechanical brushing."
+    }
+  ],
+  "climate": {
+    "zone": "Diverse (Temperate to Subtropical)",
+    "avgTemp": 12.5,
+    "humidity": "Moderate",
+    "fashionImplication": "The vast regional climate differences necessitate a 'layering culture.' Heavy wools and technical outerwear dominate the Northeast and Midwest, while lightweight cottons and performance synthetics are essential in the South and West."
+  },
+  "culturalInfluences": [
+    "Hollywood and Celebrity Red Carpet Culture",
+    "Hip-Hop and African American Urban Style",
+    "Western Frontier and Cowboy Mythology",
+    "Ivy League 'Preppy' Collegiate Aesthetic",
+    "Silicon Valley Tech-Minimalism",
+    "The Workwear Heritage Movement",
+    "Surfing and Skateboarding Subcultures",
+    "Military Surplus and Utility Wear"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "New York Fashion Week",
+        "city": "New York City",
+        "month": "February/September",
+        "tier": "Big Four"
+      }
+    ],
+    "emergingTrends": [
+      "Quiet Luxury (The Row aesthetic)",
+      "Gorpcore (Outdoor gear as fashion)",
+      "Gender-Fluid Tailoring",
+      "Sustainable Upcycling and Deadstock Revival"
+    ],
+    "digitalPresence": 95,
+    "ecommercePenetration": 82,
+    "notableEvents": [
+      "The Met Gala",
+      "CFDA Fashion Awards",
+      "Coachella Valley Music and Arts Festival"
+    ]
+  }
+}

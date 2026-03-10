@@ -1,0 +1,179 @@
+{
+  "fashionDNA": {
+    "traditionalism": 92,
+    "innovation": 78,
+    "sustainability": 45,
+    "luxuryIndex": 88,
+    "streetwearInfluence": 65,
+    "craftsmanship": 98,
+    "globalInfluence": 82
+  },
+  "eras": [
+    {
+      "id": "indus-valley-civilization",
+      "name": "Indus Valley Civilization",
+      "yearRange": [
+        -3300,
+        -1300
+      ],
+      "description": "Earliest evidence of cotton cultivation and spinning. Clothing was largely unstitched, consisting of wrap-around garments and elaborate jewelry made of terracotta, beads, and gold.",
+      "keyGarments": [
+        "Antariya",
+        "Uttariya",
+        "Beaded girdles"
+      ],
+      "aiImagePrompt": "Ancient Indus Valley fashion, a woman wearing a fine cotton wrap-around lower garment and a draped shoulder cloth, adorned with multi-strand carnelian bead necklaces and terracotta bangles, realistic historical reconstruction."
+    },
+    {
+      "id": "mauryan-and-shunga-period",
+      "name": "Mauryan and Shunga Period",
+      "yearRange": [
+        -322,
+        -73
+      ],
+      "description": "Refinement of the draped silhouette with a focus on fine muslins. This era saw the evolution of the three-piece attire: the lower garment, the veil, and the chest band.",
+      "keyGarments": [
+        "Stanapatta",
+        "Dhoti",
+        "Patka"
+      ],
+      "aiImagePrompt": "Mauryan era Indian attire, high-ranking official wearing a finely pleated translucent cotton dhoti and an embroidered sash, intricate headgear, stone sculpture aesthetic, golden hour lighting."
+    },
+    {
+      "id": "mughal-imperial-era",
+      "name": "Mughal Imperial Era",
+      "yearRange": [
+        1526,
+        1857
+      ],
+      "description": "A fusion of Persian aesthetics with Indian craftsmanship. Introduction of tailored garments, heavy brocades, and floral motifs like the 'Buta' (paisley).",
+      "keyGarments": [
+        "Jama",
+        "Peshwaz",
+        "Farshi Gharara"
+      ],
+      "aiImagePrompt": "Mughal royalty fashion, a nobleman wearing a silk Jama with gold Zardozi embroidery, a jeweled turban with a kalgi feather, and a cashmere pashmina shawl, opulent palace background."
+    },
+    {
+      "id": "british-raj-and-swadeshi",
+      "name": "British Raj and Swadeshi Movement",
+      "yearRange": [
+        1858,
+        1947
+      ],
+      "description": "The rise of Victorian influence on Indian silhouettes, followed by the Swadeshi movement which promoted hand-spun Khadi as a symbol of political resistance.",
+      "keyGarments": [
+        "Parsi Gara Saree",
+        "Khadi Kurta",
+        "Blouse with puffed sleeves"
+      ],
+      "aiImagePrompt": "1920s India, a woman in a hand-spun Khadi saree representing the Swadeshi movement, simple and dignified, sepia-toned vintage photography style."
+    },
+    {
+      "id": "post-independence-bollywood-glamour",
+      "name": "Post-Independence and Bollywood Rise",
+      "yearRange": [
+        1950,
+        1990
+      ],
+      "description": "Cinema became the primary fashion driver. The era saw the experimentation with synthetic fabrics like polyester and the iconic 'Mumtaz' style draped saree.",
+      "keyGarments": [
+        "Anarkali suit",
+        "Sadhana cut fringe",
+        "Bell-bottom trousers"
+      ],
+      "aiImagePrompt": "1970s Bollywood fashion, a woman in a vibrant orange chiffon saree with a sleeveless blouse and oversized sunglasses, retro cinematic aesthetic."
+    },
+    {
+      "id": "contemporary-global-fusion",
+      "name": "Contemporary Global Fusion",
+      "yearRange": [
+        1991,
+        2024
+      ],
+      "description": "Economic liberalization led to the entry of global brands and the rise of the 'Modern Indian' aesthetic—blending traditional drapes with Western tailoring.",
+      "keyGarments": [
+        "Concept Saree",
+        "Bandhgala jacket",
+        "Lehenga with pockets"
+      ],
+      "aiImagePrompt": "Modern Indian high-fashion, a model wearing a structured metallic concept saree with a leather belt and contemporary jewelry, architectural background, high-fashion editorial style."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Banarasi Silk",
+      "type": "Woven",
+      "description": "Fine silk from Varanasi known for gold and silver brocade or 'Zari'.",
+      "origin": "Varanasi, Uttar Pradesh",
+      "technique": "Handloom weaving with extra weft"
+    },
+    {
+      "name": "Khadi",
+      "type": "Woven",
+      "description": "Hand-spun and hand-woven natural fiber cloth, central to India's identity.",
+      "origin": "Pan-India",
+      "technique": "Charkha spinning and hand-weaving"
+    },
+    {
+      "name": "Ajrakh",
+      "type": "Printed",
+      "description": "A unique form of block printing using natural dyes, featuring complex geometric patterns.",
+      "origin": "Kutch, Gujarat",
+      "technique": "Resist block printing with 16 stages"
+    },
+    {
+      "name": "Chikan",
+      "type": "Embroidered",
+      "description": "Delicate and artful hand embroidery traditionally done with white thread on cool fabrics.",
+      "origin": "Lucknow, Uttar Pradesh",
+      "technique": "Shadow work and various needlework stitches"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical Monsoon",
+    "avgTemp": 24.5,
+    "humidity": "Very High",
+    "fashionImplication": "High humidity necessitates breathable natural fibers like cotton and linen. The intense heat drives the preference for loose, draped silhouettes over tight-fitting garments."
+  },
+  "culturalInfluences": [
+    "Bollywood and Film Industry",
+    "Hindu Religious Ceremonies and Rituals",
+    "Persian and Central Asian Heritage",
+    "British Colonial Legacy",
+    "Regional Tribal Art and Craft",
+    "Cricket and Athleisure culture",
+    "Wedding Industry and Grandeur",
+    "The Swadeshi Movement Philosophy"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Lakme Fashion Week",
+        "city": "Mumbai",
+        "month": "March and October",
+        "tier": "Major"
+      },
+      {
+        "name": "FDCI India Fashion Week",
+        "city": "New Delhi",
+        "month": "March and October",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Sustainable Luxury and Upcycled Heirloom Textiles",
+      "Gender-Neutral Ethnic Wear",
+      "Digital Prints inspired by Indian Folklore",
+      "Modest Fashion within the Luxury Segment",
+      "Hyper-local Craft Revivalism"
+    ],
+    "digitalPresence": 85,
+    "ecommercePenetration": 72,
+    "notableEvents": [
+      "NMACC 'India in Fashion' Exhibition",
+      "Met Gala Indian Designer Appearances",
+      "The Big Fat Indian Wedding Season"
+    ]
+  }
+}
