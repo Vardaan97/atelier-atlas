@@ -30,15 +30,18 @@ function MetalBadge({
   label,
   metal,
   color,
+  usdInr,
 }: {
   label: string;
   metal: MetalPrice;
   color: string;
+  usdInr: number;
 }) {
   const isUp = metal.change24h > 0;
   const isDown = metal.change24h < 0;
   const ChangeIcon = isUp ? TrendingUp : isDown ? TrendingDown : Minus;
   const changeColor = isUp ? 'text-green-400' : isDown ? 'text-red-400' : 'text-muted';
+  const inrPerGram = metal.pricePerGram * usdInr;
 
   return (
     <div className="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/[0.03] border border-white/5">
@@ -46,7 +49,10 @@ function MetalBadge({
         {label}
       </span>
       <span className={cn('text-sm font-mono font-bold', color)}>
-        ${metal.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}
+        ${metal.pricePerGram.toFixed(2)}
+      </span>
+      <span className="text-[9px] text-muted/70 font-mono">
+        ₹{inrPerGram.toLocaleString('en-IN', { maximumFractionDigits: 0 })}/g
       </span>
       <div className={cn('flex items-center gap-0.5 text-[9px] font-mono', changeColor)}>
         <ChangeIcon className="w-2.5 h-2.5" />
@@ -87,17 +93,44 @@ function MetalsTicker() {
           Precious Metals
         </h4>
         <span className="text-[8px] text-muted/60 font-mono">
-          {data.source === 'live' ? 'LIVE' : 'INDICATIVE'}
+          {data.source === 'live' ? '● LIVE' : 'INDICATIVE'}
         </span>
       </div>
+
+      {/* Gold highlight: Indian retail price per 10g */}
+      <div className="mb-3 p-2.5 rounded-lg bg-yellow-400/5 border border-yellow-400/15">
+        <div className="flex items-center justify-between">
+          <div>
+            <span className="text-[9px] text-muted uppercase tracking-wider font-mono">Gold 24K (10g) India</span>
+            <div className="flex items-baseline gap-2">
+              <span className="text-lg font-mono font-bold text-yellow-400">
+                ₹{(data.goldIndiaRetail10g ?? Math.round(data.gold.pricePerGram * 10 * data.usdInr * 1.06)).toLocaleString('en-IN')}
+              </span>
+              <span className="text-[10px] text-muted font-mono">
+                incl. duty
+              </span>
+            </div>
+            <span className="text-[9px] text-muted/60 font-mono">
+              Intl. spot: ${data.gold.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}/oz · ${data.gold.pricePerGram.toFixed(2)}/g
+            </span>
+          </div>
+          <div className="text-right">
+            <span className="text-[9px] text-muted uppercase tracking-wider font-mono block">USD/INR</span>
+            <span className="text-sm font-mono font-bold text-blue-400">
+              ₹{data.usdInr.toFixed(2)}
+            </span>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-4 gap-2">
-        <MetalBadge label="Gold" metal={data.gold} color="text-yellow-400" />
-        <MetalBadge label="Silver" metal={data.silver} color="text-gray-300" />
-        <MetalBadge label="Plat." metal={data.platinum} color="text-blue-300" />
-        <MetalBadge label="Pall." metal={data.palladium} color="text-orange-300" />
+        <MetalBadge label="Gold" metal={data.gold} color="text-yellow-400" usdInr={data.usdInr} />
+        <MetalBadge label="Silver" metal={data.silver} color="text-gray-300" usdInr={data.usdInr} />
+        <MetalBadge label="Plat." metal={data.platinum} color="text-blue-300" usdInr={data.usdInr} />
+        <MetalBadge label="Pall." metal={data.palladium} color="text-orange-300" usdInr={data.usdInr} />
       </div>
       <p className="text-[8px] text-muted/40 text-right mt-1.5 font-mono">
-        USD / troy oz
+        USD per gram · INR per gram
       </p>
     </div>
   );

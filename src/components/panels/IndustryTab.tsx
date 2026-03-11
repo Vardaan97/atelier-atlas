@@ -23,7 +23,6 @@ import { formatCurrency, formatNumber, cn } from '@/lib/utils';
 import { useTradeData } from '@/hooks/useTradeData';
 import { useWorldBank } from '@/hooks/useWorldBank';
 import { useFashionNews } from '@/hooks/useFashionNews';
-import { JewelrySection } from '@/components/panels/JewelrySection';
 import type { CountryBase } from '@/types/country';
 import type { TradeProduct, YearlyTrade } from '@/types/api';
 
@@ -724,11 +723,6 @@ export function IndustryTab({ country }: IndustryTabProps) {
           Detailed Trade Intelligence
         </h4>
         <TradeDataSection iso={country.iso} />
-      </div>
-
-      {/* Jewelry & Precious Metals */}
-      <div className="border-t border-white/10 pt-4">
-        <JewelrySection iso={country.iso} />
       </div>
 
       {/* Fashion News (fetched from GDELT) */}

@@ -2,15 +2,15 @@
  * Precious metals pricing module.
  *
  * Strategy:
- *  1. Try the free metals.dev JSON endpoint (no key, generous CORS).
+ *  1. Try Swissquote forex feed (free, no key, live prices).
  *  2. Fall back to a curated static dataset that ships with the app.
  *
- * All prices are cached in-memory for 1 hour (prices don't change fast
- * enough for a fashion-intelligence dashboard to need live ticking).
+ * All prices are cached in-memory for 30 minutes.
  */
 
 export interface MetalPrice {
   price: number;       // USD per troy oz
+  pricePerGram: number; // USD per gram
   change24h: number;   // absolute USD change
   changePct: number;   // percentage change
   currency: 'USD';
@@ -21,101 +21,124 @@ export interface MetalsData {
   silver: MetalPrice;
   platinum: MetalPrice;
   palladium: MetalPrice;
+  usdInr: number;      // USD to INR exchange rate
+  goldIndiaRetail10g: number; // Indian retail gold price per 10g (includes ~6% duty/GST estimate)
   source: 'live' | 'static';
   updatedAt: string; // ISO date
 }
 
+// 1 troy ounce = 31.1035 grams
+const TROY_OZ_TO_GRAMS = 31.1035;
+
+// Indian gold retail premium over international spot (~6% import duty + 3% GST ≈ 6% net effective)
+const INDIA_GOLD_PREMIUM = 1.06;
+
 /* ── In-memory cache ─────────────────────────────────────────── */
 let cachedMetals: MetalsData | null = null;
 let cachedAt = 0;
-const CACHE_TTL = 60 * 60 * 1000; // 1 hour
+const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
 
-/* ── Static fallback data (manually updated, realistic prices) ─ */
+/* ── Static fallback data (updated March 2026) ─────────────── */
+const STATIC_USD_INR = 92.04;
+
+function makeMetalPrice(pricePerOz: number, change24h = 0, changePct = 0): MetalPrice {
+  return {
+    price: pricePerOz,
+    pricePerGram: pricePerOz / TROY_OZ_TO_GRAMS,
+    change24h,
+    changePct,
+    currency: 'USD',
+  };
+}
+
 const STATIC_METALS: MetalsData = {
-  gold:      { price: 2935.40, change24h:  18.20, changePct:  0.62, currency: 'USD' },
-  silver:    { price:   32.85, change24h:   0.47, changePct:  1.45, currency: 'USD' },
-  platinum:  { price:  982.50, change24h:  -4.30, changePct: -0.44, currency: 'USD' },
-  palladium: { price:  968.00, change24h:  12.60, changePct:  1.32, currency: 'USD' },
+  gold:      makeMetalPrice(5184, 32.50, 0.63),
+  silver:    makeMetalPrice(86.71, 1.22, 1.43),
+  platinum:  makeMetalPrice(2175, -8.50, -0.39),
+  palladium: makeMetalPrice(1656, 14.80, 0.90),
+  usdInr: STATIC_USD_INR,
+  goldIndiaRetail10g: Math.round((5184 / TROY_OZ_TO_GRAMS) * 10 * STATIC_USD_INR * INDIA_GOLD_PREMIUM),
   source: 'static',
-  updatedAt: '2025-03-01T00:00:00Z',
+  updatedAt: '2026-03-11T00:00:00Z',
 };
 
 /**
- * Attempt to fetch live spot prices from metals.dev (free, no API key).
- * Returns null on any failure so the caller can fall back gracefully.
+ * Fetch USD/INR exchange rate from a free API.
  */
-async function fetchLivePrices(): Promise<MetalsData | null> {
+async function fetchUsdInr(): Promise<number> {
   try {
-    // metals.dev provides a free JSON endpoint for latest metal prices
-    const res = await fetch('https://api.metals.dev/v1/latest?api_key=demo&currency=USD', {
-      signal: AbortSignal.timeout(6000),
-      headers: { Accept: 'application/json' },
+    const res = await fetch('https://open.er-api.com/v6/latest/USD', {
+      signal: AbortSignal.timeout(5000),
     });
-
-    if (!res.ok) return null;
-
+    if (!res.ok) return STATIC_USD_INR;
     const json = await res.json();
-    // The metals.dev response shape: { metals: { gold: number, silver: number, ... } }
-    const m = json?.metals;
-    if (!m || typeof m.gold !== 'number') return null;
+    const rate = json?.rates?.INR;
+    return typeof rate === 'number' ? rate : STATIC_USD_INR;
+  } catch {
+    return STATIC_USD_INR;
+  }
+}
 
-    // metals.dev doesn't provide 24h change, so we compute vs. static baseline
-    const makeMetal = (live: number, staticRef: MetalPrice): MetalPrice => {
-      const change = live - staticRef.price;
-      return {
-        price: live,
-        change24h: parseFloat(change.toFixed(2)),
-        changePct: parseFloat(((change / staticRef.price) * 100).toFixed(2)),
-        currency: 'USD',
-      };
-    };
-
-    return {
-      gold:      makeMetal(m.gold,      STATIC_METALS.gold),
-      silver:    makeMetal(m.silver,    STATIC_METALS.silver),
-      platinum:  makeMetal(m.platinum,  STATIC_METALS.platinum),
-      palladium: makeMetal(m.palladium, STATIC_METALS.palladium),
-      source: 'live',
-      updatedAt: new Date().toISOString(),
-    };
+/**
+ * Fetch a single metal price from Swissquote forex feed.
+ * Symbols: XAU (gold), XAG (silver), XPT (platinum), XPD (palladium).
+ * Returns mid price (average of bid/ask) or null on failure.
+ */
+async function fetchSwissquotePrice(symbol: string): Promise<number | null> {
+  try {
+    const res = await fetch(
+      `https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/${symbol}/USD`,
+      { signal: AbortSignal.timeout(5000) },
+    );
+    if (!res.ok) return null;
+    const json = await res.json();
+    const prices = json?.[0]?.spreadProfilePrices;
+    if (!Array.isArray(prices) || prices.length === 0) return null;
+    const p = prices[0];
+    if (typeof p.bid !== 'number' || typeof p.ask !== 'number') return null;
+    return (p.bid + p.ask) / 2;
   } catch {
     return null;
   }
 }
 
 /**
- * Alternative: try the free goldapi.io endpoint.
+ * Fetch all precious metal prices from Swissquote (free, no API key).
+ * Makes 4 parallel requests for gold, silver, platinum, palladium.
  */
-async function fetchFromGoldApi(): Promise<MetalsData | null> {
+async function fetchLivePrices(usdInr: number): Promise<MetalsData | null> {
   try {
-    const res = await fetch('https://www.goldapi.io/api/XAU/USD', {
-      signal: AbortSignal.timeout(6000),
-      headers: {
-        'x-access-token': 'goldapi-demo',
-        Accept: 'application/json',
-      },
-    });
+    const [goldPrice, silverPrice, platPrice, palPrice] = await Promise.all([
+      fetchSwissquotePrice('XAU'),
+      fetchSwissquotePrice('XAG'),
+      fetchSwissquotePrice('XPT'),
+      fetchSwissquotePrice('XPD'),
+    ]);
 
-    if (!res.ok) return null;
+    // At minimum we need gold to succeed
+    if (goldPrice === null) return null;
 
-    const json = await res.json();
-    if (!json.price || typeof json.price !== 'number') return null;
+    const makeLive = (live: number | null, staticRef: MetalPrice): MetalPrice => {
+      if (live === null) return staticRef;
+      const change = live - staticRef.price;
+      return {
+        price: parseFloat(live.toFixed(2)),
+        pricePerGram: parseFloat((live / TROY_OZ_TO_GRAMS).toFixed(2)),
+        change24h: parseFloat(change.toFixed(2)),
+        changePct: parseFloat(((change / staticRef.price) * 100).toFixed(2)),
+        currency: 'USD',
+      };
+    };
 
-    // goldapi.io only returns one metal per call; not worth 4 calls for free tier
-    // Use it only for gold and keep others from static
-    const goldChange = json.ch || 0;
-    const goldPct = json.chp || 0;
+    const gold = makeLive(goldPrice, STATIC_METALS.gold);
 
     return {
-      gold: {
-        price: json.price,
-        change24h: goldChange,
-        changePct: goldPct,
-        currency: 'USD',
-      },
-      silver:    STATIC_METALS.silver,
-      platinum:  STATIC_METALS.platinum,
-      palladium: STATIC_METALS.palladium,
+      gold,
+      silver:    makeLive(silverPrice, STATIC_METALS.silver),
+      platinum:  makeLive(platPrice,   STATIC_METALS.platinum),
+      palladium: makeLive(palPrice,    STATIC_METALS.palladium),
+      usdInr,
+      goldIndiaRetail10g: Math.round(gold.pricePerGram * 10 * usdInr * INDIA_GOLD_PREMIUM),
       source: 'live',
       updatedAt: new Date().toISOString(),
     };
@@ -126,7 +149,7 @@ async function fetchFromGoldApi(): Promise<MetalsData | null> {
 
 /**
  * Main entry: get precious metals pricing data.
- * Tries live APIs, falls back to static. Caches for 1 hour.
+ * Tries Swissquote live API, falls back to static. Caches for 30 min.
  */
 export async function getMetalsPricing(): Promise<MetalsData> {
   // Return cache if fresh
@@ -134,8 +157,11 @@ export async function getMetalsPricing(): Promise<MetalsData> {
     return cachedMetals;
   }
 
-  // Try live sources in order
-  const live = await fetchLivePrices() || await fetchFromGoldApi();
+  // Fetch USD/INR rate in parallel with metals
+  const usdInr = await fetchUsdInr();
+
+  // Try live Swissquote feed
+  const live = await fetchLivePrices(usdInr);
 
   if (live) {
     cachedMetals = live;
@@ -143,8 +169,13 @@ export async function getMetalsPricing(): Promise<MetalsData> {
     return live;
   }
 
-  // Fall back to static
-  cachedMetals = STATIC_METALS;
+  // Fall back to static (update INR rate if we got a live one)
+  const fallback = {
+    ...STATIC_METALS,
+    usdInr,
+    goldIndiaRetail10g: Math.round((STATIC_METALS.gold.pricePerGram) * 10 * usdInr * INDIA_GOLD_PREMIUM),
+  };
+  cachedMetals = fallback;
   cachedAt = Date.now();
-  return STATIC_METALS;
+  return fallback;
 }
