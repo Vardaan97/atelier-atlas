@@ -94,6 +94,7 @@ export const PANEL_TABS = [
   { id: 'colors', label: 'Colors & Textiles' },
   { id: 'timeline', label: 'Timeline' },
   { id: 'industry', label: 'Industry' },
+  { id: 'jewelry', label: 'Jewelry' },
   { id: 'culture', label: 'Culture' },
   { id: 'contemporary', label: 'Modern' },
   { id: 'ai-studio', label: 'AI Studio' },

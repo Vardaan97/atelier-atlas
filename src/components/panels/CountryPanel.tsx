@@ -16,6 +16,7 @@ import { ColorsTextilesTab } from './ColorsTextilesTab';
 import { TimelineTab } from './TimelineTab';
 import { CultureClimateTab } from './CultureClimateTab';
 import { ContemporaryTab } from './ContemporaryTab';
+import { JewelryTab } from './JewelryTab';
 import { AiStudioTab } from './AiStudioTab';
 import { SimilaritySection } from './SimilaritySection';
 
@@ -41,6 +42,7 @@ export function CountryPanel() {
     colors: 'Colors',
     timeline: 'Timeline',
     industry: 'Industry',
+    jewelry: 'Gems',
     culture: 'Culture',
     contemporary: 'Modern',
     'ai-studio': 'AI',
@@ -175,6 +177,9 @@ export function CountryPanel() {
           </Tabs.Content>
           <Tabs.Content value="industry" className="outline-none">
             <IndustryTab country={country} />
+          </Tabs.Content>
+          <Tabs.Content value="jewelry" className="outline-none">
+            <JewelryTab country={country} />
           </Tabs.Content>
           <Tabs.Content value="culture" className="outline-none">
             <CultureClimateTab country={country} profile={profile} profileLoading={profileLoading} />
