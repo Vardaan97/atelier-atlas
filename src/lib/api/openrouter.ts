@@ -99,14 +99,19 @@ export async function generateImage(prompt: string): Promise<string | null> {
 
 /** Extract image URL/base64 from various OpenRouter response formats. */
 function extractImageFromResponse(data: Record<string, unknown>): string | null {
-  const choice = (data.choices as Array<{ message?: { content?: unknown } }>)?.[0];
-  const content = choice?.message?.content;
+  const choice = (data.choices as Array<{
+    message?: { content?: unknown; images?: unknown };
+  }>)?.[0];
+  const msg = choice?.message;
+  const content = msg?.content;
 
+  // Format 1: content is a base64 string or data URI
   if (typeof content === 'string') {
     if (content.startsWith('data:image')) return content;
     if (/^[A-Za-z0-9+/=]{100,}$/.test(content)) return `data:image/png;base64,${content}`;
   }
 
+  // Format 2: content is an array of parts (OpenAI multimodal format)
   if (Array.isArray(content)) {
     for (const part of content) {
       const p = part as Record<string, unknown>;
@@ -121,6 +126,26 @@ function extractImageFromResponse(data: Record<string, unknown>): string | null 
       if (p.inline_data) {
         const id = p.inline_data as { mime_type?: string; data?: string };
         if (id.data) return `data:${id.mime_type || 'image/png'};base64,${id.data}`;
+      }
+    }
+  }
+
+  // Format 3: message.images array (Gemini via OpenRouter, newer format)
+  const images = msg?.images;
+  if (Array.isArray(images)) {
+    for (const img of images) {
+      const i = img as Record<string, unknown>;
+      // { type: 'image_url', image_url: { url: 'data:image/png;base64,...' } }
+      if (i.type === 'image_url') {
+        const iu = i.image_url as { url?: string } | undefined;
+        if (iu?.url) return iu.url;
+      }
+      // Direct URL string
+      if (typeof i.url === 'string') return i.url;
+      // Direct base64 string
+      if (typeof i.data === 'string') {
+        const mime = (i.mime_type as string) || 'image/png';
+        return `data:${mime};base64,${i.data}`;
       }
     }
   }
