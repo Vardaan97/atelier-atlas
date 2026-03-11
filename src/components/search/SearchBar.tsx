@@ -357,7 +357,7 @@ export function SearchBar() {
   return (
     <div
       ref={containerRef}
-      className="absolute top-16 left-1/2 -translate-x-1/2 z-40 w-full max-w-lg px-4"
+      className="absolute top-16 left-1/2 -translate-x-1/2 z-40 w-full max-w-sm md:max-w-lg px-4"
     >
       {/* Search Input */}
       <div
@@ -412,7 +412,7 @@ export function SearchBar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.98 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="mt-2 glass-panel rounded-xl overflow-hidden max-h-[60vh] overflow-y-auto"
+            className="mt-2 glass-panel rounded-xl overflow-hidden max-h-[45vh] md:max-h-[60vh] overflow-y-auto"
             id="search-results-list"
             role="listbox"
           >

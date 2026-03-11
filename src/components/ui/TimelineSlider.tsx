@@ -61,10 +61,11 @@ export function TimelineSlider({ className }: TimelineSliderProps) {
   return (
     <div
       className={cn(
-        'absolute bottom-12 left-1/2 -translate-x-1/2 z-20',
+        'absolute bottom-14 md:bottom-12 left-1/2 -translate-x-1/2 z-20',
         'bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl',
-        'px-3 py-2 flex items-center gap-1.5',
+        'px-2 md:px-3 py-1.5 md:py-2 flex items-center gap-1 md:gap-1.5',
         'transition-all duration-300',
+        'max-w-[92vw] overflow-x-auto scrollbar-hide',
         className
       )}
     >

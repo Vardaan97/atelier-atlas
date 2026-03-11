@@ -32,12 +32,12 @@ export function GlobeView() {
     <div className="relative w-screen h-screen overflow-hidden bg-[#0A0A1A]">
       {/* Header */}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20">
-        <div className="glass-panel rounded-full px-6 py-2 flex items-center gap-3">
+        <div className="glass-panel rounded-full px-4 md:px-6 py-2 flex items-center gap-2 md:gap-3">
           <div className="w-2 h-2 rounded-full bg-accent animate-pulse-glow" />
-          <h1 className="font-heading text-lg font-bold tracking-tight">
+          <h1 className="font-heading text-sm md:text-lg font-bold tracking-tight">
             Atelier Atlas
           </h1>
-          <span className="text-[10px] text-muted font-mono uppercase tracking-widest">
+          <span className="hidden sm:inline text-[10px] text-muted font-mono uppercase tracking-widest">
             Global Fashion Intelligence
           </span>
         </div>

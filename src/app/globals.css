@@ -133,10 +133,19 @@ html, body {
   animation: ticker-scroll 60s linear infinite;
 }
 
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ---- Mobile responsive styles ---- */
 @media (max-width: 767px) {
-  /* Touch-friendly tap targets */
-  button, a, [role="button"] {
+  /* Touch-friendly tap targets (only on interactive elements, not inline spans) */
+  button:not(.inline-btn), a, [role="button"] {
     min-height: 44px;
     min-width: 44px;
   }

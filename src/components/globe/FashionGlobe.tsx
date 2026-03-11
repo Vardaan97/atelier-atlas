@@ -294,7 +294,9 @@ export function FashionGlobe() {
     [countryMap, activeMetric, setTooltip]
   );
 
-  const globeWidth = panelOpen ? dimensions.width * 0.5 : dimensions.width;
+  // Panel is lg:w-[50%] (1024px+), below that it's full width overlay
+  const isLargeScreen = dimensions.width >= 1024;
+  const globeWidth = panelOpen && isLargeScreen ? dimensions.width * 0.5 : dimensions.width;
 
   if (!geoData) {
     return (

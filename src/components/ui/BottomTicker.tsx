@@ -89,8 +89,9 @@ export function BottomTicker({ className }: BottomTickerProps) {
   return (
     <div
       className={cn(
-        'fixed bottom-0 left-0 right-0 z-20 overflow-hidden',
+        'fixed bottom-0 left-0 right-0 z-20 overflow-hidden h-10',
         'bg-white/5 backdrop-blur-xl border-t border-white/10',
+        'hidden md:block',
         className
       )}
     >

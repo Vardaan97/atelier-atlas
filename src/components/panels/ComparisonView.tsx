@@ -367,7 +367,7 @@ export function ComparisonView() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 40, opacity: 0 }}
           transition={{ type: 'spring', damping: 30, stiffness: 300, delay: 0.05 }}
-          className="relative z-10 w-full max-w-5xl mx-4 my-8 rounded-2xl border border-white/10 bg-[#0A0A1A]/95 backdrop-blur-xl shadow-2xl overflow-hidden"
+          className="relative z-10 w-full max-w-5xl mx-2 md:mx-4 my-4 md:my-8 rounded-2xl border border-white/10 bg-[#0A0A1A]/95 backdrop-blur-xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
           onClick={(e) => e.stopPropagation()}
         >
           {/* ---- Header ---- */}

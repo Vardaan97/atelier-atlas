@@ -51,7 +51,7 @@ export function CountryPanel() {
             <span className={cn(isMobile ? 'text-3xl' : 'text-5xl')}>{country.flag}</span>
             <div>
               <h2 className={cn(
-                'font-heading font-bold tracking-tight',
+                'font-heading font-bold tracking-tight truncate',
                 isMobile ? 'text-lg' : 'text-2xl'
               )}>
                 {country.name}
@@ -150,7 +150,7 @@ export function CountryPanel() {
           ))}
         </Tabs.List>
 
-        <div className="flex-1 overflow-y-auto p-4">
+        <div className="flex-1 overflow-y-auto p-3 md:p-4">
           <Tabs.Content value="traditional" className="outline-none">
             <TraditionalTab country={country} />
           </Tabs.Content>
@@ -211,7 +211,7 @@ export function CountryPanel() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: '100%', opacity: 0 }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="fixed right-0 top-0 h-full w-full sm:w-[50%] z-30 glass-panel border-l border-white/10 overflow-hidden flex flex-col"
+            className="fixed right-0 top-0 h-full w-full lg:w-[50%] z-30 glass-panel border-l border-white/10 overflow-hidden flex flex-col"
           >
             {panelContent}
           </motion.div>
