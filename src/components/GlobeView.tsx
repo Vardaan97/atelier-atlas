@@ -6,6 +6,7 @@ import { FashionGlobe } from '@/components/globe/FashionGlobe';
 import { FlatMap } from '@/components/globe/FlatMap';
 import { GlobeControls } from '@/components/globe/GlobeControls';
 import { GlobeTooltip } from '@/components/globe/GlobeTooltip';
+import { ColorLegend } from '@/components/globe/ColorLegend';
 import { CountryPanel } from '@/components/panels/CountryPanel';
 import { ComparisonView } from '@/components/panels/ComparisonView';
 import { FilterSidebar } from '@/components/filters/FilterSidebar';
@@ -57,6 +58,9 @@ export function GlobeView() {
 
       {/* Tooltip */}
       <GlobeTooltip />
+
+      {/* Color Legend */}
+      <ColorLegend />
 
       {/* Country Panel */}
       <CountryPanel />

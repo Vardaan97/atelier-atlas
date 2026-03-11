@@ -1,0 +1,185 @@
+{
+  "fashionDNA": {
+    "traditionalism": 78,
+    "innovation": 55,
+    "sustainability": 33,
+    "luxuryIndex": 42,
+    "streetwearInfluence": 65,
+    "craftsmanship": 88,
+    "globalInfluence": 35
+  },
+  "eras": [
+    {
+      "id": "magyar-conquest-period",
+      "name": "Magyar Conquest Era",
+      "yearRange": [
+        895,
+        1000
+      ],
+      "description": "The nomadic heritage of the Magyars characterized by leatherwork and functional garments for horse riding. Clothing was heavily influenced by Central Asian and Persian aesthetics.",
+      "keyGarments": [
+        "Kaftan",
+        "Selyemöv (Silk belt)",
+        "Leather boots"
+      ],
+      "aiImagePrompt": "Historical illustration of a 10th-century Magyar warrior and noblewoman, wearing heavy fur-trimmed kaftans, intricate silver belt buckles, and conical hats, set against the Carpathian basin."
+    },
+    {
+      "id": "renaissance-matthias",
+      "name": "Renaissance Splendor",
+      "yearRange": [
+        1458,
+        1490
+      ],
+      "description": "Under King Matthias Corvinus, the court in Buda became a center of European fashion, blending Italian Renaissance elegance with Eastern ornate details.",
+      "keyGarments": [
+        "Dolman",
+        "Mente (Short cloak)",
+        "Velvet doublet"
+      ],
+      "aiImagePrompt": "A 15th-century Hungarian nobleman in the court of Matthias Corvinus, wearing a velvet dolman with gold embroidery and fur lining, holding a feathered cap."
+    },
+    {
+      "id": "baroque-aristocracy",
+      "name": "Baroque & Ottoman Influence",
+      "yearRange": [
+        1600,
+        1750
+      ],
+      "description": "A period of 'Hussar' style development, where military uniforms and aristocratic dress featured heavy braiding, frogging, and vivid colors.",
+      "keyGarments": [
+        "Pelikán (Pelican feather cap)",
+        "Cifraszűr",
+        "Hussar jacket"
+      ],
+      "aiImagePrompt": "A Baroque-era Hungarian hussar in a scarlet jacket with elaborate gold cord frogging and a fur-lined pelisse slung over one shoulder."
+    },
+    {
+      "id": "reform-era-nationalism",
+      "name": "The Reform Era",
+      "yearRange": [
+        1825,
+        1848
+      ],
+      "description": "Fashion became a political statement of national identity against Austrian influence, leading to the 'Díszmagyar' (formal national dress).",
+      "keyGarments": [
+        "Díszmagyar",
+        "Párta (Headdress)",
+        "Bocskai jacket"
+      ],
+      "aiImagePrompt": "A 19th-century Hungarian noblewoman wearing a Díszmagyar gown with white lace, heavy floral embroidery, and a traditional párta crown."
+    },
+    {
+      "id": "belle-epoque-budapest",
+      "name": "Budapest Belle Époque",
+      "yearRange": [
+        1890,
+        1914
+      ],
+      "description": "Budapest rivaled Paris in sophistication; Art Nouveau influences merged with traditional folk motifs in high-end tailoring.",
+      "keyGarments": [
+        "S-bend corset gowns",
+        "Top hats",
+        "Embroidered silk parasols"
+      ],
+      "aiImagePrompt": "Elegant socialites in 1900s Budapest walking along Andrássy Avenue, wearing Art Nouveau inspired lace dresses and wide-brimmed feathered hats."
+    },
+    {
+      "id": "socialist-realism-kadar",
+      "name": "Socialist Goulash Fashion",
+      "yearRange": [
+        1950,
+        1989
+      ],
+      "description": "A shift towards industrial uniformity followed by the 'Goulash Communism' era, where Western trends were cautiously adopted through state-run department stores.",
+      "keyGarments": [
+        "Otthonka (Housecoat)",
+        "Nylon shirts",
+        "Traper jeans"
+      ],
+      "aiImagePrompt": "1970s Budapest street scene showing citizens in colorful nylon housecoats and early Eastern Bloc denim, featuring Socialist-era architecture in the background."
+    },
+    {
+      "id": "contemporary-revival",
+      "name": "The Post-Communist New Wave",
+      "yearRange": [
+        1990,
+        2024
+      ],
+      "description": "A resurgence of independent design houses in Budapest, focusing on avant-garde silhouettes and the reinterpretation of Matyó and Kalocsa embroidery.",
+      "keyGarments": [
+        "Deconstructed blazers",
+        "Graphic streetwear",
+        "Modernized folk vests"
+      ],
+      "aiImagePrompt": "A modern fashion editorial in the ruins of a Budapest ruin bar, featuring a model in a minimalist deconstructed black coat with subtle neon embroidery."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Matyó Embroidery",
+      "type": "Embroidered",
+      "description": "Characterized by densely packed, vibrant floral patterns, most notably the 'Matyó Rose'.",
+      "origin": "Mezőkövesd",
+      "technique": "Hand-stitched satin stitch"
+    },
+    {
+      "name": "Kalocsa Lace",
+      "type": "Embroidered",
+      "description": "Brightly colored floral patterns on white or black fabric, often featuring 'richelieu' cutwork.",
+      "origin": "Kalocsa",
+      "technique": "Machine and hand embroidery with openwork"
+    },
+    {
+      "name": "Kékfestő (Blue-dye)",
+      "type": "Dyed",
+      "description": "Indigo-dyed fabric with white resist-printed patterns, historically used for peasant clothing.",
+      "origin": "Pápa",
+      "technique": "Resist block printing followed by indigo vat immersion"
+    },
+    {
+      "name": "Halas Lace",
+      "type": "Embroidered",
+      "description": "Exquisite, needle-point lace that is often compared to Brussels lace in its intricacy.",
+      "origin": "Kiskunhalas",
+      "technique": "Needle-point lace making"
+    }
+  ],
+  "climate": {
+    "zone": "Humid Continental",
+    "avgTemp": 11,
+    "humidity": "Moderate",
+    "fashionImplication": "Extreme seasonal variance necessitates a wardrobe of layered wool coats for harsh winters and breathable linens for hot, humid summers."
+  },
+  "culturalInfluences": [
+    "Austro-Hungarian Imperial legacy",
+    "Transylvanian folk traditions",
+    "Bauhaus and Modernist architecture",
+    "Ottoman Turkish decorative arts",
+    "Post-Soviet industrial aesthetics",
+    "Budapest Ruin Bar subculture",
+    "Roma (Gypsy) textile heritage"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Budapest Central European Fashion Week",
+        "city": "Budapest",
+        "month": "February/August",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Ethno-minimalism",
+      "Upcycled socialist-era deadstock",
+      "Techno-wear (Berlin influence)",
+      "Digital-first artisanal craftsmanship"
+    ],
+    "digitalPresence": 72,
+    "ecommercePenetration": 64,
+    "notableEvents": [
+      "Gombold újra! (Design competition)",
+      "Budapest Fashion & Tech Summit"
+    ]
+  }
+}

@@ -10,8 +10,19 @@ interface GarmentCardProps {
   index?: number;
 }
 
+// Rotate modifiers for image variety
+const GARMENT_MODIFIERS = [
+  'full body outfit fashion photography',
+  'woman wearing traditional outfit full body',
+  'man wearing traditional outfit full body',
+  'couple wearing traditional clothing',
+  'woman in traditional dress full body portrait',
+  'traditional outfit detailed garment photography',
+];
+
 export function GarmentCard({ garment, countryName, index = 0 }: GarmentCardProps) {
-  const query = garment.imageQuery || `${garment.name} ${countryName} traditional clothing`;
+  const modifier = GARMENT_MODIFIERS[index % GARMENT_MODIFIERS.length];
+  const query = garment.imageQuery || `${garment.name} ${countryName} ${modifier}`;
   const { images, loading } = useImages(query, 1);
   const heroImage = images[0];
 

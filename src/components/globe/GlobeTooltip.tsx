@@ -6,8 +6,11 @@ import { formatCurrency, formatNumber } from '@/lib/utils';
 export function GlobeTooltip() {
   const tooltip = useGlobeStore((s) => s.tooltip);
   const activeMetric = useGlobeStore((s) => s.activeMetric);
+  const countries = useGlobeStore((s) => s.countries);
 
   if (!tooltip) return null;
+
+  const country = countries.find((c) => c.iso === tooltip.iso);
 
   const formatValue = (value: number) => {
     switch (activeMetric) {
@@ -21,6 +24,13 @@ export function GlobeTooltip() {
     }
   };
 
+  const tierColors: Record<string, string> = {
+    A: 'bg-accent text-white',
+    B: 'bg-secondary text-white',
+    C: 'bg-white/10 text-muted',
+    skeleton: 'bg-white/5 text-muted',
+  };
+
   return (
     <div
       className="fixed pointer-events-none z-50 animate-fade-in-up"
@@ -29,17 +39,36 @@ export function GlobeTooltip() {
         top: tooltip.y - 10,
       }}
     >
-      <div className="glass-panel rounded-lg px-3 py-2 shadow-xl">
-        <div className="flex items-center gap-2">
-          <span className="text-lg">{tooltip.flag}</span>
-          <span className="font-medium text-sm">{tooltip.name}</span>
+      <div className="glass-panel rounded-xl px-4 py-3 shadow-2xl min-w-[180px] border border-white/15">
+        <div className="flex items-center gap-2.5 mb-2">
+          <span className="text-xl">{tooltip.flag}</span>
+          <div className="flex-1 min-w-0">
+            <span className="font-semibold text-sm block truncate">{tooltip.name}</span>
+            {country && (
+              <span className="text-[10px] text-muted">{country.region}</span>
+            )}
+          </div>
+          {country && (
+            <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${tierColors[country.tier] || tierColors.skeleton}`}>
+              {country.tier === 'skeleton' ? '—' : `Tier ${country.tier}`}
+            </span>
+          )}
         </div>
-        <div className="flex items-center gap-1 mt-1">
-          <span className="text-xs text-muted">{tooltip.metric}:</span>
-          <span className="text-xs font-mono font-semibold text-accent">
-            {formatValue(tooltip.value)}
-          </span>
+
+        <div className="flex items-center justify-between gap-3 text-xs border-t border-white/10 pt-2">
+          <div>
+            <span className="text-[10px] text-muted block">{tooltip.metric}</span>
+            <span className="font-mono font-semibold text-accent">{formatValue(tooltip.value)}</span>
+          </div>
+          {country && activeMetric !== 'fashionIndex' && (
+            <div className="text-right">
+              <span className="text-[10px] text-muted block">Fashion Index</span>
+              <span className="font-mono font-semibold">{country.fashionIndex}</span>
+            </div>
+          )}
         </div>
+
+        <p className="text-[9px] text-muted/60 mt-2 text-center">Click to explore</p>
       </div>
     </div>
   );

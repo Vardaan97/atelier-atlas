@@ -32,7 +32,12 @@ export function useTradeData(iso: string | null) {
     setError(null);
 
     fetch(`/api/trade/${iso}`, { signal: controller.signal })
-      .then((res) => res.json())
+      .then(async (res) => {
+        if (!res.ok) {
+          throw new Error(`Trade API returned ${res.status}`);
+        }
+        return res.json();
+      })
       .then((json) => {
         if (json.data) {
           setData(json.data);

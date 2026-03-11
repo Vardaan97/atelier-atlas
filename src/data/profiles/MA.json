@@ -1,0 +1,177 @@
+{
+  "fashionDNA": {
+    "traditionalism": 92,
+    "innovation": 65,
+    "sustainability": 38,
+    "luxuryIndex": 85,
+    "streetwearInfluence": 45,
+    "craftsmanship": 98,
+    "globalInfluence": 70
+  },
+  "eras": [
+    {
+      "id": "indigenous-amazigh-foundations",
+      "name": "Indigenous Amazigh Foundations",
+      "yearRange": [
+        1000,
+        1500
+      ],
+      "description": "Characterized by practical, heavy wool garments designed for the Atlas Mountains. Fashion was deeply symbolic, utilizing tribal tattoos and intricate silver jewelry to denote status and lineage.",
+      "keyGarments": [
+        "Selham",
+        "Haik",
+        "Fibula jewelry"
+      ],
+      "aiImagePrompt": "A high-detail historical illustration of an 11th-century Amazigh woman in the Atlas Mountains, wearing a heavy hand-woven white wool Haik secured by silver triangular fibula brooches, featuring intricate geometric facial tattoos and layered amber bead necklaces."
+    },
+    {
+      "id": "andalusian-refinement",
+      "name": "Andalusian Refinement",
+      "yearRange": [
+        1500,
+        1800
+      ],
+      "description": "The influx of refugees from Al-Andalus brought sophisticated urban tailoring and silk weaving to cities like Fes and Tetouan. This era saw the introduction of complex embroidery and the early evolution of the structured Caftan.",
+      "keyGarments": [
+        "Silk Caftan",
+        "Mansouria",
+        "Fez (Tarboosh)"
+      ],
+      "aiImagePrompt": "A 17th-century Moroccan noble in a Fes courtyard, wearing a layered silk Caftan with gold thread embroidery (Sfifa) and a traditional red felt Tarboosh hat, cinematic lighting, Moorish architecture background."
+    },
+    {
+      "id": "protectorate-transition",
+      "name": "French & Spanish Protectorate Era",
+      "yearRange": [
+        1912,
+        1956
+      ],
+      "description": "A period of stylistic dualism where Western silhouettes began to influence urban elites. Traditional garments like the Djellaba were modernized with sharper tailoring while maintaining their cultural essence.",
+      "keyGarments": [
+        "Modernized Djellaba",
+        "Western-style suits",
+        "Babouche slippers"
+      ],
+      "aiImagePrompt": "1940s Casablanca street scene, a man wearing a tailored wool Djellaba over a French-style collared shirt and trousers, leather Babouche, blending colonial and traditional aesthetics."
+    },
+    {
+      "id": "post-independence-renaissance",
+      "name": "Post-Independence Renaissance",
+      "yearRange": [
+        1956,
+        1990
+      ],
+      "description": "A resurgence of national pride led to the elevation of the Caftan into a high-fashion garment. Designers began experimenting with lighter fabrics and vibrant colors for the international jet-set visiting Marrakech.",
+      "keyGarments": [
+        "Velvet Takchita",
+        "Embroidered Jabador",
+        "Silk belt (Mdamma)"
+      ],
+      "aiImagePrompt": "A 1970s fashion editorial style shot of a woman in Marrakech wearing a two-piece Takchita in emerald green velvet with heavy gold embroidery and a wide metallic Mdamma belt, poolside setting."
+    },
+    {
+      "id": "contemporary-caftan-couture",
+      "name": "Contemporary Caftan Couture",
+      "yearRange": [
+        1990,
+        2010
+      ],
+      "description": "Led by designers like Albert Oiknine, the Moroccan Caftan entered the global luxury stage. The focus shifted to 'Haute Couture' techniques, incorporating Swarovski crystals and unconventional cuts.",
+      "keyGarments": [
+        "Couture Caftan",
+        "Sheer over-caftans",
+        "Jeweled belts"
+      ],
+      "aiImagePrompt": "A modern runway shot of an Albert Oiknine inspired luxury Caftan, sheer silk organza layers, intricate silver filigree hand-embroidery, high-fashion lighting, dramatic silhouette."
+    },
+    {
+      "id": "neo-moroccan-streetwear",
+      "name": "Neo-Moroccan Streetwear",
+      "yearRange": [
+        2010,
+        2024
+      ],
+      "description": "A youth-led movement blending traditional motifs with global streetwear. This era is defined by oversized silhouettes, Arabic calligraphy prints, and the repurposing of traditional fabrics like Sfifa on hoodies.",
+      "keyGarments": [
+        "Hooded Djellaba-style coats",
+        "Calligraphy tees",
+        "Custom sneakers"
+      ],
+      "aiImagePrompt": "A young Moroccan man in the Casablanca medina wearing an oversized black hoodie with gold Sfifa trim along the sleeves and Arabic typography, mixing high-street fashion with heritage craft."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Sabra Silk",
+      "type": "Woven",
+      "description": "Known as 'vegetable silk,' it is derived from the Agave cactus and features a distinct metallic sheen and heavy drape.",
+      "origin": "Marrakech",
+      "technique": "Loom weaving of cactus fibers"
+    },
+    {
+      "name": "Fes Embroidery (Terz Fassi)",
+      "type": "Embroidered",
+      "description": "Intricate, reversible geometric patterns usually in blue or green on white cotton or linen.",
+      "origin": "Fes",
+      "technique": "Counted-thread hand embroidery"
+    },
+    {
+      "name": "Moroccan Leather",
+      "type": "Dyed",
+      "description": "World-renowned soft goatskin and sheepskin, traditionally processed in ancient tanneries.",
+      "origin": "Fes and Marrakech",
+      "technique": "Vegetable tanning in stone vats"
+    },
+    {
+      "name": "Sfifa",
+      "type": "Woven",
+      "description": "A decorative woven braid used to finish the edges of traditional garments, often made with gold or silver threads.",
+      "origin": "Nationwide",
+      "technique": "Hand-braiding using a specialized loom (Mramma)"
+    }
+  ],
+  "climate": {
+    "zone": "Mediterranean and Semi-Arid",
+    "avgTemp": 18,
+    "humidity": "Moderate",
+    "fashionImplication": "The extreme heat of the interior necessitates loose-fitting, breathable natural fibers like linen and cotton, while the cool Atlas nights require heavy wool wraps."
+  },
+  "culturalInfluences": [
+    "Islamic Modesty",
+    "Amazigh Tribal Symbols",
+    "Andalusian Craftsmanship",
+    "French Colonial Tailoring",
+    "Sahrawi Nomadic Utility",
+    "Marrakech Jet-set Glamour",
+    "Sufi Mysticism aesthetics"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Marrakech Fashion Week",
+        "city": "Marrakech",
+        "month": "October",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Caftan du Maroc",
+        "city": "Marrakech/Casablanca",
+        "month": "May",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Sustainable Upcycling of vintage rugs",
+      "Gender-neutral Djellabas",
+      "Digital embroidery integration",
+      "Ethical leather sourcing"
+    ],
+    "digitalPresence": 72,
+    "ecommercePenetration": 45,
+    "notableEvents": [
+      "Caftan Show (2M TV)",
+      "Fashion Trust Arabia (Regional support)",
+      "Yves Saint Laurent Museum openings"
+    ]
+  }
+}

@@ -46,3 +46,4 @@ src/data/trade-cache/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env*.local

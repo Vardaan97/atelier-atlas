@@ -34,12 +34,14 @@ export function interpolateColor(
   min: number,
   max: number,
   fromColor: [number, number, number] = [15, 52, 96],
-  toColor: [number, number, number] = [233, 69, 96]
+  toColor: [number, number, number] = [233, 69, 96],
+  alpha: number = 1
 ): string {
   const t = Math.max(0, Math.min(1, (value - min) / (max - min || 1)));
   const r = Math.round(fromColor[0] + t * (toColor[0] - fromColor[0]));
   const g = Math.round(fromColor[1] + t * (toColor[1] - fromColor[1]));
   const b = Math.round(fromColor[2] + t * (toColor[2] - fromColor[2]));
+  if (alpha < 1) return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   return `rgb(${r}, ${g}, ${b})`;
 }
 

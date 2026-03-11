@@ -51,7 +51,8 @@ function ControlButtons({ onDone }: { onDone?: () => void }) {
   };
 
   const handleOverlayClick = (key: OverlayMode) => {
-    setOverlayMode(key);
+    // Toggle off: clicking active overlay resets to 'metric'
+    setOverlayMode(overlayMode === key ? 'metric' : key);
     onDone?.();
   };
 
@@ -234,14 +235,15 @@ function DesktopControls() {
     <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
       {/* Metric buttons */}
       <div className="glass-panel rounded-xl p-1.5 flex flex-col gap-1">
+        <p className="text-[9px] text-muted/60 uppercase tracking-wider font-mono px-3 pt-1">Data Metrics</p>
         {METRICS.map((m) => (
           <button
             key={m.key}
             onClick={() => setActiveMetric(m.key as MetricKey)}
             className={cn(
               'flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-200',
-              activeMetric === m.key
-                ? 'bg-accent/20 text-accent'
+              activeMetric === m.key && overlayMode === 'metric'
+                ? 'bg-accent/20 text-accent glow-accent'
                 : 'text-muted hover:text-foreground hover:bg-white/5'
             )}
             title={m.label}
@@ -292,14 +294,15 @@ function DesktopControls() {
 
       {/* Overlay mode buttons */}
       <div className="glass-panel rounded-xl p-1.5 flex flex-col gap-1">
+        <p className="text-[9px] text-muted/60 uppercase tracking-wider font-mono px-3 pt-1">Overlay Mode</p>
         {OVERLAY_MODES.map((mode) => (
           <button
             key={mode.key}
-            onClick={() => setOverlayMode(mode.key)}
+            onClick={() => setOverlayMode(overlayMode === mode.key ? 'metric' : mode.key)}
             className={cn(
               'flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-200',
               overlayMode === mode.key
-                ? 'bg-accent/20 text-accent'
+                ? 'bg-accent/20 text-accent glow-accent'
                 : 'text-muted hover:text-foreground hover:bg-white/5'
             )}
             title={mode.label}

@@ -108,7 +108,7 @@ export const useGlobeStore = create<GlobeState>((set, get) => ({
   setActiveTab: (tab) => set({ activeTab: tab }),
 
   activeMetric: 'fashionIndex',
-  setActiveMetric: (metric) => set({ activeMetric: metric }),
+  setActiveMetric: (metric) => set({ activeMetric: metric, overlayMode: 'metric' }),
   autoRotate: true,
   setAutoRotate: (rotate) => set({ autoRotate: rotate }),
 

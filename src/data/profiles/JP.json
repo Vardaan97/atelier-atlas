@@ -1,0 +1,171 @@
+{
+  "fashionDNA": {
+    "traditionalism": 75,
+    "innovation": 95,
+    "sustainability": 68,
+    "luxuryIndex": 88,
+    "streetwearInfluence": 92,
+    "craftsmanship": 98,
+    "globalInfluence": 94
+  },
+  "eras": [
+    {
+      "id": "heian-period",
+      "name": "Heian Era",
+      "yearRange": [
+        794,
+        1185
+      ],
+      "description": "Characterized by the pursuit of aesthetic refinement and the development of the 'Junihitoe' or twelve-layered robe. Fashion was a critical indicator of rank and poetic sensibility, focusing on color harmony and seasonal symbolism.",
+      "keyGarments": [
+        "Junihitoe",
+        "Sokutai",
+        "Osode"
+      ],
+      "aiImagePrompt": "A high-ranking Heian period Japanese noblewoman wearing a multi-layered Junihitoe silk kimono, showcasing vibrant seasonal color gradations at the sleeves, long flowing black hair, in a traditional palace setting, ukiyo-e aesthetic influence."
+    },
+    {
+      "id": "edo-period",
+      "name": "Edo Era",
+      "yearRange": [
+        1603,
+        1867
+      ],
+      "description": "A period of isolation where the Kosode (predecessor to the modern Kimono) became the primary canvas for artistic expression. Sumptuary laws restricted certain colors and fabrics, leading to the development of subtle luxury and intricate dyeing techniques.",
+      "keyGarments": [
+        "Kosode",
+        "Kamishimo",
+        "Hakama"
+      ],
+      "aiImagePrompt": "An Edo period merchant in a high-quality indigo-dyed cotton kosode with subtle geometric patterns, wearing a traditional topknot, walking through a bustling historic Kyoto street."
+    },
+    {
+      "id": "meiji-restoration",
+      "name": "Meiji Era",
+      "yearRange": [
+        1868,
+        1912
+      ],
+      "description": "Rapid modernization saw the introduction of Western military uniforms and Victorian dresses. This era represents the 'Wafuku' (Japanese clothing) vs 'Yofuku' (Western clothing) duality that defines modern Japan.",
+      "keyGarments": [
+        "Frock Coats",
+        "Gibson Girl Dresses",
+        "Haikara-san style Hakama"
+      ],
+      "aiImagePrompt": "A Meiji era Japanese student wearing a combination of a traditional floral kimono and a dark pleated hakama skirt, paired with Western leather lace-up boots and a ribbon in her hair."
+    },
+    {
+      "id": "showa-modernism",
+      "name": "Early Showa & Post-War",
+      "yearRange": [
+        1926,
+        1989
+      ],
+      "description": "Post-war recovery led to the rise of ready-to-wear and the 'Mobo' (Modern Boy) and 'Moga' (Modern Girl) subcultures. By the 70s and 80s, Japanese designers began conquering Paris with avant-garde concepts.",
+      "keyGarments": [
+        "Western-style Suits",
+        "Pleated Skirts",
+        "Deconstructed Knitwear"
+      ],
+      "aiImagePrompt": "1980s Tokyo street style featuring oversized, asymmetrical black wool coats by avant-garde designers, minimalist aesthetic, moody urban Ginza background."
+    },
+    {
+      "id": "harajuku-peak",
+      "name": "Heisei Streetwear Explosion",
+      "yearRange": [
+        1989,
+        2019
+      ],
+      "description": "The rise of Ura-Harajuku culture and highly specific subcultures like Lolita, Gyaru, and Visual Kei. This era established Japan as the global capital of creative streetwear and 'kawaii' culture.",
+      "keyGarments": [
+        "Souvenir Jackets (Sukajan)",
+        "Platform Boots",
+        "Graphic Hoodies"
+      ],
+      "aiImagePrompt": "A 1990s Harajuku street scene with teenagers in layered 'Fruits' magazine style, featuring neon colors, mixed patterns, customized denim, and decorative accessories."
+    },
+    {
+      "id": "reiwa-tech-minimalism",
+      "name": "Reiwa Era Modernism",
+      "yearRange": [
+        2019,
+        2024
+      ],
+      "description": "A focus on sustainable high-tech fabrics, gender-neutral silhouettes, and the 'City Boy' aesthetic. Fashion now blends extreme functionality with traditional Japanese minimalism.",
+      "keyGarments": [
+        "Technical Parkas",
+        "Wide-leg Trousers",
+        "Modular Vests"
+      ],
+      "aiImagePrompt": "Modern Tokyo minimalist fashion, a person wearing oversized technical beige trousers and a sustainable hemp-blend oversized shirt, clean lines, architectural background of Shibuya."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Nishijin-ori",
+      "type": "Woven",
+      "description": "A traditional textile produced in the Nishijin district of Kyoto, known for highly decorative and intricate weave patterns using dyed yarns.",
+      "origin": "Kyoto",
+      "technique": "Yarn-dyeing and intricate jacquard-style weaving"
+    },
+    {
+      "name": "Kuro-monsho Ichigaya (Indigo Denim)",
+      "type": "Dyed",
+      "description": "Japan is world-renowned for its premium selvedge denim, often using natural indigo fermentation processes.",
+      "origin": "Kojima, Okayama",
+      "technique": "Rope dyeing and shuttle loom weaving"
+    },
+    {
+      "name": "Shibori",
+      "type": "Dyed",
+      "description": "A Japanese manual tie-dyeing technique that produces a wide variety of different patterns on fabric, often creating a 3D texture.",
+      "origin": "Arimatsu",
+      "technique": "Pressure-resistance dyeing through binding, stitching, or folding"
+    },
+    {
+      "name": "Bashofu",
+      "type": "Woven",
+      "description": "A fiber cloth made from the Himalayan wild banana plant, prized for its lightness and breathability in humid climates.",
+      "origin": "Okinawa",
+      "technique": "Hand-spinning banana fibers and plain weaving"
+    }
+  ],
+  "climate": {
+    "zone": "Temperate / Subtropical",
+    "avgTemp": 15.5,
+    "humidity": "High",
+    "fashionImplication": "High humidity necessitates breathable fabrics like linen and high-twist cotton in summer, while distinct seasonality drives a strong culture of 'Koromogae' (seasonal wardrobe rotation)."
+  },
+  "culturalInfluences": [
+    "Wabi-sabi (Acceptance of transience and imperfection)",
+    "Anime and Manga subcultures",
+    "Zen Buddhism (Minimalism and focus on form)",
+    "Monozukuri (The spirit of specialized craftsmanship)",
+    "Ukiyo-e woodblock prints",
+    "Cyberpunk and futuristic urbanism",
+    "Bushido (Samurai code of discipline and structure)"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Rakuten Fashion Week Tokyo",
+        "city": "Tokyo",
+        "month": "March and August",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Genderless Kei (Gender-neutral styling)",
+      "Technical Outdoor Wear (Gorpcore)",
+      "Upcycled Vintage Americana",
+      "Virtual Fashion and Digital Avatars"
+    ],
+    "digitalPresence": 92,
+    "ecommercePenetration": 85,
+    "notableEvents": [
+      "Tokyo Girls Collection",
+      "Dover Street Market Ginza Collaborations",
+      "Kyoto Fashion Exhibition"
+    ]
+  }
+}

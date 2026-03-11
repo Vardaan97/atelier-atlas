@@ -544,7 +544,7 @@ export function FilterSidebar() {
                 {TIER_OPTIONS.map((tier) => (
                   <CheckboxItem
                     key={tier}
-                    label={tier === 'skeleton' ? 'Skeleton' : `Tier ${tier}`}
+                    label={tier === 'skeleton' ? 'Unrated' : `Tier ${tier}`}
                     checked={tierFilter.includes(tier)}
                     onChange={() =>
                       setFilters({

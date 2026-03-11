@@ -92,5 +92,5 @@ export function buildEraImagePrompt(
   yearRange: [number, number],
   keyGarments: string[]
 ): string {
-  return `A museum-quality illustration of traditional clothing from ${countryName} during the ${eraName} period (${yearRange[0]}-${yearRange[1]}). Show a person wearing ${keyGarments.join(' and ')}. Historically accurate textile patterns, authentic colors, and period-appropriate details. Soft, warm lighting. Detailed fabric textures visible. Professional fashion illustration style.`;
+  return `A museum-quality full-body fashion illustration of traditional clothing from ${countryName} during the ${eraName} period (${yearRange[0]}-${yearRange[1]}). Show a person standing in a full-body pose wearing ${keyGarments.join(' and ')}. The entire outfit must be fully visible from head to toe. Historically accurate textile patterns, authentic colors, and period-appropriate details. Soft, warm lighting. Detailed fabric textures visible. Professional fashion illustration style. Focus on the garment details, not the face.`;
 }

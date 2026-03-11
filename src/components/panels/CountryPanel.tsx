@@ -16,6 +16,7 @@ import { ColorsTextilesTab } from './ColorsTextilesTab';
 import { TimelineTab } from './TimelineTab';
 import { CultureClimateTab } from './CultureClimateTab';
 import { ContemporaryTab } from './ContemporaryTab';
+import { AiStudioTab } from './AiStudioTab';
 import { SimilaritySection } from './SimilaritySection';
 
 export function CountryPanel() {
@@ -86,7 +87,7 @@ export function CountryPanel() {
             {[
               { label: 'Fashion Index', value: country.fashionIndex.toString() },
               { label: 'Sustainability', value: `${country.sustainabilityScore}%` },
-              { label: 'Tier', value: country.tier.toUpperCase() },
+              { label: 'Tier', value: country.tier === 'skeleton' ? '—' : `Tier ${country.tier.toUpperCase()}` },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -169,6 +170,9 @@ export function CountryPanel() {
           <Tabs.Content value="contemporary" className="outline-none">
             <ContemporaryTab country={country} profile={profile} profileLoading={profileLoading} />
           </Tabs.Content>
+          <Tabs.Content value="ai-studio" className="outline-none">
+            <AiStudioTab country={country} profile={profile} profileLoading={profileLoading} />
+          </Tabs.Content>
 
           {/* Style Similarity — always visible below active tab */}
           <div className="border-t border-white/10 pt-4 mt-6">
@@ -180,7 +184,7 @@ export function CountryPanel() {
   ) : null;
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {panelOpen && country && (
         isMobile ? (
           /* ---- Mobile: Bottom sheet ---- */
@@ -209,7 +213,7 @@ export function CountryPanel() {
             key="side-panel"
             initial={{ x: '100%', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: '100%', opacity: 0 }}
+            exit={{ x: '110%', opacity: 0 }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
             className="fixed right-0 top-0 h-full w-full lg:w-[50%] z-30 glass-panel border-l border-white/10 overflow-hidden flex flex-col"
           >

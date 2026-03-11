@@ -17,7 +17,7 @@ export function TraditionalTab({ country }: TraditionalTabProps) {
         <Shirt className="w-10 h-10 text-muted/40 mb-3" />
         <p className="text-muted text-sm">No traditional garment data yet</p>
         <p className="text-muted/50 text-xs mt-1">
-          AI-generated profiles coming in Session 3
+          Data being compiled
         </p>
       </div>
     );

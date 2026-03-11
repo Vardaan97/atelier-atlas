@@ -68,6 +68,8 @@ export function TimelineSlider({ className }: TimelineSliderProps) {
         'max-w-[92vw] overflow-x-auto scrollbar-hide',
         className
       )}
+      onClick={(e) => e.stopPropagation()}
+      onPointerDown={(e) => e.stopPropagation()}
     >
       {/* Prev button */}
       <button

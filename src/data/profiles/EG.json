@@ -1,0 +1,178 @@
+{
+  "fashionDNA": {
+    "traditionalism": 75,
+    "innovation": 62,
+    "sustainability": 32,
+    "luxuryIndex": 80,
+    "streetwearInfluence": 68,
+    "craftsmanship": 92,
+    "globalInfluence": 70
+  },
+  "eras": [
+    {
+      "id": "old-kingdom-period",
+      "name": "Old Kingdom Pharaonic Era",
+      "yearRange": [
+        -2686,
+        -2181
+      ],
+      "description": "Fashion centered on simplicity and cleanliness, utilizing finely pleated white linen. Clothing served as a status symbol, with higher-ranking individuals wearing more elaborate draping and beadwork.",
+      "keyGarments": [
+        "Kalasiris",
+        "Shendyt",
+        "Broad Collar (Wesekh)"
+      ],
+      "aiImagePrompt": "A high-ranking ancient Egyptian noblewoman in a white pleated linen Kalasiris dress with a colorful beaded Wesekh collar, standing in a temple courtyard, realistic historical reconstruction."
+    },
+    {
+      "id": "new-kingdom-period",
+      "name": "New Kingdom Golden Age",
+      "yearRange": [
+        -1550,
+        -1070
+      ],
+      "description": "An era of increased opulence and complex draping. The introduction of the vertical loom allowed for wider fabrics and more intricate weaving patterns influenced by Near Eastern contact.",
+      "keyGarments": [
+        "Haik",
+        "Pleated Robes",
+        "Beaded Net Dresses"
+      ],
+      "aiImagePrompt": "Egyptian royalty wearing translucent, finely pleated layered linen garments with gold embroidery and heavy lapis lazuli jewelry, theatrical lighting, cinematic historical style."
+    },
+    {
+      "id": "islamic-golden-age",
+      "name": "Mamluk & Fatimid Period",
+      "yearRange": [
+        909,
+        1517
+      ],
+      "description": "Introduction of elaborate silk weaving and Tiraz embroidery. Fashion became more modest, focusing on voluminous silhouettes and calligraphic ornamentation.",
+      "keyGarments": [
+        "Tiraz Sleeves",
+        "Caftan",
+        "Turban"
+      ],
+      "aiImagePrompt": "An Egyptian merchant in Fustat wearing a heavy silk caftan with calligraphic Tiraz embroidery on the upper arms, vibrant madder-dyed textiles, 14th-century setting."
+    },
+    {
+      "id": "muhammad-ali-modernization",
+      "name": "Khedivate Era",
+      "yearRange": [
+        1805,
+        1914
+      ],
+      "description": "A fusion of Ottoman and European styles. The elite adopted Western tailoring while retaining traditional headwear like the Tarboosh (fez).",
+      "keyGarments": [
+        "Tarboosh",
+        "Stambouline Coat",
+        "Yashmak"
+      ],
+      "aiImagePrompt": "An Egyptian statesman in 19th-century Cairo wearing a dark Stambouline frock coat and a red Tarboosh, blending Victorian tailoring with Ottoman tradition."
+    },
+    {
+      "id": "mid-century-glamour",
+      "name": "The Golden Age of Cinema",
+      "yearRange": [
+        1940,
+        1960
+      ],
+      "description": "Cairo was the 'Paris of the Middle East.' High fashion was dominated by French-style couture, tailored suits, and glamorous evening gowns worn by cinema stars.",
+      "keyGarments": [
+        "Tailored Pencil Skirts",
+        "Evening Gowns",
+        "Cocktail Dresses"
+      ],
+      "aiImagePrompt": "A 1950s Egyptian actress in a glamorous fitted evening gown walking through downtown Cairo, vintage film aesthetic, elegant mid-century tailoring."
+    },
+    {
+      "id": "contemporary-revival",
+      "name": "Post-Revolution Modernism",
+      "yearRange": [
+        2011,
+        2024
+      ],
+      "description": "A surge in local designer brands and a return to heritage. Designers are blending ancient motifs with modern streetwear and high-end evening wear.",
+      "keyGarments": [
+        "Modern Galabeya",
+        "Graphic Streetwear",
+        "Architectural Couture"
+      ],
+      "aiImagePrompt": "A modern Egyptian woman wearing an architectural white couture dress with gold geometric laser-cut patterns inspired by lotus flowers, contemporary luxury studio lighting."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Egyptian Long-Staple Cotton",
+      "type": "Woven",
+      "description": "World-renowned for its extra-long fibers, creating exceptionally soft, durable, and breathable fabric.",
+      "origin": "Nile Delta",
+      "technique": "Hand-combing and precision spinning"
+    },
+    {
+      "name": "Khayameya",
+      "type": "Embroidered",
+      "description": "Intricate applique work originally used for tent-making, now applied to fashion and home decor.",
+      "origin": "Tentmakers' Street, Cairo",
+      "technique": "Hand-stitched applique"
+    },
+    {
+      "name": "Akhmim Silk and Cotton",
+      "type": "Woven",
+      "description": "Hand-loomed textiles featuring traditional Coptic and Islamic geometric motifs.",
+      "origin": "Akhmim, Sohag",
+      "technique": "Manual hand-loom weaving"
+    },
+    {
+      "name": "Tulle bi Tell",
+      "type": "Embroidered",
+      "description": "A unique technique of threading small metal strips into cotton or silk mesh to create geometric patterns.",
+      "origin": "Assiut",
+      "technique": "Metal thread embroidery on net"
+    }
+  ],
+  "climate": {
+    "zone": "Arid/Desert",
+    "avgTemp": 22.1,
+    "humidity": "Low",
+    "fashionImplication": "Preference for lightweight, breathable natural fibers like cotton and linen to manage extreme heat and high UV exposure."
+  },
+  "culturalInfluences": [
+    "Ancient Pharaonic Mythology",
+    "Islamic Geometric Art",
+    "Coptic Christian Iconography",
+    "Bedouin Tribal Traditions",
+    "French and Italian Tailoring",
+    "Nubian Aesthetic and Color Palettes",
+    "Modern Arab Pop Culture",
+    "Mediterranean Coastal Lifestyle"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Cairo Fashion Week",
+        "city": "Cairo",
+        "month": "March",
+        "tier": "Emerging"
+      },
+      {
+        "name": "La Mode A Beyrouth (Cairo Edition)",
+        "city": "Cairo",
+        "month": "October",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Neo-Pharaonic Minimalism",
+      "Sustainable Upcycled Denim",
+      "Modest-Chic Activewear",
+      "Heritage-Craft Luxury Handbags"
+    ],
+    "digitalPresence": 85,
+    "ecommercePenetration": 45,
+    "notableEvents": [
+      "The Pharaohs' Golden Parade Fashion",
+      "Dior Men's Fall 2023 at Giza Pyramids",
+      "Creative Industry Summit"
+    ]
+  }
+}

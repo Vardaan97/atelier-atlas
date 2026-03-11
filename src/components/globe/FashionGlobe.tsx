@@ -3,31 +3,26 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useGlobeStore } from '@/store/useGlobeStore';
-import { GLOBE, GEOJSON_URL, METRICS } from '@/lib/constants';
+import { GLOBE, GEOJSON_URL, METRICS, FASHION_CAPITALS, FASHION_ARCS } from '@/lib/constants';
 import { interpolateColor } from '@/lib/utils';
 import type { GeoJSON, GeoFeature } from '@/types/globe';
 import type { CountryBase } from '@/types/country';
 
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
-// Climate zone colors
+// Climate zone colors — fully opaque so they pop against dark globe
 const CLIMATE_COLORS: Record<string, string> = {
-  tropical: 'rgba(255, 184, 0, 0.75)',     // #FFB800
-  arid: 'rgba(212, 165, 116, 0.75)',        // #D4A574
-  temperate: 'rgba(0, 196, 140, 0.75)',     // #00C48C
-  continental: 'rgba(74, 144, 217, 0.75)',  // #4A90D9
-  polar: 'rgba(232, 232, 232, 0.75)',       // #E8E8E8
+  tropical: 'rgb(255, 184, 0)',
+  arid: 'rgb(212, 165, 116)',
+  temperate: 'rgb(0, 196, 140)',
+  continental: 'rgb(74, 144, 217)',
+  polar: 'rgb(220, 220, 235)',
 };
 
-/** Infer climate zone from latitude and subregion heuristics */
 function inferClimateZone(lat: number, subregion: string): string {
   const absLat = Math.abs(lat);
   const sub = subregion.toLowerCase();
-
-  // Polar
   if (absLat >= 66) return 'polar';
-
-  // Arid regions (desert belts + known arid subregions)
   if (
     (absLat >= 15 && absLat <= 35 &&
       (sub.includes('northern africa') || sub.includes('western asia'))) ||
@@ -36,18 +31,12 @@ function inferClimateZone(lat: number, subregion: string): string {
   ) {
     return 'arid';
   }
-
-  // Tropical
   if (absLat <= 23.5) return 'tropical';
-
-  // Continental (high-latitude inland areas)
   if (absLat >= 50) return 'continental';
-
-  // Temperate (default mid-latitudes)
   return 'temperate';
 }
 
-// Map ISO_A3 -> ISO_A2 for lookup
+// ISO A3 → A2 mapping
 function iso3toIso2(iso3: string): string {
   const map: Record<string, string> = {
     AFG: 'AF', ALB: 'AL', DZA: 'DZ', AND: 'AD', AGO: 'AO', ATG: 'AG', ARG: 'AR',
@@ -96,6 +85,7 @@ export function FashionGlobe() {
   const setTooltip = useGlobeStore((s) => s.setTooltip);
   const setGlobeReady = useGlobeStore((s) => s.setGlobeReady);
   const panelOpen = useGlobeStore((s) => s.panelOpen);
+  const setPanelOpen = useGlobeStore((s) => s.setPanelOpen);
   const getFilteredCountries = useGlobeStore((s) => s.getFilteredCountries);
   const searchResults = useGlobeStore((s) => s.searchResults);
   const overlayMode = useGlobeStore((s) => s.overlayMode);
@@ -104,7 +94,6 @@ export function FashionGlobe() {
   const highlightedIsos = useMemo(() => {
     const filtered = new Set(getFilteredCountries());
     if (searchResults.length > 0) {
-      // Intersect filters with search results
       return new Set(searchResults.filter((iso) => filtered.has(iso)));
     }
     return filtered;
@@ -130,6 +119,50 @@ export function FashionGlobe() {
     });
     return { min: Math.min(...values), max: Math.max(...values) };
   }, [countries, activeMetric]);
+
+  // Fashion week city points — shown in fashionWeek overlay mode
+  const fashionWeekPoints = useMemo(() => {
+    if (overlayMode !== 'fashionWeek') return [];
+    return FASHION_CAPITALS.map((cap) => ({
+      lat: cap.lat,
+      lng: cap.lng,
+      city: cap.city,
+      color: cap.tier === 'A' ? '#E94560' : '#FF5A7A',
+      altitude: cap.tier === 'A' ? 0.12 : 0.08,
+      radius: cap.tier === 'A' ? 0.5 : 0.35,
+    }));
+  }, [overlayMode]);
+
+  // Fashion arcs connecting capitals — shown in fashionWeek overlay mode
+  const fashionArcData = useMemo(() => {
+    if (overlayMode !== 'fashionWeek') return [];
+    return FASHION_ARCS.map((arc) => {
+      const start = FASHION_CAPITALS.find((c) => c.city === arc.start);
+      const end = FASHION_CAPITALS.find((c) => c.city === arc.end);
+      if (!start || !end) return null;
+      return {
+        startLat: start.lat,
+        startLng: start.lng,
+        endLat: end.lat,
+        endLng: end.lng,
+        color: ['rgba(233, 69, 96, 0.5)', 'rgba(233, 69, 96, 0.08)'],
+      };
+    }).filter((arc): arc is NonNullable<typeof arc> => arc !== null);
+  }, [overlayMode]);
+
+  // Ring pulse on selected country
+  const ringsData = useMemo(() => {
+    if (!selectedCountry) return [];
+    const country = countryMap.get(selectedCountry);
+    if (!country) return [];
+    return [{
+      lat: country.coordinates[0],
+      lng: country.coordinates[1],
+      maxR: 4,
+      propagationSpeed: 2,
+      repeatPeriod: 1200,
+    }];
+  }, [selectedCountry, countryMap]);
 
   // Fetch GeoJSON
   useEffect(() => {
@@ -174,43 +207,40 @@ export function FashionGlobe() {
     (feat: object) => {
       const feature = feat as GeoFeature;
       const iso3 = feature.properties?.ISO_A3;
-      if (!iso3 || iso3 === '-99') return 'rgba(15, 22, 41, 0.6)';
+      if (!iso3 || iso3 === '-99') return 'rgb(18, 25, 50)';
       const iso2 = iso3toIso2(iso3);
       const country = countryMap.get(iso2);
-      if (!country) return 'rgba(15, 22, 41, 0.6)';
+      if (!country) return 'rgb(18, 25, 50)';
 
-      // Selected country always highlighted
-      if (iso2 === selectedCountry) return 'rgba(233, 69, 96, 0.8)';
+      // Selected country — bright accent
+      if (iso2 === selectedCountry) return 'rgb(233, 69, 96)';
 
-      // Dim non-matching countries when filters/search are active
+      // Dim non-matching countries when filters/search active
       if (hasActiveFilters && !highlightedIsos.has(iso2)) {
-        return 'rgba(15, 22, 41, 0.3)';
+        return 'rgb(12, 18, 35)';
       }
 
       switch (overlayMode) {
         case 'sustainability': {
-          // Green (#00C48C) for high score, Red (#FF4757) for low score
           const score = country.sustainabilityScore ?? 0;
           return interpolateColor(
-            score,
-            0,
-            100,
-            [255, 71, 87],   // low = red
-            [0, 196, 140]    // high = green
+            score, 0, 100,
+            [200, 60, 70],   // low = red
+            [0, 220, 160]    // high = green
           );
         }
 
         case 'climate': {
           const lat = country.coordinates[0];
           const zone = inferClimateZone(lat, country.subregion);
-          return CLIMATE_COLORS[zone] || 'rgba(15, 22, 41, 0.6)';
+          return CLIMATE_COLORS[zone] || 'rgb(18, 25, 50)';
         }
 
         case 'fashionWeek': {
           if (country.fashionWeeks && country.fashionWeeks.length > 0) {
-            return 'rgba(233, 69, 96, 0.85)'; // accent
+            return 'rgb(233, 69, 96)';
           }
-          return 'rgba(15, 22, 41, 0.4)'; // very dim
+          return 'rgb(20, 30, 55)';
         }
 
         case 'metric':
@@ -222,8 +252,8 @@ export function FashionGlobe() {
             value,
             metricRange.min,
             metricRange.max,
-            [15, 52, 96],
-            [233, 69, 96]
+            [40, 80, 180],   // low = vivid blue
+            [233, 69, 96]    // high = accent red
           );
         }
       }
@@ -315,7 +345,7 @@ export function FashionGlobe() {
         ref={globeRef}
         width={globeWidth}
         height={dimensions.height}
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
+        // No globe texture — clean dark sphere so polygon colors pop
         backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
         polygonsData={geoData.features}
         polygonCapColor={getPolygonColor}
@@ -325,15 +355,43 @@ export function FashionGlobe() {
           const feat = d as GeoFeature;
           const iso3 = feat.properties?.ISO_A3;
           const iso2 = iso3 ? iso3toIso2(iso3) : '';
-          return iso2 === selectedCountry ? 0.04 : 0.01;
+          return iso2 === selectedCountry ? 0.06 : 0.008;
         }}
+        onGlobeClick={() => { if (panelOpen) setPanelOpen(false); }}
         onPolygonClick={handlePolygonClick}
         onPolygonHover={handlePolygonHover}
-        polygonsTransitionDuration={300}
+        polygonsTransitionDuration={400}
         atmosphereColor={GLOBE.atmosphereColor}
         atmosphereAltitude={GLOBE.atmosphereAltitude}
         animateIn={true}
         enablePointerInteraction={true}
+        // Fashion week city markers
+        pointsData={fashionWeekPoints}
+        pointLat="lat"
+        pointLng="lng"
+        pointColor="color"
+        pointAltitude="altitude"
+        pointRadius="radius"
+        pointsMerge={false}
+        // Fashion capital connection arcs
+        arcsData={fashionArcData}
+        arcStartLat="startLat"
+        arcStartLng="startLng"
+        arcEndLat="endLat"
+        arcEndLng="endLng"
+        arcColor="color"
+        arcStroke={0.5}
+        arcDashLength={0.4}
+        arcDashGap={0.2}
+        arcDashAnimateTime={3000}
+        // Selected country ring pulse
+        ringsData={ringsData}
+        ringLat="lat"
+        ringLng="lng"
+        ringColor={() => '#E94560'}
+        ringMaxRadius="maxR"
+        ringPropagationSpeed="propagationSpeed"
+        ringRepeatPeriod="repeatPeriod"
       />
     </div>
   );

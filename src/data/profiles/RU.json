@@ -1,0 +1,179 @@
+{
+  "fashionDNA": {
+    "traditionalism": 85,
+    "innovation": 65,
+    "sustainability": 30,
+    "luxuryIndex": 92,
+    "streetwearInfluence": 88,
+    "craftsmanship": 90,
+    "globalInfluence": 75
+  },
+  "eras": [
+    {
+      "id": "kiev-rus-era",
+      "name": "Kievan Rus' Period",
+      "yearRange": [
+        882,
+        1240
+      ],
+      "description": "Fashion was heavily influenced by Byzantine styles and Norse utility. Clothing emphasized layering for warmth, featuring long tunics and heavy wool cloaks fastened with fibulae.",
+      "keyGarments": [
+        "Rubakha",
+        "Kaftan",
+        "Fibula"
+      ],
+      "aiImagePrompt": "Historical illustration of a 10th-century Kievan Rus noble wearing a long white linen rubakha with red embroidery, a heavy wool kaftan lined with fur, and leather boots, set in a snowy medieval village."
+    },
+    {
+      "id": "moscovite-tsardom",
+      "name": "Moscovite Tsardom",
+      "yearRange": [
+        1547,
+        1721
+      ],
+      "description": "A period defined by 'Terem' culture and extreme modesty. Garments were voluminous and heavy, using stiff brocades and pearls to signify social status and religious piety.",
+      "keyGarments": [
+        "Opredel",
+        "Sarafan",
+        "Kokoshnik"
+      ],
+      "aiImagePrompt": "A 16th-century Russian Boyar in a tall fur hat (Gorlatnaya) and a heavy gold-brocade Feriaz coat with extremely long sleeves, standing in a traditional wooden palace."
+    },
+    {
+      "id": "petrine-westernization",
+      "name": "Petrine Westernization",
+      "yearRange": [
+        1721,
+        1801
+      ],
+      "description": "Peter the Great forcibly introduced European fashion, banning traditional Russian dress for the nobility. French and German styles dominated the court, including corsets and wigs.",
+      "keyGarments": [
+        "Justacorps",
+        "Pannier Dress",
+        "Tricorne Hat"
+      ],
+      "aiImagePrompt": "An 18th-century Russian aristocrat at the court of St. Petersburg wearing a Rococo French-style silk gown with elaborate lace ruffles and a powdered wig."
+    },
+    {
+      "id": "imperial-golden-age",
+      "name": "Imperial Golden Age",
+      "yearRange": [
+        1801,
+        1917
+      ],
+      "description": "A fusion of European high fashion and Russian motifs. The court uniform was strictly regulated, while the upper class embraced Parisian haute couture and Fabergé craftsmanship.",
+      "keyGarments": [
+        "Court Uniform",
+        "Manteau",
+        "Gimnasterka"
+      ],
+      "aiImagePrompt": "A late 19th-century Russian noblewoman wearing a velvet evening gown with a matching fur-trimmed mantle and an emerald-encrusted tiara, inspired by Romanov opulence."
+    },
+    {
+      "id": "soviet-constructivism",
+      "name": "Early Soviet Constructivism",
+      "yearRange": [
+        1917,
+        1930
+      ],
+      "description": "Avant-garde artists like Varvara Stepanova designed functional, geometric clothing for the 'new socialist person'. The focus shifted to mass production and utilitarianism.",
+      "keyGarments": [
+        "Prozodezhda",
+        "Geometric Scarves",
+        "Leather Jackets"
+      ],
+      "aiImagePrompt": "A 1920s Soviet worker wearing a constructivist outfit with bold geometric patterns in red, black, and white, designed for industrial labor and mobility."
+    },
+    {
+      "id": "late-soviet-stagnation",
+      "name": "Late Soviet Stagnation",
+      "yearRange": [
+        1964,
+        1985
+      ],
+      "description": "Characterized by a shortage of consumer goods and the rise of 'fartsovshchiki' (black market traders). Western denim and synthetic fabrics became ultimate status symbols.",
+      "keyGarments": [
+        "Varenki Jeans",
+        "Bolonye Coat",
+        "Ushanka"
+      ],
+      "aiImagePrompt": "A young person in 1970s Moscow wearing acid-washed denim and a thick wool sweater, standing in front of brutalist architecture."
+    },
+    {
+      "id": "post-soviet-streetwear",
+      "name": "Post-Soviet Renaissance",
+      "yearRange": [
+        1991,
+        2024
+      ],
+      "description": "A blend of 90s gopnik subculture, Cyrillic typography, and high-fashion irony. This era saw the global rise of Russian designers reclaiming their heritage through grit and luxury.",
+      "keyGarments": [
+        "Tracksuits",
+        "Oversized Hoodies",
+        "Branded Puffer Jackets"
+      ],
+      "aiImagePrompt": "Modern Russian streetwear featuring an oversized hoodie with Cyrillic text, high-end sneakers, and a luxury parka, set against a backdrop of neon Moscow city lights."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Vologda Lace",
+      "type": "Embroidered",
+      "description": "Intricate bobbin lace known for its floral and snowflake patterns, traditionally made in white or cream linen.",
+      "origin": "Vologda",
+      "technique": "Bobbin lace weaving"
+    },
+    {
+      "name": "Pavlovo Posad Wool",
+      "type": "Printed",
+      "description": "Fine wool shawls featuring vibrant, multi-colored floral prints, often with a distinctive fringe.",
+      "origin": "Pavlovsky Posad",
+      "technique": "Block printing on wool"
+    },
+    {
+      "name": "Ivanovo Chintz",
+      "type": "Printed",
+      "description": "Historic cotton fabric known for bright, populist patterns used for everyday peasant clothing.",
+      "origin": "Ivanovo",
+      "technique": "Cylinder printing"
+    }
+  ],
+  "climate": {
+    "zone": "Subarctic and Humid Continental",
+    "avgTemp": -5,
+    "humidity": "Moderate",
+    "fashionImplication": "Extreme seasonality necessitates heavy investment in high-quality outerwear, fur insulation, and layered woolens to survive temperatures reaching -30°C."
+  },
+  "culturalInfluences": [
+    "Orthodox Christianity",
+    "Byzantine Imperialism",
+    "Soviet Constructivism",
+    "Russian Folklore and Fairytales",
+    "Military Uniformity",
+    "The Bolshoi Ballet",
+    "90s Underground Techno Culture"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Moscow Fashion Week",
+        "city": "Moscow",
+        "month": "March/October",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Neo-Folklorism",
+      "Techwear Integration",
+      "Cyrillic Logomania",
+      "Upcycled Soviet Textiles"
+    ],
+    "digitalPresence": 82,
+    "ecommercePenetration": 74,
+    "notableEvents": [
+      "Mercedes-Benz Fashion Week Russia",
+      "Futurum Moscow",
+      "BRICS+ Fashion Summit"
+    ]
+  }
+}

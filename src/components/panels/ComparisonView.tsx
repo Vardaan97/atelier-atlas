@@ -178,7 +178,7 @@ function CountrySearchDropdown({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.15 }}
-            className="absolute bottom-full mb-2 left-0 w-72 rounded-xl border border-white/10 bg-[#0F1629] shadow-2xl overflow-hidden z-50"
+            className="absolute bottom-full mb-2 left-0 w-72 rounded-xl border border-white/10 bg-[#0F1629] shadow-2xl overflow-hidden z-[60]"
           >
             <div className="p-3 border-b border-white/10">
               <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5">
@@ -221,7 +221,7 @@ function CountrySearchDropdown({
                       TIER_COLORS[c.tier]
                     )}
                   >
-                    {c.tier.toUpperCase()}
+                    {c.tier === 'skeleton' ? '—' : c.tier.toUpperCase()}
                   </span>
                 </button>
               ))}
@@ -397,8 +397,8 @@ export function ComparisonView() {
                 <Plus className="w-6 h-6 text-muted" />
               </div>
               <p className="text-muted text-sm text-center max-w-sm">
-                Click countries on the globe or use the search below to add up
-                to 3 countries for comparison.
+                Click countries on the globe or click &apos;Add Country&apos; below to
+                search and compare up to 3 countries.
               </p>
               <CountrySearchDropdown
                 onSelect={handleAddCountry}
@@ -442,7 +442,7 @@ export function ComparisonView() {
                           TIER_COLORS[c.tier]
                         )}
                       >
-                        TIER {c.tier.toUpperCase()}
+                        {c.tier === 'skeleton' ? 'Unrated' : `TIER ${c.tier.toUpperCase()}`}
                       </span>
                     </div>
 

@@ -1,0 +1,155 @@
+{
+  "fashionDNA": {
+    "traditionalism": 92,
+    "innovation": 58,
+    "sustainability": 78,
+    "luxuryIndex": 45,
+    "streetwearInfluence": 40,
+    "craftsmanship": 95,
+    "globalInfluence": 65
+  },
+  "eras": [
+    {
+      "id": "empire-of-mali-zenith",
+      "name": "Mali Empire Golden Age",
+      "yearRange": [
+        1230,
+        1600
+      ],
+      "description": "A period of immense wealth where gold and cotton were primary status symbols. Clothing was characterized by voluminous robes and intricate weaving, reflecting the empire's dominance in trans-Saharan trade.",
+      "keyGarments": [
+        "Grand Boubou",
+        "Turban",
+        "Gold-threaded tunics"
+      ],
+      "aiImagePrompt": "Historical illustration of a 14th-century Malian noble in a voluminous white cotton Grand Boubou with intricate gold embroidery, wearing a large structured turban, set against the mud-brick architecture of Timbuktu."
+    },
+    {
+      "id": "bamana-tradition-peak",
+      "name": "Bamana Cultural Hegemony",
+      "yearRange": [
+        1650,
+        1890
+      ],
+      "description": "Focus shifted toward symbolic textiles and tribal identity. This era saw the refinement of Bogolanfini (mud cloth) as a medium for storytelling and spiritual protection.",
+      "keyGarments": [
+        "Bogolanfini wrap",
+        "Hunter's shirt (Donzo N'goni)",
+        "Amulet vests"
+      ],
+      "aiImagePrompt": "A 19th-century Bamana hunter wearing a brown cotton shirt adorned with leather amulets, cowrie shells, and mirrors, carrying a traditional bow, photorealistic style."
+    },
+    {
+      "id": "french-colonial-fusion",
+      "name": "French Soudan Era",
+      "yearRange": [
+        1892,
+        1959
+      ],
+      "description": "The introduction of European tailoring and industrial fabrics mixed with local silhouettes. A distinct 'evolue' style emerged among the urban elite in Bamako.",
+      "keyGarments": [
+        "Tailored cotton suits",
+        "Fez caps",
+        "Western-style chemises"
+      ],
+      "aiImagePrompt": "1940s Bamako street scene, men in a mix of French colonial khaki suits and traditional cotton caps, women in vibrant patterned wax prints with structured headwraps."
+    },
+    {
+      "id": "independence-optimism",
+      "name": "Post-Independence Modernism",
+      "yearRange": [
+        1960,
+        1979
+      ],
+      "description": "A celebration of African identity led by photographers like Malick Sidibé and Seydou Keïta. Youth culture embraced bell-bottoms made from local textiles and sharp, minimalist tailoring.",
+      "keyGarments": [
+        "High-waisted trousers",
+        "A-line mini dresses in wax print",
+        "Patterned button-downs"
+      ],
+      "aiImagePrompt": "Black and white studio portrait style of the 1960s, a young Malian couple posing with a vintage radio; man in flared trousers and a slim-fit shirt, woman in a geometric print shift dress."
+    },
+    {
+      "id": "contemporary-bamako-chic",
+      "name": "Modern Malian Renaissance",
+      "yearRange": [
+        2000,
+        2024
+      ],
+      "description": "The rise of high-fashion Bazin Riche and the globalization of Bogolan. Malian designers are now integrating traditional hand-dyeing techniques into global haute couture silhouettes.",
+      "keyGarments": [
+        "Embroidered Bazin Riche Boubou",
+        "Modern Mudcloth jackets",
+        "Filigree gold jewelry"
+      ],
+      "aiImagePrompt": "Modern Malian fashion editorial, a model wearing a structural avant-garde gown made of black and white Bogolanfini, high-contrast lighting, desert background."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Bogolanfini",
+      "type": "Dyed",
+      "description": "Handmade Malian cotton fabric dyed with fermented mud and plant extracts.",
+      "origin": "Beledougou region",
+      "technique": "Discharge dyeing and hand-painting with mud paste"
+    },
+    {
+      "name": "Bazin Riche",
+      "type": "Dyed",
+      "description": "A high-quality damask cotton that is hand-dyed in vibrant colors and beaten with wooden mallets to create a permanent metallic sheen.",
+      "origin": "Bamako",
+      "technique": "Resist-dyeing and manual pounding for luster"
+    },
+    {
+      "name": "Leppi",
+      "type": "Woven",
+      "description": "A traditional Fulani fabric made of thin strips of indigo-dyed cotton sewn together.",
+      "origin": "Mopti region",
+      "technique": "Narrow-strip weaving on horizontal looms"
+    }
+  ],
+  "climate": {
+    "zone": "Subtropical/Sahelian",
+    "avgTemp": 29,
+    "humidity": "Low",
+    "fashionImplication": "Extreme heat necessitates loose-fitting, breathable natural fibers like cotton to allow air circulation. The low humidity favors the use of heavy indigo and mud dyes which remain stable in dry heat."
+  },
+  "culturalInfluences": [
+    "Malinke and Bamana oral traditions",
+    "Islamic modesty and geometric aesthetics",
+    "The legendary wealth of Mansa Musa",
+    "West African Griot (Jeli) performance culture",
+    "Studio photography movement of the 1960s",
+    "French colonial tailoring techniques",
+    "Tuareg nomadic blue-dye traditions"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Bamako Fashion Week",
+        "city": "Bamako",
+        "month": "February",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Festiv'Art Bogolan",
+        "city": "Bamako",
+        "month": "May",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Upcycled Bogolan streetwear",
+      "Metallic Bazin evening wear",
+      "Ethical hand-woven luxury accessories",
+      "Digital printing of traditional mud-cloth patterns"
+    ],
+    "digitalPresence": 42,
+    "ecommercePenetration": 15,
+    "notableEvents": [
+      "Chrissey-D Collection launches",
+      "Mali Mode Association annual gala",
+      "Ségou'Art Festival"
+    ]
+  }
+}

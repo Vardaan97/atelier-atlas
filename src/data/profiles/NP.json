@@ -1,0 +1,147 @@
+{
+  "fashionDNA": {
+    "traditionalism": 85,
+    "innovation": 45,
+    "sustainability": 68,
+    "luxuryIndex": 30,
+    "streetwearInfluence": 55,
+    "craftsmanship": 92,
+    "globalInfluence": 25
+  },
+  "eras": [
+    {
+      "id": "licchavi-period",
+      "name": "Licchavi Golden Age",
+      "yearRange": [
+        400,
+        750
+      ],
+      "description": "A period characterized by the refinement of weaving and the use of fine muslins. Clothing was draped and influenced by Gupta-era aesthetics, often featuring intricate gold jewelry and floral garlands.",
+      "keyGarments": [
+        "Antariya",
+        "Uttariya",
+        "Stanapatta"
+      ],
+      "aiImagePrompt": "Historical illustration of a 7th-century Nepali Licchavi noblewoman wearing a finely draped white muslin antariya with gold borders, multiple strands of turquoise and coral necklaces, and hair adorned with fresh jasmine, standing against a backdrop of ancient stone pagoda architecture."
+    },
+    {
+      "id": "malla-renaissance",
+      "name": "Malla Dynasty Craftsmanship",
+      "yearRange": [
+        1201,
+        1769
+      ],
+      "description": "The era where Newari craftsmanship peaked, introducing structured garments for the elite. Use of heavy brocades and the development of the Haku Patasi style among the Newar community became prominent.",
+      "keyGarments": [
+        "Haku Patasi",
+        "Misalan",
+        "Jama"
+      ],
+      "aiImagePrompt": "A Newar woman from the 15th century Malla period wearing a Haku Patasi (black sari with red border) draped in multiple layers, with a white shawl (Ga) and heavy traditional Newari gold jewelry (Tayoo), set in a Kathmandu Durbar Square courtyard."
+    },
+    {
+      "id": "rana-aristocracy",
+      "name": "Rana Regency Westernization",
+      "yearRange": [
+        1846,
+        1951
+      ],
+      "description": "A period of heavy European influence where the ruling elite adopted Victorian and Edwardian silhouettes. High-ranking officials wore military uniforms with heavy gold embroidery and ostrich feather plumes.",
+      "keyGarments": [
+        "Shreepech",
+        "Military Tunic",
+        "Victorian Gowns"
+      ],
+      "aiImagePrompt": "A 19th-century Nepali Rana general in a dark green military tunic heavily embroidered with gold bullion filigree, wearing a Shreepech crown with bird-of-paradise plumes, blending Victorian military style with Himalayan royalty."
+    },
+    {
+      "id": "panchayat-nationalism",
+      "name": "Panchayat Era Uniformity",
+      "yearRange": [
+        1960,
+        1990
+      ],
+      "description": "A period focused on national identity where the Daura Suruwal and Dhaka Topi were mandated as official national dress for men. This era solidified the Dhaka fabric as a symbol of Nepalese heritage.",
+      "keyGarments": [
+        "Daura Suruwal",
+        "Dhaka Topi",
+        "Gunyu Cholo"
+      ],
+      "aiImagePrompt": "A mid-20th-century Nepali man wearing a grey Daura Suruwal with a distinct geometric patterned Dhaka Topi, standing in a terraced mountain village, representing the standardized national identity."
+    },
+    {
+      "id": "modern-fusion-era",
+      "name": "Contemporary Fusion",
+      "yearRange": [
+        2000,
+        2024
+      ],
+      "description": "Integration of global fashion trends with traditional textiles. Young designers are repurposing Dhaka and Pashmina into modern silhouettes like blazers, jumpsuits, and high-fashion evening wear.",
+      "keyGarments": [
+        "Dhaka Blazer",
+        "Modernized Sari",
+        "Hemp Streetwear"
+      ],
+      "aiImagePrompt": "A professional fashion photograph of a modern Nepali model wearing a sharp-cut tailored blazer made of colorful geometric Palpali Dhaka fabric, paired with high-waisted trousers and minimalist gold accessories, urban Kathmandu background."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Dhaka",
+      "type": "Woven",
+      "description": "A hand-loomed cotton fabric featuring intricate geometric patterns, traditionally produced in Palpa and Tehrathum.",
+      "origin": "Palpa",
+      "technique": "Hand-loom jacquard weaving"
+    },
+    {
+      "name": "Pashmina",
+      "type": "Woven",
+      "description": "Ultra-fine wool harvested from the undercoat of Changthangi goats found in the high Himalayas.",
+      "origin": "Mustang",
+      "technique": "Hand-spinning and fine loom weaving"
+    },
+    {
+      "name": "Himalayan Hemp",
+      "type": "Woven",
+      "description": "Durable, eco-friendly fiber derived from wild cannabis plants, used for rugged outerwear and accessories.",
+      "origin": "Bajhang",
+      "technique": "Retting, hand-spinning, and pit-loom weaving"
+    }
+  ],
+  "climate": {
+    "zone": "Subtropical to Alpine",
+    "avgTemp": 15,
+    "humidity": "Moderate",
+    "fashionImplication": "Extreme altitudinal variation necessitates a layering system, transitioning from light cottons in the Terai plains to heavy wools and furs in the Himalayan highlands."
+  },
+  "culturalInfluences": [
+    "Tibetan Buddhism",
+    "Hindu Vedic traditions",
+    "Newari craftsmanship",
+    "British Raj military aesthetics",
+    "Ethnic diversity of 125+ groups",
+    "High-altitude mountaineering culture"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "TGIF Nepal Fashion Week",
+        "city": "Kathmandu",
+        "month": "April",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Upcycled Dhaka accessories",
+      "Organic Hemp streetwear",
+      "Ethical Pashmina luxury",
+      "Gender-neutral Daura Suruwal interpretations"
+    ],
+    "digitalPresence": 42,
+    "ecommercePenetration": 28,
+    "notableEvents": [
+      "Mount Everest Fashion Runway",
+      "Nepal Fashion Festival"
+    ]
+  }
+}

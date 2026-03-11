@@ -169,6 +169,7 @@ export function SearchBar() {
   const selectCountry = useGlobeStore((s) => s.selectCountry);
   const setSearchQuery = useGlobeStore((s) => s.setSearchQuery);
   const setSearchResults = useGlobeStore((s) => s.setSearchResults);
+  const panelOpen = useGlobeStore((s) => s.panelOpen);
 
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -224,6 +225,7 @@ export function SearchBar() {
         !containerRef.current.contains(e.target as Node)
       ) {
         setOpen(false);
+        setInputValue('');
       }
     }
     if (open) {
@@ -301,7 +303,9 @@ export function SearchBar() {
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (e.key === 'Escape') {
+        e.stopPropagation();
         setOpen(false);
+        setInputValue('');
         inputRef.current?.blur();
         return;
       }
@@ -357,7 +361,7 @@ export function SearchBar() {
   return (
     <div
       ref={containerRef}
-      className="absolute top-16 left-1/2 -translate-x-1/2 z-40 w-full max-w-sm md:max-w-lg px-4"
+      className={cn("absolute top-16 left-1/2 -translate-x-1/2 w-full max-w-sm md:max-w-lg px-4", panelOpen ? "z-20" : "z-40")}
     >
       {/* Search Input */}
       <div

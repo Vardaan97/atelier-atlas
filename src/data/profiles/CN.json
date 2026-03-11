@@ -1,0 +1,178 @@
+{
+  "fashionDNA": {
+    "traditionalism": 85,
+    "innovation": 92,
+    "sustainability": 40,
+    "luxuryIndex": 95,
+    "streetwearInfluence": 88,
+    "craftsmanship": 98,
+    "globalInfluence": 90
+  },
+  "eras": [
+    {
+      "id": "han-dynasty",
+      "name": "Han Dynasty Golden Age",
+      "yearRange": [
+        -202,
+        220
+      ],
+      "description": "Defined by the establishment of the Silk Road, fashion focused on cross-collar robes (Shenyi) with wide sleeves and layered silk garments reflecting social hierarchy.",
+      "keyGarments": [
+        "Shenyi",
+        "Quju",
+        "Zhiju"
+      ],
+      "aiImagePrompt": "A noblewoman of the Han Dynasty wearing a multi-layered silk Quju robe with intricate cloud patterns, wide sleeves, and a high waist sash, set against a palace garden backdrop, cinematic lighting."
+    },
+    {
+      "id": "tang-dynasty",
+      "name": "Tang Dynasty Cosmopolitanism",
+      "yearRange": [
+        618,
+        907
+      ],
+      "description": "An era of unprecedented openness and opulence, featuring high-waisted skirts (Ruqun) and low-cut necklines influenced by Central Asian aesthetics.",
+      "keyGarments": [
+        "Ruqun",
+        "Pibo",
+        "Hufu"
+      ],
+      "aiImagePrompt": "A Tang Dynasty lady with elaborate floral headpieces, wearing a high-waisted silk skirt and a sheer silk wrap-around shawl, vibrant crimson and gold colors, traditional makeup with flower petal forehead markings."
+    },
+    {
+      "id": "qing-dynasty",
+      "name": "Qing Dynasty Manchu Influence",
+      "yearRange": [
+        1644,
+        1912
+      ],
+      "description": "Characterized by the introduction of the horseshoe sleeve and the evolution of the Pipa jacket, blending Manchu equestrian practicality with Han Chinese silk embroidery.",
+      "keyGarments": [
+        "Qipao",
+        "Magua",
+        "Chaozhu"
+      ],
+      "aiImagePrompt": "A high-ranking Qing Dynasty official in a formal silk robe with detailed dragon embroidery, horseshoe-shaped sleeves, and a jade-encrusted belt, historical accuracy, studio lighting."
+    },
+    {
+      "id": "republican-shanghai",
+      "name": "Republican Era Shanghai Modernism",
+      "yearRange": [
+        1912,
+        1949
+      ],
+      "description": "The birth of the modern body-conforming Qipao in Shanghai, merging traditional Chinese motifs with Western tailoring, high slits, and Art Deco influences.",
+      "keyGarments": [
+        "Modern Qipao",
+        "Zhongshan Suit",
+        "Cloche Hats"
+      ],
+      "aiImagePrompt": "A 1930s Shanghai socialite in a fitted silk Qipao with a high collar and geometric Art Deco patterns, standing near a vintage gramophone, noir aesthetic."
+    },
+    {
+      "id": "mao-era",
+      "name": "Mao Era Uniformity",
+      "yearRange": [
+        1949,
+        1978
+      ],
+      "description": "A period of utilitarianism where fashion was political, dominated by the Zhongshan suit in drab colors to promote egalitarianism and revolutionary spirit.",
+      "keyGarments": [
+        "Mao Suit",
+        "Lenin Jacket",
+        "Liberation Shoes"
+      ],
+      "aiImagePrompt": "A group of workers in 1960s Beijing wearing identical blue and olive green Mao suits with red star caps, socialist realism art style, propaganda poster aesthetic."
+    },
+    {
+      "id": "contemporary-revival",
+      "name": "The New Chinese Style (Guochao)",
+      "yearRange": [
+        2010,
+        2024
+      ],
+      "description": "A resurgence of national pride where young designers blend Hanfu elements with high-tech fabrics and streetwear silhouettes, known as the Guochao movement.",
+      "keyGarments": [
+        "Modern Hanfu",
+        "Techwear Jackets",
+        "Embroidered Sneakers"
+      ],
+      "aiImagePrompt": "A modern street style photo in Shanghai featuring a youth wearing a deconstructed Hanfu-style techwear jacket with neon accents and traditional silk embroidery, futuristic urban background."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Yunbrocade (Yunjin)",
+      "type": "Woven",
+      "description": "Known as 'cloud brocade,' it uses gold and silver threads to create intricate, multi-colored patterns that are as light as clouds.",
+      "origin": "Nanjing",
+      "technique": "Hand-weaving on a large wooden treadle loom"
+    },
+    {
+      "name": "Gambiered Canton Gauze",
+      "type": "Dyed",
+      "description": "A sustainable, mud-coated silk that is naturally dyed with yam juice and iron-rich river mud, resulting in a leather-like texture.",
+      "origin": "Guangdong",
+      "technique": "Sun-drying and mud-smearing"
+    },
+    {
+      "name": "Su Embroidery",
+      "type": "Embroidered",
+      "description": "Famous for its delicacy and split-hair thin threads, often featuring double-sided designs where the front and back are identical.",
+      "origin": "Suzhou",
+      "technique": "Split-stitch silk embroidery"
+    },
+    {
+      "name": "Xiangyunsha",
+      "type": "Dyed",
+      "description": "A traditional silk fabric that undergoes a complex fermentation process, resulting in a breathable, antibacterial textile used for summer wear.",
+      "origin": "Shunde",
+      "technique": "Natural vegetable dyeing and sun-exposure"
+    }
+  ],
+  "climate": {
+    "zone": "Diverse (Subtropical to Temperate)",
+    "avgTemp": 12.5,
+    "humidity": "High",
+    "fashionImplication": "The humid south favors breathable silks and linens with loose silhouettes, while the frigid north necessitates heavy padding, fur linings, and layered technical outerwear."
+  },
+  "culturalInfluences": [
+    "Confucianism (modesty and social hierarchy)",
+    "Taoist Philosophy (harmony and natural flow)",
+    "Silk Road Exchange (Persian and Central Asian motifs)",
+    "Socialist Realism (utilitarianism and functionality)",
+    "Guochao (nationalist pride in domestic brands)",
+    "Digital Futurism (gaming and metaverse aesthetics)",
+    "Traditional Chinese Medicine (wellness-oriented textiles)"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Shanghai Fashion Week",
+        "city": "Shanghai",
+        "month": "March/October",
+        "tier": "Major"
+      },
+      {
+        "name": "China Fashion Week",
+        "city": "Beijing",
+        "month": "March/September",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Neo-Hanfu (Daily wear traditionalism)",
+      "Digital Couture for Social Media",
+      "Quiet Luxury with Eastern Minimalism",
+      "Upcycled Vintage Qipaos",
+      "Gender-neutral tailoring"
+    ],
+    "digitalPresence": 98,
+    "ecommercePenetration": 92,
+    "notableEvents": [
+      "Met Gala: China Through the Looking Glass",
+      "Tmall Hey Box Product Launches",
+      "Double 11 (Singles' Day) Shopping Festival"
+    ]
+  }
+}
