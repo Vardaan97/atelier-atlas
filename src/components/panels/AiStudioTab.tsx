@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Sparkles,
@@ -37,6 +37,35 @@ interface GeneratedImage {
 // Client-side gallery cache so generated images persist across tab switches
 const galleryCache = new Map<string, GeneratedImage[]>();
 
+/** Download a base64 data-URI (or regular URL) as a file */
+function downloadImage(url: string, filename: string) {
+  // For base64 data URIs, convert to blob for a cleaner download
+  if (url.startsWith('data:')) {
+    const [header, b64] = url.split(',');
+    const mime = header.match(/data:(.*?);/)?.[1] || 'image/png';
+    const bytes = atob(b64);
+    const arr = new Uint8Array(bytes.length);
+    for (let i = 0; i < bytes.length; i++) arr[i] = bytes.charCodeAt(i);
+    const blob = new Blob([arr], { type: mime });
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(blobUrl);
+  } else {
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+}
+
 export function AiStudioTab({ country, profile, profileLoading }: AiStudioTabProps) {
   const [view, setView] = useState<'menu' | 'garment-detail' | 'gallery'>('menu');
   const [selectedGarment, setSelectedGarment] = useState<Garment | null>(null);
@@ -47,10 +76,17 @@ export function AiStudioTab({ country, profile, profileLoading }: AiStudioTabPro
   );
   const [error, setError] = useState<string | null>(null);
 
+  // Ref to always read the latest images — avoids stale closure in generateImage
+  const imagesRef = useRef(generatedImages);
+  imagesRef.current = generatedImages;
+
   const saveToCache = useCallback(
-    (images: GeneratedImage[]) => {
-      galleryCache.set(country.iso, images);
-      setGeneratedImages(images);
+    (updater: (prev: GeneratedImage[]) => GeneratedImage[]) => {
+      setGeneratedImages((prev) => {
+        const next = updater(prev);
+        galleryCache.set(country.iso, next);
+        return next;
+      });
     },
     [country.iso]
   );
@@ -86,22 +122,24 @@ export function AiStudioTab({ country, profile, profileLoading }: AiStudioTabPro
             source,
             timestamp: Date.now(),
           };
-          saveToCache([img, ...generatedImages]);
+          saveToCache((prev) => [img, ...prev]);
         } else {
           throw new Error(json.error || 'No image returned');
         }
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Generation failed');
       } finally {
+        // Small delay before allowing next generation to prevent double-clicks
+        await new Promise((r) => setTimeout(r, 100));
         setGeneratingId(null);
       }
     },
-    [country.iso, generatedImages, saveToCache]
+    [country.iso, saveToCache]
   );
 
   const handleGarmentGenerate = useCallback(
     (garment: Garment) => {
-      const prompt = `A museum-quality full-body fashion photograph of a person from ${country.name} wearing a traditional ${garment.name}. ${garment.description}. The garment is made from ${garment.materials.join(' and ')}. Era: ${garment.era}. Occasion: ${garment.occasion}. Show the complete outfit from head to toe with historically accurate details, authentic textile patterns, and period-appropriate styling. Professional fashion photography, soft warm lighting, detailed fabric textures. Focus entirely on the garment details and craftsmanship, not the face.`;
+      const prompt = `Professional fashion studio photograph of a ${garment.name} from ${country.name}. Full-length view showing the complete garment on a person standing against a clean neutral gray studio backdrop. Sharp focus on fabric texture, draping, embroidery details, and traditional patterns. The ${garment.name} is made from ${garment.materials.join(' and ')}. Era: ${garment.era}. Soft diffused studio lighting, fashion catalog style, white/gray seamless background. No distracting scenery.`;
       generateImage(prompt, garment.name, 'garment');
     },
     [country.name, generateImage]
@@ -111,7 +149,7 @@ export function AiStudioTab({ country, profile, profileLoading }: AiStudioTabPro
     (era: FashionEra) => {
       const prompt =
         era.aiImagePrompt ||
-        `A museum-quality full-body fashion illustration of traditional clothing from ${country.name} during the ${era.name} period (${era.yearRange[0]}-${era.yearRange[1]}). Show a person standing in a full-body pose wearing ${era.keyGarments.join(' and ')}. The entire outfit must be fully visible from head to toe. Historically accurate textile patterns, authentic colors, and period-appropriate details. Soft, warm lighting. Detailed fabric textures visible. Professional fashion illustration style. Focus on the garment details, not the face.`;
+        `Fashion catalog photograph showing traditional ${country.name} clothing from the ${era.name} period (${era.yearRange[0]}-${era.yearRange[1]}). A person wearing ${era.keyGarments.join(' and ')} standing full-length against a clean neutral studio backdrop. Focus entirely on the garments: fabric details, traditional patterns, colors, layering, and accessories. Professional studio lighting on a seamless gray/white background. No environmental scenery, no buildings, no landscapes.`;
       generateImage(prompt, `${era.name} (${era.yearRange[0]}-${era.yearRange[1]})`, 'era');
     },
     [country.name, generateImage]
@@ -208,24 +246,40 @@ export function AiStudioTab({ country, profile, profileLoading }: AiStudioTabPro
               animate={{ opacity: 1, y: 0 }}
               className="glass-panel rounded-xl overflow-hidden"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={img.url}
-                alt={img.label}
-                className="w-full aspect-[3/4] object-cover"
-              />
+              <div className="max-h-[500px] overflow-hidden bg-black/30">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img.url}
+                  alt={img.label}
+                  className="w-full max-h-[500px] object-contain bg-black/30"
+                />
+              </div>
               <div className="p-3 flex items-center justify-between">
                 <span className="text-[10px] text-muted font-mono">
                   AI Generated
                 </span>
-                <button
-                  onClick={() => handleGarmentGenerate(selectedGarment)}
-                  disabled={!!generatingId}
-                  className="text-xs text-accent hover:text-accent-hover transition-colors flex items-center gap-1"
-                >
-                  <RefreshCw className="w-3 h-3" />
-                  Regenerate
-                </button>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() =>
+                      downloadImage(
+                        img.url,
+                        `${img.label.replace(/\s+/g, '-').toLowerCase()}-${img.id}.png`
+                      )
+                    }
+                    className="text-xs text-muted hover:text-foreground transition-colors flex items-center gap-1"
+                  >
+                    <Download className="w-3 h-3" />
+                    Download
+                  </button>
+                  <button
+                    onClick={() => handleGarmentGenerate(selectedGarment)}
+                    disabled={!!generatingId}
+                    className="text-xs text-accent hover:text-accent-hover transition-colors flex items-center gap-1"
+                  >
+                    <RefreshCw className="w-3 h-3" />
+                    Regenerate
+                  </button>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -272,17 +326,34 @@ export function AiStudioTab({ country, profile, profileLoading }: AiStudioTabPro
                 transition={{ delay: i * 0.05 }}
                 className="glass-panel rounded-xl overflow-hidden group"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img.url}
-                  alt={img.label}
-                  className="w-full aspect-square object-cover"
-                />
-                <div className="p-2">
-                  <p className="text-xs font-medium truncate">{img.label}</p>
-                  <p className="text-[9px] text-muted font-mono capitalize">
-                    {img.source}
-                  </p>
+                <div className="max-h-[280px] overflow-hidden bg-black/30">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={img.url}
+                    alt={img.label}
+                    className="w-full max-h-[280px] object-contain bg-black/30"
+                  />
+                </div>
+                <div className="p-2 flex items-center justify-between">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs font-medium truncate">{img.label}</p>
+                    <p className="text-[9px] text-muted font-mono capitalize">
+                      {img.source}
+                    </p>
+                  </div>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      downloadImage(
+                        img.url,
+                        `${img.label.replace(/\s+/g, '-').toLowerCase()}-${img.id}.png`
+                      );
+                    }}
+                    className="shrink-0 ml-2 text-muted hover:text-foreground transition-colors"
+                    title="Download"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </motion.div>
             ))}
@@ -484,12 +555,14 @@ export function AiStudioTab({ country, profile, profileLoading }: AiStudioTabPro
                 className="glass-panel rounded-lg overflow-hidden cursor-pointer hover:ring-1 hover:ring-accent/40 transition-all"
                 onClick={() => setView('gallery')}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img.url}
-                  alt={img.label}
-                  className="w-full aspect-square object-cover"
-                />
+                <div className="max-h-[120px] overflow-hidden bg-black/30">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={img.url}
+                    alt={img.label}
+                    className="w-full max-h-[120px] object-contain bg-black/30"
+                  />
+                </div>
               </div>
             ))}
           </div>

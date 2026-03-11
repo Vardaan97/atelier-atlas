@@ -1,0 +1,177 @@
+{
+  "fashionDNA": {
+    "traditionalism": 85,
+    "innovation": 62,
+    "sustainability": 28,
+    "luxuryIndex": 78,
+    "streetwearInfluence": 45,
+    "craftsmanship": 95,
+    "globalInfluence": 55
+  },
+  "eras": [
+    {
+      "id": "mughal-legacy",
+      "name": "Mughal Imperial Era",
+      "yearRange": [
+        1526,
+        1857
+      ],
+      "description": "A period defined by opulent courtly attire featuring intricate Zardozi embroidery, rich brocades, and Persian-influenced silhouettes. The aesthetic emphasized royalty, using gold threads and precious stones embedded in fabric.",
+      "keyGarments": [
+        "Peshwas",
+        "Farshi Gharara",
+        "Angarkha"
+      ],
+      "aiImagePrompt": "A high-detail historical illustration of a Mughal princess wearing a silk Peshwas with heavy gold Zardozi embroidery, a sheer dupatta with kiran lace, and layered traditional jewelry, set in an ornate marble palace."
+    },
+    {
+      "id": "colonial-transition",
+      "name": "British Raj Influence",
+      "yearRange": [
+        1858,
+        1947
+      ],
+      "description": "Traditional silhouettes began merging with Victorian tailoring. Men increasingly adopted the Sherwani as a formal alternative to Western suits, while women’s garments saw changes in sleeve cuts and lace usage.",
+      "keyGarments": [
+        "Sherwani",
+        "Churidar Pajama",
+        "Victorian-style Blouse"
+      ],
+      "aiImagePrompt": "A portrait of a 1920s South Asian nobleman wearing a structured black Sherwani with brass buttons and a white churidar, standing in a colonial-era study with teak furniture."
+    },
+    {
+      "id": "post-independence-modernism",
+      "name": "The Golden Age of PIA",
+      "yearRange": [
+        1950,
+        1970
+      ],
+      "description": "A sophisticated era where Pierre Cardin designed uniforms for Pakistan International Airlines, influencing a generation. The look was sleek, featuring slim-fit kameez and high-fashion hair styling.",
+      "keyGarments": [
+        "Slim-fit Kameez",
+        "Dupatta worn as a headscarf",
+        "Tapered Shalwar"
+      ],
+      "aiImagePrompt": "A vintage 1960s fashion photograph of a Pakistani woman in a tailored silk kameez with a short hemline and slim trousers, featuring a beehive hairstyle and winged eyeliner."
+    },
+    {
+      "id": "islamization-shift",
+      "name": "The Zia Era",
+      "yearRange": [
+        1977,
+        1988
+      ],
+      "description": "A period of mandated modesty where the dupatta became a compulsory accessory in public life and media. Silhouettes became looser and more conservative, moving away from the fitted styles of the previous decades.",
+      "keyGarments": [
+        "Loose-fit Shalwar Kameez",
+        "Chadar",
+        "Large Dupatta"
+      ],
+      "aiImagePrompt": "A documentary-style photo of 1980s Pakistani street fashion featuring women in modest, loose-fitting cotton shalwar kameez with large cotton shawls draped over their heads."
+    },
+    {
+      "id": "couture-renaissance",
+      "name": "The Rise of High-End Bridal",
+      "yearRange": [
+        1990,
+        2010
+      ],
+      "description": "The birth of the modern Pakistani fashion industry with the establishment of the first fashion schools. Designers like HSY revolutionized bridal wear, turning it into a multi-billion rupee luxury market.",
+      "keyGarments": [
+        "Lehenga Choli",
+        "Long Floor-length Kameez",
+        "Gharara"
+      ],
+      "aiImagePrompt": "A contemporary high-fashion bridal editorial featuring a model in a deep crimson velvet lehenga encrusted with silver dabka work and crystals, shot in a historic Lahore haveli."
+    },
+    {
+      "id": "digital-lawn-boom",
+      "name": "The Lawn Craze",
+      "yearRange": [
+        2011,
+        2024
+      ],
+      "description": "The democratization of fashion through mass-produced designer lawn (fine cotton). Digital printing technology allowed for complex, vibrant patterns that became the standard summer uniform for all social classes.",
+      "keyGarments": [
+        "Three-piece Lawn Suit",
+        "Digital Printed Silk Dupatta",
+        "Cigarette Pants"
+      ],
+      "aiImagePrompt": "A vibrant outdoor lifestyle shot of a woman in a digitally printed floral lawn suit with lace inserts, standing in a lush green garden during a sunny Karachi afternoon."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Lawn Cotton",
+      "type": "Woven",
+      "description": "A high-thread-count, lightweight, and breathable cotton fabric essential for the South Asian heat.",
+      "origin": "Multan and Faisalabad",
+      "technique": "Fine plain weave with combed yarns"
+    },
+    {
+      "name": "Ajrak",
+      "type": "Printed",
+      "description": "A unique block-printed fabric featuring geometric and floral patterns, usually in indigo and crimson.",
+      "origin": "Sindh",
+      "technique": "Complex woodblock printing using natural dyes and resist-dyeing"
+    },
+    {
+      "name": "Khaadi Net",
+      "type": "Woven",
+      "description": "A hand-loomed fabric that combines the crispness of net with the texture of cotton or silk.",
+      "origin": "Various rural clusters",
+      "technique": "Traditional hand-loom weaving"
+    },
+    {
+      "name": "Jamawar",
+      "type": "Woven",
+      "description": "An intricate brocade fabric often featuring paisley motifs, used for formal wear.",
+      "origin": "Lahore (Persian roots)",
+      "technique": "Jacquard weaving with silk and metallic threads"
+    }
+  ],
+  "climate": {
+    "zone": "Arid/Semi-Arid and Subtropical",
+    "avgTemp": 24,
+    "humidity": "Moderate",
+    "fashionImplication": "Extreme summer temperatures necessitate breathable natural fibers like cotton lawn, while cold winters in the north drive a secondary market for heavy pashmina and wool shawls."
+  },
+  "culturalInfluences": [
+    "Mughal Imperial Heritage",
+    "Sufi Mysticism and Aesthetics",
+    "British Tailoring and Structure",
+    "Persian and Central Asian Art",
+    "Islamic Modesty Standards",
+    "Bollywood Cinema Trends",
+    "Regional Ethnic Identities (Sindhi, Punjabi, Pashtun, Balochi)"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Fashion Pakistan Week",
+        "city": "Karachi",
+        "month": "October",
+        "tier": "Major"
+      },
+      {
+        "name": "PFDC L'Oreal Paris Bridal Week",
+        "city": "Lahore",
+        "month": "September",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Sustainable Hand-loom Revival",
+      "Gender-neutral Shalwar Kameez",
+      "Fusion Streetwear (Truck Art motifs)",
+      "Minimalist Monochromatic Ensembles"
+    ],
+    "digitalPresence": 82,
+    "ecommercePenetration": 65,
+    "notableEvents": [
+      "Hum Style Awards",
+      "Lux Style Awards",
+      "The Grand Trunk Road Runway"
+    ]
+  }
+}

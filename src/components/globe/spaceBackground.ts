@@ -30,54 +30,54 @@ interface PlanetDef {
 const PLANETS: PlanetDef[] = [
   {
     name: 'planet-blue',
-    radius: 18,
-    position: [-400, 200, -900],
+    radius: 36,
+    position: [-300, 180, -500],
     color: 0x1a3a6a,
-    emissive: 0x0d1f3d,
-    emissiveIntensity: 0.4,
+    emissive: 0x1a3a6a,
+    emissiveIntensity: 0.8,
     rotationSpeed: 0.0008,
   },
   {
     name: 'planet-purple',
-    radius: 28,
-    position: [500, -150, -1400],
+    radius: 56,
+    position: [420, -120, -750],
     color: 0x3d1f5c,
-    emissive: 0x1f0e30,
-    emissiveIntensity: 0.35,
+    emissive: 0x3d1f5c,
+    emissiveIntensity: 0.7,
     rotationSpeed: 0.0005,
     ring: {
-      innerRadius: 36,
-      outerRadius: 52,
+      innerRadius: 72,
+      outerRadius: 104,
       color: 0x5a3a7a,
-      opacity: 0.25,
+      opacity: 0.3,
       tilt: 0.5,
     },
   },
   {
     name: 'planet-amber',
-    radius: 12,
-    position: [350, 300, -700],
+    radius: 24,
+    position: [280, 250, -400],
     color: 0x5a3210,
-    emissive: 0x2e1a08,
-    emissiveIntensity: 0.45,
+    emissive: 0x5a3210,
+    emissiveIntensity: 0.9,
     rotationSpeed: 0.0012,
   },
   {
     name: 'planet-teal',
-    radius: 22,
-    position: [-550, -280, -1600],
+    radius: 44,
+    position: [-450, -220, -800],
     color: 0x0f3d3d,
-    emissive: 0x081f1f,
-    emissiveIntensity: 0.3,
+    emissive: 0x0f3d3d,
+    emissiveIntensity: 0.7,
     rotationSpeed: 0.0006,
   },
   {
     name: 'planet-crimson',
-    radius: 15,
-    position: [200, -350, -1100],
+    radius: 30,
+    position: [160, -300, -600],
     color: 0x4a1520,
-    emissive: 0x250a10,
-    emissiveIntensity: 0.4,
+    emissive: 0x4a1520,
+    emissiveIntensity: 0.8,
     rotationSpeed: 0.001,
   },
 ];
@@ -101,11 +101,6 @@ export interface SpaceCleanup {
 export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
   const objects: THREE.Object3D[] = [];
   let frameId: number | null = null;
-
-  // Ensure the default camera can see BG_LAYER.
-  // react-globe.gl's internal camera only enables layer 0 by default.
-  // We'll patch it lazily in the animation loop (camera ref can change).
-  let cameraPatched = false;
 
   // ── Ambient light for planets (scene already has directional from globe) ──
   const ambientLight = new THREE.AmbientLight(0x223355, 0.6);
@@ -192,7 +187,7 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
     colors[i * 3 + 1] = col.g;
     colors[i * 3 + 2] = col.b;
 
-    sizes[i] = 1.5 + Math.random() * 3;
+    sizes[i] = 2.5 + Math.random() * 4;
   }
 
   const nebulaGeo = new THREE.BufferGeometry();
@@ -201,10 +196,10 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
   nebulaGeo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
   const nebulaMat = new THREE.PointsMaterial({
-    size: 2.5,
+    size: 3.5,
     vertexColors: true,
     transparent: true,
-    opacity: 0.35,
+    opacity: 0.45,
     sizeAttenuation: true,
     depthWrite: false,
   });
@@ -218,16 +213,6 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
 
   function animate() {
     frameId = requestAnimationFrame(animate);
-
-    // Patch the camera so it renders BG_LAYER
-    if (!cameraPatched) {
-      scene.traverse((obj) => {
-        if ((obj as THREE.Camera).isCamera) {
-          obj.layers.enable(BG_LAYER);
-          cameraPatched = true;
-        }
-      });
-    }
 
     // Rotate planets
     for (let i = 0; i < PLANETS.length; i++) {

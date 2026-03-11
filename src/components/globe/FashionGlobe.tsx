@@ -195,6 +195,15 @@ export function FashionGlobe() {
     }).filter((arc): arc is NonNullable<typeof arc> => arc !== null);
   }, [overlayMode]);
 
+  // Create a new features array reference when coloring dependencies change.
+  // react-globe.gl caches polygon colors and won't re-evaluate them when only
+  // the callback reference changes.  A new array reference forces a full
+  // re-color pass.
+  const polygonsData = useMemo(() => {
+    if (!geoData) return [];
+    return [...geoData.features];
+  }, [geoData, overlayMode, activeMetric, selectedCountry, highlightedIsos]);
+
   // Ring pulse on selected country
   const ringsData = useMemo(() => {
     if (!selectedCountry) return [];
@@ -252,10 +261,22 @@ export function FashionGlobe() {
   useEffect(() => {
     if (!globeRef.current) return;
 
-    // react-globe.gl exposes the Three.js scene via .scene()
-    const globe = globeRef.current as { scene: () => import('three').Scene };
+    // react-globe.gl exposes .scene() and .camera() on its ref
+    const globe = globeRef.current;
     const scene = globe.scene();
-    if (!scene) return;
+    const camera = globe.camera();
+    if (!scene || !camera) return;
+
+    // Enable BG_LAYER on the camera so it can render the space objects.
+    // react-globe.gl's camera is NOT in the scene tree, so we must
+    // patch it directly via the ref rather than traversing the scene.
+    camera.layers.enable(2); // BG_LAYER = 2
+
+    // Extend the far clipping plane so distant planets are not culled
+    if (camera.far < 5000) {
+      camera.far = 5000;
+      camera.updateProjectionMatrix();
+    }
 
     const { dispose } = addSpaceBackground(scene);
     return () => dispose();
@@ -456,7 +477,7 @@ export function FashionGlobe() {
         height={dimensions.height}
         // No globe texture — clean dark sphere so polygon colors pop
         backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
-        polygonsData={geoData.features}
+        polygonsData={polygonsData}
         polygonCapColor={getPolygonColor}
         polygonSideColor={() => GLOBE.polygonSideColor}
         polygonStrokeColor={() => GLOBE.polygonStrokeColor}
