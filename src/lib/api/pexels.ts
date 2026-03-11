@@ -13,7 +13,6 @@ export async function searchPexels(
     const params = new URLSearchParams({
       query,
       per_page: count.toString(),
-      orientation: 'landscape',
     });
 
     const res = await fetch(`${PEXELS_API}/search?${params}`, {

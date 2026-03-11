@@ -76,6 +76,21 @@ export interface YearlyTrade {
   imports: number;
 }
 
+export interface FashionEvent {
+  name: string;
+  city: string;
+  country: string; // ISO 2-letter code
+  lat: number;
+  lng: number;
+  type: 'fashion-week' | 'trade-show' | 'jewelry-show';
+  tier: 'A' | 'B' | 'C';
+  months: string[];
+  description: string;
+  designers: number;
+  attendance: number;
+  established: number;
+}
+
 export type CacheEntry<T> = {
   data: T;
   timestamp: number;

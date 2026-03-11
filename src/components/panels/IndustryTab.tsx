@@ -11,9 +11,19 @@ import {
   Leaf,
   BarChart3,
   Scale,
+  Newspaper,
+  ExternalLink,
+  Loader2,
+  Globe2,
+  Factory,
+  Briefcase,
+  ArrowLeftRight,
 } from 'lucide-react';
 import { formatCurrency, formatNumber, cn } from '@/lib/utils';
 import { useTradeData } from '@/hooks/useTradeData';
+import { useWorldBank } from '@/hooks/useWorldBank';
+import { useFashionNews } from '@/hooks/useFashionNews';
+import { JewelrySection } from '@/components/panels/JewelrySection';
 import type { CountryBase } from '@/types/country';
 import type { TradeProduct, YearlyTrade } from '@/types/api';
 
@@ -226,6 +236,341 @@ function TradeDataSection({ iso }: { iso: string }) {
   );
 }
 
+/* ─── Time ago helper ─── */
+function timeAgo(dateStr: string): string {
+  const now = Date.now();
+  const then = new Date(dateStr).getTime();
+  const diffMs = now - then;
+  const mins = Math.floor(diffMs / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  if (days === 1) return 'yesterday';
+  return `${days}d ago`;
+}
+
+/* ─── Fashion News Section (fetched from GDELT) ─── */
+function FashionNewsSection({ iso }: { iso: string }) {
+  const { articles, loading, error } = useFashionNews(iso, 8);
+
+  if (loading) {
+    return (
+      <div className="glass-panel rounded-xl p-4 flex items-center justify-center gap-2">
+        <Loader2 className="w-4 h-4 text-accent animate-spin" />
+        <span className="text-xs text-muted">Loading fashion news...</span>
+      </div>
+    );
+  }
+
+  if (error || articles.length === 0) {
+    return (
+      <div className="glass-panel rounded-xl p-4 text-center">
+        <Newspaper className="w-6 h-6 text-muted/40 mx-auto mb-2" />
+        <p className="text-xs text-muted">
+          No recent fashion news found for this country
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      {articles.slice(0, 5).map((article, i) => (
+        <a
+          key={`${article.url}-${i}`}
+          href={article.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex gap-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] p-3 transition-colors group animate-fade-in-up"
+          style={{ animationDelay: `${i * 60}ms` }}
+        >
+          {/* Thumbnail */}
+          {article.image && (
+            <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-white/5">
+              <img
+                src={article.image}
+                alt=""
+                className="w-full h-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+            </div>
+          )}
+          {/* Content */}
+          <div className="flex-1 min-w-0">
+            <h5 className="text-xs font-medium leading-snug line-clamp-2 group-hover:text-accent transition-colors">
+              {article.title}
+            </h5>
+            <div className="flex items-center gap-2 mt-1.5">
+              <span className="text-[9px] text-muted font-mono uppercase truncate max-w-[120px]">
+                {article.source}
+              </span>
+              <span className="text-[9px] text-muted/60">
+                {timeAgo(article.date)}
+              </span>
+              <ExternalLink className="w-2.5 h-2.5 text-muted/40 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  );
+}
+
+/* ─── Skeleton for World Bank section ─── */
+function EconomicSkeleton() {
+  return (
+    <div className="space-y-3 animate-pulse">
+      <div className="grid grid-cols-2 gap-3">
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className="rounded-xl bg-white/[0.03] p-3">
+            <div className="h-3 w-20 bg-white/10 rounded mb-2" />
+            <div className="h-5 w-16 bg-white/10 rounded" />
+          </div>
+        ))}
+      </div>
+      <div className="rounded-xl bg-white/[0.03] p-3">
+        <div className="h-3 w-32 bg-white/10 rounded mb-3" />
+        <div className="space-y-2">
+          <div className="h-2 bg-white/10 rounded-full w-full" />
+          <div className="h-2 bg-white/10 rounded-full w-3/4" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Helper: format percentage with bar ─── */
+function PercentBar({
+  label,
+  value,
+  year,
+  color = 'bg-accent',
+  icon: Icon,
+}: {
+  label: string;
+  value: number;
+  year: number;
+  color?: string;
+  icon: React.ComponentType<{ className?: string }>;
+}) {
+  // Clamp display to 0-100 range
+  const pct = Math.min(Math.max(value, 0), 100);
+  return (
+    <div className="space-y-1.5">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-1.5">
+          <Icon className="w-3 h-3 text-muted" />
+          <span className="text-[10px] text-muted uppercase tracking-wider">
+            {label}
+          </span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="text-sm font-mono font-bold">{value.toFixed(1)}%</span>
+          <span className="text-[9px] text-muted font-mono">({year})</span>
+        </div>
+      </div>
+      <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
+        <div
+          className={cn('h-full rounded-full transition-all duration-700', color)}
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+    </div>
+  );
+}
+
+/* ─── Economic Profile (World Bank data) ─── */
+function EconomicProfileSection({ iso }: { iso: string }) {
+  const { data, loading, error } = useWorldBank(iso);
+
+  if (loading) return <EconomicSkeleton />;
+
+  if (error || !data) {
+    return (
+      <div className="glass-panel rounded-xl p-4 text-center">
+        <Globe2 className="w-6 h-6 text-muted/40 mx-auto mb-2" />
+        <p className="text-xs text-muted">
+          {error || 'Economic data unavailable'}
+        </p>
+      </div>
+    );
+  }
+
+  // Check if we actually have any data
+  const hasAnyData = data.gdp || data.population || data.manufacturingPct ||
+    data.industryEmploymentPct || data.exportsGoodsPct;
+
+  if (!hasAnyData) {
+    return (
+      <div className="glass-panel rounded-xl p-4 text-center">
+        <Globe2 className="w-6 h-6 text-muted/40 mx-auto mb-2" />
+        <p className="text-xs text-muted">No economic data available from World Bank</p>
+      </div>
+    );
+  }
+
+  // Build stat cards for GDP, Population, Labor Force
+  const topStats: {
+    label: string;
+    value: string;
+    year: number;
+    icon: React.ComponentType<{ className?: string }>;
+    color: string;
+  }[] = [];
+
+  if (data.gdp?.value) {
+    topStats.push({
+      label: 'GDP',
+      value: formatCurrency(data.gdp.value),
+      year: data.gdp.year,
+      icon: DollarSign,
+      color: 'text-accent',
+    });
+  }
+
+  if (data.population?.value) {
+    topStats.push({
+      label: 'Population',
+      value: formatNumber(data.population.value),
+      year: data.population.year,
+      icon: Users,
+      color: 'text-blue-400',
+    });
+  }
+
+  if (data.laborForce?.value) {
+    topStats.push({
+      label: 'Labor Force',
+      value: formatNumber(data.laborForce.value),
+      year: data.laborForce.year,
+      icon: Briefcase,
+      color: 'text-purple-400',
+    });
+  }
+
+  if (data.exportsGoodsPct?.value) {
+    topStats.push({
+      label: 'Exports (% GDP)',
+      value: `${data.exportsGoodsPct.value.toFixed(1)}%`,
+      year: data.exportsGoodsPct.year,
+      icon: ArrowLeftRight,
+      color: 'text-green-400',
+    });
+  }
+
+  // Compute export/import balance if both available
+  const hasBalance = data.manufacturesExportsPct?.value != null && data.manufacturesImportsPct?.value != null;
+
+  return (
+    <div className="space-y-4">
+      {/* Top stat cards */}
+      {topStats.length > 0 && (
+        <div className="grid grid-cols-2 gap-3">
+          {topStats.map((stat, i) => (
+            <div
+              key={stat.label}
+              className="rounded-xl bg-white/[0.03] border border-white/5 p-3 animate-fade-in-up"
+              style={{ animationDelay: `${i * 50}ms` }}
+            >
+              <div className="flex items-center gap-1.5 mb-1.5">
+                <stat.icon className={cn('w-3.5 h-3.5', stat.color)} />
+                <span className="text-[10px] text-muted uppercase tracking-wider">
+                  {stat.label}
+                </span>
+              </div>
+              <div className={cn('text-lg font-mono font-bold', stat.color)}>
+                {stat.value}
+              </div>
+              <span className="text-[9px] text-muted font-mono">{stat.year}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Percentage bars */}
+      <div
+        className="rounded-xl bg-white/[0.03] border border-white/5 p-4 space-y-4 animate-fade-in-up"
+        style={{ animationDelay: '200ms' }}
+      >
+        {data.manufacturingPct?.value != null && (
+          <PercentBar
+            label="Manufacturing (% GDP)"
+            value={data.manufacturingPct.value}
+            year={data.manufacturingPct.year}
+            color="bg-accent/80"
+            icon={Factory}
+          />
+        )}
+        {data.industryPct?.value != null && (
+          <PercentBar
+            label="Industry (% GDP)"
+            value={data.industryPct.value}
+            year={data.industryPct.year}
+            color="bg-blue-400/80"
+            icon={Factory}
+          />
+        )}
+        {data.industryEmploymentPct?.value != null && (
+          <PercentBar
+            label="Industry Employment"
+            value={data.industryEmploymentPct.value}
+            year={data.industryEmploymentPct.year}
+            color="bg-purple-400/80"
+            icon={Briefcase}
+          />
+        )}
+      </div>
+
+      {/* Export/Import manufactures balance */}
+      {hasBalance && (
+        <div
+          className="rounded-xl bg-white/[0.03] border border-white/5 p-4 animate-fade-in-up"
+          style={{ animationDelay: '300ms' }}
+        >
+          <h5 className="text-[10px] text-muted uppercase tracking-wider mb-3 flex items-center gap-1.5">
+            <ArrowLeftRight className="w-3 h-3" />
+            Manufactures Trade Composition
+          </h5>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="text-center p-2 rounded-lg bg-green-400/5 border border-green-400/10">
+              <p className="text-[9px] text-muted uppercase tracking-wider mb-1">
+                Exports Share
+              </p>
+              <p className="text-sm font-mono font-bold text-green-400">
+                {data.manufacturesExportsPct!.value!.toFixed(1)}%
+              </p>
+              <p className="text-[9px] text-muted font-mono">
+                of merch. ({data.manufacturesExportsPct!.year})
+              </p>
+            </div>
+            <div className="text-center p-2 rounded-lg bg-red-400/5 border border-red-400/10">
+              <p className="text-[9px] text-muted uppercase tracking-wider mb-1">
+                Imports Share
+              </p>
+              <p className="text-sm font-mono font-bold text-red-400">
+                {data.manufacturesImportsPct!.value!.toFixed(1)}%
+              </p>
+              <p className="text-[9px] text-muted font-mono">
+                of merch. ({data.manufacturesImportsPct!.year})
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Attribution */}
+      <p className="text-[9px] text-muted/50 text-center font-mono">
+        Source: World Bank Open Data
+      </p>
+    </div>
+  );
+}
+
 /* ─── Main Industry Tab ─── */
 export function IndustryTab({ country }: IndustryTabProps) {
   const stats = country.industryStats;
@@ -363,6 +708,15 @@ export function IndustryTab({ country }: IndustryTabProps) {
         </div>
       )}
 
+      {/* Economic Profile (World Bank data) */}
+      <div className="border-t border-white/10 pt-4">
+        <h4 className="text-xs font-medium text-muted uppercase tracking-wider mb-4 flex items-center gap-2">
+          <Globe2 className="w-3.5 h-3.5 text-accent" />
+          Economic Profile
+        </h4>
+        <EconomicProfileSection iso={country.iso} />
+      </div>
+
       {/* Detailed Trade Data (fetched from API) */}
       <div className="border-t border-white/10 pt-4">
         <h4 className="text-xs font-medium text-muted uppercase tracking-wider mb-4 flex items-center gap-2">
@@ -370,6 +724,20 @@ export function IndustryTab({ country }: IndustryTabProps) {
           Detailed Trade Intelligence
         </h4>
         <TradeDataSection iso={country.iso} />
+      </div>
+
+      {/* Jewelry & Precious Metals */}
+      <div className="border-t border-white/10 pt-4">
+        <JewelrySection iso={country.iso} />
+      </div>
+
+      {/* Fashion News (fetched from GDELT) */}
+      <div className="border-t border-white/10 pt-4">
+        <h4 className="text-xs font-medium text-muted uppercase tracking-wider mb-4 flex items-center gap-2">
+          <Newspaper className="w-3.5 h-3.5 text-accent" />
+          Latest Fashion News
+        </h4>
+        <FashionNewsSection iso={country.iso} />
       </div>
     </div>
   );

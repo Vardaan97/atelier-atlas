@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Clock, Shirt } from 'lucide-react';
 import { useImages } from '@/hooks/useImages';
 import { Skeleton } from '@/components/ui/Skeleton';
+import { MuseumEraInline } from './MuseumSection';
 import type { CountryBase, CountryProfile, FashionEra } from '@/types/country';
 
 interface TimelineTabProps {
@@ -131,6 +132,9 @@ function EraCard({
               ))}
             </div>
           )}
+
+          {/* Met Museum items for this era */}
+          <MuseumEraInline countryName={countryName} eraName={era.name} />
         </div>
       </div>
     </motion.div>

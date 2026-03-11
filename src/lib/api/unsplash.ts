@@ -13,7 +13,7 @@ export async function searchUnsplash(
     const params = new URLSearchParams({
       query,
       per_page: count.toString(),
-      orientation: 'landscape',
+      content_filter: 'high',
     });
 
     const res = await fetch(`${UNSPLASH_API}/search/photos?${params}`, {

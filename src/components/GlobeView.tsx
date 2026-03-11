@@ -13,13 +13,18 @@ import { FilterSidebar } from '@/components/filters/FilterSidebar';
 import { SearchBar } from '@/components/search/SearchBar';
 import { TimelineSlider } from '@/components/ui/TimelineSlider';
 import { BottomTicker } from '@/components/ui/BottomTicker';
+import { OnboardingHint } from '@/components/ui/OnboardingHint';
 import { useIsMobile } from '@/hooks/useIsMobile';
+import { usePrefetch } from '@/hooks/usePrefetch';
 import type { CountryBase } from '@/types/country';
 
 export function GlobeView() {
   const setCountries = useGlobeStore((s) => s.setCountries);
   const globeReady = useGlobeStore((s) => s.globeReady);
   const isMobile = useIsMobile();
+
+  // Background pre-fetch garment images for top countries (runs silently)
+  usePrefetch(globeReady);
 
   // Load country data
   useEffect(() => {
@@ -67,6 +72,9 @@ export function GlobeView() {
 
       {/* Comparison View */}
       <ComparisonView />
+
+      {/* First-visit onboarding hint */}
+      <OnboardingHint />
 
       {/* Loading overlay */}
       {!globeReady && (

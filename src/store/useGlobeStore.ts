@@ -59,6 +59,7 @@ interface GlobeState {
   getFilteredCountries: () => string[];
   filterSidebarOpen: boolean;
   setFilterSidebarOpen: (open: boolean) => void;
+  toggleFilterSidebar: () => void;
 
   // Search
   searchQuery: string;
@@ -187,6 +188,7 @@ export const useGlobeStore = create<GlobeState>((set, get) => ({
 
   filterSidebarOpen: false,
   setFilterSidebarOpen: (open) => set({ filterSidebarOpen: open }),
+  toggleFilterSidebar: () => set((state) => ({ filterSidebarOpen: !state.filterSidebarOpen })),
 
   // Search
   searchQuery: '',

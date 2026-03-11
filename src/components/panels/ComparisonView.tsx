@@ -19,11 +19,18 @@ import {
   Loader2,
   Crown,
   Sparkles,
+  Link2,
 } from 'lucide-react';
 import { useGlobeStore } from '@/store/useGlobeStore';
 import { useComparisonProfiles } from '@/hooks/useComparisonProfiles';
+import { useWorldBankComparison } from '@/hooks/useWorldBankComparison';
 import { FASHION_DNA_AXES } from '@/lib/constants';
 import { cn, formatCurrency, formatNumber } from '@/lib/utils';
+import {
+  getCountryPairSimilarity,
+  getCharacteristics,
+  type DimensionBreakdown,
+} from '@/lib/fashionSimilarity';
 import type { CountryBase, FashionDNA } from '@/types/country';
 
 // ---------------------------------------------------------------------------
@@ -122,6 +129,278 @@ function Section({
             className="overflow-hidden"
           >
             <div className="px-6 pb-5">{children}</div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Fashion Culture Similarity Section
+// ---------------------------------------------------------------------------
+
+const DIMENSION_LABELS: Record<keyof DimensionBreakdown, string> = {
+  silhouette: 'Silhouette',
+  colorPalette: 'Color Palette',
+  materials: 'Materials',
+  techniques: 'Techniques',
+  aesthetic: 'Aesthetic',
+  embellishment: 'Embellishment',
+  modesty: 'Modesty',
+  region: 'Region',
+  climate: 'Climate',
+  culturalInfluence: 'Cultural',
+};
+
+function FashionSimilaritySection({
+  countries,
+}: {
+  countries: CountryBase[];
+}) {
+  // For 2 countries, show a single pair. For 3, show all 3 pairs.
+  const pairs = useMemo(() => {
+    const result: Array<{
+      a: CountryBase;
+      b: CountryBase;
+      similarity: NonNullable<ReturnType<typeof getCountryPairSimilarity>>;
+    }> = [];
+
+    for (let i = 0; i < countries.length; i++) {
+      for (let j = i + 1; j < countries.length; j++) {
+        const sim = getCountryPairSimilarity(countries[i].iso, countries[j].iso);
+        if (sim) {
+          result.push({ a: countries[i], b: countries[j], similarity: sim });
+        }
+      }
+    }
+    return result;
+  }, [countries]);
+
+  if (pairs.length === 0) return null;
+
+  return (
+    <Section title="Fashion Culture Similarity" defaultOpen={true}>
+      <div className="space-y-5">
+        {pairs.map(({ a, b, similarity }) => (
+          <div key={`${a.iso}-${b.iso}`} className="space-y-3">
+            {/* Header with score */}
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 flex-1 min-w-0">
+                <span className="text-lg">{a.flag}</span>
+                <span className="text-xs font-medium truncate">{a.name}</span>
+                <Link2 className="w-3 h-3 text-muted shrink-0" />
+                <span className="text-lg">{b.flag}</span>
+                <span className="text-xs font-medium truncate">{b.name}</span>
+              </div>
+              <div className="shrink-0 flex items-center gap-1.5">
+                <span
+                  className={cn(
+                    'text-lg font-mono font-bold',
+                    similarity.score >= 60
+                      ? 'text-accent'
+                      : similarity.score >= 40
+                        ? 'text-[#FFB800]'
+                        : 'text-muted'
+                  )}
+                >
+                  {similarity.score}%
+                </span>
+              </div>
+            </div>
+
+            {/* Explanation */}
+            <p className="text-[11px] text-muted leading-relaxed">
+              {similarity.explanation}
+            </p>
+
+            {/* Shared traits */}
+            {similarity.sharedTraits.length > 0 && (
+              <div className="flex flex-wrap gap-1.5">
+                {similarity.sharedTraits.map((trait) => (
+                  <span
+                    key={trait}
+                    className="text-[10px] px-2 py-0.5 rounded-full bg-accent/10 text-accent/80 border border-accent/20"
+                  >
+                    {trait}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Breakdown bars */}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+              {(Object.entries(similarity.breakdown) as [keyof DimensionBreakdown, number][]).map(
+                ([dim, val]) => (
+                  <div key={dim} className="flex items-center gap-2">
+                    <span className="text-[9px] text-muted font-mono w-16 shrink-0 text-right">
+                      {DIMENSION_LABELS[dim]}
+                    </span>
+                    <div className="flex-1 h-1.5 rounded-full bg-white/10 overflow-hidden">
+                      <div
+                        className="h-full rounded-full transition-all duration-500"
+                        style={{
+                          width: `${Math.round(val * 100)}%`,
+                          background:
+                            val >= 0.6
+                              ? 'var(--color-accent)'
+                              : val >= 0.3
+                                ? '#FFB800'
+                                : 'rgba(255,255,255,0.2)',
+                        }}
+                      />
+                    </div>
+                    <span className="text-[9px] text-muted font-mono w-7 shrink-0">
+                      {Math.round(val * 100)}%
+                    </span>
+                  </div>
+                )
+              )}
+            </div>
+
+            {/* Fashion characteristics comparison */}
+            <FashionCharacteristicsComparison isoA={a.iso} isoB={b.iso} nameA={a.name} nameB={b.name} />
+          </div>
+        ))}
+      </div>
+
+      <p className="text-[9px] text-muted/40 text-center font-mono mt-4">
+        Based on analysis of silhouettes, materials, techniques, color palettes, and cultural aesthetics
+      </p>
+    </Section>
+  );
+}
+
+function FashionCharacteristicsComparison({
+  isoA,
+  isoB,
+  nameA,
+  nameB,
+}: {
+  isoA: string;
+  isoB: string;
+  nameA: string;
+  nameB: string;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const charsA = getCharacteristics(isoA);
+  const charsB = getCharacteristics(isoB);
+
+  if (!charsA || !charsB) return null;
+
+  const dimensions: Array<{
+    label: string;
+    tagsA: string[];
+    tagsB: string[];
+  }> = [
+    { label: 'Silhouette', tagsA: charsA.silhouette, tagsB: charsB.silhouette },
+    { label: 'Color Palette', tagsA: charsA.colorPalette, tagsB: charsB.colorPalette },
+    { label: 'Materials', tagsA: charsA.materials, tagsB: charsB.materials },
+    { label: 'Techniques', tagsA: charsA.techniques, tagsB: charsB.techniques },
+    { label: 'Aesthetics', tagsA: charsA.aestheticPhilosophy, tagsB: charsB.aestheticPhilosophy },
+  ];
+
+  return (
+    <div>
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="flex items-center gap-1.5 text-[10px] text-accent/70 hover:text-accent transition-colors font-mono"
+      >
+        {expanded ? (
+          <ChevronUp className="w-3 h-3" />
+        ) : (
+          <ChevronDown className="w-3 h-3" />
+        )}
+        {expanded ? 'HIDE' : 'SHOW'} DETAILED COMPARISON
+      </button>
+
+      <AnimatePresence>
+        {expanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <div className="mt-3 space-y-3">
+              {dimensions.map(({ label, tagsA, tagsB }) => {
+                const shared = tagsA.filter((t) => tagsB.includes(t));
+
+                return (
+                  <div key={label}>
+                    <div className="text-[10px] text-muted font-mono uppercase tracking-wider mb-1.5">
+                      {label}
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <div className="text-[9px] text-muted/60 mb-1">{nameA}</div>
+                        <div className="flex flex-wrap gap-1">
+                          {tagsA.map((tag) => (
+                            <span
+                              key={tag}
+                              className={cn(
+                                'text-[9px] px-1.5 py-0.5 rounded-full border',
+                                shared.includes(tag)
+                                  ? 'bg-accent/15 text-accent border-accent/25'
+                                  : 'bg-white/5 text-muted border-white/10'
+                              )}
+                            >
+                              {tag.replace(/-/g, ' ')}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-[9px] text-muted/60 mb-1">{nameB}</div>
+                        <div className="flex flex-wrap gap-1">
+                          {tagsB.map((tag) => (
+                            <span
+                              key={tag}
+                              className={cn(
+                                'text-[9px] px-1.5 py-0.5 rounded-full border',
+                                shared.includes(tag)
+                                  ? 'bg-accent/15 text-accent border-accent/25'
+                                  : 'bg-white/5 text-muted border-white/10'
+                              )}
+                            >
+                              {tag.replace(/-/g, ' ')}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    {shared.length > 0 && (
+                      <div className="text-[9px] text-accent/60 mt-1 font-mono">
+                        {shared.length} shared: {shared.map(t => t.replace(/-/g, ' ')).join(', ')}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+
+              {/* Numeric dimensions */}
+              <div className="grid grid-cols-3 gap-2 text-center">
+                {[
+                  { label: 'Embellishment', a: charsA.embellishmentLevel, b: charsB.embellishmentLevel, max: 5 },
+                  { label: 'Modesty', a: charsA.modesty, b: charsB.modesty, max: 5 },
+                  { label: 'Gender Distinction', a: charsA.genderDistinction, b: charsB.genderDistinction, max: 5 },
+                ].map(({ label, a, b, max }) => (
+                  <div key={label} className="rounded-lg bg-white/[0.03] p-2">
+                    <div className="text-[9px] text-muted font-mono mb-1">{label}</div>
+                    <div className="flex items-center justify-center gap-3">
+                      <span className={cn('text-xs font-mono font-bold', a === b ? 'text-accent' : 'text-foreground')}>
+                        {a}/{max}
+                      </span>
+                      <span className="text-[9px] text-muted">vs</span>
+                      <span className={cn('text-xs font-mono font-bold', a === b ? 'text-accent' : 'text-foreground')}>
+                        {b}/{max}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -296,6 +575,7 @@ export function ComparisonView() {
   );
 
   const { profiles, loading } = useComparisonProfiles(comparedCountries);
+  const { data: wbData, loading: wbLoading } = useWorldBankComparison(comparedCountries);
 
   // Resolve full CountryBase for each compared ISO
   const comparedData = useMemo(() => {
@@ -481,6 +761,11 @@ export function ComparisonView() {
                 </Section>
               )}
 
+              {/* 1.5 Fashion Culture Similarity */}
+              {comparedData.length >= 2 && (
+                <FashionSimilaritySection countries={comparedData} />
+              )}
+
               {/* 2. Key Stats */}
               <Section title="Key Stats">
                 <div className="overflow-x-auto">
@@ -544,7 +829,264 @@ export function ComparisonView() {
                 </div>
               </Section>
 
-              {/* 3. Traditional Garments */}
+              {/* 3. Economic Indicators (World Bank) */}
+              <Section title="Economic Indicators" defaultOpen={true}>
+                {wbLoading.size > 0 && wbData.size === 0 ? (
+                  <div className="flex items-center justify-center gap-2 py-6">
+                    <Loader2 className="w-4 h-4 text-accent animate-spin" />
+                    <span className="text-xs text-muted font-mono">
+                      Loading World Bank data...
+                    </span>
+                  </div>
+                ) : wbData.size === 0 ? (
+                  <p className="text-xs text-muted text-center py-4">
+                    World Bank data unavailable
+                  </p>
+                ) : (
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b border-white/5">
+                          <th className="text-left text-[10px] text-muted font-mono uppercase tracking-wider py-2 pr-4">
+                            Indicator
+                          </th>
+                          {comparedData.map((c, i) => (
+                            <th
+                              key={c.iso}
+                              className="text-center text-[10px] font-mono uppercase tracking-wider py-2 px-2"
+                              style={{ color: COMPARISON_COLORS[i] }}
+                            >
+                              {c.name}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {/* Manufacturing % of GDP */}
+                        {(() => {
+                          const vals = comparedData.map(
+                            (c) => wbData.get(c.iso)?.manufacturingPct?.value ?? null
+                          );
+                          const hasAny = vals.some((v) => v !== null);
+                          if (!hasAny) return null;
+                          const maxIdx = vals.reduce<number>(
+                            (best, v, i) =>
+                              v !== null && (best === -1 || v > (vals[best as number] ?? -Infinity))
+                                ? i
+                                : best,
+                            -1
+                          );
+                          return (
+                            <tr className="border-b border-white/[0.03] hover:bg-white/[0.02] transition-colors">
+                              <td className="py-2.5 pr-4 text-xs text-muted">
+                                Manufacturing % GDP
+                              </td>
+                              {comparedData.map((c, i) => {
+                                const wb = wbData.get(c.iso);
+                                const val = wb?.manufacturingPct?.value;
+                                const year = wb?.manufacturingPct?.year;
+                                const isWinner = maxIdx === i && comparedData.length >= 2;
+                                return (
+                                  <td
+                                    key={c.iso}
+                                    className={cn(
+                                      'py-2.5 px-2 text-center font-mono text-sm',
+                                      isWinner ? 'text-accent font-bold' : 'text-foreground'
+                                    )}
+                                  >
+                                    {val != null ? (
+                                      <div className="flex flex-col items-center">
+                                        <div className="flex items-center gap-1.5">
+                                          {val.toFixed(1)}%
+                                          {isWinner && <Crown className="w-3 h-3 text-accent" />}
+                                        </div>
+                                        {year && (
+                                          <span className="text-[9px] text-muted font-mono">
+                                            {year}
+                                          </span>
+                                        )}
+                                      </div>
+                                    ) : (
+                                      <span className="text-muted">--</span>
+                                    )}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          );
+                        })()}
+
+                        {/* Industry Employment % */}
+                        {(() => {
+                          const vals = comparedData.map(
+                            (c) => wbData.get(c.iso)?.industryEmploymentPct?.value ?? null
+                          );
+                          const hasAny = vals.some((v) => v !== null);
+                          if (!hasAny) return null;
+                          const maxIdx = vals.reduce<number>(
+                            (best, v, i) =>
+                              v !== null && (best === -1 || v > (vals[best as number] ?? -Infinity))
+                                ? i
+                                : best,
+                            -1
+                          );
+                          return (
+                            <tr className="border-b border-white/[0.03] hover:bg-white/[0.02] transition-colors">
+                              <td className="py-2.5 pr-4 text-xs text-muted">
+                                Industry Employment %
+                              </td>
+                              {comparedData.map((c, i) => {
+                                const wb = wbData.get(c.iso);
+                                const val = wb?.industryEmploymentPct?.value;
+                                const year = wb?.industryEmploymentPct?.year;
+                                const isWinner = maxIdx === i && comparedData.length >= 2;
+                                return (
+                                  <td
+                                    key={c.iso}
+                                    className={cn(
+                                      'py-2.5 px-2 text-center font-mono text-sm',
+                                      isWinner ? 'text-accent font-bold' : 'text-foreground'
+                                    )}
+                                  >
+                                    {val != null ? (
+                                      <div className="flex flex-col items-center">
+                                        <div className="flex items-center gap-1.5">
+                                          {val.toFixed(1)}%
+                                          {isWinner && <Crown className="w-3 h-3 text-accent" />}
+                                        </div>
+                                        {year && (
+                                          <span className="text-[9px] text-muted font-mono">
+                                            {year}
+                                          </span>
+                                        )}
+                                      </div>
+                                    ) : (
+                                      <span className="text-muted">--</span>
+                                    )}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          );
+                        })()}
+
+                        {/* GDP */}
+                        {(() => {
+                          const vals = comparedData.map(
+                            (c) => wbData.get(c.iso)?.gdp?.value ?? null
+                          );
+                          const hasAny = vals.some((v) => v !== null);
+                          if (!hasAny) return null;
+                          const maxIdx = vals.reduce<number>(
+                            (best, v, i) =>
+                              v !== null && (best === -1 || v > (vals[best as number] ?? -Infinity))
+                                ? i
+                                : best,
+                            -1
+                          );
+                          return (
+                            <tr className="border-b border-white/[0.03] hover:bg-white/[0.02] transition-colors">
+                              <td className="py-2.5 pr-4 text-xs text-muted">
+                                GDP (World Bank)
+                              </td>
+                              {comparedData.map((c, i) => {
+                                const wb = wbData.get(c.iso);
+                                const val = wb?.gdp?.value;
+                                const year = wb?.gdp?.year;
+                                const isWinner = maxIdx === i && comparedData.length >= 2;
+                                return (
+                                  <td
+                                    key={c.iso}
+                                    className={cn(
+                                      'py-2.5 px-2 text-center font-mono text-sm',
+                                      isWinner ? 'text-accent font-bold' : 'text-foreground'
+                                    )}
+                                  >
+                                    {val != null ? (
+                                      <div className="flex flex-col items-center">
+                                        <div className="flex items-center gap-1.5">
+                                          {formatCurrency(val)}
+                                          {isWinner && <Crown className="w-3 h-3 text-accent" />}
+                                        </div>
+                                        {year && (
+                                          <span className="text-[9px] text-muted font-mono">
+                                            {year}
+                                          </span>
+                                        )}
+                                      </div>
+                                    ) : (
+                                      <span className="text-muted">--</span>
+                                    )}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          );
+                        })()}
+
+                        {/* Exports of goods & services % GDP */}
+                        {(() => {
+                          const vals = comparedData.map(
+                            (c) => wbData.get(c.iso)?.exportsGoodsPct?.value ?? null
+                          );
+                          const hasAny = vals.some((v) => v !== null);
+                          if (!hasAny) return null;
+                          const maxIdx = vals.reduce<number>(
+                            (best, v, i) =>
+                              v !== null && (best === -1 || v > (vals[best as number] ?? -Infinity))
+                                ? i
+                                : best,
+                            -1
+                          );
+                          return (
+                            <tr className="border-b border-white/[0.03] hover:bg-white/[0.02] transition-colors">
+                              <td className="py-2.5 pr-4 text-xs text-muted">
+                                Exports % GDP
+                              </td>
+                              {comparedData.map((c, i) => {
+                                const wb = wbData.get(c.iso);
+                                const val = wb?.exportsGoodsPct?.value;
+                                const year = wb?.exportsGoodsPct?.year;
+                                const isWinner = maxIdx === i && comparedData.length >= 2;
+                                return (
+                                  <td
+                                    key={c.iso}
+                                    className={cn(
+                                      'py-2.5 px-2 text-center font-mono text-sm',
+                                      isWinner ? 'text-accent font-bold' : 'text-foreground'
+                                    )}
+                                  >
+                                    {val != null ? (
+                                      <div className="flex flex-col items-center">
+                                        <div className="flex items-center gap-1.5">
+                                          {val.toFixed(1)}%
+                                          {isWinner && <Crown className="w-3 h-3 text-accent" />}
+                                        </div>
+                                        {year && (
+                                          <span className="text-[9px] text-muted font-mono">
+                                            {year}
+                                          </span>
+                                        )}
+                                      </div>
+                                    ) : (
+                                      <span className="text-muted">--</span>
+                                    )}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          );
+                        })()}
+                      </tbody>
+                    </table>
+                    <p className="text-[9px] text-muted/50 text-center font-mono mt-3">
+                      Source: World Bank Open Data
+                    </p>
+                  </div>
+                )}
+              </Section>
+
+              {/* 4. Traditional Garments */}
               <Section title="Traditional Garments" defaultOpen={false}>
                 <div
                   className="grid gap-4"

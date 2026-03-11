@@ -204,17 +204,23 @@ export function SearchBar() {
     function handleGlobalKey(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
+        e.stopPropagation();
         setOpen((prev) => {
           if (!prev) {
-            // Opening – focus input next tick
-            setTimeout(() => inputRef.current?.focus(), 0);
+            // Opening – focus input on next frame after render
+            requestAnimationFrame(() => {
+              inputRef.current?.focus();
+            });
+          } else {
+            // Closing – blur input
+            inputRef.current?.blur();
           }
           return !prev;
         });
       }
     }
-    window.addEventListener('keydown', handleGlobalKey);
-    return () => window.removeEventListener('keydown', handleGlobalKey);
+    document.addEventListener('keydown', handleGlobalKey, { capture: true });
+    return () => document.removeEventListener('keydown', handleGlobalKey, { capture: true });
   }, []);
 
   // ---- Click outside to close ----

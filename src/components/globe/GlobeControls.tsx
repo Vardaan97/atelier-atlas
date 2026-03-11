@@ -37,7 +37,7 @@ function ControlButtons({ onDone }: { onDone?: () => void }) {
   const activeMetric = useGlobeStore((s) => s.activeMetric);
   const setActiveMetric = useGlobeStore((s) => s.setActiveMetric);
   const filterSidebarOpen = useGlobeStore((s) => s.filterSidebarOpen);
-  const setFilterSidebarOpen = useGlobeStore((s) => s.setFilterSidebarOpen);
+  const toggleFilterSidebar = useGlobeStore((s) => s.toggleFilterSidebar);
   const comparisonMode = useGlobeStore((s) => s.comparisonMode);
   const toggleComparisonMode = useGlobeStore((s) => s.toggleComparisonMode);
   const overlayMode = useGlobeStore((s) => s.overlayMode);
@@ -53,6 +53,11 @@ function ControlButtons({ onDone }: { onDone?: () => void }) {
   const handleOverlayClick = (key: OverlayMode) => {
     // Toggle off: clicking active overlay resets to 'metric'
     setOverlayMode(overlayMode === key ? 'metric' : key);
+    onDone?.();
+  };
+
+  const handleFilterToggle = () => {
+    toggleFilterSidebar();
     onDone?.();
   };
 
@@ -83,10 +88,7 @@ function ControlButtons({ onDone }: { onDone?: () => void }) {
       <div className="space-y-1">
         <p className="text-[10px] text-muted uppercase tracking-wider font-mono mb-1.5 md:hidden">Actions</p>
         <button
-          onClick={() => {
-            setFilterSidebarOpen(!filterSidebarOpen);
-            onDone?.();
-          }}
+          onClick={handleFilterToggle}
           className={cn(
             'flex items-center gap-2 px-3 py-2 md:py-1.5 rounded-lg text-xs transition-all duration-200 relative w-full min-h-[44px] md:min-h-0',
             filterSidebarOpen
@@ -223,13 +225,17 @@ function DesktopControls() {
   const activeMetric = useGlobeStore((s) => s.activeMetric);
   const setActiveMetric = useGlobeStore((s) => s.setActiveMetric);
   const filterSidebarOpen = useGlobeStore((s) => s.filterSidebarOpen);
-  const setFilterSidebarOpen = useGlobeStore((s) => s.setFilterSidebarOpen);
+  const toggleFilterSidebar = useGlobeStore((s) => s.toggleFilterSidebar);
   const comparisonMode = useGlobeStore((s) => s.comparisonMode);
   const toggleComparisonMode = useGlobeStore((s) => s.toggleComparisonMode);
   const overlayMode = useGlobeStore((s) => s.overlayMode);
   const setOverlayMode = useGlobeStore((s) => s.setOverlayMode);
 
   const filterCount = countActiveFilters(useGlobeStore.getState());
+
+  const handleFilterToggle = () => {
+    toggleFilterSidebar();
+  };
 
   return (
     <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
@@ -258,7 +264,7 @@ function DesktopControls() {
       <div className="glass-panel rounded-xl p-1.5 flex flex-col gap-1">
         {/* Filter toggle */}
         <button
-          onClick={() => setFilterSidebarOpen(!filterSidebarOpen)}
+          onClick={handleFilterToggle}
           className={cn(
             'flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-200 relative',
             filterSidebarOpen

@@ -46,6 +46,7 @@
     "traditionalGarments": [
       {
         "name": "Haute Couture Gown",
+        "imageQuery": "haute couture gown Paris runway dress silk",
         "description": "Custom-fitted garments handcrafted by master artisans in Parisian ateliers, the pinnacle of fashion.",
         "era": "19th Century - Present",
         "occasion": "Formal events, galas",
@@ -57,6 +58,7 @@
       },
       {
         "name": "Beret",
+        "imageQuery": "French beret hat wool classic Parisian style",
         "description": "Iconic soft round cap from the Basque region, symbol of French artistic culture.",
         "era": "15th Century - Present",
         "occasion": "Everyday wear",
@@ -67,6 +69,7 @@
       },
       {
         "name": "Breton Stripe Shirt",
+        "imageQuery": "Breton stripe mariniere shirt navy white French nautical",
         "description": "Navy-and-white striped marinière originally worn by French Navy sailors in Brittany.",
         "era": "19th Century - Present",
         "occasion": "Casual wear",
@@ -165,6 +168,7 @@
     "traditionalGarments": [
       {
         "name": "Toga",
+        "imageQuery": "ancient Roman toga draped white garment statue classical",
         "description": "Ancient Roman draped garment symbolizing citizenship, wrapped in elaborate folds.",
         "era": "Ancient Rome",
         "occasion": "Formal, ceremonial",
@@ -175,6 +179,7 @@
       },
       {
         "name": "Renaissance Doublet",
+        "imageQuery": "Italian Renaissance doublet embroidered velvet jacket 16th century costume",
         "description": "Fitted padded jacket worn during the Italian Renaissance, richly embroidered.",
         "era": "15th-16th Century",
         "occasion": "Court wear",
@@ -186,6 +191,7 @@
       },
       {
         "name": "Made in Italy Suit",
+        "imageQuery": "Italian tailored suit menswear Milan craftsmanship wool",
         "description": "Pinnacle of modern menswear representing unmatched Italian craftsmanship.",
         "era": "20th Century - Present",
         "occasion": "Business, formal",
@@ -285,6 +291,7 @@
     "traditionalGarments": [
       {
         "name": "Blue Jeans",
+        "imageQuery": "classic American blue jeans denim Levi's workwear",
         "description": "Quintessential American garment born from workwear into global fashion phenomenon.",
         "era": "19th Century - Present",
         "occasion": "Everyday, casual",
@@ -295,6 +302,7 @@
       },
       {
         "name": "Cowboy Boots & Western Wear",
+        "imageQuery": "American cowboy western wear Stetson hat leather boots outfit",
         "description": "Iconic American West style with Stetson hats, leather boots, fringed jackets.",
         "era": "19th Century - Present",
         "occasion": "Western culture, casual",
@@ -306,6 +314,7 @@
       },
       {
         "name": "Varsity Jacket",
+        "imageQuery": "American varsity letterman jacket college wool leather sleeves",
         "description": "Letterman jacket originating from American college sports culture.",
         "era": "20th Century - Present",
         "occasion": "Casual, sportswear",
@@ -405,6 +414,7 @@
     "traditionalGarments": [
       {
         "name": "Savile Row Suit",
+        "imageQuery": "Savile Row bespoke tailored suit London British menswear",
         "description": "Bespoke tailored suit from London's famous tailoring street, gold standard of menswear.",
         "era": "19th Century - Present",
         "occasion": "Business, formal",
@@ -415,6 +425,7 @@
       },
       {
         "name": "Tartan Kilt",
+        "imageQuery": "Scottish tartan kilt plaid wool traditional Highland dress",
         "description": "Traditional Scottish garment with clan-specific plaid patterns.",
         "era": "16th Century - Present",
         "occasion": "Ceremonial, cultural",
@@ -425,6 +436,7 @@
       },
       {
         "name": "Trench Coat",
+        "imageQuery": "classic Burberry trench coat beige gabardine British outerwear",
         "description": "Iconic waterproof coat designed for WWI officers, now a fashion staple.",
         "era": "Early 20th Century - Present",
         "occasion": "Outerwear, all seasons",
@@ -523,6 +535,7 @@
     "traditionalGarments": [
       {
         "name": "Kimono",
+        "imageQuery": "Japanese kimono traditional silk obi sash pattern",
         "description": "Iconic T-shaped wrapped garment tied with obi sash, worn for centuries.",
         "era": "Heian Period - Present",
         "occasion": "Ceremonies, festivals",
@@ -534,6 +547,7 @@
       },
       {
         "name": "Hakama",
+        "imageQuery": "Japanese hakama pleated trousers traditional martial arts outfit",
         "description": "Wide-legged pleated trousers worn over kimono, originally by samurai.",
         "era": "Kamakura Period - Present",
         "occasion": "Martial arts, graduation",
@@ -544,6 +558,7 @@
       },
       {
         "name": "Yukata",
+        "imageQuery": "Japanese yukata summer cotton kimono festival pattern casual",
         "description": "Casual summer cotton kimono worn at festivals and hot springs.",
         "era": "Edo Period - Present",
         "occasion": "Summer festivals, casual",
@@ -642,6 +657,7 @@
     "traditionalGarments": [
       {
         "name": "Qipao (Cheongsam)",
+        "imageQuery": "Chinese qipao cheongsam dress mandarin collar silk embroidered",
         "description": "Form-fitting dress with mandarin collar and side slits, icon of Chinese elegance.",
         "era": "1920s - Present",
         "occasion": "Formal, semi-formal",
@@ -653,6 +669,7 @@
       },
       {
         "name": "Hanfu",
+        "imageQuery": "Chinese hanfu traditional robe flowing sleeves Han dynasty clothing",
         "description": "Traditional Han Chinese clothing with flowing robes and wide sleeves.",
         "era": "Ancient - Ming Dynasty",
         "occasion": "Ceremonial, cultural revival",
@@ -664,6 +681,7 @@
       },
       {
         "name": "Changshan",
+        "imageQuery": "Chinese changshan men long robe mandarin collar traditional",
         "description": "Traditional men's long robe with mandarin collar.",
         "era": "Qing Dynasty - Present",
         "occasion": "Formal, cultural events",
@@ -764,6 +782,7 @@
     "traditionalGarments": [
       {
         "name": "Saree",
+        "imageQuery": "Indian saree sari draped silk traditional colorful garment",
         "description": "Elegant draped garment of 5-9 yards worn by women with countless regional variations.",
         "era": "Ancient - Present",
         "occasion": "Daily wear, weddings, formal",
@@ -776,6 +795,7 @@
       },
       {
         "name": "Kurta",
+        "imageQuery": "Indian kurta pajama men traditional cotton tunic embroidered",
         "description": "Long loose-fitting tunic worn by men and women, paired with churidar or salwar.",
         "era": "Mughal Era - Present",
         "occasion": "Daily, casual, semi-formal",
@@ -787,6 +807,7 @@
       },
       {
         "name": "Sherwani",
+        "imageQuery": "Indian sherwani groom embroidered long coat wedding attire",
         "description": "Long coat-like garment for men, richly embroidered wedding attire.",
         "era": "Mughal Era - Present",
         "occasion": "Weddings, formal events",
@@ -798,6 +819,7 @@
       },
       {
         "name": "Lehenga Choli",
+        "imageQuery": "Indian lehenga choli bridal embroidered skirt blouse wedding",
         "description": "Embroidered skirt and blouse ensemble, elaborate Indian bridal wear.",
         "era": "Rajput Era - Present",
         "occasion": "Weddings, festivals",
@@ -898,6 +920,7 @@
     "traditionalGarments": [
       {
         "name": "Hanbok",
+        "imageQuery": "Korean hanbok traditional dress colorful jeogori chima silk",
         "description": "Traditional Korean dress with vibrant colors, jeogori top and chima skirt for women.",
         "era": "Three Kingdoms - Present",
         "occasion": "Festivals, weddings, holidays",
@@ -909,6 +932,7 @@
       },
       {
         "name": "Dopo",
+        "imageQuery": "Korean dopo scholar overcoat Joseon Dynasty traditional white robe",
         "description": "Scholar's overcoat worn by Joseon Dynasty literati.",
         "era": "Joseon Dynasty",
         "occasion": "Scholarly, ceremonial",
@@ -1001,6 +1025,7 @@
     "traditionalGarments": [
       {
         "name": "Dirndl",
+        "imageQuery": "Bavarian dirndl dress traditional bodice apron Oktoberfest Alpine",
         "description": "Traditional Bavarian dress with bodice, blouse and apron.",
         "era": "18th Century - Present",
         "occasion": "Oktoberfest, festivals",
@@ -1012,6 +1037,7 @@
       },
       {
         "name": "Lederhosen",
+        "imageQuery": "Bavarian lederhosen leather breeches traditional German Alpine clothing",
         "description": "Leather breeches traditional to Bavaria and Alpine regions.",
         "era": "18th Century - Present",
         "occasion": "Festivals, traditional events",
@@ -1022,6 +1048,7 @@
       },
       {
         "name": "Tracht",
+        "imageQuery": "German tracht folk costume traditional regional Bavarian clothing",
         "description": "Regional folk costumes varying across German states.",
         "era": "16th Century - Present",
         "occasion": "Cultural events",
@@ -1115,6 +1142,7 @@
     "traditionalGarments": [
       {
         "name": "Traje de Flamenca",
+        "imageQuery": "Spanish flamenco dress ruffles polka dots Andalusia Feria Seville",
         "description": "Iconic flamenco dress with ruffles and polka dots from Andalusia.",
         "era": "19th Century - Present",
         "occasion": "Feria, flamenco performances",
@@ -1126,6 +1154,7 @@
       },
       {
         "name": "Mantilla",
+        "imageQuery": "Spanish mantilla lace veil comb traditional Semana Santa black",
         "description": "Traditional lace veil worn over a comb, for religious and formal occasions.",
         "era": "17th Century - Present",
         "occasion": "Religious ceremonies, weddings",
@@ -1136,6 +1165,7 @@
       },
       {
         "name": "Traje de Luces",
+        "imageQuery": "Spanish traje de luces suit of lights matador bullfighter embroidered",
         "description": "The elaborate sequined suit worn by bullfighters.",
         "era": "18th Century - Present",
         "occasion": "Bullfighting",
@@ -1229,6 +1259,7 @@
     "traditionalGarments": [
       {
         "name": "Carnival Costume",
+        "imageQuery": "Rio Carnival samba costume feathered sequins elaborate Brazilian",
         "description": "Elaborate feathered and sequined costumes for Rio Carnival samba schools.",
         "era": "20th Century - Present",
         "occasion": "Carnival",
@@ -1240,6 +1271,7 @@
       },
       {
         "name": "Baiana Dress",
+        "imageQuery": "Brazilian Baiana dress white lace Bahia turban traditional Afro-Brazilian",
         "description": "White lace dress of Bahian women with African-influenced turban and jewelry.",
         "era": "Colonial Era - Present",
         "occasion": "Cultural, religious ceremonies",
@@ -1250,6 +1282,7 @@
       },
       {
         "name": "Havaianas & Beach Wear",
+        "imageQuery": "Brazilian Havaianas flip flops colorful beach sandals iconic",
         "description": "Brazil's iconic flip-flops and bold swimwear culture.",
         "era": "20th Century - Present",
         "occasion": "Beach, casual",
@@ -1342,6 +1375,7 @@
     "traditionalGarments": [
       {
         "name": "Akubra Hat",
+        "imageQuery": "Akubra hat Australian outback wide brim felt stockman",
         "description": "Iconic wide-brimmed felt hat of the Australian outback.",
         "era": "19th Century - Present",
         "occasion": "Rural, outdoor",
@@ -1351,6 +1385,7 @@
       },
       {
         "name": "Driza-Bone Oilskin Coat",
+        "imageQuery": "Driza-Bone oilskin riding coat Australian stockman waterproof",
         "description": "Waterproof riding coat for stockmen and drovers.",
         "era": "19th Century - Present",
         "occasion": "Rural, outdoor",
@@ -1443,6 +1478,7 @@
     "traditionalGarments": [
       {
         "name": "Kandura (Thobe)",
+        "imageQuery": "Emirati kandura thobe white robe men traditional Gulf Arab",
         "description": "White full-length robe worn by men, symbol of Emirati identity.",
         "era": "Traditional - Present",
         "occasion": "Daily, formal",
@@ -1453,6 +1489,7 @@
       },
       {
         "name": "Abaya",
+        "imageQuery": "modern abaya black cloak embroidered flowing Gulf fashion",
         "description": "Black flowing cloak worn by women, increasingly fashion-forward with modern designs.",
         "era": "Traditional - Present",
         "occasion": "Daily, formal",
@@ -1464,6 +1501,7 @@
       },
       {
         "name": "Sheila",
+        "imageQuery": "Sheila headscarf Emirati women styled silk chiffon traditional",
         "description": "Headscarf worn by women, often elaborately styled.",
         "era": "Traditional - Present",
         "occasion": "Daily wear",
@@ -1556,6 +1594,7 @@
     "traditionalGarments": [
       {
         "name": "Folk Dress (Folkdräkt)",
+        "imageQuery": "Swedish folkdräkt folk dress embroidered bodice striped skirt Midsummer",
         "description": "Regional folk costumes with embroidered bodices and striped skirts.",
         "era": "18th Century - Present",
         "occasion": "Midsummer, national holidays",
@@ -1567,6 +1606,7 @@
       },
       {
         "name": "Sami Gákti",
+        "imageQuery": "Sami gakti tunic colorful braiding indigenous Lapland Nordic traditional",
         "description": "Colorful tunic of the indigenous Sami people with distinctive braiding.",
         "era": "Traditional - Present",
         "occasion": "Cultural events, daily wear",
@@ -1659,6 +1699,7 @@
     "traditionalGarments": [
       {
         "name": "Kaftan",
+        "imageQuery": "Ottoman kaftan robe embroidered silk brocade Turkish royal garment",
         "description": "Richly embroidered robe worn by Ottoman sultans and court members.",
         "era": "Ottoman Empire",
         "occasion": "Royal, ceremonial",
@@ -1670,6 +1711,7 @@
       },
       {
         "name": "Bindallı",
+        "imageQuery": "Turkish bindalli wedding dress gold embroidery velvet Ottoman bridal",
         "description": "Ornate wedding dress with gold embroidery on velvet.",
         "era": "Ottoman Era - Present",
         "occasion": "Weddings",
@@ -1680,6 +1722,7 @@
       },
       {
         "name": "Şalvar",
+        "imageQuery": "Turkish salvar baggy trousers traditional harem pants Anatolian",
         "description": "Traditional baggy trousers gathered at the ankle.",
         "era": "Traditional - Present",
         "occasion": "Rural, daily wear",
@@ -1767,6 +1810,7 @@
     "traditionalGarments": [
       {
         "name": "Agbada",
+        "imageQuery": "Nigerian agbada flowing robe wide sleeves Yoruba men embroidered",
         "description": "Flowing wide-sleeved robe worn by men for important occasions in Yoruba culture.",
         "era": "Traditional - Present",
         "occasion": "Ceremonies, formal",
@@ -1778,6 +1822,7 @@
       },
       {
         "name": "Iro and Buba",
+        "imageQuery": "Nigerian iro buba wrapper blouse gele headtie Yoruba women traditional",
         "description": "Yoruba women's wrap skirt and blouse set with gele headtie.",
         "era": "Traditional - Present",
         "occasion": "Daily, celebrations",
@@ -1860,6 +1905,7 @@
     "traditionalGarments": [
       {
         "name": "Kente Cloth",
+        "imageQuery": "Ghanaian kente cloth woven geometric pattern Ashanti colorful fabric",
         "description": "Iconic Ashanti handwoven cloth with geometric patterns, each design has symbolic meaning.",
         "era": "17th Century - Present",
         "occasion": "Festivals, graduation, royalty",
@@ -1870,6 +1916,7 @@
       },
       {
         "name": "Smock (Fugu)",
+        "imageQuery": "Ghanaian smock fugu handwoven cotton Northern Ghana traditional",
         "description": "Hand-woven cotton smock from Northern Ghana.",
         "era": "Traditional - Present",
         "occasion": "Cultural, formal, daily",
@@ -1950,6 +1997,7 @@
     "traditionalGarments": [
       {
         "name": "Djellaba",
+        "imageQuery": "Moroccan djellaba hooded robe wool traditional North African garment",
         "description": "Long loose-fitting hooded robe worn by both men and women.",
         "era": "Traditional - Present",
         "occasion": "Daily, formal",
@@ -1960,6 +2008,7 @@
       },
       {
         "name": "Caftan",
+        "imageQuery": "Moroccan caftan embroidered gown brocade women celebration dress",
         "description": "Elaborately embroidered gown worn by women for celebrations.",
         "era": "Traditional - Present",
         "occasion": "Weddings, festivals",
@@ -2039,6 +2088,7 @@
     "traditionalGarments": [
       {
         "name": "Galabeya",
+        "imageQuery": "Egyptian galabeya galabiya robe long flowing traditional cotton garment",
         "description": "Traditional long flowing robe worn by men and women in Egypt.",
         "era": "Ancient - Present",
         "occasion": "Daily, casual",
@@ -2049,6 +2099,7 @@
       },
       {
         "name": "Egyptian Cotton Garments",
+        "imageQuery": "Egyptian cotton fabric luxury long-staple textile white linen garment",
         "description": "Famed for the world's finest long-staple cotton fiber.",
         "era": "Ancient - Present",
         "occasion": "Various",
@@ -2125,6 +2176,7 @@
     "traditionalGarments": [
       {
         "name": "Habesha Kemis",
+        "imageQuery": "Ethiopian habesha kemis white cotton dress tibeb embroidery border",
         "description": "White cotton dress with intricate colored embroidery borders (tibeb).",
         "era": "Traditional - Present",
         "occasion": "Holidays, weddings, church",
@@ -2134,6 +2186,7 @@
       },
       {
         "name": "Netela/Gabi",
+        "imageQuery": "Ethiopian netela gabi handwoven cotton shawl blanket traditional",
         "description": "Handwoven cotton shawl or blanket with decorative borders.",
         "era": "Traditional - Present",
         "occasion": "Daily, ceremonial",
@@ -2213,6 +2266,7 @@
     "traditionalGarments": [
       {
         "name": "Batik",
+        "imageQuery": "Indonesian batik wax resist dyed fabric Javanese pattern traditional",
         "description": "UNESCO-recognized wax-resist dyed fabric with intricate patterns unique to each region.",
         "era": "Ancient - Present",
         "occasion": "Formal, daily, ceremonial",
@@ -2223,6 +2277,7 @@
       },
       {
         "name": "Kebaya",
+        "imageQuery": "Indonesian kebaya fitted lace blouse batik sarong women traditional",
         "description": "Fitted blouse-dress worn by women, often paired with batik sarong.",
         "era": "15th Century - Present",
         "occasion": "Formal, weddings",
@@ -2304,6 +2359,7 @@
     "traditionalGarments": [
       {
         "name": "Chut Thai",
+        "imageQuery": "Thai chut thai traditional silk ensemble royal ceremonial gold",
         "description": "Traditional Thai ensemble with various styles for different occasions.",
         "era": "Sukhothai Period - Present",
         "occasion": "Royal events, ceremonies",
@@ -2314,6 +2370,7 @@
       },
       {
         "name": "Pha Sin",
+        "imageQuery": "Thai pha sin tubular wrap skirt woven silk traditional pattern",
         "description": "Tubular skirt worn by women, woven with traditional patterns.",
         "era": "Traditional - Present",
         "occasion": "Daily, formal",
@@ -2392,6 +2449,7 @@
     "traditionalGarments": [
       {
         "name": "Ao Dai",
+        "imageQuery": "Vietnamese ao dai tunic silk fitted trousers traditional elegant",
         "description": "Iconic form-fitting tunic worn over trousers, symbol of Vietnamese elegance.",
         "era": "18th Century - Present",
         "occasion": "Formal, school, wedding",
@@ -2403,6 +2461,7 @@
       },
       {
         "name": "Non La",
+        "imageQuery": "Vietnamese non la conical leaf hat palm bamboo traditional",
         "description": "Conical leaf hat iconic to Vietnamese culture.",
         "era": "Ancient - Present",
         "occasion": "Daily wear, sun protection",
@@ -2482,6 +2541,7 @@
     "traditionalGarments": [
       {
         "name": "Poncho",
+        "imageQuery": "Peruvian poncho alpaca woven Andean traditional colorful pattern",
         "description": "Woven cloak with central head opening, iconic Andean garment.",
         "era": "Pre-Columbian - Present",
         "occasion": "Daily, ceremonial",
@@ -2492,6 +2552,7 @@
       },
       {
         "name": "Pollera",
+        "imageQuery": "Peruvian pollera colorful layered skirt Andean indigenous women traditional",
         "description": "Colorful layered skirt worn by indigenous women in the Andes.",
         "era": "Colonial Era - Present",
         "occasion": "Daily, festivals",
@@ -2573,6 +2634,7 @@
     "traditionalGarments": [
       {
         "name": "Huipil",
+        "imageQuery": "Mexican huipil embroidered blouse tunic indigenous Oaxaca colorful",
         "description": "Traditional embroidered blouse/tunic worn by indigenous women across Mexico.",
         "era": "Pre-Columbian - Present",
         "occasion": "Daily, ceremonial",
@@ -2583,6 +2645,7 @@
       },
       {
         "name": "Charro Suit",
+        "imageQuery": "Mexican charro suit traje de charro silver embroidered mariachi",
         "description": "Ornate suit worn by horsemen, Mexico's national costume.",
         "era": "Colonial Era - Present",
         "occasion": "Charreada, formal events",
@@ -2664,6 +2727,7 @@
     "traditionalGarments": [
       {
         "name": "Sombrero Vueltiao",
+        "imageQuery": "Colombian sombrero vueltiao woven hat Zenu black white palm",
         "description": "Iconic woven hat from the Zenú people, national symbol of Colombia.",
         "era": "Pre-Columbian - Present",
         "occasion": "Daily, cultural symbol",
@@ -2673,6 +2737,7 @@
       },
       {
         "name": "Mochila Wayuu",
+        "imageQuery": "Wayuu mochila bag colorful crocheted Colombian indigenous pattern",
         "description": "Colorful hand-crocheted bags by the Wayuu indigenous people.",
         "era": "Traditional - Present",
         "occasion": "Daily use, fashion accessory",
@@ -2753,6 +2818,7 @@
     "traditionalGarments": [
       {
         "name": "Gaucho Attire",
+        "imageQuery": "Argentine gaucho outfit bombachas leather belt beret horseman pampas",
         "description": "Horseman's outfit with bombachas, wide belt with coin decoration, and beret.",
         "era": "18th Century - Present",
         "occasion": "Rural, cultural",
@@ -2764,6 +2830,7 @@
       },
       {
         "name": "Poncho Pampeano",
+        "imageQuery": "Argentine poncho pampeano striped wool traditional pampas gaucho",
         "description": "Distinctive striped poncho of the Argentine pampas.",
         "era": "Colonial Era - Present",
         "occasion": "Rural, cold weather",
@@ -2844,6 +2911,7 @@
     "traditionalGarments": [
       {
         "name": "Sarafan",
+        "imageQuery": "Russian sarafan traditional jumper dress folk embroidered women",
         "description": "Traditional Russian women's jumper dress worn over a blouse.",
         "era": "Medieval - Present",
         "occasion": "Folk festivals, traditional",
@@ -2855,6 +2923,7 @@
       },
       {
         "name": "Ushanka",
+        "imageQuery": "Russian ushanka fur hat ear flaps winter sheepskin traditional",
         "description": "Iconic Russian fur hat with ear flaps for extreme cold.",
         "era": "20th Century - Present",
         "occasion": "Winter wear",
@@ -2934,6 +3003,7 @@
     "traditionalGarments": [
       {
         "name": "Chador",
+        "imageQuery": "Iranian chador full body cloak black traditional women garment",
         "description": "Full-body cloak worn by women in public, a symbol of Iranian modesty.",
         "era": "Traditional - Present",
         "occasion": "Daily, religious",
@@ -2944,6 +3014,7 @@
       },
       {
         "name": "Persian Carpet Motif Clothing",
+        "imageQuery": "Persian paisley boteh pattern textile carpet motif silk traditional Iran",
         "description": "Garments incorporating iconic Persian carpet patterns and paisley (boteh).",
         "era": "Safavid Era - Present",
         "occasion": "Formal, cultural",
@@ -3016,6 +3087,7 @@
     "traditionalGarments": [
       {
         "name": "Thobe",
+        "imageQuery": "Saudi thobe white ankle length robe men traditional Arab dress",
         "description": "White ankle-length robe, the standard dress for Saudi men.",
         "era": "Traditional - Present",
         "occasion": "Daily, formal",
@@ -3026,6 +3098,7 @@
       },
       {
         "name": "Bisht",
+        "imageQuery": "Saudi bisht gold trimmed cloak over thobe formal Arabian garment",
         "description": "Gold-trimmed cloak worn over the thobe for formal occasions.",
         "era": "Traditional - Present",
         "occasion": "Royal, formal events",
@@ -3108,6 +3181,7 @@
     "traditionalGarments": [
       {
         "name": "Shalwar Kameez",
+        "imageQuery": "Pakistani shalwar kameez tunic trousers traditional embroidered outfit",
         "description": "National dress consisting of a tunic top with loose trousers.",
         "era": "Mughal Era - Present",
         "occasion": "Daily, formal",
@@ -3119,6 +3193,7 @@
       },
       {
         "name": "Dupatta",
+        "imageQuery": "Pakistani dupatta long scarf draped chiffon silk embroidered women",
         "description": "Long scarf draped over head/shoulders, essential to Pakistani women's dress.",
         "era": "Traditional - Present",
         "occasion": "Daily, formal",
@@ -3199,6 +3274,7 @@
     "traditionalGarments": [
       {
         "name": "Jamdani Saree",
+        "imageQuery": "Bangladeshi jamdani saree muslin woven pattern Dhaka traditional fabric",
         "description": "UNESCO-recognized muslin fabric with intricate woven patterns from Dhaka.",
         "era": "Mughal Era - Present",
         "occasion": "Weddings, formal",
@@ -3209,6 +3285,7 @@
       },
       {
         "name": "Lungi",
+        "imageQuery": "Bangladeshi lungi sarong wrap men cotton traditional garment",
         "description": "Sarong-like garment widely worn by men.",
         "era": "Traditional - Present",
         "occasion": "Daily, casual",
@@ -3285,6 +3362,7 @@
     "traditionalGarments": [
       {
         "name": "Osariya",
+        "imageQuery": "Sri Lankan osariya Kandyan style saree draping traditional silk",
         "description": "Sri Lankan style of draping the saree, distinctive Kandyan style.",
         "era": "Traditional - Present",
         "occasion": "Formal, ceremonial",
@@ -3295,6 +3373,7 @@
       },
       {
         "name": "Sarong",
+        "imageQuery": "Sri Lankan sarong batik wrap garment cotton traditional pattern",
         "description": "Wrapped garment worn by men and women, often with batik patterns.",
         "era": "Traditional - Present",
         "occasion": "Daily, casual",
@@ -3366,6 +3445,7 @@
     "traditionalGarments": [
       {
         "name": "Daura Suruwal",
+        "imageQuery": "Nepali daura suruwal men national dress cross-over shirt trousers",
         "description": "Men's national dress with cross-over closed shirt and fitted trousers.",
         "era": "Traditional - Present",
         "occasion": "Formal, national dress",
@@ -3376,6 +3456,7 @@
       },
       {
         "name": "Gunyu Cholo",
+        "imageQuery": "Nepali gunyu cholo women wrapped garment blouse traditional clothing",
         "description": "Women's wrapped garment with fitted blouse.",
         "era": "Traditional - Present",
         "occasion": "Daily, ceremonies",
@@ -3449,6 +3530,7 @@
     "traditionalGarments": [
       {
         "name": "Maasai Shuka",
+        "imageQuery": "Maasai shuka red checked blanket wrap traditional Kenya Africa",
         "description": "Distinctive red checked blanket/wrap of the Maasai people.",
         "era": "Traditional - Present",
         "occasion": "Daily, ceremonial",
@@ -3459,6 +3541,7 @@
       },
       {
         "name": "Kikoy",
+        "imageQuery": "Kenyan kikoy woven sarong colorful striped Swahili coast cotton",
         "description": "Colorful woven sarong from Kenya's coast, originally Swahili.",
         "era": "Traditional - Present",
         "occasion": "Beach, casual, daily",
@@ -3533,6 +3616,7 @@
     "traditionalGarments": [
       {
         "name": "Hudson's Bay Blanket Coat",
+        "imageQuery": "Hudson Bay blanket coat striped Canadian wool traditional winter",
         "description": "Iconic striped blanket coat from Canadian fur trade heritage.",
         "era": "18th Century - Present",
         "occasion": "Winter wear",
@@ -3606,6 +3690,7 @@
     "traditionalGarments": [
       {
         "name": "Klompen & Klederdracht",
+        "imageQuery": "Dutch klederdracht traditional costume wooden clogs cap apron Netherlands",
         "description": "Traditional regional costumes with wooden clogs, caps and aprons.",
         "era": "17th Century - Present",
         "occasion": "Folk events, tourism",
@@ -3680,6 +3765,7 @@
     "traditionalGarments": [
       {
         "name": "Bruges Lace Garments",
+        "imageQuery": "Belgian Bruges lace handmade bobbin lace white intricate traditional",
         "description": "Handmade bobbin lace tradition dating to the 16th century.",
         "era": "16th Century - Present",
         "occasion": "Formal, ceremonial",
@@ -3754,6 +3840,7 @@
     "traditionalGarments": [
       {
         "name": "Bunad-style Folk Dress",
+        "imageQuery": "Danish folk dress traditional costume embroidered regional Scandinavian",
         "description": "Regional traditional costumes with embroidered details.",
         "era": "18th Century - Present",
         "occasion": "National celebrations",
@@ -3829,6 +3916,7 @@
     "traditionalGarments": [
       {
         "name": "Bunad",
+        "imageQuery": "Norwegian bunad folk costume embroidered wool silver jewelry national dress",
         "description": "Norwegian folk costume with regional variations, handmade and passed down.",
         "era": "18th Century - Present",
         "occasion": "National Day, weddings",
@@ -3899,6 +3987,7 @@
     "traditionalGarments": [
       {
         "name": "Krakowiak Costume",
+        "imageQuery": "Polish Krakowiak folk costume Krakow floral embroidery colorful traditional",
         "description": "Colorful folk dress from the Kraków region with floral embroidery.",
         "era": "18th Century - Present",
         "occasion": "Folk festivals, weddings",
@@ -3967,6 +4056,7 @@
     "traditionalGarments": [
       {
         "name": "Fustanella",
+        "imageQuery": "Greek fustanella white pleated skirt Evzones guard traditional costume",
         "description": "White pleated skirt worn by Evzones (Greek presidential guard).",
         "era": "Ancient - Present",
         "occasion": "Military, ceremonial",
@@ -4042,6 +4132,7 @@
     "traditionalGarments": [
       {
         "name": "Kippah",
+        "imageQuery": "Jewish kippah yarmulke small cap embroidered velvet traditional headwear",
         "description": "Small cap worn as sign of respect and piety in Judaism.",
         "era": "Ancient - Present",
         "occasion": "Religious, daily",
@@ -4117,6 +4208,7 @@
     "traditionalGarments": [
       {
         "name": "Shweshwe Dress",
+        "imageQuery": "South African shweshwe dress printed cotton Xhosa Sotho traditional fabric",
         "description": "Distinctive printed cotton fabric from South Africa, used for traditional Xhosa and Sotho dresses.",
         "era": "19th Century - Present",
         "occasion": "Ceremonies, daily",
@@ -4192,6 +4284,7 @@
     "traditionalGarments": [
       {
         "name": "Barong Tagalog",
+        "imageQuery": "Filipino barong tagalog sheer embroidered formal shirt pineapple fiber",
         "description": "National formal shirt made from sheer piña or jusi fabric with intricate embroidery.",
         "era": "Spanish Colonial - Present",
         "occasion": "Formal, weddings",
@@ -4268,6 +4361,7 @@
     "traditionalGarments": [
       {
         "name": "Baju Kurung",
+        "imageQuery": "Malaysian baju kurung traditional Malay tunic skirt songket fabric",
         "description": "Traditional Malay costume with a long tunic and matching skirt.",
         "era": "15th Century - Present",
         "occasion": "Daily, formal, religious",
@@ -4342,6 +4436,7 @@
     "traditionalGarments": [
       {
         "name": "Longyi",
+        "imageQuery": "Myanmar longyi wrap skirt traditional Burmese clothing cylindrical",
         "description": "Cylindrical wrap-around skirt worn by both men and women.",
         "era": "Traditional - Present",
         "occasion": "Daily wear",
@@ -4408,6 +4503,7 @@
     "traditionalGarments": [
       {
         "name": "Deel",
+        "imageQuery": "Mongolian deel robe traditional nomadic silk sash belt garment",
         "description": "Traditional Mongolian robe tied with a silk sash, adapted for nomadic life.",
         "era": "Hunnic Period - Present",
         "occasion": "Daily, ceremonial, festivals",
@@ -4474,6 +4570,7 @@
     "traditionalGarments": [
       {
         "name": "Gho",
+        "imageQuery": "Bhutanese gho knee length robe men national dress traditional belt",
         "description": "Knee-length robe for men, tied at the waist with a belt. National dress of Bhutan.",
         "era": "17th Century - Present",
         "occasion": "Daily, required in offices",
@@ -4485,6 +4582,7 @@
       },
       {
         "name": "Kira",
+        "imageQuery": "Bhutanese kira ankle length dress women wrapped pinned shoulder traditional",
         "description": "Ankle-length dress for women, wrapped and pinned at shoulders.",
         "era": "Traditional - Present",
         "occasion": "Daily, formal",
@@ -4546,6 +4644,7 @@
     "traditionalGarments": [
       {
         "name": "Guayabera",
+        "imageQuery": "Cuban guayabera shirt pleated four pockets linen white tropical formal",
         "description": "Lightweight pleated shirt with four pockets, national garment of Cuba.",
         "era": "18th Century - Present",
         "occasion": "Formal, daily, tropical wear",

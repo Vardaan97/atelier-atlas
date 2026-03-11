@@ -1,0 +1,182 @@
+{
+  "IN": {
+    "traditions": ["Kundan", "Meenakari", "Temple Jewelry", "Polki", "Jadau"],
+    "materials": ["Gold", "Silver", "Diamonds", "Rubies", "Emeralds", "Pearls"],
+    "significance": "World's largest gold consumer; jewelry is integral to weddings, festivals, and cultural identity across all regions",
+    "marketRank": 1
+  },
+  "IT": {
+    "traditions": ["Cameo Carving", "Gold Filigree", "Murano Glass Beads", "Coral Jewelry"],
+    "materials": ["Gold", "Coral", "Cameo Shell", "Murano Glass", "Silver"],
+    "significance": "Historic center of European goldsmithing; home to Bulgari, Buccellati, and the Ponte Vecchio jewelers' tradition",
+    "marketRank": 3
+  },
+  "FR": {
+    "traditions": ["Art Nouveau", "Art Deco", "Haute Joaillerie", "Enamelwork"],
+    "materials": ["Platinum", "Diamonds", "Sapphires", "Emeralds", "Enamel"],
+    "significance": "Home to Cartier, Van Cleef & Arpels, and Boucheron; Paris is the global capital of haute joaillerie",
+    "marketRank": 4
+  },
+  "CN": {
+    "traditions": ["Jade Carving", "Cloisonné", "Kingfisher Feather Inlay", "Silver Filigree"],
+    "materials": ["Jade", "Gold", "Silver", "Pearls", "Coral", "Turquoise"],
+    "significance": "5,000-year jade tradition; world's largest jewelry manufacturing hub and second-largest consumer market",
+    "marketRank": 2
+  },
+  "US": {
+    "traditions": ["Navajo Turquoise", "Zuni Inlay", "Art Deco", "Contemporary Design"],
+    "materials": ["Gold", "Silver", "Turquoise", "Diamonds", "Platinum"],
+    "significance": "World's largest jewelry consumer market; home to Tiffany & Co. and major diamond trading hub in New York",
+    "marketRank": 5
+  },
+  "JP": {
+    "traditions": ["Kanzashi", "Maki-e Lacquer", "Mokume-gane", "Pearl Cultivation"],
+    "materials": ["Gold", "Silver", "Akoya Pearls", "Lacquer", "Platinum"],
+    "significance": "Invented cultured pearl industry (Mikimoto); mokume-gane metalworking technique prized worldwide",
+    "marketRank": 6
+  },
+  "GB": {
+    "traditions": ["Crown Jewels", "Hallmarking", "Scottish Thistle", "Celtic Knotwork"],
+    "materials": ["Gold", "Silver", "Platinum", "Diamonds", "Scottish Agate"],
+    "significance": "Home of the world's oldest hallmarking system; Hatton Garden is London's historic jewelry quarter",
+    "marketRank": 7
+  },
+  "DE": {
+    "traditions": ["Pforzheim Goldsmithing", "Bauhaus Design", "Idar-Oberstein Gemcutting"],
+    "materials": ["Gold", "Silver", "Agate", "Jasper", "Steel"],
+    "significance": "Pforzheim is 'Gold City' of Germany; Idar-Oberstein has been a gemstone cutting center since the 15th century",
+    "marketRank": 10
+  },
+  "TR": {
+    "traditions": ["Ottoman Goldwork", "Filigree", "Granulation", "Evil Eye (Nazar)"],
+    "materials": ["Gold", "Silver", "Turquoise", "Glass", "Diamonds"],
+    "significance": "Istanbul's Grand Bazaar is one of the world's oldest jewelry markets; Turkey is 4th largest gold consumer",
+    "marketRank": 8
+  },
+  "TH": {
+    "traditions": ["Nielloware", "Gold-Leaf Buddha", "Silver Hill-Tribe Jewelry"],
+    "materials": ["Gold", "Silver", "Rubies", "Sapphires", "Niello"],
+    "significance": "World's largest colored gemstone cutting and trading center; Bangkok is the global hub for ruby and sapphire",
+    "marketRank": 9
+  },
+  "BR": {
+    "traditions": ["Indigenous Seed Beads", "Imperial Gemstone Jewelry", "Amazonian Featherwork"],
+    "materials": ["Gold", "Emeralds", "Tourmalines", "Aquamarines", "Topaz"],
+    "significance": "World's leading producer of colored gemstones; H.Stern and Amsterdam Sauer are globally recognized brands",
+    "marketRank": 12
+  },
+  "MX": {
+    "traditions": ["Oaxacan Filigree", "Taxco Silver", "Mazahua Beadwork", "Mixtec Goldwork"],
+    "materials": ["Silver", "Gold", "Obsidian", "Turquoise", "Amber"],
+    "significance": "Taxco is Mexico's 'Silver Capital'; silver jewelry tradition dates to pre-Columbian Mixtec artisans",
+    "marketRank": 15
+  },
+  "EG": {
+    "traditions": ["Pharaonic Revival", "Bedouin Silver", "Islamic Geometric", "Scarab Amulets"],
+    "materials": ["Gold", "Silver", "Lapis Lazuli", "Turquoise", "Carnelian"],
+    "significance": "6,000-year goldsmithing tradition; Khan el-Khalili bazaar remains a center for traditional craftsmanship",
+    "marketRank": 18
+  },
+  "MA": {
+    "traditions": ["Berber Silver", "Amazigh Fibulae", "Tuareg Crosses", "Coral Necklaces"],
+    "materials": ["Silver", "Coral", "Amber", "Enamel", "Semi-Precious Stones"],
+    "significance": "Berber tribal jewelry carries deep symbolic meaning; each region has distinct designs passed through generations",
+    "marketRank": 25
+  },
+  "NG": {
+    "traditions": ["Coral Bead Crowns", "Benin Bronze Casting", "Igbo Silver Anklets", "Fulani Gold Earrings"],
+    "materials": ["Gold", "Coral", "Bronze", "Silver", "Glass Beads"],
+    "significance": "Benin bronzes represent one of Africa's greatest metalworking traditions; coral beads signify royal status",
+    "marketRank": 22
+  },
+  "KR": {
+    "traditions": ["Norigae Pendants", "Binyeo Hairpins", "Joseon Court Ornaments"],
+    "materials": ["Gold", "Jade", "Silver", "Amethyst", "Coral"],
+    "significance": "Rich Joseon dynasty jewelry heritage; Seoul is now a major center for contemporary fine jewelry design",
+    "marketRank": 11
+  },
+  "ES": {
+    "traditions": ["Damasquinado (Toledo)", "Majorcan Pearls", "Jet Jewelry (Azabache)"],
+    "materials": ["Gold", "Silver", "Jet", "Pearls", "Damascus Steel"],
+    "significance": "Toledo's damascene (gold inlay on blackened steel) is a UNESCO-recognized craft dating to Moorish artisans",
+    "marketRank": 14
+  },
+  "GR": {
+    "traditions": ["Byzantine Goldwork", "Minoan Revival", "Filigree", "Meander Patterns"],
+    "materials": ["Gold", "Silver", "Rubies", "Sapphires", "Pearls"],
+    "significance": "Ancient Greek goldsmiths influenced all Western jewelry; Thessaloniki remains a goldsmithing center",
+    "marketRank": 20
+  },
+  "PE": {
+    "traditions": ["Inca Goldwork", "Filigree", "Muyu (Spondylus Shell)", "Andean Silver"],
+    "materials": ["Gold", "Silver", "Spondylus Shell", "Turquoise", "Copper"],
+    "significance": "Pre-Columbian metallurgy among the most advanced in the ancient world; gold was sacred to the Inca",
+    "marketRank": 23
+  },
+  "RU": {
+    "traditions": ["Fabergé Eggs", "Rostov Enamel", "Ural Gemstones", "Amber Jewelry"],
+    "materials": ["Gold", "Platinum", "Amber", "Malachite", "Diamonds", "Enamel"],
+    "significance": "Home of Fabergé and the Ural gemstone mines; Russian amber and malachite are globally prized",
+    "marketRank": 13
+  },
+  "ZA": {
+    "traditions": ["Zulu Beadwork", "Ndebele Rings", "Gold Rush Heritage", "Wire Art"],
+    "materials": ["Gold", "Platinum", "Diamonds", "Glass Beads", "Wire"],
+    "significance": "World's largest producer of platinum and among the top gold and diamond producers",
+    "marketRank": 16
+  },
+  "AE": {
+    "traditions": ["Emirati Gold Souks", "Bedouin Silver", "Islamic Calligraphy Pendants"],
+    "materials": ["Gold", "Silver", "Diamonds", "Pearls", "Gemstones"],
+    "significance": "Dubai Gold Souk is the world's largest gold market; UAE is a major global jewelry trading hub",
+    "marketRank": 17
+  },
+  "ET": {
+    "traditions": ["Coptic Crosses", "Habesha Jewelry", "Filigree Headpieces"],
+    "materials": ["Gold", "Silver", "Amber", "Beads"],
+    "significance": "Distinctive Coptic cross designs vary by region with over 200 documented styles",
+    "marketRank": 28
+  },
+  "ID": {
+    "traditions": ["Balinese Silver", "Javanese Gold", "Dayak Beadwork", "Toraja Jewelry"],
+    "materials": ["Gold", "Silver", "Pearls", "Coral", "Semi-Precious Stones"],
+    "significance": "Celuk village in Bali is renowned for intricate silverwork; Indonesia produces South Sea pearls",
+    "marketRank": 19
+  },
+  "MM": {
+    "traditions": ["Ruby and Jade Trade", "Burmese Lacquer Jewelry", "Hill Tribe Silver"],
+    "materials": ["Rubies", "Jade", "Sapphires", "Gold", "Silver", "Lacquer"],
+    "significance": "Mogok Valley produces the world's finest 'pigeon blood' rubies; Myanmar jade is highly prized in Asia",
+    "marketRank": 21
+  },
+  "PL": {
+    "traditions": ["Amber Crafting", "Folk Silver", "Silesian Filigree"],
+    "materials": ["Amber", "Silver", "Gold", "Coral"],
+    "significance": "Gdansk is the world capital of amber; Polish amber jewelry tradition spans over 6,000 years",
+    "marketRank": 24
+  },
+  "CO": {
+    "traditions": ["Muisca Goldwork", "Emerald Jewelry", "Quimbaya Casting"],
+    "materials": ["Gold", "Emeralds", "Silver", "Platinum"],
+    "significance": "Produces 70-90% of the world's emeralds; the Muisca 'El Dorado' legend originated from their gold tradition",
+    "marketRank": 26
+  },
+  "LK": {
+    "traditions": ["Kandyan Jewelry", "Moonstone Crafting", "Blue Sapphire Settings"],
+    "materials": ["Sapphires", "Rubies", "Moonstones", "Gold", "Silver"],
+    "significance": "Known as 'Ratna Dweepa' (Island of Gems); Sri Lankan blue sapphires are among the world's finest",
+    "marketRank": 27
+  },
+  "GH": {
+    "traditions": ["Ashanti Gold Weights", "Krobo Beads", "Adinkra Symbol Pendants"],
+    "materials": ["Gold", "Glass Beads", "Brass", "Silver"],
+    "significance": "Gold Coast heritage; Ashanti gold weights are both currency and art, now coveted by collectors worldwide",
+    "marketRank": 29
+  },
+  "AF": {
+    "traditions": ["Kuchi Tribal", "Lapis Lazuli Jewelry", "Turkmen Silver"],
+    "materials": ["Silver", "Lapis Lazuli", "Turquoise", "Carnelian", "Gold"],
+    "significance": "World's primary source of lapis lazuli for over 6,000 years; Kuchi nomadic jewelry is iconic tribal art",
+    "marketRank": 30
+  }
+}

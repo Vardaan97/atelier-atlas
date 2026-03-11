@@ -454,7 +454,7 @@ export function FilterSidebar() {
     <AnimatePresence>
       {filterSidebarOpen && (
         <>
-          {/* Mobile overlay backdrop */}
+          {/* Overlay backdrop — visible on tablets and below (< xl) */}
           <motion.div
             key="filter-overlay"
             variants={overlayVariants}
@@ -462,10 +462,10 @@ export function FilterSidebar() {
             animate="visible"
             exit="exit"
             onClick={() => setFilterSidebarOpen(false)}
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm xl:hidden"
           />
 
-          {/* Sidebar panel */}
+          {/* Sidebar panel — overlay on < xl, inline on xl+ */}
           <motion.aside
             key="filter-sidebar"
             variants={sidebarVariants}
@@ -477,7 +477,8 @@ export function FilterSidebar() {
               'w-full md:w-80 lg:w-[340px]',
               'bg-[#0A0A1A]/95 backdrop-blur-xl',
               'border-r border-white/10',
-              'shadow-2xl shadow-black/50'
+              'shadow-2xl shadow-black/50',
+              'xl:relative xl:z-auto xl:shadow-none'
             )}
           >
             {/* ---- Header ---- */}
@@ -696,7 +697,7 @@ export function FilterSidebar() {
             </div>
 
             {/* ---- Sticky footer ---- */}
-            <div className="border-t border-white/10 px-4 py-3 space-y-2 bg-[#0A0A1A]/95 backdrop-blur-xl">
+            <div className="border-t border-white/10 px-4 py-3 space-y-2 bg-[#0A0A1A]/95 backdrop-blur-xl safe-area-bottom">
               <div className="flex items-center justify-between text-[10px] font-mono text-muted">
                 <span>
                   {filteredCount} of {countries.length} countries

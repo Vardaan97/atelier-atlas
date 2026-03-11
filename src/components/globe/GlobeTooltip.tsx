@@ -7,8 +7,9 @@ export function GlobeTooltip() {
   const tooltip = useGlobeStore((s) => s.tooltip);
   const activeMetric = useGlobeStore((s) => s.activeMetric);
   const countries = useGlobeStore((s) => s.countries);
+  const panelOpen = useGlobeStore((s) => s.panelOpen);
 
-  if (!tooltip) return null;
+  if (!tooltip || panelOpen) return null;
 
   const country = countries.find((c) => c.iso === tooltip.iso);
 

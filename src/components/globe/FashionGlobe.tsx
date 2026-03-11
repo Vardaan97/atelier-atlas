@@ -5,8 +5,11 @@ import dynamic from 'next/dynamic';
 import { useGlobeStore } from '@/store/useGlobeStore';
 import { GLOBE, GEOJSON_URL, METRICS, FASHION_CAPITALS, FASHION_ARCS } from '@/lib/constants';
 import { interpolateColor } from '@/lib/utils';
+import { addSpaceBackground } from './spaceBackground';
+import fashionEventsData from '@/data/fashion-events.json';
 import type { GeoJSON, GeoFeature } from '@/types/globe';
 import type { CountryBase } from '@/types/country';
+import type { FashionEvent } from '@/types/api';
 
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
@@ -120,18 +123,60 @@ export function FashionGlobe() {
     return { min: Math.min(...values), max: Math.max(...values) };
   }, [countries, activeMetric]);
 
-  // Fashion week city points — shown in fashionWeek overlay mode
+  // Fashion events cast to typed array
+  const fashionEvents = useMemo(() => fashionEventsData as FashionEvent[], []);
+
+  // Build a lookup: city -> events for tooltip enrichment
+  const cityEventsMap = useMemo(() => {
+    const map = new Map<string, FashionEvent[]>();
+    for (const event of fashionEvents) {
+      const key = event.city.toLowerCase();
+      const existing = map.get(key) || [];
+      existing.push(event);
+      map.set(key, existing);
+    }
+    return map;
+  }, [fashionEvents]);
+
+  // Deduplicated city points from events data — shown in fashionWeek overlay mode
   const fashionWeekPoints = useMemo(() => {
     if (overlayMode !== 'fashionWeek') return [];
-    return FASHION_CAPITALS.map((cap) => ({
-      lat: cap.lat,
-      lng: cap.lng,
-      city: cap.city,
-      color: cap.tier === 'A' ? '#E94560' : '#FF5A7A',
-      altitude: cap.tier === 'A' ? 0.12 : 0.08,
-      radius: cap.tier === 'A' ? 0.5 : 0.35,
+
+    // Deduplicate by city (use the highest-tier event per city)
+    const cityMap = new Map<string, { lat: number; lng: number; city: string; tier: string; eventCount: number; topEvent: FashionEvent }>();
+
+    for (const event of fashionEvents) {
+      const key = event.city.toLowerCase();
+      const existing = cityMap.get(key);
+      const tierOrder: Record<string, number> = { A: 0, B: 1, C: 2 };
+
+      if (!existing || (tierOrder[event.tier] ?? 3) < (tierOrder[existing.tier] ?? 3)) {
+        cityMap.set(key, {
+          lat: event.lat,
+          lng: event.lng,
+          city: event.city,
+          tier: event.tier,
+          eventCount: (existing?.eventCount ?? 0) + 1,
+          topEvent: event,
+        });
+      } else {
+        existing.eventCount += 1;
+      }
+    }
+
+    return Array.from(cityMap.values()).map((pt) => ({
+      lat: pt.lat,
+      lng: pt.lng,
+      city: pt.city,
+      tier: pt.tier,
+      eventCount: pt.eventCount,
+      topEventName: pt.topEvent.name,
+      topEventType: pt.topEvent.type,
+      color: pt.tier === 'A' ? '#E94560' : pt.tier === 'B' ? '#FF5A7A' : '#FF8A9E',
+      altitude: pt.tier === 'A' ? 0.12 : pt.tier === 'B' ? 0.08 : 0.05,
+      radius: pt.tier === 'A' ? 0.5 : pt.tier === 'B' ? 0.35 : 0.25,
     }));
-  }, [overlayMode]);
+  }, [overlayMode, fashionEvents]);
 
   // Fashion arcs connecting capitals — shown in fashionWeek overlay mode
   const fashionArcData = useMemo(() => {
@@ -202,6 +247,19 @@ export function FashionGlobe() {
       GLOBE.animationDuration
     );
   }, [selectedCountry, countryMap]);
+
+  // Add space background (planets + nebula) once the globe scene is available
+  useEffect(() => {
+    if (!globeRef.current) return;
+
+    // react-globe.gl exposes the Three.js scene via .scene()
+    const globe = globeRef.current as { scene: () => import('three').Scene };
+    const scene = globe.scene();
+    if (!scene) return;
+
+    const { dispose } = addSpaceBackground(scene);
+    return () => dispose();
+  }, [geoData]); // geoData triggers once globe is mounted & ready
 
   const getPolygonColor = useCallback(
     (feat: object) => {
@@ -324,6 +382,57 @@ export function FashionGlobe() {
     [countryMap, activeMetric, setTooltip]
   );
 
+  // Build rich HTML tooltip for fashion event points
+  const getPointLabel = useCallback(
+    (d: object) => {
+      const point = d as { city: string; tier: string; topEventName: string; topEventType: string; eventCount: number };
+      const cityKey = point.city.toLowerCase();
+      const cityEvents = cityEventsMap.get(cityKey) || [];
+
+      const typeColors: Record<string, string> = {
+        'fashion-week': '#E94560',
+        'trade-show': '#4A90D9',
+        'jewelry-show': '#FFB800',
+      };
+      const typeLabels: Record<string, string> = {
+        'fashion-week': 'Fashion Week',
+        'trade-show': 'Trade Show',
+        'jewelry-show': 'Jewelry',
+      };
+
+      const tierBg: Record<string, string> = {
+        A: 'rgba(233,69,96,0.25)',
+        B: 'rgba(15,52,96,0.5)',
+        C: 'rgba(255,255,255,0.1)',
+      };
+
+      const eventsHtml = cityEvents.slice(0, 4).map((e) => {
+        const color = typeColors[e.type] || '#fff';
+        const label = typeLabels[e.type] || e.type;
+        return `<div style="display:flex;align-items:center;gap:6px;margin-top:4px;">
+          <span style="width:6px;height:6px;border-radius:50%;background:${color};flex-shrink:0;"></span>
+          <span style="font-size:11px;color:#ddd;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${e.name}</span>
+          <span style="font-size:9px;color:${color};background:${color}22;padding:1px 5px;border-radius:4px;white-space:nowrap;">${label}</span>
+        </div>`;
+      }).join('');
+
+      const moreHtml = cityEvents.length > 4
+        ? `<div style="font-size:10px;color:#8B8FA3;margin-top:4px;">+${cityEvents.length - 4} more events</div>`
+        : '';
+
+      return `<div style="background:rgba(10,10,26,0.95);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:12px 14px;min-width:200px;max-width:280px;box-shadow:0 8px 32px rgba(0,0,0,0.5);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <span style="font-size:14px;font-weight:700;color:#F0F0F5;">${point.city}</span>
+          <span style="font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;background:${tierBg[point.tier] || tierBg.C};color:#F0F0F5;">Tier ${point.tier}</span>
+        </div>
+        <div style="font-size:10px;color:#8B8FA3;margin-bottom:6px;">${cityEvents.length} fashion event${cityEvents.length !== 1 ? 's' : ''}</div>
+        ${eventsHtml}
+        ${moreHtml}
+      </div>`;
+    },
+    [cityEventsMap]
+  );
+
   // Panel is lg:w-[50%] (1024px+), below that it's full width overlay
   const isLargeScreen = dimensions.width >= 1024;
   const globeWidth = panelOpen && isLargeScreen ? dimensions.width * 0.5 : dimensions.width;
@@ -372,6 +481,7 @@ export function FashionGlobe() {
         pointColor="color"
         pointAltitude="altitude"
         pointRadius="radius"
+        pointLabel={getPointLabel}
         pointsMerge={false}
         // Fashion capital connection arcs
         arcsData={fashionArcData}

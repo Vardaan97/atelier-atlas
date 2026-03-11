@@ -60,6 +60,7 @@ export const CACHE_TTL = {
   stockImage: 7 * 24 * 60 * 60 * 1000, // 7 days
   tradeData: 30 * 24 * 60 * 60 * 1000,
   search: 24 * 60 * 60 * 1000, // 1 day
+  fashionNews: 30 * 60 * 1000, // 30 minutes
 } as const;
 
 export const REGIONS = [

@@ -1,7 +1,9 @@
 'use client';
 
-import { CloudSun, Droplets, Thermometer, Globe2, Leaf, Sparkles } from 'lucide-react';
+import { CloudSun, Droplets, Thermometer, Globe2, Leaf, Sparkles, Calendar } from 'lucide-react';
 import { Skeleton } from '@/components/ui/Skeleton';
+import { EventsInline } from './FashionCalendar';
+import { useEvents } from '@/hooks/useEvents';
 import type { CountryBase, CountryProfile } from '@/types/country';
 
 interface CultureClimateTabProps {
@@ -11,6 +13,8 @@ interface CultureClimateTabProps {
 }
 
 export function CultureClimateTab({ country, profile, profileLoading }: CultureClimateTabProps) {
+  const { events, loading: eventsLoading } = useEvents(country.iso);
+
   if (profileLoading) {
     return <CultureSkeleton />;
   }
@@ -95,8 +99,22 @@ export function CultureClimateTab({ country, profile, profileLoading }: CultureC
         </section>
       )}
 
-      {/* Sustainability */}
+      {/* Fashion Events */}
       <section className="animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+        <div className="flex items-center gap-2 mb-4">
+          <Calendar className="w-4 h-4 text-accent" />
+          <h3 className="text-sm font-medium text-muted uppercase tracking-wider">
+            Fashion Events
+          </h3>
+          {events.length > 0 && (
+            <span className="ml-auto text-[10px] font-mono text-accent">{events.length} event{events.length !== 1 ? 's' : ''}</span>
+          )}
+        </div>
+        <EventsInline events={events} loading={eventsLoading} countryName={country.name} />
+      </section>
+
+      {/* Sustainability */}
+      <section className="animate-fade-in-up" style={{ animationDelay: '300ms' }}>
         <div className="flex items-center gap-2 mb-4">
           <Leaf className="w-4 h-4 text-accent" />
           <h3 className="text-sm font-medium text-muted uppercase tracking-wider">
@@ -128,7 +146,7 @@ export function CultureClimateTab({ country, profile, profileLoading }: CultureC
       </section>
 
       {/* Regional Context */}
-      <section className="animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+      <section className="animate-fade-in-up" style={{ animationDelay: '400ms' }}>
         <div className="flex items-center gap-2 mb-4">
           <Sparkles className="w-4 h-4 text-accent" />
           <h3 className="text-sm font-medium text-muted uppercase tracking-wider">

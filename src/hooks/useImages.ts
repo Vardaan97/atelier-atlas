@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import type { ImageResult } from '@/types/api';
 
-const clientCache = new Map<string, ImageResult[]>();
+/** Shared client-side image cache. Exported so the prefetcher can populate it. */
+export const imageClientCache = new Map<string, ImageResult[]>();
 
 export function useImages(query: string | null, count: number = 4) {
   const [images, setImages] = useState<ImageResult[]>([]);
@@ -17,7 +18,7 @@ export function useImages(query: string | null, count: number = 4) {
     }
 
     const cacheKey = `${query}:${count}`;
-    const cached = clientCache.get(cacheKey);
+    const cached = imageClientCache.get(cacheKey);
     if (cached) {
       setImages(cached);
       return;
@@ -34,7 +35,7 @@ export function useImages(query: string | null, count: number = 4) {
       .then((res) => res.json())
       .then((data) => {
         const results = data.data || [];
-        clientCache.set(cacheKey, results);
+        imageClientCache.set(cacheKey, results);
         setImages(results);
       })
       .catch((err) => {

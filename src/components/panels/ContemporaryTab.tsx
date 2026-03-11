@@ -2,6 +2,7 @@
 
 import { Calendar, User, TrendingUp, Wifi, ShoppingCart, Award } from 'lucide-react';
 import { Skeleton } from '@/components/ui/Skeleton';
+import { TrendsSection } from './TrendsSection';
 import type { CountryBase, CountryProfile } from '@/types/country';
 
 interface ContemporaryTabProps {
@@ -18,25 +19,25 @@ export function ContemporaryTab({ country, profile, profileLoading }: Contempora
     return <ContemporarySkeleton />;
   }
 
-  const hasContent = (scene?.fashionWeeks && scene.fashionWeeks.length > 0)
+  const hasProfileContent = (scene?.fashionWeeks && scene.fashionWeeks.length > 0)
     || country.fashionWeeks.length > 0
     || designers.length > 0
     || (scene?.emergingTrends && scene.emergingTrends.length > 0);
 
-  if (!hasContent) {
-    return (
-      <div className="flex flex-col items-center justify-center py-16 text-center">
-        <TrendingUp className="w-10 h-10 text-muted/40 mb-3" />
-        <p className="text-muted text-sm">No contemporary data available</p>
-        <p className="text-muted/50 text-xs mt-1">
-          AI profile needed for full contemporary analysis
-        </p>
-      </div>
-    );
-  }
-
+  // Always render -- TrendsSection fetches its own data and is always relevant
   return (
     <div className="space-y-6">
+      {/* Google Trends — always shown */}
+      <TrendsSection countryIso={country.iso} />
+
+      {!hasProfileContent && !profileLoading && (
+        <div className="flex flex-col items-center justify-center py-8 text-center border-t border-white/10 mt-4">
+          <TrendingUp className="w-8 h-8 text-muted/30 mb-2" />
+          <p className="text-muted text-xs">
+            AI profile needed for additional contemporary analysis
+          </p>
+        </div>
+      )}
       {/* Fashion Weeks */}
       {((scene?.fashionWeeks && scene.fashionWeeks.length > 0) || country.fashionWeeks.length > 0) && (
         <section className="animate-fade-in-up">

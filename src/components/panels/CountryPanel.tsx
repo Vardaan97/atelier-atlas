@@ -35,6 +35,17 @@ export function CountryPanel() {
 
   const { profile, loading: profileLoading } = useAiProfile(country || null);
 
+  // Mobile-friendly short tab labels
+  const mobileTabLabels: Record<string, string> = {
+    traditional: 'Trad.',
+    colors: 'Colors',
+    timeline: 'Timeline',
+    industry: 'Industry',
+    culture: 'Culture',
+    contemporary: 'Modern',
+    'ai-studio': 'AI',
+  };
+
   // Shared panel content
   const panelContent = country ? (
     <>
@@ -134,19 +145,20 @@ export function CountryPanel() {
         onValueChange={setActiveTab}
         className="flex flex-col flex-1 min-h-0"
       >
-        <Tabs.List className="flex border-b border-white/10 px-4 shrink-0 overflow-x-auto">
+        <Tabs.List className="flex border-b border-white/10 px-4 shrink-0 overflow-x-auto scrollbar-hide">
           {PANEL_TABS.map((tab) => (
             <Tabs.Trigger
               key={tab.id}
               value={tab.id}
               className={cn(
                 'px-3 py-2.5 text-xs font-medium whitespace-nowrap transition-all border-b-2 min-h-[44px]',
+                isMobile && 'px-2 text-[11px]',
                 activeTab === tab.id
                   ? 'border-accent text-accent'
                   : 'border-transparent text-muted hover:text-foreground'
               )}
             >
-              {tab.label}
+              {isMobile ? (mobileTabLabels[tab.id] || tab.label) : tab.label}
             </Tabs.Trigger>
           ))}
         </Tabs.List>
@@ -202,7 +214,7 @@ export function CountryPanel() {
                 setPanelOpen(false);
               }
             }}
-            className="fixed bottom-0 left-0 right-0 z-30 glass-panel border-t border-white/10 rounded-t-2xl overflow-hidden flex flex-col"
+            className="fixed bottom-0 left-0 right-0 z-30 glass-panel border-t border-white/10 rounded-t-2xl overflow-hidden flex flex-col safe-area-bottom"
             style={{ maxHeight: '80vh' }}
           >
             {panelContent}
