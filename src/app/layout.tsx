@@ -21,6 +21,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://atelier-atlas.vercel.app'),
   title: 'Atelier Atlas — Global Fashion Intelligence',
   description:
     'Bloomberg-style interactive 3D globe mapping fashion trends, traditional clothing, industry data, and cultural intelligence across 195 countries.',
@@ -32,6 +33,24 @@ export const metadata: Metadata = {
     'textile',
     'fashion intelligence',
   ],
+  openGraph: {
+    title: 'Atelier Atlas — Global Fashion Intelligence',
+    description:
+      'Bloomberg-style interactive 3D globe mapping fashion trends, traditional clothing, industry data, and cultural intelligence across 195 countries.',
+    type: 'website',
+    siteName: 'Atelier Atlas',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Atelier Atlas — Global Fashion Intelligence',
+    description:
+      'Bloomberg-style interactive 3D globe mapping fashion trends, traditional clothing, industry data, and cultural intelligence across 195 countries.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -44,6 +63,25 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${jetbrains.variable} font-sans antialiased bg-[#0A0A1A] text-[#F0F0F5] overflow-hidden`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: 'Atelier Atlas',
+              description:
+                'Bloomberg-style interactive 3D globe mapping fashion trends, traditional clothing, industry data, and cultural intelligence across 195 countries.',
+              applicationCategory: 'EducationalApplication',
+              operatingSystem: 'Web Browser',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+              },
+            }),
+          }}
+        />
         {children}
       </body>
     </html>

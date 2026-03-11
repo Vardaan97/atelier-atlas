@@ -1,0 +1,184 @@
+{
+  "fashionDNA": {
+    "traditionalism": 85,
+    "innovation": 92,
+    "sustainability": 65,
+    "luxuryIndex": 98,
+    "streetwearInfluence": 60,
+    "craftsmanship": 100,
+    "globalInfluence": 99
+  },
+  "eras": [
+    {
+      "id": "roman-antiquity",
+      "name": "Roman Antiquity",
+      "yearRange": [
+        -753,
+        476
+      ],
+      "description": "Fashion was a indicator of social status and citizenship, characterized by draped wool and linen garments. The silhouettes emphasized hierarchy through color, specifically the use of Tyrian purple.",
+      "keyGarments": [
+        "Toga",
+        "Stola",
+        "Palla",
+        "Tunica"
+      ],
+      "aiImagePrompt": "Historical illustration of a Roman Senator in a white wool toga with a purple border and a noblewoman in a layered linen stola, ancient Roman forum background, cinematic lighting, hyper-realistic textures."
+    },
+    {
+      "id": "italian-renaissance",
+      "name": "The High Renaissance",
+      "yearRange": [
+        1450,
+        1550
+      ],
+      "description": "A period of opulent display centered in Florence and Venice, featuring heavy brocades, velvets, and intricate embroidery. Menswear introduced the doublet while women wore high-waisted gowns with voluminous slashed sleeves.",
+      "keyGarments": [
+        "Doublet",
+        "Gamurra",
+        "Cioppa",
+        "Codpiece"
+      ],
+      "aiImagePrompt": "16th-century Florentine noble wearing a rich velvet doublet with puffed slashed sleeves and gold embroidery, oil painting style, chiaroscuro lighting, Renaissance palace interior."
+    },
+    {
+      "id": "risorgimento-elegance",
+      "name": "The Risorgimento & Unification",
+      "yearRange": [
+        1815,
+        1871
+      ],
+      "description": "Italian fashion aligned with broader European Romanticism but maintained a distinct focus on fine tailoring and regional silk production. The silhouette transitioned from Empire waistlines to the structured Victorian crinoline.",
+      "keyGarments": [
+        "Frock Coat",
+        "Crinoline Gown",
+        "Mantilla",
+        "Top Hat"
+      ],
+      "aiImagePrompt": "19th-century Italian aristocrats in Milan, man in a tailored black frock coat, woman in a wide silk crinoline dress with lace detailing, neoclassical architecture background."
+    },
+    {
+      "id": "post-war-rebirth",
+      "name": "The Birth of 'Made in Italy'",
+      "yearRange": [
+        1951,
+        1969
+      ],
+      "description": "The 1951 Sala Bianca show in Florence launched Italian high fashion globally. This era focused on 'La Dolce Vita' aesthetics, blending Hollywood glamour with impeccable Mediterranean craftsmanship.",
+      "keyGarments": [
+        "Capri Pants",
+        "Cocktail Dress",
+        "Slim-cut Suit",
+        "Silk Headscarf"
+      ],
+      "aiImagePrompt": "1950s Italian chic, a woman in a fitted floral cocktail dress and cat-eye sunglasses sitting at a Roman cafe, Vespa in the background, vintage film photography style."
+    },
+    {
+      "id": "power-tailoring-boom",
+      "name": "The Rise of the Milanese Stylists",
+      "yearRange": [
+        1975,
+        1995
+      ],
+      "description": "Milan replaced Florence as the fashion capital as ready-to-wear exploded. Giorgio Armani redefined the professional wardrobe with unstructured jackets, while Versace introduced provocative, high-octane glamour.",
+      "keyGarments": [
+        "Unstructured Blazer",
+        "Power Suit",
+        "Chainmail Dress",
+        "Pleated Trousers"
+      ],
+      "aiImagePrompt": "1980s Milanese fashion, a model in an oversized greige Armani power suit with soft shoulders, minimalist urban background, high-contrast fashion editorial photography."
+    },
+    {
+      "id": "modern-intellectualism",
+      "name": "The New Era of Luxury",
+      "yearRange": [
+        1996,
+        2024
+      ],
+      "description": "A shift toward conceptual luxury and heritage preservation. This era is defined by Prada's 'ugly-chic' philosophy and a renewed focus on sustainable artisanal production within the 'Made in Italy' framework.",
+      "keyGarments": [
+        "Nylon Backpack",
+        "Statement Coat",
+        "Deconstructed Knitwear",
+        "Luxury Sneakers"
+      ],
+      "aiImagePrompt": "Contemporary Italian street style in Milan, high-end technical nylon outerwear mixed with heritage wool trousers, sleek modern architecture, sharp focus, 8k resolution."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Como Silk",
+      "type": "Printed",
+      "description": "World-renowned silk produced in the Lake Como region, known for its incredible luster and precision printing.",
+      "origin": "Como, Lombardy",
+      "technique": "Screen and digital printing on high-density silk weave"
+    },
+    {
+      "name": "Biella Wool",
+      "type": "Woven",
+      "description": "Superfine merino wool and cashmere fabrics used by the world's top tailors for luxury suiting.",
+      "origin": "Biella, Piedmont",
+      "technique": "Traditional worsted spinning and weaving using Alpine water for finishing"
+    },
+    {
+      "name": "Florentine Leather",
+      "type": "Dyed",
+      "description": "Supple, vegetable-tanned leather used for high-end accessories and footwear.",
+      "origin": "Florence, Tuscany",
+      "technique": "Traditional vegetable tanning using plant-based tannins"
+    },
+    {
+      "name": "Venetian Velvet",
+      "type": "Woven",
+      "description": "Heavy, plush fabric often featuring 'soprarizzo' techniques with raised patterns.",
+      "origin": "Venice, Veneto",
+      "technique": "Hand-loomed double-cloth weaving"
+    }
+  ],
+  "climate": {
+    "zone": "Mediterranean / Temperate",
+    "avgTemp": 15.5,
+    "humidity": "Moderate",
+    "fashionImplication": "The climate encourages 'Sprezzatura' or effortless layering; lightweight linens and fresce wools are essential for hot summers, while high-quality wool overcoats define the damp, cool winters."
+  },
+  "culturalInfluences": [
+    "Catholicism and Religious Iconography",
+    "The Concept of 'Bella Figura' (Presenting one's best self)",
+    "Regionalism and Local Craft Identity",
+    "Post-War Cinema (Neorealism and Fellini)",
+    "The Opera and Theatrical Grandeur",
+    "Italian Futurism Art Movement",
+    "Family-owned Industrial Dynasties"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Milan Fashion Week",
+        "city": "Milan",
+        "month": "February/September",
+        "tier": "Big Four"
+      },
+      {
+        "name": "Pitti Immagine Uomo",
+        "city": "Florence",
+        "month": "January/June",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Quiet Luxury (Old Money Aesthetic)",
+      "Upcycled Heritage Fabrics",
+      "Gender-Fluid Tailoring",
+      "Technical Outerwear (Gorpcore-Luxury fusion)",
+      "Archival Revivals"
+    ],
+    "digitalPresence": 88,
+    "ecommercePenetration": 72,
+    "notableEvents": [
+      "Met Gala: Heavenly Bodies (Italian influence focus)",
+      "amfAR Gala Milano",
+      "Green Carpet Fashion Awards"
+    ]
+  }
+}

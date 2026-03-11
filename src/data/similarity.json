@@ -1,0 +1,247 @@
+{
+  "FR": [
+    { "iso": "IT", "name": "Italy", "score": 79, "sharedFabrics": ["Silk"], "flag": "🇮🇹" },
+    { "iso": "GB", "name": "United Kingdom", "score": 74, "sharedFabrics": ["Tweed"], "flag": "🇬🇧" },
+    { "iso": "ES", "name": "Spain", "score": 72, "sharedFabrics": ["Lace"], "flag": "🇪🇸" },
+    { "iso": "SE", "name": "Sweden", "score": 67, "sharedFabrics": [], "flag": "🇸🇪" },
+    { "iso": "DE", "name": "Germany", "score": 65, "sharedFabrics": [], "flag": "🇩🇪" }
+  ],
+  "IT": [
+    { "iso": "FR", "name": "France", "score": 79, "sharedFabrics": ["Silk"], "flag": "🇫🇷" },
+    { "iso": "GB", "name": "United Kingdom", "score": 74, "sharedFabrics": ["Wool"], "flag": "🇬🇧" },
+    { "iso": "ES", "name": "Spain", "score": 72, "sharedFabrics": ["Leather"], "flag": "🇪🇸" },
+    { "iso": "DE", "name": "Germany", "score": 68, "sharedFabrics": ["Wool"], "flag": "🇩🇪" },
+    { "iso": "SE", "name": "Sweden", "score": 63, "sharedFabrics": ["Wool"], "flag": "🇸🇪" }
+  ],
+  "US": [
+    { "iso": "BR", "name": "Brazil", "score": 74, "sharedFabrics": ["Cotton", "Denim", "Leather"], "flag": "🇧🇷" },
+    { "iso": "MX", "name": "Mexico", "score": 65, "sharedFabrics": ["Cotton", "Leather"], "flag": "🇲🇽" },
+    { "iso": "AR", "name": "Argentina", "score": 62, "sharedFabrics": ["Leather", "Cotton"], "flag": "🇦🇷" },
+    { "iso": "GB", "name": "United Kingdom", "score": 61, "sharedFabrics": ["Cotton"], "flag": "🇬🇧" },
+    { "iso": "KR", "name": "South Korea", "score": 58, "sharedFabrics": ["Synthetic"], "flag": "🇰🇷" }
+  ],
+  "GB": [
+    { "iso": "DE", "name": "Germany", "score": 76, "sharedFabrics": ["Wool", "Cotton"], "flag": "🇩🇪" },
+    { "iso": "SE", "name": "Sweden", "score": 75, "sharedFabrics": ["Wool", "Cotton"], "flag": "🇸🇪" },
+    { "iso": "FR", "name": "France", "score": 74, "sharedFabrics": ["Tweed"], "flag": "🇫🇷" },
+    { "iso": "IT", "name": "Italy", "score": 74, "sharedFabrics": ["Wool"], "flag": "🇮🇹" },
+    { "iso": "ES", "name": "Spain", "score": 69, "sharedFabrics": ["Cotton"], "flag": "🇪🇸" }
+  ],
+  "JP": [
+    { "iso": "KR", "name": "South Korea", "score": 77, "sharedFabrics": ["Silk"], "flag": "🇰🇷" },
+    { "iso": "CN", "name": "China", "score": 71, "sharedFabrics": ["Silk"], "flag": "🇨🇳" },
+    { "iso": "IN", "name": "India", "score": 68, "sharedFabrics": ["Silk"], "flag": "🇮🇳" },
+    { "iso": "AE", "name": "United Arab Emirates", "score": 63, "sharedFabrics": ["Silk", "Linen"], "flag": "🇦🇪" },
+    { "iso": "VN", "name": "Vietnam", "score": 62, "sharedFabrics": ["Silk", "Linen"], "flag": "🇻🇳" }
+  ],
+  "CN": [
+    { "iso": "IN", "name": "India", "score": 76, "sharedFabrics": ["Silk", "Cotton", "Brocade"], "flag": "🇮🇳" },
+    { "iso": "JP", "name": "Japan", "score": 71, "sharedFabrics": ["Silk"], "flag": "🇯🇵" },
+    { "iso": "TR", "name": "Turkey", "score": 71, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇹🇷" },
+    { "iso": "KR", "name": "South Korea", "score": 68, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇰🇷" },
+    { "iso": "TH", "name": "Thailand", "score": 66, "sharedFabrics": ["Cotton"], "flag": "🇹🇭" }
+  ],
+  "IN": [
+    { "iso": "CN", "name": "China", "score": 76, "sharedFabrics": ["Silk", "Cotton", "Brocade"], "flag": "🇨🇳" },
+    { "iso": "PK", "name": "Pakistan", "score": 74, "sharedFabrics": ["Cotton", "Silk", "Chiffon"], "flag": "🇵🇰" },
+    { "iso": "TR", "name": "Turkey", "score": 70, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇹🇷" },
+    { "iso": "BD", "name": "Bangladesh", "score": 68, "sharedFabrics": ["Cotton"], "flag": "🇧🇩" },
+    { "iso": "KR", "name": "South Korea", "score": 66, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇰🇷" }
+  ],
+  "KR": [
+    { "iso": "JP", "name": "Japan", "score": 77, "sharedFabrics": ["Silk"], "flag": "🇯🇵" },
+    { "iso": "CN", "name": "China", "score": 68, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇨🇳" },
+    { "iso": "IN", "name": "India", "score": 66, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇮🇳" },
+    { "iso": "AE", "name": "United Arab Emirates", "score": 64, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇦🇪" },
+    { "iso": "TH", "name": "Thailand", "score": 63, "sharedFabrics": ["Cotton"], "flag": "🇹🇭" }
+  ],
+  "DE": [
+    { "iso": "SE", "name": "Sweden", "score": 80, "sharedFabrics": ["Wool", "Cotton", "Linen"], "flag": "🇸🇪" },
+    { "iso": "GB", "name": "United Kingdom", "score": 76, "sharedFabrics": ["Wool", "Cotton"], "flag": "🇬🇧" },
+    { "iso": "AU", "name": "Australia", "score": 68, "sharedFabrics": ["Cotton", "Linen"], "flag": "🇦🇺" },
+    { "iso": "ES", "name": "Spain", "score": 67, "sharedFabrics": ["Cotton", "Linen"], "flag": "🇪🇸" },
+    { "iso": "FR", "name": "France", "score": 65, "sharedFabrics": [], "flag": "🇫🇷" }
+  ],
+  "ES": [
+    { "iso": "FR", "name": "France", "score": 72, "sharedFabrics": ["Lace"], "flag": "🇫🇷" },
+    { "iso": "IT", "name": "Italy", "score": 72, "sharedFabrics": ["Leather"], "flag": "🇮🇹" },
+    { "iso": "GB", "name": "United Kingdom", "score": 69, "sharedFabrics": ["Cotton"], "flag": "🇬🇧" },
+    { "iso": "MA", "name": "Morocco", "score": 68, "sharedFabrics": ["Cotton", "Leather", "Linen"], "flag": "🇲🇦" },
+    { "iso": "DE", "name": "Germany", "score": 67, "sharedFabrics": ["Cotton", "Linen"], "flag": "🇩🇪" }
+  ],
+  "BR": [
+    { "iso": "US", "name": "United States", "score": 74, "sharedFabrics": ["Cotton", "Denim", "Leather"], "flag": "🇺🇸" },
+    { "iso": "MX", "name": "Mexico", "score": 70, "sharedFabrics": ["Cotton", "Leather"], "flag": "🇲🇽" },
+    { "iso": "AR", "name": "Argentina", "score": 68, "sharedFabrics": ["Leather", "Cotton"], "flag": "🇦🇷" },
+    { "iso": "CO", "name": "Colombia", "score": 67, "sharedFabrics": ["Cotton", "Leather"], "flag": "🇨🇴" },
+    { "iso": "PE", "name": "Peru", "score": 60, "sharedFabrics": [], "flag": "🇵🇪" }
+  ],
+  "AU": [
+    { "iso": "DE", "name": "Germany", "score": 68, "sharedFabrics": ["Cotton", "Linen"], "flag": "🇩🇪" },
+    { "iso": "SE", "name": "Sweden", "score": 67, "sharedFabrics": ["Cotton", "Linen"], "flag": "🇸🇪" },
+    { "iso": "GB", "name": "United Kingdom", "score": 63, "sharedFabrics": ["Cotton"], "flag": "🇬🇧" },
+    { "iso": "ES", "name": "Spain", "score": 60, "sharedFabrics": ["Cotton", "Linen"], "flag": "🇪🇸" },
+    { "iso": "MA", "name": "Morocco", "score": 58, "sharedFabrics": ["Cotton"], "flag": "🇲🇦" }
+  ],
+  "AE": [
+    { "iso": "SA", "name": "Saudi Arabia", "score": 76, "sharedFabrics": ["Cotton", "Silk", "Gold Thread"], "flag": "🇸🇦" },
+    { "iso": "IR", "name": "Iran", "score": 68, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇮🇷" },
+    { "iso": "TR", "name": "Turkey", "score": 66, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇹🇷" },
+    { "iso": "KR", "name": "South Korea", "score": 64, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇰🇷" },
+    { "iso": "IN", "name": "India", "score": 63, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇮🇳" }
+  ],
+  "SE": [
+    { "iso": "DE", "name": "Germany", "score": 80, "sharedFabrics": ["Wool", "Cotton", "Linen"], "flag": "🇩🇪" },
+    { "iso": "GB", "name": "United Kingdom", "score": 75, "sharedFabrics": ["Wool", "Cotton"], "flag": "🇬🇧" },
+    { "iso": "AU", "name": "Australia", "score": 67, "sharedFabrics": ["Cotton", "Linen"], "flag": "🇦🇺" },
+    { "iso": "FR", "name": "France", "score": 67, "sharedFabrics": [], "flag": "🇫🇷" },
+    { "iso": "ES", "name": "Spain", "score": 63, "sharedFabrics": ["Cotton", "Linen"], "flag": "🇪🇸" }
+  ],
+  "TR": [
+    { "iso": "CN", "name": "China", "score": 71, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇨🇳" },
+    { "iso": "IN", "name": "India", "score": 70, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇮🇳" },
+    { "iso": "IR", "name": "Iran", "score": 70, "sharedFabrics": ["Silk", "Wool", "Cotton"], "flag": "🇮🇷" },
+    { "iso": "MA", "name": "Morocco", "score": 68, "sharedFabrics": ["Cotton", "Wool", "Silk"], "flag": "🇲🇦" },
+    { "iso": "PK", "name": "Pakistan", "score": 67, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇵🇰" }
+  ],
+  "NG": [
+    { "iso": "GH", "name": "Ghana", "score": 82, "sharedFabrics": ["Ankara"], "flag": "🇬🇭" },
+    { "iso": "KE", "name": "Kenya", "score": 68, "sharedFabrics": [], "flag": "🇰🇪" },
+    { "iso": "ET", "name": "Ethiopia", "score": 63, "sharedFabrics": [], "flag": "🇪🇹" },
+    { "iso": "EG", "name": "Egypt", "score": 61, "sharedFabrics": [], "flag": "🇪🇬" },
+    { "iso": "MA", "name": "Morocco", "score": 58, "sharedFabrics": [], "flag": "🇲🇦" }
+  ],
+  "GH": [
+    { "iso": "NG", "name": "Nigeria", "score": 82, "sharedFabrics": ["Ankara"], "flag": "🇳🇬" },
+    { "iso": "KE", "name": "Kenya", "score": 66, "sharedFabrics": ["Cotton"], "flag": "🇰🇪" },
+    { "iso": "ET", "name": "Ethiopia", "score": 63, "sharedFabrics": ["Cotton"], "flag": "🇪🇹" },
+    { "iso": "ID", "name": "Indonesia", "score": 62, "sharedFabrics": ["Batik", "Cotton"], "flag": "🇮🇩" },
+    { "iso": "MA", "name": "Morocco", "score": 58, "sharedFabrics": ["Cotton"], "flag": "🇲🇦" }
+  ],
+  "MA": [
+    { "iso": "EG", "name": "Egypt", "score": 72, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇪🇬" },
+    { "iso": "TR", "name": "Turkey", "score": 68, "sharedFabrics": ["Cotton", "Wool", "Silk"], "flag": "🇹🇷" },
+    { "iso": "ES", "name": "Spain", "score": 68, "sharedFabrics": ["Cotton", "Leather", "Linen"], "flag": "🇪🇸" },
+    { "iso": "IR", "name": "Iran", "score": 66, "sharedFabrics": ["Silk", "Wool", "Cotton"], "flag": "🇮🇷" },
+    { "iso": "KE", "name": "Kenya", "score": 61, "sharedFabrics": ["Cotton"], "flag": "🇰🇪" }
+  ],
+  "EG": [
+    { "iso": "MA", "name": "Morocco", "score": 72, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇲🇦" },
+    { "iso": "VN", "name": "Vietnam", "score": 67, "sharedFabrics": ["Cotton", "Silk", "Linen"], "flag": "🇻🇳" },
+    { "iso": "SA", "name": "Saudi Arabia", "score": 65, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇸🇦" },
+    { "iso": "IR", "name": "Iran", "score": 63, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇮🇷" },
+    { "iso": "KE", "name": "Kenya", "score": 62, "sharedFabrics": ["Cotton"], "flag": "🇰🇪" }
+  ],
+  "ET": [
+    { "iso": "KE", "name": "Kenya", "score": 69, "sharedFabrics": ["Cotton"], "flag": "🇰🇪" },
+    { "iso": "BD", "name": "Bangladesh", "score": 65, "sharedFabrics": ["Cotton"], "flag": "🇧🇩" },
+    { "iso": "GH", "name": "Ghana", "score": 63, "sharedFabrics": ["Cotton"], "flag": "🇬🇭" },
+    { "iso": "NG", "name": "Nigeria", "score": 63, "sharedFabrics": [], "flag": "🇳🇬" },
+    { "iso": "NP", "name": "Nepal", "score": 62, "sharedFabrics": ["Cotton"], "flag": "🇳🇵" }
+  ],
+  "ID": [
+    { "iso": "TH", "name": "Thailand", "score": 73, "sharedFabrics": ["Cotton"], "flag": "🇹🇭" },
+    { "iso": "VN", "name": "Vietnam", "score": 66, "sharedFabrics": ["Cotton"], "flag": "🇻🇳" },
+    { "iso": "LK", "name": "Sri Lanka", "score": 63, "sharedFabrics": ["Cotton", "Batik"], "flag": "🇱🇰" },
+    { "iso": "GH", "name": "Ghana", "score": 62, "sharedFabrics": ["Batik", "Cotton"], "flag": "🇬🇭" },
+    { "iso": "BD", "name": "Bangladesh", "score": 61, "sharedFabrics": ["Cotton"], "flag": "🇧🇩" }
+  ],
+  "TH": [
+    { "iso": "ID", "name": "Indonesia", "score": 73, "sharedFabrics": ["Cotton"], "flag": "🇮🇩" },
+    { "iso": "VN", "name": "Vietnam", "score": 68, "sharedFabrics": ["Cotton"], "flag": "🇻🇳" },
+    { "iso": "CN", "name": "China", "score": 66, "sharedFabrics": ["Cotton"], "flag": "🇨🇳" },
+    { "iso": "KR", "name": "South Korea", "score": 63, "sharedFabrics": ["Cotton"], "flag": "🇰🇷" },
+    { "iso": "IN", "name": "India", "score": 62, "sharedFabrics": ["Cotton"], "flag": "🇮🇳" }
+  ],
+  "VN": [
+    { "iso": "TH", "name": "Thailand", "score": 68, "sharedFabrics": ["Cotton"], "flag": "🇹🇭" },
+    { "iso": "EG", "name": "Egypt", "score": 67, "sharedFabrics": ["Cotton", "Silk", "Linen"], "flag": "🇪🇬" },
+    { "iso": "ID", "name": "Indonesia", "score": 66, "sharedFabrics": ["Cotton"], "flag": "🇮🇩" },
+    { "iso": "BD", "name": "Bangladesh", "score": 66, "sharedFabrics": ["Cotton"], "flag": "🇧🇩" },
+    { "iso": "IR", "name": "Iran", "score": 64, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇮🇷" }
+  ],
+  "PE": [
+    { "iso": "CO", "name": "Colombia", "score": 68, "sharedFabrics": [], "flag": "🇨🇴" },
+    { "iso": "AR", "name": "Argentina", "score": 64, "sharedFabrics": [], "flag": "🇦🇷" },
+    { "iso": "MX", "name": "Mexico", "score": 62, "sharedFabrics": ["Cotton"], "flag": "🇲🇽" },
+    { "iso": "NP", "name": "Nepal", "score": 58, "sharedFabrics": [], "flag": "🇳🇵" },
+    { "iso": "ET", "name": "Ethiopia", "score": 55, "sharedFabrics": [], "flag": "🇪🇹" }
+  ],
+  "MX": [
+    { "iso": "CO", "name": "Colombia", "score": 72, "sharedFabrics": ["Cotton", "Leather"], "flag": "🇨🇴" },
+    { "iso": "BR", "name": "Brazil", "score": 70, "sharedFabrics": ["Cotton", "Leather"], "flag": "🇧🇷" },
+    { "iso": "AR", "name": "Argentina", "score": 68, "sharedFabrics": ["Leather", "Cotton"], "flag": "🇦🇷" },
+    { "iso": "US", "name": "United States", "score": 65, "sharedFabrics": ["Cotton", "Leather"], "flag": "🇺🇸" },
+    { "iso": "PE", "name": "Peru", "score": 62, "sharedFabrics": ["Cotton"], "flag": "🇵🇪" }
+  ],
+  "CO": [
+    { "iso": "MX", "name": "Mexico", "score": 72, "sharedFabrics": ["Cotton", "Leather"], "flag": "🇲🇽" },
+    { "iso": "AR", "name": "Argentina", "score": 71, "sharedFabrics": ["Leather", "Cotton"], "flag": "🇦🇷" },
+    { "iso": "PE", "name": "Peru", "score": 68, "sharedFabrics": [], "flag": "🇵🇪" },
+    { "iso": "BR", "name": "Brazil", "score": 67, "sharedFabrics": ["Cotton", "Leather"], "flag": "🇧🇷" },
+    { "iso": "ET", "name": "Ethiopia", "score": 59, "sharedFabrics": ["Cotton", "Leather"], "flag": "🇪🇹" }
+  ],
+  "AR": [
+    { "iso": "CO", "name": "Colombia", "score": 71, "sharedFabrics": ["Leather", "Cotton"], "flag": "🇨🇴" },
+    { "iso": "MX", "name": "Mexico", "score": 68, "sharedFabrics": ["Leather", "Cotton"], "flag": "🇲🇽" },
+    { "iso": "BR", "name": "Brazil", "score": 68, "sharedFabrics": ["Leather", "Cotton"], "flag": "🇧🇷" },
+    { "iso": "PE", "name": "Peru", "score": 64, "sharedFabrics": [], "flag": "🇵🇪" },
+    { "iso": "MA", "name": "Morocco", "score": 58, "sharedFabrics": ["Leather", "Wool", "Cotton"], "flag": "🇲🇦" }
+  ],
+  "RU": [
+    { "iso": "GB", "name": "United Kingdom", "score": 63, "sharedFabrics": ["Wool"], "flag": "🇬🇧" },
+    { "iso": "DE", "name": "Germany", "score": 62, "sharedFabrics": ["Wool", "Linen"], "flag": "🇩🇪" },
+    { "iso": "SE", "name": "Sweden", "score": 60, "sharedFabrics": ["Wool", "Linen"], "flag": "🇸🇪" },
+    { "iso": "ES", "name": "Spain", "score": 59, "sharedFabrics": ["Lace"], "flag": "🇪🇸" },
+    { "iso": "IT", "name": "Italy", "score": 58, "sharedFabrics": ["Wool"], "flag": "🇮🇹" }
+  ],
+  "IR": [
+    { "iso": "TR", "name": "Turkey", "score": 70, "sharedFabrics": ["Silk", "Wool", "Cotton"], "flag": "🇹🇷" },
+    { "iso": "AE", "name": "United Arab Emirates", "score": 68, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇦🇪" },
+    { "iso": "PK", "name": "Pakistan", "score": 67, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇵🇰" },
+    { "iso": "MA", "name": "Morocco", "score": 66, "sharedFabrics": ["Silk", "Wool", "Cotton"], "flag": "🇲🇦" },
+    { "iso": "SA", "name": "Saudi Arabia", "score": 65, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇸🇦" }
+  ],
+  "SA": [
+    { "iso": "AE", "name": "United Arab Emirates", "score": 76, "sharedFabrics": ["Cotton", "Silk", "Gold Thread"], "flag": "🇦🇪" },
+    { "iso": "EG", "name": "Egypt", "score": 65, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇪🇬" },
+    { "iso": "IR", "name": "Iran", "score": 65, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇮🇷" },
+    { "iso": "PK", "name": "Pakistan", "score": 64, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇵🇰" },
+    { "iso": "TR", "name": "Turkey", "score": 62, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇹🇷" }
+  ],
+  "PK": [
+    { "iso": "IN", "name": "India", "score": 74, "sharedFabrics": ["Cotton", "Silk", "Chiffon"], "flag": "🇮🇳" },
+    { "iso": "BD", "name": "Bangladesh", "score": 72, "sharedFabrics": ["Cotton"], "flag": "🇧🇩" },
+    { "iso": "IR", "name": "Iran", "score": 67, "sharedFabrics": ["Silk", "Cotton"], "flag": "🇮🇷" },
+    { "iso": "TR", "name": "Turkey", "score": 67, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇹🇷" },
+    { "iso": "SA", "name": "Saudi Arabia", "score": 64, "sharedFabrics": ["Cotton", "Silk"], "flag": "🇸🇦" }
+  ],
+  "BD": [
+    { "iso": "PK", "name": "Pakistan", "score": 72, "sharedFabrics": ["Cotton"], "flag": "🇵🇰" },
+    { "iso": "IN", "name": "India", "score": 68, "sharedFabrics": ["Cotton"], "flag": "🇮🇳" },
+    { "iso": "VN", "name": "Vietnam", "score": 66, "sharedFabrics": ["Cotton"], "flag": "🇻🇳" },
+    { "iso": "ET", "name": "Ethiopia", "score": 65, "sharedFabrics": ["Cotton"], "flag": "🇪🇹" },
+    { "iso": "LK", "name": "Sri Lanka", "score": 65, "sharedFabrics": ["Cotton"], "flag": "🇱🇰" }
+  ],
+  "LK": [
+    { "iso": "BD", "name": "Bangladesh", "score": 65, "sharedFabrics": ["Cotton"], "flag": "🇧🇩" },
+    { "iso": "ID", "name": "Indonesia", "score": 63, "sharedFabrics": ["Cotton", "Batik"], "flag": "🇮🇩" },
+    { "iso": "NP", "name": "Nepal", "score": 63, "sharedFabrics": ["Cotton"], "flag": "🇳🇵" },
+    { "iso": "VN", "name": "Vietnam", "score": 62, "sharedFabrics": ["Cotton"], "flag": "🇻🇳" },
+    { "iso": "ET", "name": "Ethiopia", "score": 59, "sharedFabrics": ["Cotton"], "flag": "🇪🇹" }
+  ],
+  "NP": [
+    { "iso": "LK", "name": "Sri Lanka", "score": 63, "sharedFabrics": ["Cotton"], "flag": "🇱🇰" },
+    { "iso": "ET", "name": "Ethiopia", "score": 62, "sharedFabrics": ["Cotton"], "flag": "🇪🇹" },
+    { "iso": "BD", "name": "Bangladesh", "score": 61, "sharedFabrics": ["Cotton"], "flag": "🇧🇩" },
+    { "iso": "IR", "name": "Iran", "score": 59, "sharedFabrics": ["Cotton"], "flag": "🇮🇷" },
+    { "iso": "PE", "name": "Peru", "score": 58, "sharedFabrics": [], "flag": "🇵🇪" }
+  ],
+  "KE": [
+    { "iso": "ET", "name": "Ethiopia", "score": 69, "sharedFabrics": ["Cotton"], "flag": "🇪🇹" },
+    { "iso": "NG", "name": "Nigeria", "score": 68, "sharedFabrics": [], "flag": "🇳🇬" },
+    { "iso": "GH", "name": "Ghana", "score": 66, "sharedFabrics": ["Cotton"], "flag": "🇬🇭" },
+    { "iso": "EG", "name": "Egypt", "score": 62, "sharedFabrics": ["Cotton"], "flag": "🇪🇬" },
+    { "iso": "MA", "name": "Morocco", "score": 61, "sharedFabrics": ["Cotton"], "flag": "🇲🇦" }
+  ]
+}

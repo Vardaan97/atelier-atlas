@@ -8,13 +8,13 @@ import { readFile, writeFile, mkdir } from 'fs/promises';
 import path from 'path';
 
 const TRADE_CACHE_DIR = path.join(process.cwd(), 'src', 'data', 'trade-cache');
+const IS_VERCEL = !!process.env.VERCEL;
 
 async function getFileCachedTrade(iso: string): Promise<TradeData | null> {
   try {
     const filePath = path.join(TRADE_CACHE_DIR, `${iso}.json`);
     const data = await readFile(filePath, 'utf-8');
     const parsed = JSON.parse(data);
-    // Check if file cache is still valid (30 days)
     if (parsed.cachedAt && Date.now() - parsed.cachedAt < CACHE_TTL.tradeData) {
       return parsed.data as TradeData;
     }
@@ -25,6 +25,7 @@ async function getFileCachedTrade(iso: string): Promise<TradeData | null> {
 }
 
 async function setFileCachedTrade(iso: string, data: TradeData): Promise<void> {
+  if (IS_VERCEL) return;
   try {
     await mkdir(TRADE_CACHE_DIR, { recursive: true });
     const filePath = path.join(TRADE_CACHE_DIR, `${iso}.json`);

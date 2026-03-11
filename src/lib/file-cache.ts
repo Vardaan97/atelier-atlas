@@ -4,6 +4,9 @@ import path from 'path';
 const AI_IMAGES_DIR = path.join(process.cwd(), 'src', 'data', 'ai-images');
 const PROFILES_DIR = path.join(process.cwd(), 'src', 'data', 'profiles');
 
+// Vercel has a read-only filesystem after deploy — skip write attempts
+const IS_VERCEL = !!process.env.VERCEL;
+
 function sanitizeKey(key: string): string {
   return key.replace(/[^a-zA-Z0-9-_]/g, '_').slice(0, 200);
 }
@@ -24,6 +27,7 @@ export async function setFileCachedImage(
   url: string,
   prompt: string
 ): Promise<void> {
+  if (IS_VERCEL) return; // Read-only filesystem on Vercel
   try {
     await mkdir(AI_IMAGES_DIR, { recursive: true });
     const filePath = path.join(AI_IMAGES_DIR, `${sanitizeKey(key)}.json`);
@@ -49,6 +53,7 @@ export async function getFileCachedProfile<T>(iso: string): Promise<T | null> {
 }
 
 export async function setFileCachedProfile<T>(iso: string, profile: T): Promise<void> {
+  if (IS_VERCEL) return; // Read-only filesystem on Vercel
   try {
     await mkdir(PROFILES_DIR, { recursive: true });
     const filePath = path.join(PROFILES_DIR, `${iso}.json`);

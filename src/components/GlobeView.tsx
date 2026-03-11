@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useGlobeStore } from '@/store/useGlobeStore';
 import { FashionGlobe } from '@/components/globe/FashionGlobe';
+import { FlatMap } from '@/components/globe/FlatMap';
 import { GlobeControls } from '@/components/globe/GlobeControls';
 import { GlobeTooltip } from '@/components/globe/GlobeTooltip';
 import { CountryPanel } from '@/components/panels/CountryPanel';
@@ -11,11 +12,13 @@ import { FilterSidebar } from '@/components/filters/FilterSidebar';
 import { SearchBar } from '@/components/search/SearchBar';
 import { TimelineSlider } from '@/components/ui/TimelineSlider';
 import { BottomTicker } from '@/components/ui/BottomTicker';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import type { CountryBase } from '@/types/country';
 
 export function GlobeView() {
   const setCountries = useGlobeStore((s) => s.setCountries);
   const globeReady = useGlobeStore((s) => s.globeReady);
+  const isMobile = useIsMobile();
 
   // Load country data
   useEffect(() => {
@@ -40,8 +43,8 @@ export function GlobeView() {
         </div>
       </div>
 
-      {/* Globe */}
-      <FashionGlobe />
+      {/* Globe / FlatMap */}
+      {isMobile ? <FlatMap /> : <FashionGlobe />}
 
       {/* Filter Sidebar */}
       <FilterSidebar />

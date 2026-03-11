@@ -1,0 +1,166 @@
+{
+  "fashionDNA": {
+    "traditionalism": 85,
+    "innovation": 45,
+    "sustainability": 11,
+    "luxuryIndex": 60,
+    "streetwearInfluence": 70,
+    "craftsmanship": 92,
+    "globalInfluence": 35
+  },
+  "eras": [
+    {
+      "id": "berber-numidian-antiquity",
+      "name": "Berber-Numidian Antiquity",
+      "yearRange": [
+        -202,
+        430
+      ],
+      "description": "Early North African attire centered on draped garments and heavy silver ornamentation. The use of the fibula (tazra) to fasten woolen wraps established a silhouette that persists in rural regions today.",
+      "keyGarments": [
+        "Tunic",
+        "Fibula Brooches",
+        "Woolen Haïk"
+      ],
+      "aiImagePrompt": "Ancient Numidian woman wearing a heavy white draped woolen tunic fastened by large silver triangular fibulas, intricate facial tattoos, and layered coral and silver jewelry, Mediterranean landscape background."
+    },
+    {
+      "id": "islamic-golden-age-andalusian",
+      "name": "Islamic Golden Age & Andalusian Influx",
+      "yearRange": [
+        711,
+        1492
+      ],
+      "description": "The arrival of Andalusian refugees brought sophisticated silk weaving and embroidery techniques. Algiers and Tlemcen became hubs for refined urban dress, blending Maghrebi aesthetics with Spanish Islamic luxury.",
+      "keyGarments": [
+        "Kaftan",
+        "Silk Saroual",
+        "Gold-thread embroidery"
+      ],
+      "aiImagePrompt": "14th century Algiers royalty wearing a long silk kaftan with intricate gold thread embroidery, wide sleeves, and a velvet vest, set in a Moorish courtyard with zellige tiles."
+    },
+    {
+      "id": "ottoman-regency-influence",
+      "name": "Ottoman Regency Influence",
+      "yearRange": [
+        1516,
+        1830
+      ],
+      "description": "Algerian fashion integrated Turkish elements, leading to the creation of the Karakou and the Ghlila. This era defined the 'Algiers style' characterized by structured velvet jackets and voluminous trousers.",
+      "keyGarments": [
+        "Karakou",
+        "Ghlila",
+        "Saroual Mdouwer"
+      ],
+      "aiImagePrompt": "18th century Algerian noblewoman in a Karakou, a fitted velvet jacket embroidered with gold 'majbud' wire, paired with silk saroual trousers and a pointed silk cap."
+    },
+    {
+      "id": "colonial-resistance-hybridity",
+      "name": "Colonial Resistance & Hybridity",
+      "yearRange": [
+        1830,
+        1962
+      ],
+      "description": "A period of visual resistance where traditional dress like the Haïk became a symbol of national identity against French cultural imposition. Urbanites began blending European tailoring with traditional accessories.",
+      "keyGarments": [
+        "White Haïk",
+        "M'laya",
+        "Burnous"
+      ],
+      "aiImagePrompt": "1950s Algiers street scene, women draped in voluminous white silk Haïks covering their faces with lace 'aadjar', walking past French colonial architecture."
+    },
+    {
+      "id": "post-independence-socialism",
+      "name": "Post-Independence Socialism",
+      "yearRange": [
+        1962,
+        1989
+      ],
+      "description": "The state-led industrialization focused on textile manufacturing. Fashion reflected a mix of Pan-Arabism and revolutionary austerity, with the rise of the 'Chedda' of Tlemcen as a protected cultural heritage item.",
+      "keyGarments": [
+        "Chedda of Tlemcen",
+        "Blousa Oranaise",
+        "Utility Jackets"
+      ],
+      "aiImagePrompt": "1970s Algerian wedding, a bride wearing the Chedda of Tlemcen, a heavy dress covered in rows of pearls, gold necklaces, and a conical velvet headdress."
+    },
+    {
+      "id": "contemporary-revival",
+      "name": "Contemporary Revival & Streetwear",
+      "yearRange": [
+        2000,
+        2024
+      ],
+      "description": "A resurgence of pride in traditional craftsmanship (Haute Couture Algérienne) alongside a booming youth streetwear scene influenced by the Algerian diaspora in France.",
+      "keyGarments": [
+        "Modern Karakou",
+        "Algeria Football Jersey",
+        "Djellaba 2.0"
+      ],
+      "aiImagePrompt": "Modern Algiers youth wearing a mix of high-end streetwear, a green and white Algeria football jersey, and a designer denim jacket with traditional Berber embroidery motifs."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Majbud",
+      "type": "Embroidered",
+      "description": "A prestigious gold or silver thread embroidery technique using a cardboard base to create a 3D effect on velvet.",
+      "origin": "Algiers",
+      "technique": "Couching gold wire over shaped cutouts."
+    },
+    {
+      "name": "Fetla",
+      "type": "Embroidered",
+      "description": "A delicate, flat gold thread embroidery often used for floral and geometric motifs on festive garments.",
+      "origin": "Annaba",
+      "technique": "Hand-stitching silk-wrapped metallic threads."
+    },
+    {
+      "name": "Kabyle Weave",
+      "type": "Woven",
+      "description": "Brightly colored woolen fabrics featuring geometric Berber symbols, historically used for the Fouta.",
+      "origin": "Kabylia Region",
+      "technique": "Hand-looming with vibrant synthetic and natural dyes."
+    }
+  ],
+  "climate": {
+    "zone": "Mediterranean and Arid",
+    "avgTemp": 18.5,
+    "humidity": "Moderate",
+    "fashionImplication": "Coastal regions favor breathable cottons and silks, while the vast Saharan south necessitates loose, layered cotton garments (Cheche) for sand protection and thermal regulation."
+  },
+  "culturalInfluences": [
+    "Berber/Amazigh Heritage",
+    "Andalusian Refinement",
+    "Ottoman Court Luxury",
+    "French Colonial Tailoring",
+    "Islamic Modesty Standards",
+    "Saharan Tuareg Aesthetics",
+    "Mediterranean Maritime Culture",
+    "The Algerian Diaspora in France"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Algiers Fashion Week",
+        "city": "Algiers",
+        "month": "May",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Neo-Karakou (velvet jackets with jeans)",
+      "Berber-motif Streetwear",
+      "Sustainable Upcycling of Vintage Haïks",
+      "Modest Sportswear",
+      "Hand-painted Silk Scarves"
+    ],
+    "digitalPresence": 65,
+    "ecommercePenetration": 38,
+    "notableEvents": [
+      "Festival of the Traditional Dress",
+      "UNESCO recognition of the Chedda of Tlemcen",
+      "Fashion Star Algeria TV Program"
+    ]
+  }
+}

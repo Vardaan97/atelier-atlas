@@ -132,3 +132,21 @@ html, body {
 .animate-ticker-scroll {
   animation: ticker-scroll 60s linear infinite;
 }
+
+/* ---- Mobile responsive styles ---- */
+@media (max-width: 767px) {
+  /* Touch-friendly tap targets */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Bottom sheet drag handle */
+  .bottom-sheet-handle {
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 auto;
+  }
+}

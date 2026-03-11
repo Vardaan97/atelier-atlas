@@ -1,0 +1,179 @@
+{
+  "fashionDNA": {
+    "traditionalism": 85,
+    "innovation": 92,
+    "sustainability": 72,
+    "luxuryIndex": 98,
+    "streetwearInfluence": 65,
+    "craftsmanship": 95,
+    "globalInfluence": 100
+  },
+  "eras": [
+    {
+      "id": "ancien-regime-rococo",
+      "name": "The Rococo Era",
+      "yearRange": [
+        1715,
+        1789
+      ],
+      "description": "A period of extreme opulence and artifice centered around the court of Versailles. Fashion was a tool for political status, characterized by voluminous silhouettes and intricate ornamentation.",
+      "keyGarments": [
+        "Robe à la française",
+        "Justacorps",
+        "Panniers"
+      ],
+      "aiImagePrompt": "A high-fashion historical portrait of a French noblewoman in 1750 wearing a silk Robe à la française with wide panniers, intricate lace engageantes, and pastel floral embroidery, set in a gilded Versailles salon, soft cinematic lighting."
+    },
+    {
+      "id": "empire-period",
+      "name": "Empire Style",
+      "yearRange": [
+        1800,
+        1815
+      ],
+      "description": "Inspired by Neoclassicism and the Napoleonic campaigns, this era saw a radical shift toward simplicity and Greco-Roman silhouettes. Heavy corsetry was briefly abandoned in favor of high-waisted, lightweight gowns.",
+      "keyGarments": [
+        "Empire waist dress",
+        "Spencer jacket",
+        "Cashmere shawl"
+      ],
+      "aiImagePrompt": "A Napoleonic era fashion illustration of a woman in a white muslin empire-waist gown with gold laurel embroidery, wearing a short velvet Spencer jacket, standing in a neoclassical marble hall."
+    },
+    {
+      "id": "belle-epoque",
+      "name": "La Belle Époque",
+      "yearRange": [
+        1871,
+        1914
+      ],
+      "description": "The golden age of Parisian Haute Couture, led by Charles Frederick Worth. The S-bend silhouette and lavish use of lace and feathers defined the luxury of the pre-war upper class.",
+      "keyGarments": [
+        "S-bend corset",
+        "Hobble skirt",
+        "Picture hat"
+      ],
+      "aiImagePrompt": "A 1900s Parisian street scene featuring a woman in an elegant lace-trimmed afternoon gown with an S-curve silhouette, wearing an oversized feathered picture hat and carrying a silk parasol."
+    },
+    {
+      "id": "the-golden-age-couture",
+      "name": "The New Look & Golden Age",
+      "yearRange": [
+        1947,
+        1959
+      ],
+      "description": "Post-WWII recovery led by Christian Dior's 'New Look', reintroducing ultra-feminine silhouettes with cinched waists and full skirts. This era re-established Paris as the undisputed world fashion capital.",
+      "keyGarments": [
+        "Bar Suit",
+        "Cocktail dress",
+        "Pencil skirt"
+      ],
+      "aiImagePrompt": "A black and white 1950s fashion photograph of a model in the Dior Bar Suit, featuring a structured cream silk jacket with a peplum and a voluminous pleated black wool skirt, posed by the Seine in Paris."
+    },
+    {
+      "id": "space-age-revolution",
+      "name": "Space Age & Youthquake",
+      "yearRange": [
+        1960,
+        1969
+      ],
+      "description": "A shift from haute couture to ready-to-wear (prêt-à-porter) led by designers like André Courrèges and Pierre Cardin. Fashion became geometric, futuristic, and youth-oriented.",
+      "keyGarments": [
+        "Shift dress",
+        "Go-go boots",
+        "PVC raincoat"
+      ],
+      "aiImagePrompt": "1960s French mod fashion featuring a model in a geometric white and silver vinyl mini dress, white patent leather go-go boots, and oversized round sunglasses, studio setting with pop-art colors."
+    },
+    {
+      "id": "le-smoking-era",
+      "name": "The YSL Revolution",
+      "yearRange": [
+        1966,
+        1979
+      ],
+      "description": "Yves Saint Laurent redefined femininity by introducing masculine tailoring into the female wardrobe, most notably the tuxedo for women, signaling a shift in gender norms and social power.",
+      "keyGarments": [
+        "Le Smoking tuxedo",
+        "Safari jacket",
+        "Peasant blouse"
+      ],
+      "aiImagePrompt": "A dramatic 1970s fashion shot of a woman with slicked-back hair wearing a sharp black tuxedo suit with a white ruffled shirt, standing under a Parisian street lamp at night."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Dentelle d'Alençon",
+      "type": "Embroidered",
+      "description": "Known as the 'Queen of Lace', this needle lace is famous for its fine mesh and raised outlines.",
+      "origin": "Alençon, Normandy",
+      "technique": "Hand-stitched needle lace using a horsehair support"
+    },
+    {
+      "name": "Lyon Silk",
+      "type": "Woven",
+      "description": "High-quality jacquard and velvet silks that supplied the royal courts of Europe for centuries.",
+      "origin": "Lyon",
+      "technique": "Jacquard weaving with intricate floral and damask patterns"
+    },
+    {
+      "name": "Breton Jersey",
+      "type": "Knitted",
+      "description": "A durable, heavy-weight cotton knit originally used for naval uniforms, later popularized by Coco Chanel.",
+      "origin": "Brittany",
+      "technique": "Circular knitting with horizontal indigo stripes"
+    },
+    {
+      "name": "Tweed de Maison Lesage",
+      "type": "Woven",
+      "description": "An avant-garde interpretation of tweed incorporating ribbons, sequins, and unconventional threads for Haute Couture.",
+      "origin": "Paris",
+      "technique": "Hand-weaving on traditional looms with mixed-media yarns"
+    }
+  ],
+  "climate": {
+    "zone": "Temperate Maritime",
+    "avgTemp": 12,
+    "humidity": "Moderate",
+    "fashionImplication": "The variable weather encourages sophisticated layering, trench coats, and high-quality knitwear, with a focus on 'trans-seasonal' pieces that transition from damp mornings to mild afternoons."
+  },
+  "culturalInfluences": [
+    "The Court of Louis XIV (The Sun King)",
+    "French Impressionism and Art Nouveau",
+    "Existentialist movement of the Left Bank",
+    "The concept of 'L'art de vivre' (The art of living)",
+    "French Cinema (Nouvelle Vague)",
+    "Colonial history and North African craftsmanship",
+    "The 'Parisienne' archetype of effortless chic"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Paris Fashion Week",
+        "city": "Paris",
+        "month": "February, September",
+        "tier": "Big Four"
+      },
+      {
+        "name": "Paris Haute Couture Week",
+        "city": "Paris",
+        "month": "January, July",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Upcycled Haute Couture",
+      "Neo-Bourgeois tailoring",
+      "Gender-fluid eveningwear",
+      "Hyper-local artisanal manufacturing",
+      "Digital fashion and NFTs in luxury houses"
+    ],
+    "digitalPresence": 90,
+    "ecommercePenetration": 78,
+    "notableEvents": [
+      "The Met Gala French themes",
+      "LVMH Prize for Young Fashion Designers",
+      "Festival d'Hyères",
+      "Andam Fashion Award"
+    ]
+  }
+}
