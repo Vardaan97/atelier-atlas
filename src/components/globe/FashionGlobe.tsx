@@ -2,14 +2,17 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
+import * as THREE from 'three';
 import { useGlobeStore } from '@/store/useGlobeStore';
 import { GLOBE, GEOJSON_URL, METRICS, FASHION_CAPITALS, FASHION_ARCS } from '@/lib/constants';
 import { interpolateColor } from '@/lib/utils';
 import { addSpaceBackground } from './spaceBackground';
+import { PlanetOverlay } from './PlanetOverlay';
 import fashionEventsData from '@/data/fashion-events.json';
 import type { GeoJSON, GeoFeature } from '@/types/globe';
 import type { CountryBase } from '@/types/country';
 import type { FashionEvent } from '@/types/api';
+import type { SpaceCleanup, ClickablePlanet, PlanetInfo } from './spaceBackground';
 
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
@@ -78,8 +81,11 @@ function iso3toIso2(iso3: string): string {
 export function FashionGlobe() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const globeRef = useRef<any>(null);
+  const spaceRef = useRef<SpaceCleanup | null>(null);
   const [geoData, setGeoData] = useState<GeoJSON | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [activePlanet, setActivePlanet] = useState<PlanetInfo | null>(null);
+  const flyAnimRef = useRef<number | null>(null);
 
   const countries = useGlobeStore((s) => s.countries);
   const selectedCountry = useGlobeStore((s) => s.selectedCountry);
@@ -92,6 +98,8 @@ export function FashionGlobe() {
   const getFilteredCountries = useGlobeStore((s) => s.getFilteredCountries);
   const searchResults = useGlobeStore((s) => s.searchResults);
   const overlayMode = useGlobeStore((s) => s.overlayMode);
+  const viewingPlanet = useGlobeStore((s) => s.viewingPlanet);
+  const setViewingPlanet = useGlobeStore((s) => s.setViewingPlanet);
 
   // Filtered & search-highlighted country ISOs
   const highlightedIsos = useMemo(() => {
@@ -257,30 +265,228 @@ export function FashionGlobe() {
     );
   }, [selectedCountry, countryMap]);
 
-  // Add space background (planets + nebula) once the globe scene is available
+  // Add space background (Milky Way + solar system) once the globe scene is available
   useEffect(() => {
-    if (!globeRef.current) return;
+    let cancelled = false;
+    let cleanup: SpaceCleanup | null = null;
+    let bgInterval: ReturnType<typeof setInterval> | null = null;
 
-    // react-globe.gl exposes .scene() and .camera() on its ref
-    const globe = globeRef.current;
-    const scene = globe.scene();
-    const camera = globe.camera();
-    if (!scene || !camera) return;
+    function trySetup() {
+      if (cancelled || !globeRef.current) {
+        if (!cancelled) setTimeout(trySetup, 300);
+        return;
+      }
 
-    // Enable BG_LAYER on the camera so it can render the space objects.
-    // react-globe.gl's camera is NOT in the scene tree, so we must
-    // patch it directly via the ref rather than traversing the scene.
-    camera.layers.enable(2); // BG_LAYER = 2
+      const globe = globeRef.current;
+      const scene = typeof globe.scene === 'function' ? globe.scene() : null;
+      const camera = typeof globe.camera === 'function' ? globe.camera() : null;
+      if (!scene || !camera) {
+        // Globe Three.js internals not ready yet — retry
+        setTimeout(trySetup, 300);
+        return;
+      }
 
-    // Extend the far clipping plane so distant planets are not culled
-    if (camera.far < 5000) {
-      camera.far = 5000;
-      camera.updateProjectionMatrix();
+      // Enable BG_LAYER on the camera so it can render the space objects
+      camera.layers.enable(2); // BG_LAYER = 2
+
+      // Extend far plane for distant planets (Neptune orbit ~1600 from sun + sun ~930 from origin)
+      if (camera.far < 6000) {
+        camera.far = 6000;
+        camera.updateProjectionMatrix();
+      }
+
+      cleanup = addSpaceBackground(scene);
+      spaceRef.current = cleanup;
+
+      // react-globe.gl may re-set scene.background on renders — enforce it frequently
+      bgInterval = setInterval(() => {
+        if (!cleanup) return;
+        const tex = cleanup.getMilkyWayTexture();
+        if (tex && scene.background !== tex) scene.background = tex;
+        // Re-enable layer 2 in case globe resets camera layers
+        // camera.layers.mask is a bitmask — bit 2 should be set (value 4)
+        if (camera.layers && !(camera.layers.mask & 4)) {
+          camera.layers.enable(2);
+        }
+      }, 500);
     }
 
-    const { dispose } = addSpaceBackground(scene);
-    return () => dispose();
-  }, [geoData]); // geoData triggers once globe is mounted & ready
+    // Start trying after a short delay to let the Globe component mount
+    const initTimeout = setTimeout(trySetup, 500);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(initTimeout);
+      if (bgInterval) clearInterval(bgInterval);
+      if (cleanup) {
+        cleanup.dispose();
+        spaceRef.current = null;
+      }
+    };
+  }, [geoData]);
+
+  // Planet click detection via raycasting on the canvas
+  useEffect(() => {
+    if (!globeRef.current || !geoData) return;
+
+    // react-globe.gl may expose renderer as renderer() or via scene's parent
+    const globe = globeRef.current;
+    const rendererObj = typeof globe.renderer === 'function' ? globe.renderer() : globe.renderer;
+    const canvas = rendererObj?.domElement ?? globe.scene()?.userData?.element ?? document.querySelector('canvas');
+    if (!canvas) return;
+
+    function handlePlanetClick(event: MouseEvent) {
+      if (!spaceRef.current || !globeRef.current) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const mouse = new THREE.Vector2(
+        ((event.clientX - rect.left) / rect.width) * 2 - 1,
+        -((event.clientY - rect.top) / rect.height) * 2 + 1,
+      );
+
+      const raycaster = new THREE.Raycaster();
+      raycaster.layers.set(2); // Only BG_LAYER objects
+      raycaster.setFromCamera(mouse, globeRef.current.camera());
+
+      const planets = spaceRef.current.getClickablePlanets();
+      const meshes = planets.map((p) => p.mesh);
+      const intersects = raycaster.intersectObjects(meshes, false);
+
+      if (intersects.length > 0) {
+        const hitMesh = intersects[0].object as THREE.Mesh;
+        const planet = planets.find((p) => p.mesh === hitMesh);
+        if (planet) {
+          flyToPlanet(planet);
+          event.stopImmediatePropagation();
+          event.preventDefault();
+        }
+      }
+    }
+
+    canvas.addEventListener('click', handlePlanetClick, true);
+    return () => canvas.removeEventListener('click', handlePlanetClick, true);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [geoData]);
+
+  // Fly camera to a planet
+  function flyToPlanet(planet: ClickablePlanet) {
+    const controls = globeRef.current?.controls?.();
+    const camera = globeRef.current?.camera?.();
+    if (!controls || !camera) return;
+
+    // Cancel any in-progress animation
+    if (flyAnimRef.current) cancelAnimationFrame(flyAnimRef.current);
+
+    setActivePlanet(planet.info);
+    setViewingPlanet(planet.info.name);
+
+    const targetPos = planet.mesh.position.clone();
+    const radius = (planet.mesh.geometry as THREE.SphereGeometry).parameters?.radius || 20;
+
+    // Camera offset: slightly above and in front
+    const dir = new THREE.Vector3().subVectors(targetPos, camera.position).normalize();
+    const up = new THREE.Vector3(0, 1, 0);
+    const side = new THREE.Vector3().crossVectors(dir, up).normalize();
+    const cameraEnd = targetPos.clone()
+      .add(dir.multiplyScalar(-radius * 4))
+      .add(up.multiplyScalar(radius * 2))
+      .add(side.multiplyScalar(radius * 1.5));
+
+    const startPos = camera.position.clone();
+    const startTarget = controls.target.clone();
+    const startTime = performance.now();
+    const duration = 2500;
+
+    controls.autoRotate = false;
+
+    function animate() {
+      const t = Math.min((performance.now() - startTime) / duration, 1);
+      // Cubic ease-in-out
+      const ease = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+      camera.position.lerpVectors(startPos, cameraEnd, ease);
+      controls.target.lerpVectors(startTarget, targetPos, ease);
+      controls.update();
+
+      if (t < 1) {
+        flyAnimRef.current = requestAnimationFrame(animate);
+      } else {
+        flyAnimRef.current = null;
+      }
+    }
+
+    animate();
+  }
+
+  // Return camera to Earth (globe)
+  function returnToEarth() {
+    const controls = globeRef.current?.controls?.();
+    const camera = globeRef.current?.camera?.();
+    if (!controls || !camera) return;
+
+    if (flyAnimRef.current) cancelAnimationFrame(flyAnimRef.current);
+
+    const targetPos = new THREE.Vector3(0, 0, 0);
+    // Default viewing position for the globe
+    const cameraEnd = new THREE.Vector3(0, 100, 350);
+
+    const startPos = camera.position.clone();
+    const startTarget = controls.target.clone();
+    const startTime = performance.now();
+    const duration = 2000;
+
+    setActivePlanet(null);
+    setViewingPlanet(null);
+
+    function animate() {
+      const t = Math.min((performance.now() - startTime) / duration, 1);
+      const ease = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+      camera.position.lerpVectors(startPos, cameraEnd, ease);
+      controls.target.lerpVectors(startTarget, targetPos, ease);
+      controls.update();
+
+      if (t < 1) {
+        flyAnimRef.current = requestAnimationFrame(animate);
+      } else {
+        flyAnimRef.current = null;
+        // Reset to default globe view
+        globeRef.current?.pointOfView?.({ lat: 20, lng: 0, altitude: 2.5 }, 0);
+      }
+    }
+
+    animate();
+  }
+
+  // When viewing a planet, smooth-follow its orbit position
+  useEffect(() => {
+    if (!viewingPlanet || !spaceRef.current || !globeRef.current) return;
+
+    let followId: number;
+
+    function follow() {
+      if (!spaceRef.current || !globeRef.current) return;
+      const controls = globeRef.current.controls?.();
+      if (!controls) return;
+
+      const planets = spaceRef.current.getClickablePlanets();
+      const planet = planets.find((p) => p.info.name === viewingPlanet);
+      if (!planet) return;
+
+      // Gently follow the orbiting planet
+      controls.target.lerp(planet.mesh.position, 0.03);
+      controls.update();
+
+      followId = requestAnimationFrame(follow);
+    }
+
+    // Start following after fly-to completes
+    const delay = setTimeout(() => { follow(); }, 2600);
+    return () => {
+      clearTimeout(delay);
+      cancelAnimationFrame(followId);
+    };
+  }, [viewingPlanet]);
 
   const getPolygonColor = useCallback(
     (feat: object) => {
@@ -471,12 +677,14 @@ export function FashionGlobe() {
 
   return (
     <div className="relative transition-all duration-500" style={{ width: globeWidth, height: dimensions.height }}>
+      {/* Planet info overlay (Easter egg) */}
+      <PlanetOverlay planet={activePlanet} onReturn={returnToEarth} />
+
       <Globe
         ref={globeRef}
         width={globeWidth}
         height={dimensions.height}
-        // No globe texture — clean dark sphere so polygon colors pop
-        backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+        // Milky Way is set via scene.background in spaceBackground.ts
         polygonsData={polygonsData}
         polygonCapColor={getPolygonColor}
         polygonSideColor={() => GLOBE.polygonSideColor}

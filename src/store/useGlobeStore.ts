@@ -78,6 +78,10 @@ interface GlobeState {
   // Globe loading
   globeReady: boolean;
   setGlobeReady: (ready: boolean) => void;
+
+  // Planet navigation (Easter egg)
+  viewingPlanet: string | null;
+  setViewingPlanet: (planet: string | null) => void;
 }
 
 export const useGlobeStore = create<GlobeState>((set, get) => ({
@@ -206,4 +210,8 @@ export const useGlobeStore = create<GlobeState>((set, get) => ({
 
   globeReady: false,
   setGlobeReady: (ready) => set({ globeReady: ready }),
+
+  // Planet navigation
+  viewingPlanet: null,
+  setViewingPlanet: (planet) => set({ viewingPlanet: planet }),
 }));
