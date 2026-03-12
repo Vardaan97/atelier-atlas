@@ -59,86 +59,144 @@ export function CountryPanel() {
       )}
 
       {/* Header */}
-      <div className={cn('border-b border-white/10 shrink-0', isMobile ? 'p-4' : 'p-6')}>
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-3">
-            <span className={cn(isMobile ? 'text-3xl' : 'text-5xl')}>{country.flag}</span>
-            <div>
-              <h2 className={cn(
-                'font-heading font-bold tracking-tight truncate',
-                isMobile ? 'text-lg' : 'text-2xl'
-              )}>
-                {country.name}
-              </h2>
-              <div className="flex items-center gap-2 mt-1 flex-wrap">
-                <span className="flex items-center gap-1 text-xs text-muted">
-                  <MapPin className="w-3 h-3" />
-                  {country.capital}
-                </span>
-                <span className="flex items-center gap-1 text-xs text-muted">
-                  <Globe2 className="w-3 h-3" />
-                  {country.region}
-                </span>
-                <span className="flex items-center gap-1 text-xs text-muted">
-                  <TrendingUp className="w-3 h-3" />
-                  {formatCurrency(country.marketSize * 1e9)}
-                </span>
-              </div>
-            </div>
-          </div>
-          <button
-            onClick={() => setPanelOpen(false)}
-            className="p-2 rounded-lg hover:bg-white/10 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
-          >
-            <X className="w-5 h-5 text-muted" />
-          </button>
-        </div>
+      <div className={cn('border-b border-white/10 shrink-0 relative overflow-hidden', isMobile ? 'p-4' : 'p-6')}>
+        {/* Subtle radial gradient bg */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(233,69,96,0.06),transparent_70%)]" />
 
-        {/* Quick stats + Radar Chart */}
-        <div className={cn('flex gap-3 mt-4', isMobile && 'flex-col')}>
-          <div className="flex-1 flex gap-2">
-            {[
-              { label: 'Fashion Index', value: country.fashionIndex.toString() },
-              { label: 'Sustainability', value: `${country.sustainabilityScore}%` },
-              { label: 'Tier', value: country.tier === 'skeleton' ? '—' : `Tier ${country.tier.toUpperCase()}` },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="flex-1 rounded-lg bg-white/5 px-3 py-2 text-center"
-              >
-                <div className={cn(
-                  'font-mono font-bold text-accent',
-                  isMobile ? 'text-base' : 'text-lg'
+        <div className="relative z-10">
+          {/* Top row: flag + name + close */}
+          <div className="flex items-start justify-between">
+            <div className="flex items-center gap-3">
+              <span className={cn(isMobile ? 'text-3xl' : 'text-5xl')}>{country.flag}</span>
+              <div>
+                <h2 className={cn(
+                  'font-heading font-bold tracking-tight truncate',
+                  isMobile ? 'text-lg' : 'text-2xl'
                 )}>
-                  {stat.value}
-                </div>
-                <div className="text-[10px] text-muted uppercase tracking-wider">
-                  {stat.label}
+                  {country.name}
+                </h2>
+                <div className="flex items-center gap-3 mt-1 flex-wrap">
+                  <span className="flex items-center gap-1 text-xs text-white/40">
+                    <MapPin className="w-3 h-3" />
+                    {country.capital}
+                  </span>
+                  <span className="flex items-center gap-1 text-xs text-white/40">
+                    <Globe2 className="w-3 h-3" />
+                    {country.region}
+                  </span>
+                  <span className="flex items-center gap-1 text-xs text-white/40">
+                    <TrendingUp className="w-3 h-3" />
+                    {formatCurrency(country.marketSize * 1e9)}
+                  </span>
                 </div>
               </div>
-            ))}
+            </div>
+            <button
+              onClick={() => setPanelOpen(false)}
+              className="p-2 rounded-full hover:bg-white/10 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+            >
+              <X className="w-5 h-5 text-white/40" />
+            </button>
           </div>
 
-          {/* Mini Radar Chart */}
-          {profile?.fashionDNA && !isMobile && (
-            <div className="w-36 shrink-0">
-              <FashionDNAChart dna={profile.fashionDNA} size="sm" />
+          {/* Stat cards + Radar */}
+          <div className={cn('flex gap-3 mt-4', isMobile && 'flex-col')}>
+            <div className="flex-1 grid grid-cols-3 gap-2">
+              {/* Fashion Index */}
+              <div className="relative overflow-hidden rounded-xl bg-white/[0.04] border border-white/[0.06] p-3 text-center">
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent/60 to-accent/0" />
+                <div className={cn(
+                  'font-mono font-bold bg-gradient-to-r from-accent to-pink-400 bg-clip-text text-transparent',
+                  isMobile ? 'text-xl' : 'text-2xl'
+                )}>
+                  {country.fashionIndex}
+                </div>
+                <div className="text-[9px] text-white/40 uppercase tracking-wider mt-0.5">
+                  Fashion Index
+                </div>
+              </div>
+
+              {/* Sustainability — circular progress */}
+              <div className="relative overflow-hidden rounded-xl bg-white/[0.04] border border-white/[0.06] p-3 flex flex-col items-center">
+                <div className="relative">
+                  <svg width={isMobile ? 36 : 44} height={isMobile ? 36 : 44} className="-rotate-90">
+                    <circle
+                      cx={isMobile ? 18 : 22}
+                      cy={isMobile ? 18 : 22}
+                      r={isMobile ? 14 : 18}
+                      stroke="rgba(255,255,255,0.08)"
+                      strokeWidth={3}
+                      fill="none"
+                    />
+                    <circle
+                      cx={isMobile ? 18 : 22}
+                      cy={isMobile ? 18 : 22}
+                      r={isMobile ? 14 : 18}
+                      stroke="rgb(52,211,153)"
+                      strokeWidth={3}
+                      fill="none"
+                      strokeDasharray={2 * Math.PI * (isMobile ? 14 : 18)}
+                      strokeDashoffset={2 * Math.PI * (isMobile ? 14 : 18) * (1 - country.sustainabilityScore / 100)}
+                      strokeLinecap="round"
+                      className="transition-all duration-1000"
+                    />
+                  </svg>
+                  <span className={cn(
+                    'absolute inset-0 flex items-center justify-center font-mono font-bold text-emerald-400',
+                    isMobile ? 'text-[10px]' : 'text-xs'
+                  )}>
+                    {country.sustainabilityScore}
+                  </span>
+                </div>
+                <div className="text-[9px] text-white/40 uppercase tracking-wider mt-1">
+                  Sustainability
+                </div>
+              </div>
+
+              {/* Tier badge */}
+              <div className="relative overflow-hidden rounded-xl bg-white/[0.04] border border-white/[0.06] p-3 text-center flex flex-col items-center justify-center">
+                {country.tier !== 'skeleton' ? (
+                  <span className={cn(
+                    'inline-flex items-center justify-center px-3 py-1 rounded-lg font-mono font-bold text-sm border',
+                    country.tier === 'A' && 'bg-amber-500/15 text-amber-300 border-amber-500/30',
+                    country.tier === 'B' && 'bg-slate-400/15 text-slate-300 border-slate-400/30',
+                    country.tier === 'C' && 'bg-orange-700/15 text-orange-400 border-orange-700/30',
+                  )}>
+                    Tier {country.tier}
+                  </span>
+                ) : (
+                  <span className="text-sm font-mono text-white/30">—</span>
+                )}
+                <div className="text-[9px] text-white/40 uppercase tracking-wider mt-1">
+                  Market Tier
+                </div>
+              </div>
+            </div>
+
+            {/* Mini Radar Chart */}
+            {profile?.fashionDNA && !isMobile && (
+              <div className="w-36 shrink-0">
+                <FashionDNAChart dna={profile.fashionDNA} size="sm" />
+              </div>
+            )}
+            {profileLoading && !isMobile && (
+              <div className="w-36 shrink-0 flex items-center justify-center">
+                <Loader2 className="w-5 h-5 text-accent animate-spin" />
+              </div>
+            )}
+          </div>
+
+          {/* AI Profile indicator */}
+          {profile && (
+            <div className="flex items-center gap-1.5 mt-3">
+              <Sparkles className="w-3 h-3 text-accent" />
+              <span className="text-[10px] text-accent font-mono tracking-wider">AI PROFILE ACTIVE</span>
             </div>
           )}
-          {profileLoading && !isMobile && (
-            <div className="w-36 shrink-0 flex items-center justify-center">
-              <Loader2 className="w-5 h-5 text-accent animate-spin" />
-            </div>
-          )}
+
+          {/* Gradient accent line */}
+          <div className="mt-4 h-[1px] bg-gradient-to-r from-accent/50 via-pink-500/30 to-transparent" />
         </div>
-
-        {/* AI Profile indicator */}
-        {profile && (
-          <div className="flex items-center gap-1.5 mt-3">
-            <Sparkles className="w-3 h-3 text-accent" />
-            <span className="text-[10px] text-accent font-mono">AI PROFILE ACTIVE</span>
-          </div>
-        )}
       </div>
 
       {/* Tabs */}

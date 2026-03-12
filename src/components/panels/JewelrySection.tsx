@@ -26,40 +26,63 @@ interface JewelrySectionProps {
 
 /* ── Metals Ticker ──────────────────────────────────────────── */
 
-function MetalBadge({
+const METAL_CONFIG = [
+  { key: 'gold' as const, symbol: 'Au', label: 'Gold', color: 'text-yellow-400', borderColor: 'border-yellow-400/20', bgColor: 'bg-yellow-400/5' },
+  { key: 'silver' as const, symbol: 'Ag', label: 'Silver', color: 'text-gray-300', borderColor: 'border-gray-300/20', bgColor: 'bg-gray-300/5' },
+  { key: 'platinum' as const, symbol: 'Pt', label: 'Platinum', color: 'text-blue-300', borderColor: 'border-blue-300/20', bgColor: 'bg-blue-300/5' },
+  { key: 'palladium' as const, symbol: 'Pd', label: 'Palladium', color: 'text-orange-300', borderColor: 'border-orange-300/20', bgColor: 'bg-orange-300/5' },
+] as const;
+
+function MetalCard({
+  symbol,
   label,
   metal,
   color,
+  borderColor,
   usdInr,
+  delay,
 }: {
+  symbol: string;
   label: string;
   metal: MetalPrice;
   color: string;
+  borderColor: string;
   usdInr: number;
+  delay: number;
 }) {
   const isUp = metal.change24h > 0;
   const isDown = metal.change24h < 0;
-  const ChangeIcon = isUp ? TrendingUp : isDown ? TrendingDown : Minus;
-  const changeColor = isUp ? 'text-green-400' : isDown ? 'text-red-400' : 'text-muted';
+  const changeColor = isUp ? 'text-emerald-400' : isDown ? 'text-red-400' : 'text-white/30';
   const inrPerGram = metal.pricePerGram * usdInr;
 
   return (
-    <div className="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/[0.03] border border-white/5">
-      <span className="text-[9px] text-muted uppercase tracking-wider font-mono">
-        {label}
-      </span>
-      <span className={cn('text-sm font-mono font-bold', color)}>
-        ${metal.pricePerGram.toFixed(2)}
-      </span>
-      <span className="text-[9px] text-muted/70 font-mono">
+    <div
+      className={cn(
+        'relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/[0.06] p-3 transition-all duration-200 hover:bg-white/[0.06] group animate-fade-in-up',
+      )}
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      {/* Left accent border on hover */}
+      <div className={cn('absolute left-0 top-0 bottom-0 w-[2px] opacity-0 group-hover:opacity-100 transition-opacity', borderColor.replace('border-', 'bg-'))} />
+
+      <div className="flex items-start justify-between mb-1.5">
+        <div>
+          <span className={cn('text-lg font-mono font-bold', color)}>{symbol}</span>
+          <span className="text-[9px] text-white/30 font-mono ml-1.5">{label}</span>
+        </div>
+        <div className={cn('flex items-center gap-0.5 text-[10px] font-mono', changeColor)}>
+          {isUp ? <TrendingUp className="w-3 h-3" /> : isDown ? <TrendingDown className="w-3 h-3" /> : <Minus className="w-3 h-3" />}
+          <span>
+            {isUp ? '+' : ''}{metal.changePct.toFixed(2)}%
+          </span>
+        </div>
+      </div>
+
+      <div className={cn('text-base font-mono font-bold', color)}>
+        ${metal.pricePerGram.toFixed(2)}<span className="text-[9px] text-white/30 font-normal">/g</span>
+      </div>
+      <div className="text-[10px] text-white/30 font-mono mt-0.5">
         ₹{inrPerGram.toLocaleString('en-IN', { maximumFractionDigits: 0 })}/g
-      </span>
-      <div className={cn('flex items-center gap-0.5 text-[9px] font-mono', changeColor)}>
-        <ChangeIcon className="w-2.5 h-2.5" />
-        <span>
-          {isUp ? '+' : ''}
-          {metal.changePct.toFixed(2)}%
-        </span>
       </div>
     </div>
   );
@@ -70,11 +93,12 @@ function MetalsTicker() {
 
   if (loading) {
     return (
-      <div className="glass-panel rounded-xl p-4 animate-pulse">
-        <div className="h-4 w-36 bg-white/10 rounded mb-3" />
-        <div className="grid grid-cols-4 gap-2">
+      <div className="rounded-xl bg-white/[0.03] border border-white/[0.06] p-4">
+        <div className="h-4 w-36 bg-white/10 rounded-lg mb-4 animate-pulse" />
+        <div className="h-20 bg-white/5 rounded-xl mb-3 animate-pulse" />
+        <div className="grid grid-cols-2 gap-2">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="h-16 bg-white/5 rounded-lg" />
+            <div key={i} className="h-20 bg-white/5 rounded-xl animate-pulse" style={{ animationDelay: `${i * 100}ms` }} />
           ))}
         </div>
       </div>
@@ -82,56 +106,69 @@ function MetalsTicker() {
   }
 
   if (error || !data) {
-    return null; // Silently hide if metals data unavailable
+    return null;
   }
 
   return (
-    <div className="glass-panel rounded-xl p-4 animate-fade-in-up">
-      <div className="flex items-center justify-between mb-3">
-        <h4 className="text-sm font-medium text-muted uppercase tracking-wider flex items-center gap-2">
+    <div className="space-y-3 animate-fade-in-up">
+      {/* Section header */}
+      <div className="flex items-center justify-between">
+        <h4 className="text-[10px] font-mono tracking-[0.15em] uppercase text-white/40 flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
           Precious Metals
         </h4>
-        <span className="text-[8px] text-muted/60 font-mono">
-          {data.source === 'live' ? '● LIVE' : 'INDICATIVE'}
+        <span className={cn(
+          'flex items-center gap-1.5 text-[9px] font-mono',
+          data.source === 'live' ? 'text-emerald-400' : 'text-white/30'
+        )}>
+          {data.source === 'live' && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />}
+          {data.source === 'live' ? 'LIVE' : 'INDICATIVE'}
         </span>
       </div>
 
-      {/* Gold highlight: Indian retail price per 10g */}
-      <div className="mb-3 p-2.5 rounded-lg bg-yellow-400/5 border border-yellow-400/15">
-        <div className="flex items-center justify-between">
-          <div>
-            <span className="text-[9px] text-muted uppercase tracking-wider font-mono">Gold 24K (10g) India</span>
+      {/* Gold India Retail highlight banner */}
+      <div className="relative overflow-hidden rounded-xl bg-yellow-400/[0.04] border border-yellow-400/10 p-4">
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-yellow-400/60 via-yellow-400/20 to-transparent" />
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="text-xl font-mono font-bold text-yellow-400">Au</span>
+              <span className="text-[9px] text-white/40 uppercase tracking-wider font-mono">Gold 24K India · 10g</span>
+            </div>
             <div className="flex items-baseline gap-2">
-              <span className="text-lg font-mono font-bold text-yellow-400">
+              <span className="text-2xl font-mono font-bold text-yellow-400">
                 ₹{(data.goldIndiaRetail10g ?? Math.round(data.gold.pricePerGram * 10 * data.usdInr * 1.06)).toLocaleString('en-IN')}
               </span>
-              <span className="text-[10px] text-muted font-mono">
-                incl. duty
-              </span>
+              <span className="text-[10px] text-white/30 font-mono">incl. duty</span>
             </div>
-            <span className="text-[9px] text-muted/60 font-mono">
-              Intl. spot: ${data.gold.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}/oz · ${data.gold.pricePerGram.toFixed(2)}/g
-            </span>
+            <div className="text-[9px] text-white/25 font-mono mt-1">
+              Spot: ${data.gold.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}/oz
+            </div>
           </div>
-          <div className="text-right">
-            <span className="text-[9px] text-muted uppercase tracking-wider font-mono block">USD/INR</span>
-            <span className="text-sm font-mono font-bold text-blue-400">
-              ₹{data.usdInr.toFixed(2)}
+          <div className="text-right shrink-0">
+            <span className="text-[9px] text-white/30 uppercase tracking-wider font-mono block mb-0.5">USD/INR</span>
+            <span className="text-lg font-mono font-bold text-blue-400">
+              {data.usdInr.toFixed(2)}
             </span>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-2">
-        <MetalBadge label="Gold" metal={data.gold} color="text-yellow-400" usdInr={data.usdInr} />
-        <MetalBadge label="Silver" metal={data.silver} color="text-gray-300" usdInr={data.usdInr} />
-        <MetalBadge label="Plat." metal={data.platinum} color="text-blue-300" usdInr={data.usdInr} />
-        <MetalBadge label="Pall." metal={data.palladium} color="text-orange-300" usdInr={data.usdInr} />
+      {/* Metal cards grid */}
+      <div className="grid grid-cols-2 gap-2">
+        {METAL_CONFIG.map((m, i) => (
+          <MetalCard
+            key={m.key}
+            symbol={m.symbol}
+            label={m.label}
+            metal={data[m.key]}
+            color={m.color}
+            borderColor={m.borderColor}
+            usdInr={data.usdInr}
+            delay={i * 50}
+          />
+        ))}
       </div>
-      <p className="text-[8px] text-muted/40 text-right mt-1.5 font-mono">
-        USD per gram · INR per gram
-      </p>
     </div>
   );
 }

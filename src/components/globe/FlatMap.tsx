@@ -134,7 +134,13 @@ interface MapTooltip {
 export function FlatMap() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [geoData, setGeoData] = useState<GeoJSON | null>(null);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [fetchError, setFetchError] = useState<string | null>(null);
+  const [dimensions, setDimensions] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return { width: window.innerWidth, height: window.innerHeight };
+    }
+    return { width: 0, height: 0 };
+  });
   const [localTooltip, setLocalTooltip] = useState<MapTooltip | null>(null);
 
   const countries = useGlobeStore((s) => s.countries);
@@ -179,13 +185,25 @@ export function FlatMap() {
 
   // Fetch GeoJSON
   useEffect(() => {
-    fetch(GEOJSON_URL)
-      .then((r) => r.json())
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
+    fetch(GEOJSON_URL, { signal: controller.signal })
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
       .then((data: GeoJSON) => {
         setGeoData(data);
         setGlobeReady(true);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error('GeoJSON fetch failed:', err);
+        setFetchError(err.message);
+        setGlobeReady(true);
+      });
+
+    return () => { clearTimeout(timeout); controller.abort(); };
   }, [setGlobeReady]);
 
   // Measure container
@@ -340,9 +358,25 @@ export function FlatMap() {
     []
   );
 
+  if (fetchError) {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-muted text-sm">Map data failed to load</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="text-accent text-xs mt-2 underline"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if (!geoData) {
     return (
-      <div className="w-full h-full flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="w-16 h-16 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
           <p className="text-muted text-sm font-mono">Loading map data...</p>
@@ -352,7 +386,7 @@ export function FlatMap() {
   }
 
   return (
-    <div ref={containerRef} className="relative w-full h-full overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       <svg
         width={dimensions.width}
         height={dimensions.height}

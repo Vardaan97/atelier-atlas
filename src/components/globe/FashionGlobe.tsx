@@ -228,13 +228,24 @@ export function FashionGlobe() {
 
   // Fetch GeoJSON
   useEffect(() => {
-    fetch(GEOJSON_URL)
-      .then((r) => r.json())
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
+    fetch(GEOJSON_URL, { signal: controller.signal })
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
       .then((data: GeoJSON) => {
         setGeoData(data);
         setGlobeReady(true);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error('GeoJSON fetch failed:', err);
+        setGlobeReady(true);
+      });
+
+    return () => { clearTimeout(timeout); controller.abort(); };
   }, [setGlobeReady]);
 
   // Handle window resize

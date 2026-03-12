@@ -26,6 +26,17 @@ export function GlobeView() {
   // Background pre-fetch garment images for top countries (runs silently)
   usePrefetch(globeReady);
 
+  // Safety net: force globeReady after 15s to prevent infinite loading
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (!useGlobeStore.getState().globeReady) {
+        console.warn('Globe loading timeout — forcing ready state');
+        useGlobeStore.getState().setGlobeReady(true);
+      }
+    }, 15000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   // Load country data
   useEffect(() => {
     import('@/data/countries.json').then((mod) => {

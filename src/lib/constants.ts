@@ -100,5 +100,4 @@ export const PANEL_TABS = [
   { id: 'ai-studio', label: 'AI Studio' },
 ] as const;
 
-export const GEOJSON_URL =
-  'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson';
+export const GEOJSON_URL = '/data/ne_110m_admin_0_countries.geojson';
