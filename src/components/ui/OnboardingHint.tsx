@@ -61,7 +61,7 @@ export function OnboardingHint() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.95 }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="absolute left-1/2 top-[56%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
+          className="absolute left-1/2 top-[45%] md:top-[56%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
         >
           <div className="flex flex-col items-center gap-3">
             {/* Glass hint card */}

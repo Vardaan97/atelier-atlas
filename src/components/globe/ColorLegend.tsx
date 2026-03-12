@@ -15,14 +15,16 @@ const CLIMATE_ZONES = [
 export function ColorLegend() {
   const overlayMode = useGlobeStore((s) => s.overlayMode);
   const activeMetric = useGlobeStore((s) => s.activeMetric);
+  const panelOpen = useGlobeStore((s) => s.panelOpen);
   const isMobile = useIsMobile();
 
-  if (isMobile) return null;
+  // Hide on mobile when panel is open (overlaps bottom sheet)
+  if (isMobile && panelOpen) return null;
 
   if (overlayMode === 'metric') {
     const metricLabel = METRICS.find((m) => m.key === activeMetric)?.label || activeMetric;
     return (
-      <div className="absolute bottom-14 right-4 z-20 glass-panel rounded-xl p-3 animate-fade-in-up">
+      <div className="absolute bottom-4 md:bottom-14 left-4 md:left-auto md:right-4 z-20 glass-panel rounded-xl p-2 md:p-3 animate-fade-in-up">
         <p className="text-[10px] text-muted uppercase tracking-wider font-mono mb-2">{metricLabel}</p>
         <div className="flex items-center gap-2">
           <span className="text-[9px] text-muted">Low</span>
@@ -38,7 +40,7 @@ export function ColorLegend() {
 
   if (overlayMode === 'sustainability') {
     return (
-      <div className="absolute bottom-14 right-4 z-20 glass-panel rounded-xl p-3 animate-fade-in-up">
+      <div className="absolute bottom-4 md:bottom-14 left-4 md:left-auto md:right-4 z-20 glass-panel rounded-xl p-2 md:p-3 animate-fade-in-up">
         <p className="text-[10px] text-muted uppercase tracking-wider font-mono mb-2">Sustainability Score</p>
         <div className="flex items-center gap-2">
           <span className="text-[9px] text-muted">Low</span>
@@ -54,7 +56,7 @@ export function ColorLegend() {
 
   if (overlayMode === 'climate') {
     return (
-      <div className="absolute bottom-14 right-4 z-20 glass-panel rounded-xl p-3 animate-fade-in-up">
+      <div className="absolute bottom-4 md:bottom-14 left-4 md:left-auto md:right-4 z-20 glass-panel rounded-xl p-2 md:p-3 animate-fade-in-up">
         <p className="text-[10px] text-muted uppercase tracking-wider font-mono mb-2">Climate Zones</p>
         <div className="flex flex-col gap-1">
           {CLIMATE_ZONES.map((zone) => (
@@ -70,7 +72,7 @@ export function ColorLegend() {
 
   if (overlayMode === 'fashionWeek') {
     return (
-      <div className="absolute bottom-14 right-4 z-20 glass-panel rounded-xl p-3 animate-fade-in-up">
+      <div className="absolute bottom-4 md:bottom-14 left-4 md:left-auto md:right-4 z-20 glass-panel rounded-xl p-2 md:p-3 animate-fade-in-up">
         <p className="text-[10px] text-muted uppercase tracking-wider font-mono mb-2">Fashion Weeks</p>
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2">

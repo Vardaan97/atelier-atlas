@@ -151,18 +151,21 @@ function ControlButtons({ onDone }: { onDone?: () => void }) {
 export function GlobeControls() {
   const isMobile = useIsMobile();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const panelOpen = useGlobeStore((s) => s.panelOpen);
 
   if (isMobile) {
     return (
       <>
-        {/* Floating menu button */}
-        <button
-          onClick={() => setMobileOpen(true)}
-          className="fixed bottom-20 left-4 z-20 w-12 h-12 rounded-full glass-panel flex items-center justify-center glow-accent"
-          style={{ minWidth: 48, minHeight: 48 }}
-        >
-          <Menu className="w-5 h-5 text-accent" />
-        </button>
+        {/* Floating menu button — hide when country panel is open */}
+        {!panelOpen && (
+          <button
+            onClick={() => setMobileOpen(true)}
+            className="fixed bottom-6 left-4 z-20 w-12 h-12 rounded-full glass-panel flex items-center justify-center glow-accent safe-area-bottom"
+            style={{ minWidth: 48, minHeight: 48 }}
+          >
+            <Menu className="w-5 h-5 text-accent" />
+          </button>
+        )}
 
         {/* Mobile controls overlay */}
         <AnimatePresence>

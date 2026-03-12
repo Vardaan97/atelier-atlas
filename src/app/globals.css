@@ -173,8 +173,9 @@ html, body {
 
 /* ---- Mobile responsive styles ---- */
 @media (max-width: 767px) {
-  /* Touch-friendly tap targets (only on interactive elements, not inline spans) */
-  button:not(.inline-btn), a, [role="button"] {
+  /* Touch-friendly tap targets — only applied via explicit class, not globally.
+     The global rule was breaking compact UI elements (chips, search clear, tab triggers). */
+  .touch-target {
     min-height: 44px;
     min-width: 44px;
   }

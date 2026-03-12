@@ -291,8 +291,17 @@ export function FlatMap() {
     [selectedCountry, selectCountry]
   );
 
+  // Detect touch device to skip hover-only interactions
+  const isTouchRef = useRef(false);
+  useEffect(() => {
+    isTouchRef.current = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  }, []);
+
   const handlePointerEnter = useCallback(
     (iso2: string, name: string, e: React.PointerEvent) => {
+      // Skip hover tooltip on touch — tooltip shows on tap via handleClick
+      if (isTouchRef.current) return;
+
       const country = countryMap.get(iso2);
       const flag = country?.flag ?? '';
       setLocalTooltip({ name, flag, x: e.clientX, y: e.clientY });
@@ -318,12 +327,14 @@ export function FlatMap() {
   );
 
   const handlePointerLeave = useCallback(() => {
+    if (isTouchRef.current) return;
     setLocalTooltip(null);
     useGlobeStore.getState().setTooltip(null);
   }, []);
 
   const handlePointerMove = useCallback(
     (name: string, flag: string, e: React.PointerEvent) => {
+      if (isTouchRef.current) return;
       setLocalTooltip({ name, flag, x: e.clientX, y: e.clientY });
     },
     []

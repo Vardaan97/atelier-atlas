@@ -147,23 +147,31 @@ export function CountryPanel() {
         onValueChange={setActiveTab}
         className="flex flex-col flex-1 min-h-0"
       >
-        <Tabs.List className="flex border-b border-white/10 px-4 shrink-0 overflow-x-auto scrollbar-hide">
-          {PANEL_TABS.map((tab) => (
-            <Tabs.Trigger
-              key={tab.id}
-              value={tab.id}
-              className={cn(
-                'px-3 py-2.5 text-xs font-medium whitespace-nowrap transition-all border-b-2 min-h-[44px]',
-                isMobile && 'px-2 text-[11px]',
-                activeTab === tab.id
-                  ? 'border-accent text-accent'
-                  : 'border-transparent text-muted hover:text-foreground'
-              )}
-            >
-              {isMobile ? (mobileTabLabels[tab.id] || tab.label) : tab.label}
-            </Tabs.Trigger>
-          ))}
-        </Tabs.List>
+        <div className="relative shrink-0">
+          <Tabs.List className="flex border-b border-white/10 px-2 md:px-4 overflow-x-auto scrollbar-hide">
+            {PANEL_TABS.map((tab) => (
+              <Tabs.Trigger
+                key={tab.id}
+                value={tab.id}
+                className={cn(
+                  'px-2.5 md:px-3 py-2 text-xs font-medium whitespace-nowrap transition-all border-b-2',
+                  isMobile && 'text-[11px] px-2 py-2.5',
+                  activeTab === tab.id
+                    ? 'border-accent text-accent'
+                    : 'border-transparent text-muted hover:text-foreground'
+                )}
+              >
+                {isMobile ? (mobileTabLabels[tab.id] || tab.label) : tab.label}
+              </Tabs.Trigger>
+            ))}
+          </Tabs.List>
+          {/* Scroll fade indicators for mobile */}
+          {isMobile && (
+            <>
+              <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-[#0A0A1A]/80 to-transparent pointer-events-none" />
+            </>
+          )}
+        </div>
 
         <div className="flex-1 overflow-y-auto p-3 md:p-4">
           <Tabs.Content value="traditional" className="outline-none">
@@ -215,12 +223,12 @@ export function CountryPanel() {
             dragConstraints={{ top: 0, bottom: 0 }}
             dragElastic={0.2}
             onDragEnd={(_e, info) => {
-              if (info.offset.y > 100 || info.velocity.y > 500) {
+              if (info.offset.y > 80 || info.velocity.y > 400) {
                 setPanelOpen(false);
               }
             }}
-            className="fixed bottom-0 left-0 right-0 z-30 glass-panel border-t border-white/10 rounded-t-2xl overflow-hidden flex flex-col safe-area-bottom"
-            style={{ maxHeight: '80vh' }}
+            className="fixed bottom-0 left-0 right-0 z-30 bg-[#0A0A1A]/95 backdrop-blur-xl border-t border-white/10 rounded-t-2xl overflow-hidden flex flex-col safe-area-bottom"
+            style={{ maxHeight: '85dvh' }}
           >
             {panelContent}
           </motion.div>
@@ -232,7 +240,7 @@ export function CountryPanel() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: '110%', opacity: 0 }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="fixed right-0 top-0 h-full w-full lg:w-[50%] z-30 glass-panel border-l border-white/10 overflow-hidden flex flex-col"
+            className="fixed right-0 top-0 h-full w-full md:w-[65%] lg:w-[50%] z-30 glass-panel border-l border-white/10 overflow-hidden flex flex-col"
           >
             {panelContent}
           </motion.div>
