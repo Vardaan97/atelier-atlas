@@ -499,8 +499,9 @@ export function FashionGlobe() {
     };
   }, [viewingPlanet]);
 
-  const getPolygonColor = useCallback(
-    (feat: object) => {
+  // Compute polygon color string (used for both color + material)
+  const getPolygonColorStr = useCallback(
+    (feat: object): string => {
       const feature = feat as GeoFeature;
       const iso3 = feature.properties?.ISO_A3;
       if (!iso3 || iso3 === '-99') return 'rgb(18, 25, 50)';
@@ -555,6 +556,47 @@ export function FashionGlobe() {
       }
     },
     [countryMap, activeMetric, metricRange, selectedCountry, hasActiveFilters, highlightedIsos, overlayMode]
+  );
+
+  // For polygonCapColor (used as fallback / transition color)
+  const getPolygonColor = useCallback(
+    (feat: object) => getPolygonColorStr(feat),
+    [getPolygonColorStr]
+  );
+
+  // Material cache to avoid creating thousands of materials per frame
+  const materialCacheRef = useRef(new Map<string, THREE.MeshBasicMaterial>());
+
+  // Use MeshBasicMaterial (unlit) so polygon colors render vibrant
+  // regardless of Three.js scene lighting. MeshLambertMaterial (the default)
+  // appears near-black under physically-correct lighting in Three.js v0.183+.
+  const getPolygonMaterial = useCallback(
+    (feat: object) => {
+      const colorStr = getPolygonColorStr(feat);
+      const cache = materialCacheRef.current;
+
+      let mat = cache.get(colorStr);
+      if (!mat) {
+        mat = new THREE.MeshBasicMaterial({
+          color: new THREE.Color(colorStr),
+          side: THREE.DoubleSide,
+        });
+        cache.set(colorStr, mat);
+        // Evict old cache entries if it grows too large
+        if (cache.size > 500) {
+          const first = cache.keys().next().value;
+          if (first) {
+            cache.get(first)?.dispose();
+            cache.delete(first);
+          }
+        }
+      } else {
+        // Update color in case it changed (same string key)
+        mat.color.set(colorStr);
+      }
+      return mat;
+    },
+    [getPolygonColorStr]
   );
 
   const handlePolygonClick = useCallback(
@@ -698,6 +740,7 @@ export function FashionGlobe() {
         // Milky Way is set via scene.background in spaceBackground.ts
         polygonsData={polygonsData}
         polygonCapColor={getPolygonColor}
+        polygonCapMaterial={getPolygonMaterial}
         polygonSideColor={() => GLOBE.polygonSideColor}
         polygonStrokeColor={() => GLOBE.polygonStrokeColor}
         polygonAltitude={(d: object) => {
