@@ -125,6 +125,7 @@ function geometryToPath(feature: GeoFeature, cfg: ProjectionConfig): string {
 interface MapTooltip {
   name: string;
   flag: string;
+  iso2: string;
   x: number;
   y: number;
 }
@@ -322,7 +323,7 @@ export function FlatMap() {
 
       const country = countryMap.get(iso2);
       const flag = country?.flag ?? '';
-      setLocalTooltip({ name, flag, x: e.clientX, y: e.clientY });
+      setLocalTooltip({ name, flag, iso2, x: e.clientX, y: e.clientY });
 
       // Also set store tooltip for consistency
       if (country) {
@@ -351,12 +352,46 @@ export function FlatMap() {
   }, []);
 
   const handlePointerMove = useCallback(
-    (name: string, flag: string, e: React.PointerEvent) => {
+    (name: string, flag: string, iso2: string, e: React.PointerEvent) => {
       if (isTouchRef.current) return;
-      setLocalTooltip({ name, flag, x: e.clientX, y: e.clientY });
+      setLocalTooltip({ name, flag, iso2, x: e.clientX, y: e.clientY });
     },
     []
   );
+
+  // Hovered country ISO for hover glow effect
+  const [hoveredIso, setHoveredIso] = useState<string | null>(null);
+
+  // Compute dot grid positions
+  const dotGrid = useMemo(() => {
+    if (dimensions.width === 0) return [];
+    const dots: { x: number; y: number }[] = [];
+    const latitudes = [-75, -60, -45, -30, -15, 0, 15, 30, 45, 60, 75];
+    const longitudes: number[] = [];
+    for (let lng = -180; lng <= 180; lng += 15) longitudes.push(lng);
+    for (const lat of latitudes) {
+      for (const lng of longitudes) {
+        dots.push({
+          x: projectLng(lng, projCfg),
+          y: projectLat(lat, projCfg),
+        });
+      }
+    }
+    return dots;
+  }, [dimensions, projCfg]);
+
+  // Get tooltip metric info
+  const tooltipMetricInfo = useMemo(() => {
+    if (!localTooltip) return null;
+    const country = countryMap.get(localTooltip.iso2);
+    if (!country) return null;
+    const metricObj = METRICS.find((m) => m.key === activeMetric);
+    const label = metricObj?.label || activeMetric;
+    const value = typeof country[activeMetric] === 'number'
+      ? (country[activeMetric] as number)
+      : null;
+    return { label, value, tier: country.tier };
+  }, [localTooltip, countryMap, activeMetric]);
 
   if (fetchError) {
     return (
@@ -387,21 +422,97 @@ export function FlatMap() {
 
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden">
+      {/* Pulsing animation for selected country */}
+      <style>{`
+        @keyframes flatmap-pulse-glow {
+          0%, 100% { stroke-opacity: 1; filter: url(#flatmap-glow-strong); }
+          50% { stroke-opacity: 0.5; filter: url(#flatmap-glow); }
+        }
+        .flatmap-selected-pulse {
+          animation: flatmap-pulse-glow 2s ease-in-out infinite;
+        }
+      `}</style>
+
       <svg
         width={dimensions.width}
         height={dimensions.height}
         viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
         className="block"
-        style={{ background: '#0A0A1A' }}
       >
-        {/* Grid lines for visual reference */}
-        <g opacity={0.08} stroke="#F0F0F5" strokeWidth={0.5} fill="none">
-          {/* Latitude lines */}
-          {[-60, -30, 0, 30, 60].map((lat) => {
+        <defs>
+          {/* Ocean gradient background */}
+          <linearGradient id="flatmap-ocean" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#070B1A" />
+            <stop offset="50%" stopColor="#0B1022" />
+            <stop offset="100%" stopColor="#0D1429" />
+          </linearGradient>
+
+          {/* Soft glow filter for country borders */}
+          <filter id="flatmap-glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          {/* Stronger glow for selected country */}
+          <filter id="flatmap-glow-strong" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          {/* Hover glow filter */}
+          <filter id="flatmap-glow-hover" x="-15%" y="-15%" width="130%" height="130%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          {/* Vignette radial gradient */}
+          <radialGradient id="flatmap-vignette" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+            <stop offset="0%" stopColor="#070B1A" stopOpacity={0} />
+            <stop offset="60%" stopColor="#070B1A" stopOpacity={0} />
+            <stop offset="100%" stopColor="#070B1A" stopOpacity={0.5} />
+          </radialGradient>
+        </defs>
+
+        {/* Ocean background */}
+        <rect
+          x={0}
+          y={0}
+          width={dimensions.width}
+          height={dimensions.height}
+          fill="url(#flatmap-ocean)"
+        />
+
+        {/* Dot grid pattern instead of lines */}
+        <g>
+          {dotGrid.map((dot, i) => (
+            <circle
+              key={`dot-${i}`}
+              cx={dot.x}
+              cy={dot.y}
+              r={0.8}
+              fill="#F0F0F5"
+              opacity={0.05}
+            />
+          ))}
+        </g>
+
+        {/* Subtle latitude/longitude reference lines (very faint) */}
+        <g opacity={0.03} stroke="#8B8FA3" strokeWidth={0.3} fill="none" strokeDasharray="4 8">
+          {[0].map((lat) => {
             const y = projectLat(lat, projCfg);
             return (
               <line
-                key={`lat-${lat}`}
+                key={`lat-eq-${lat}`}
                 x1={projCfg.padding}
                 y1={y}
                 x2={dimensions.width - projCfg.padding}
@@ -409,54 +520,102 @@ export function FlatMap() {
               />
             );
           })}
-          {/* Longitude lines */}
-          {[-150, -120, -90, -60, -30, 0, 30, 60, 90, 120, 150].map((lng) => {
-            const x = projectLng(lng, projCfg);
-            return (
-              <line
-                key={`lng-${lng}`}
-                x1={x}
-                y1={projCfg.padding}
-                x2={x}
-                y2={dimensions.height - projCfg.padding}
-              />
-            );
-          })}
         </g>
 
-        {/* Country polygons */}
+        {/* Country polygons – base layer */}
         {featureData.map(({ iso2, d, name }) => {
           const country = countryMap.get(iso2);
           const flag = country?.flag ?? '';
+          const isSelected = iso2 === selectedCountry;
+          const isHovered = iso2 === hoveredIso;
           return (
             <path
               key={iso2}
               d={d}
               fill={getFillColor(iso2)}
-              stroke="rgba(240, 240, 245, 0.2)"
-              strokeWidth={iso2 === selectedCountry ? 1.5 : 0.5}
-              className="transition-colors duration-200 cursor-pointer"
-              style={{ touchAction: 'manipulation' }}
+              stroke={
+                isSelected
+                  ? '#E94560'
+                  : isHovered
+                    ? 'rgba(233, 69, 96, 0.5)'
+                    : 'rgba(140, 160, 220, 0.15)'
+              }
+              strokeWidth={isSelected ? 2 : isHovered ? 1 : 0.4}
+              strokeLinejoin="round"
+              filter={isHovered && !isSelected ? 'url(#flatmap-glow-hover)' : undefined}
+              className={`cursor-pointer ${isSelected ? 'flatmap-selected-pulse' : 'transition-all duration-200'}`}
+              style={{
+                touchAction: 'manipulation',
+                opacity: isHovered && !isSelected ? 1 : undefined,
+              }}
               onClick={() => handleClick(iso2)}
-              onPointerEnter={(e) => handlePointerEnter(iso2, name, e)}
-              onPointerLeave={handlePointerLeave}
-              onPointerMove={(e) => handlePointerMove(name, flag, e)}
+              onPointerEnter={(e) => {
+                setHoveredIso(iso2);
+                handlePointerEnter(iso2, name, e);
+              }}
+              onPointerLeave={() => {
+                setHoveredIso(null);
+                handlePointerLeave();
+              }}
+              onPointerMove={(e) => handlePointerMove(name, flag, iso2, e)}
             />
           );
         })}
+
+        {/* Vignette overlay to darken edges */}
+        <rect
+          x={0}
+          y={0}
+          width={dimensions.width}
+          height={dimensions.height}
+          fill="url(#flatmap-vignette)"
+          pointerEvents="none"
+        />
       </svg>
 
-      {/* Tooltip */}
+      {/* Enhanced glassmorphism tooltip */}
       {localTooltip && (
         <div
-          className="fixed z-50 pointer-events-none glass-panel rounded-lg px-3 py-1.5 text-xs font-medium whitespace-nowrap"
+          className="fixed z-50 pointer-events-none"
           style={{
-            left: localTooltip.x + 12,
-            top: localTooltip.y - 30,
+            left: localTooltip.x + 16,
+            top: localTooltip.y - 40,
           }}
         >
-          <span className="mr-1.5">{localTooltip.flag}</span>
-          {localTooltip.name}
+          <div
+            className="rounded-xl px-4 py-3 shadow-2xl whitespace-nowrap border border-white/[0.12] min-w-[160px]"
+            style={{
+              background: 'rgba(10, 14, 30, 0.85)',
+              backdropFilter: 'blur(24px)',
+              WebkitBackdropFilter: 'blur(24px)',
+              borderTop: '1px solid rgba(233, 69, 96, 0.3)',
+            }}
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="text-lg leading-none">{localTooltip.flag}</span>
+              <div className="flex-1 min-w-0">
+                <span className="font-semibold text-sm text-[#F0F0F5] block truncate">
+                  {localTooltip.name}
+                </span>
+                {tooltipMetricInfo && tooltipMetricInfo.value !== null && (
+                  <div className="flex items-center gap-1.5 mt-0.5">
+                    <span className="text-[10px] text-[#8B8FA3]">{tooltipMetricInfo.label}:</span>
+                    <span className="text-[10px] font-mono font-semibold text-[#E94560]">
+                      {tooltipMetricInfo.value.toFixed(0)}
+                    </span>
+                  </div>
+                )}
+              </div>
+              {tooltipMetricInfo && tooltipMetricInfo.tier && tooltipMetricInfo.tier !== 'skeleton' && (
+                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-white/10 text-[#8B8FA3]">
+                  {tooltipMetricInfo.tier}
+                </span>
+              )}
+            </div>
+            <p className="text-[8px] text-[#8B8FA3]/50 mt-1.5 text-center tracking-wider uppercase">
+              Click to explore
+            </p>
+          </div>
         </div>
       )}
     </div>

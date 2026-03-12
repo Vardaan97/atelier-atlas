@@ -62,6 +62,21 @@ interface PlanetDef {
 
 const SUN_POS = new THREE.Vector3(-400, 100, -800);
 
+/* ─── Planet Texture Paths (Solar System Scope, CC-BY 4.0) ────────────── */
+
+const PLANET_TEXTURES: Record<string, string> = {
+  Sun: '/textures/planets/2k_sun.jpg',
+  Mercury: '/textures/planets/2k_mercury.jpg',
+  Venus: '/textures/planets/2k_venus_surface.jpg',
+  Mars: '/textures/planets/2k_mars.jpg',
+  Jupiter: '/textures/planets/2k_jupiter.jpg',
+  Saturn: '/textures/planets/2k_saturn.jpg',
+  Uranus: '/textures/planets/2k_uranus.jpg',
+  Moon: '/textures/planets/2k_moon.jpg',
+};
+
+const SATURN_RING_TEXTURE = '/textures/planets/2k_saturn_ring_alpha.png';
+
 const PLANETS: PlanetDef[] = [
   {
     name: 'Mercury', radius: 7, color: 0x8c7a6b, emissive: 0x5a4a3a, emissiveI: 0.6,
@@ -458,6 +473,11 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
   // ── 3. Sun ──
   const sunGeo = new THREE.SphereGeometry(55, 48, 48);
   const sunMat = new THREE.MeshBasicMaterial({ color: 0xffee55 });
+  loader.load(PLANET_TEXTURES.Sun, (tex) => {
+    tex.colorSpace = THREE.SRGBColorSpace;
+    sunMat.map = tex;
+    sunMat.needsUpdate = true;
+  });
   const sunMesh = new THREE.Mesh(sunGeo, sunMat);
   sunMesh.position.copy(SUN_POS);
   sunMesh.layers.set(BG_LAYER);
@@ -532,6 +552,15 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
       emissiveIntensity: def.emissiveI,
       shininess: 20,
     });
+    // Load realistic texture if available
+    const texPath = PLANET_TEXTURES[def.name];
+    if (texPath) {
+      loader.load(texPath, (tex) => {
+        tex.colorSpace = THREE.SRGBColorSpace;
+        mat.map = tex;
+        mat.needsUpdate = true;
+      });
+    }
     const mesh = new THREE.Mesh(geo, mat);
     mesh.layers.set(BG_LAYER);
     mesh.name = def.name;
@@ -541,12 +570,30 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
     // Saturn/Uranus rings
     if (def.ring) {
       const rGeo = new THREE.RingGeometry(def.ring.inner, def.ring.outer, 80);
+      // Fix ring UVs so texture maps correctly (radial mapping)
+      const ringUvs = rGeo.attributes.uv;
+      const ringPos = rGeo.attributes.position;
+      for (let i = 0; i < ringUvs.count; i++) {
+        const x = ringPos.getX(i);
+        const y = ringPos.getY(i);
+        const dist = Math.sqrt(x * x + y * y);
+        ringUvs.setXY(i, (dist - def.ring.inner) / (def.ring.outer - def.ring.inner), 0.5);
+      }
       const rMat = new THREE.MeshBasicMaterial({
         color: def.ring.color,
         side: THREE.DoubleSide,
         transparent: true,
         opacity: def.ring.opacity,
       });
+      // Load Saturn ring texture
+      if (def.name === 'Saturn') {
+        loader.load(SATURN_RING_TEXTURE, (tex) => {
+          tex.colorSpace = THREE.SRGBColorSpace;
+          rMat.map = tex;
+          rMat.alphaMap = tex;
+          rMat.needsUpdate = true;
+        });
+      }
       const rMesh = new THREE.Mesh(rGeo, rMat);
       rMesh.rotation.x = Math.PI / 2 + (def.name === 'Uranus' ? 1.7 : 0.4);
       rMesh.layers.set(BG_LAYER);
@@ -595,6 +642,11 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
     emissive: 0x556666,
     emissiveIntensity: 0.4,
     shininess: 5,
+  });
+  loader.load(PLANET_TEXTURES.Moon, (tex) => {
+    tex.colorSpace = THREE.SRGBColorSpace;
+    moonMat.map = tex;
+    moonMat.needsUpdate = true;
   });
   const earthMoon = new THREE.Mesh(moonGeo, moonMat);
   earthMoon.layers.set(BG_LAYER);

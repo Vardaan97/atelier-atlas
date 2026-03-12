@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Clock, Shirt } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import { useImages } from '@/hooks/useImages';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { MuseumEraInline } from './MuseumSection';
@@ -34,7 +35,8 @@ export function TimelineTab({ country, profile, profileLoading }: TimelineTabPro
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center gap-2 mb-2">
+      {/* Section header with gradient underline */}
+      <div className="relative flex items-center gap-2 mb-2 pb-2">
         <Clock className="w-4 h-4 text-accent" />
         <h3 className="text-sm font-medium text-muted uppercase tracking-wider">
           Fashion Through the Ages
@@ -42,11 +44,13 @@ export function TimelineTab({ country, profile, profileLoading }: TimelineTabPro
         <span className="text-xs text-muted font-mono ml-auto">
           {eras.length} eras
         </span>
+        <div className="absolute bottom-0 left-0 w-12 h-[2px] bg-gradient-to-r from-accent to-transparent" />
       </div>
 
       {/* Timeline */}
       <div className="relative">
-        <div className="absolute left-6 top-0 bottom-0 w-px bg-accent/20" />
+        {/* Gradient timeline line */}
+        <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-accent/40 via-accent/20 to-transparent" />
         <div className="space-y-6">
           {eras.map((era, i) => (
             <EraCard
@@ -82,13 +86,25 @@ function EraCard({
       transition={{ delay: index * 0.1 }}
       className="relative pl-14"
     >
-      {/* Timeline dot */}
-      <div className="absolute left-4 top-3 w-5 h-5 rounded-full bg-[#0A0A1A] border-2 border-accent flex items-center justify-center z-10">
+      {/* Timeline dot with glow */}
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: index * 0.1 + 0.15, type: 'spring', stiffness: 300 }}
+        className={cn(
+          'absolute left-4 top-3 w-5 h-5 rounded-full bg-[#0A0A1A] border-2 border-accent',
+          'flex items-center justify-center z-10',
+          'shadow-[0_0_8px_rgba(233,69,96,0.4)]'
+        )}
+      >
         <div className="w-2 h-2 rounded-full bg-accent" />
-      </div>
+      </motion.div>
 
-      {/* Card */}
-      <div className="glass-panel glass-panel-hover rounded-xl overflow-hidden">
+      {/* Card with gradient top border */}
+      <div className="relative glass-panel glass-panel-hover rounded-xl overflow-hidden">
+        {/* Subtle gradient top accent line */}
+        <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+
         {/* Image */}
         {(loading || heroImage) && (
           <div className="relative w-full h-36 overflow-hidden">
@@ -103,28 +119,33 @@ function EraCard({
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A1A] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A1A] via-[#0A0A1A]/20 to-transparent" />
               </>
             ) : null}
           </div>
         )}
 
         <div className="p-4">
-          {/* Year badge */}
-          <span className="text-[10px] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded-full">
+          {/* Year badge with gradient background */}
+          <span className="text-[10px] font-mono text-accent bg-gradient-to-r from-accent/15 to-pink-500/10 px-2.5 py-0.5 rounded-full border border-accent/20">
             {era.yearRange[0]} — {era.yearRange[1]}
           </span>
 
           <h4 className="font-heading font-semibold text-base mt-2 mb-1">{era.name}</h4>
           <p className="text-sm text-muted leading-relaxed mb-3">{era.description}</p>
 
-          {/* Key garments */}
+          {/* Key garments with hover effect */}
           {era.keyGarments.length > 0 && (
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {era.keyGarments.map(g => (
                 <span
                   key={g}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/5 text-[10px] text-muted"
+                  className={cn(
+                    'inline-flex items-center gap-1 px-2.5 py-1 rounded-full',
+                    'bg-white/5 text-[10px] text-muted border border-white/5',
+                    'hover:bg-white/10 hover:border-accent/20 hover:text-foreground',
+                    'transition-all duration-200 cursor-default'
+                  )}
                 >
                   <Shirt className="w-3 h-3" />
                   {g}

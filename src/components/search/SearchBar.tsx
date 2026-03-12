@@ -16,6 +16,8 @@ import {
   ArrowUp,
   ArrowDown,
   Loader2,
+  Globe,
+  CornerDownLeft,
 } from 'lucide-react';
 import { useGlobeStore } from '@/store/useGlobeStore';
 import { cn } from '@/lib/utils';
@@ -164,6 +166,139 @@ function isQuestionQuery(q: string): boolean {
   );
 }
 
+/* ---- Animated cycling placeholder ---- */
+const PLACEHOLDERS = [
+  'Search countries, fabrics, designers...',
+  "Try 'silk' or 'kimono'...",
+  'Find designers by name...',
+  'Ask AI: Which countries are known for lace?',
+];
+
+function AnimatedPlaceholder({ show }: { show: boolean }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (!show) return;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % PLACEHOLDERS.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [show]);
+
+  if (!show) return null;
+
+  return (
+    <div className="absolute inset-0 flex items-center pointer-events-none select-none overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={PLACEHOLDERS[index]}
+          initial={{ opacity: 0, y: 8, filter: 'blur(4px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          exit={{ opacity: 0, y: -8, filter: 'blur(4px)' }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="text-sm text-white/25 whitespace-nowrap"
+        >
+          {PLACEHOLDERS[index]}
+        </motion.span>
+      </AnimatePresence>
+    </div>
+  );
+}
+
+/* ---- Tiny SVG progress ring for AI score ---- */
+function ScoreRing({ score }: { score: number }) {
+  const pct = Math.round(score * 100);
+  const radius = 9;
+  const circumference = 2 * Math.PI * radius;
+  const dashOffset = circumference * (1 - score);
+
+  return (
+    <div className="relative flex items-center justify-center shrink-0" title={`${pct}% match`}>
+      <svg width="26" height="26" viewBox="0 0 26 26" className="rotate-[-90deg]">
+        <circle
+          cx="13"
+          cy="13"
+          r={radius}
+          fill="none"
+          stroke="rgba(255,255,255,0.05)"
+          strokeWidth="2.5"
+        />
+        <circle
+          cx="13"
+          cy="13"
+          r={radius}
+          fill="none"
+          stroke="url(#scoreGradient)"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeDasharray={circumference}
+          strokeDashoffset={dashOffset}
+          className="drop-shadow-[0_0_4px_rgba(233,69,96,0.6)]"
+        />
+        <defs>
+          <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#E94560" />
+            <stop offset="100%" stopColor="#FF5A7A" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <span className="absolute text-[8px] font-mono text-accent font-bold leading-none">
+        {pct}
+      </span>
+    </div>
+  );
+}
+
+/* ---- Match field category config ---- */
+const CATEGORY_CONFIG: Record<string, { label: string; dot: string }> = {
+  region: { label: 'Region', dot: 'bg-blue-400' },
+  fabric: { label: 'Fabric', dot: 'bg-emerald-400' },
+  designer: { label: 'Designer', dot: 'bg-purple-400' },
+  capital: { label: 'Capital', dot: 'bg-amber-400' },
+};
+
+/* ---- Highlight matching text ---- */
+function HighlightMatch({ text, query }: { text: string; query: string }) {
+  if (!query.trim()) return <>{text}</>;
+  const qWords = query.toLowerCase().split(/\s+/).filter(Boolean);
+
+  // Find the best match position
+  let bestStart = -1;
+  let bestLen = 0;
+  const textLower = text.toLowerCase();
+
+  for (const w of qWords) {
+    const idx = textLower.indexOf(w);
+    if (idx !== -1 && w.length > bestLen) {
+      bestStart = idx;
+      bestLen = w.length;
+    }
+  }
+
+  if (bestStart === -1) return <>{text}</>;
+
+  return (
+    <>
+      {text.slice(0, bestStart)}
+      <span className="text-accent font-semibold">{text.slice(bestStart, bestStart + bestLen)}</span>
+      {text.slice(bestStart + bestLen)}
+    </>
+  );
+}
+
+/* ---- Dropdown spring animation ---- */
+const dropdownVariants = {
+  initial: { opacity: 0, y: -8, scale: 0.98 },
+  animate: { opacity: 1, y: 0, scale: 1 },
+  exit: { opacity: 0, y: -8, scale: 0.98 },
+};
+
+const dropdownTransition = {
+  type: 'spring' as const,
+  damping: 28,
+  stiffness: 380,
+};
+
 export function SearchBar() {
   const countries = useGlobeStore((s) => s.countries);
   const selectCountry = useGlobeStore((s) => s.selectCountry);
@@ -178,6 +313,7 @@ export function SearchBar() {
   const [aiLoading, setAiLoading] = useState(false);
   const [aiError, setAiError] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [isFocused, setIsFocused] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -207,12 +343,12 @@ export function SearchBar() {
         e.stopPropagation();
         setOpen((prev) => {
           if (!prev) {
-            // Opening – focus input on next frame after render
+            // Opening - focus input on next frame after render
             requestAnimationFrame(() => {
               inputRef.current?.focus();
             });
           } else {
-            // Closing – blur input
+            // Closing - blur input
             inputRef.current?.blur();
           }
           return !prev;
@@ -348,21 +484,10 @@ export function SearchBar() {
   );
 
   const matchFieldLabel = (field: string) => {
-    switch (field) {
-      case 'name':
-        return null;
-      case 'region':
-        return 'Region';
-      case 'fabric':
-        return 'Fabric';
-      case 'designer':
-        return 'Designer';
-      case 'capital':
-        return 'Capital';
-      default:
-        return null;
-    }
+    return CATEGORY_CONFIG[field] || null;
   };
+
+  const showAnimatedPlaceholder = !inputValue && isFocused;
 
   return (
     <div
@@ -372,207 +497,337 @@ export function SearchBar() {
         panelOpen ? "z-20 hidden md:block" : "z-40"
       )}
     >
-      {/* Search Input */}
+      {/* Search Input - Gradient border wrapper on focus */}
       <div
         className={cn(
-          'glass-panel rounded-xl flex items-center gap-3 px-4 py-2.5 transition-all duration-200',
-          open && 'ring-1 ring-accent/40 glow-accent'
+          'rounded-xl transition-all duration-300 p-[1px]',
+          isFocused
+            ? 'bg-gradient-to-r from-accent via-pink-500/60 to-accent shadow-[0_0_24px_rgba(233,69,96,0.2),0_0_48px_rgba(233,69,96,0.08)]'
+            : 'bg-white/[0.08] hover:bg-white/[0.12]'
         )}
       >
-        <Search className="w-4 h-4 text-muted shrink-0" />
-        <input
-          ref={inputRef}
-          type="text"
-          value={inputValue}
-          onChange={(e) => {
-            setInputValue(e.target.value);
-            if (!open) setOpen(true);
-          }}
-          onFocus={() => setOpen(true)}
-          onKeyDown={handleKeyDown}
-          placeholder="Search countries, fabrics, designers..."
-          className="flex-1 bg-transparent text-sm text-foreground placeholder:text-muted outline-none"
-          aria-label="Search countries"
-          aria-expanded={showDropdown}
-          aria-controls="search-results-list"
-          aria-autocomplete="list"
-          role="combobox"
-        />
-        {inputValue && (
-          <button
-            onClick={() => {
-              setInputValue('');
-              setLocalMatches([]);
-              setAiResults([]);
-              inputRef.current?.focus();
+        <div
+          className={cn(
+            'rounded-[11px] flex items-center gap-3 px-4 py-2.5 transition-all duration-200',
+            isFocused
+              ? 'bg-[#0A0A1A] backdrop-blur-xl'
+              : 'bg-[#0A0A1A]/80 backdrop-blur-xl hover:bg-[#0A0A1A]/90'
+          )}
+        >
+          <motion.div
+            animate={{
+              scale: isFocused ? 1.1 : 1,
             }}
-            className="text-muted hover:text-foreground transition-colors"
-            aria-label="Clear search"
+            transition={{ type: 'spring', damping: 15, stiffness: 300 }}
           >
-            <X className="w-4 h-4" />
-          </button>
-        )}
-        <kbd className="hidden sm:flex items-center gap-0.5 text-[10px] text-muted bg-white/5 border border-white/10 rounded px-1.5 py-0.5 font-mono">
-          <Command className="w-3 h-3" />K
-        </kbd>
+            <Search
+              className={cn(
+                'w-4 h-4 shrink-0 transition-colors duration-300',
+                isFocused ? 'text-accent drop-shadow-[0_0_6px_rgba(233,69,96,0.5)]' : 'text-muted'
+              )}
+            />
+          </motion.div>
+          <div className="relative flex-1">
+            <AnimatedPlaceholder show={showAnimatedPlaceholder} />
+            <input
+              ref={inputRef}
+              type="text"
+              value={inputValue}
+              onChange={(e) => {
+                setInputValue(e.target.value);
+                if (!open) setOpen(true);
+              }}
+              onFocus={() => {
+                setOpen(true);
+                setIsFocused(true);
+              }}
+              onBlur={() => setIsFocused(false)}
+              onKeyDown={handleKeyDown}
+              placeholder={isFocused ? '' : 'Search countries, fabrics, designers...'}
+              className="w-full bg-transparent text-sm text-foreground placeholder:text-white/20 outline-none"
+              aria-label="Search countries"
+              aria-expanded={showDropdown}
+              aria-controls="search-results-list"
+              aria-autocomplete="list"
+              role="combobox"
+            />
+          </div>
+          {inputValue && (
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              onClick={() => {
+                setInputValue('');
+                setLocalMatches([]);
+                setAiResults([]);
+                inputRef.current?.focus();
+              }}
+              className="text-white/30 hover:text-foreground hover:bg-white/[0.06] rounded-md p-0.5 transition-all duration-150"
+              aria-label="Clear search"
+            >
+              <X className="w-3.5 h-3.5" />
+            </motion.button>
+          )}
+          <kbd className={cn(
+            "hidden sm:flex items-center gap-0.5 text-[10px] font-mono rounded-md px-2 py-1 cursor-default transition-all duration-200",
+            isFocused
+              ? 'text-accent/60 bg-accent/[0.08] border border-accent/[0.15] shadow-[0_0_8px_rgba(233,69,96,0.1)]'
+              : 'text-white/30 bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.12]'
+          )}>
+            <Command className="w-3 h-3" />K
+          </kbd>
+        </div>
       </div>
 
       {/* Dropdown Results */}
       <AnimatePresence>
         {showDropdown && (
           <motion.div
-            initial={{ opacity: 0, y: -8, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -8, scale: 0.98 }}
-            transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="mt-2 glass-panel rounded-xl overflow-hidden max-h-[45vh] md:max-h-[60vh] overflow-y-auto"
+            variants={dropdownVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={dropdownTransition}
+            className={cn(
+              'mt-2 rounded-xl overflow-hidden max-h-[45vh] md:max-h-[60vh]',
+              'bg-[#0C0C1E]/97 backdrop-blur-2xl border border-white/[0.08]',
+              'shadow-[0_8px_40px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)]',
+              'relative'
+            )}
             id="search-results-list"
             role="listbox"
           >
-            {/* Local matches */}
-            {localMatches.length > 0 && (
-              <div className="p-2">
-                <p className="text-[10px] uppercase tracking-wider text-muted px-2 py-1">
-                  Countries
-                </p>
-                {localMatches.map((match, i) => {
-                  const globalIndex = i;
-                  const label = matchFieldLabel(match.matchField);
-                  return (
-                    <button
-                      key={match.iso}
-                      onClick={() => handleSelect(match.iso)}
-                      onMouseEnter={() => setActiveIndex(globalIndex)}
-                      className={cn(
-                        'w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-colors',
-                        activeIndex === globalIndex
-                          ? 'bg-white/10 text-foreground'
-                          : 'text-foreground/80 hover:bg-white/5'
-                      )}
-                      role="option"
-                      aria-selected={activeIndex === globalIndex}
-                    >
-                      <span className="text-lg shrink-0">{match.flag}</span>
-                      <div className="flex-1 min-w-0">
-                        <span className="text-sm font-medium truncate block">
-                          {match.name}
-                        </span>
-                        <span className="text-xs text-muted">{match.region}</span>
-                      </div>
-                      {label && (
-                        <span className="text-[10px] text-accent/80 bg-accent/10 rounded px-1.5 py-0.5 shrink-0">
-                          {label}
-                        </span>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            )}
+            {/* Gradient top border accent line */}
+            <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
-            {/* Divider */}
-            {localMatches.length > 0 && (aiResults.length > 0 || aiLoading) && (
-              <div className="border-t border-white/5" />
-            )}
+            {/* Subtle inner glow */}
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{
+                backgroundImage:
+                  'radial-gradient(ellipse at 20% 0%, rgba(233,69,96,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.01) 0%, transparent 40%)',
+              }}
+            />
 
-            {/* AI results */}
-            {aiLoading && (
-              <div className="p-4 flex items-center justify-center gap-2 text-sm text-muted">
-                <Loader2 className="w-4 h-4 animate-spin text-accent" />
-                <span>Searching with AI...</span>
-              </div>
-            )}
+            {/* Noise texture overlay */}
+            <div
+              className="pointer-events-none absolute inset-0 opacity-[0.02] mix-blend-overlay"
+              style={{
+                backgroundImage:
+                  'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")',
+              }}
+            />
 
-            {aiError && !aiLoading && (
-              <div className="p-4 text-center text-sm text-red-400">
-                {aiError}
-              </div>
-            )}
-
-            {aiResults.length > 0 && !aiLoading && (
-              <div className="p-2">
-                <p className="text-[10px] uppercase tracking-wider text-muted px-2 py-1 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-accent" />
-                  AI Results
-                </p>
-                {aiResults.map((result, i) => {
-                  const globalIndex = localMatches.length + i;
-                  const c = countries.find((cc) => cc.iso === result.iso);
-                  if (!c) return null;
-                  return (
-                    <button
-                      key={result.iso}
-                      onClick={() => handleSelect(result.iso)}
-                      onMouseEnter={() => setActiveIndex(globalIndex)}
-                      className={cn(
-                        'w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-colors',
-                        activeIndex === globalIndex
-                          ? 'bg-white/10 text-foreground'
-                          : 'text-foreground/80 hover:bg-white/5'
-                      )}
-                      role="option"
-                      aria-selected={activeIndex === globalIndex}
-                    >
-                      <span className="text-lg shrink-0">{c.flag}</span>
-                      <div className="flex-1 min-w-0">
-                        <span className="text-sm font-medium truncate block">
-                          {c.name}
-                        </span>
-                        <span className="text-xs text-muted line-clamp-1">
-                          {result.reason}
-                        </span>
-                      </div>
-                      <span className="text-[10px] text-accent font-mono shrink-0">
-                        {Math.round(result.score * 100)}%
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            )}
-
-            {/* Empty state */}
-            {!aiLoading &&
-              !aiError &&
-              localMatches.length === 0 &&
-              aiResults.length === 0 &&
-              inputValue.trim().length > 0 && (
-                <div className="p-4 text-center">
-                  <p className="text-sm text-muted">
-                    No local matches found.
+            {/* Scrollable content */}
+            <div className="relative overflow-y-auto max-h-[calc(45vh-44px)] md:max-h-[calc(60vh-44px)]">
+              {/* Local matches */}
+              {localMatches.length > 0 && (
+                <div className="p-1.5">
+                  <p className="text-[10px] uppercase tracking-[0.15em] text-white/30 px-2.5 py-2 flex items-center gap-2 font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent/70 shadow-[0_0_6px_rgba(233,69,96,0.5)]" />
+                    Countries
+                    <span className="text-white/15 ml-auto tabular-nums">{localMatches.length}</span>
                   </p>
-                  <button
-                    onClick={() => triggerAiSearch(inputValue)}
-                    className="mt-2 inline-flex items-center gap-1.5 text-xs text-accent hover:text-accent-hover transition-colors"
-                  >
-                    <Sparkles className="w-3 h-3" />
-                    Search with AI
-                  </button>
+                  {localMatches.map((match, i) => {
+                    const globalIndex = i;
+                    const category = matchFieldLabel(match.matchField);
+                    const isActive = activeIndex === globalIndex;
+                    return (
+                      <motion.button
+                        key={match.iso}
+                        initial={false}
+                        animate={{
+                          backgroundColor: isActive ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0)',
+                        }}
+                        transition={{ duration: 0.15 }}
+                        onClick={() => handleSelect(match.iso)}
+                        onMouseEnter={() => setActiveIndex(globalIndex)}
+                        className={cn(
+                          'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all duration-150 group relative',
+                          isActive
+                            ? 'text-foreground'
+                            : 'text-foreground/80 hover:text-foreground'
+                        )}
+                        role="option"
+                        aria-selected={isActive}
+                      >
+                        {/* Left accent bar */}
+                        <div className={cn(
+                          'absolute left-0 top-1/2 -translate-y-1/2 w-[2px] rounded-full transition-all duration-200',
+                          isActive ? 'h-5 bg-accent shadow-[0_0_8px_rgba(233,69,96,0.5)]' : 'h-0 bg-transparent'
+                        )} />
+                        <span className="text-lg shrink-0 drop-shadow-sm">{match.flag}</span>
+                        <div className="flex-1 min-w-0">
+                          <span className="text-sm font-medium truncate block">
+                            <HighlightMatch text={match.name} query={inputValue} />
+                          </span>
+                          <span className="text-[11px] text-white/25">{match.region}</span>
+                        </div>
+                        {category && (
+                          <span className="flex items-center gap-1.5 text-[10px] text-white/50 bg-white/[0.04] border border-white/[0.06] rounded-md px-2 py-0.5 shrink-0">
+                            <span className={cn('w-1.5 h-1.5 rounded-full', category.dot)} />
+                            {category.label}
+                          </span>
+                        )}
+                      </motion.button>
+                    );
+                  })}
                 </div>
               )}
 
-            {/* Footer hint */}
+              {/* Divider */}
+              {localMatches.length > 0 && (aiResults.length > 0 || aiLoading) && (
+                <div className="mx-3 h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+              )}
+
+              {/* AI loading state */}
+              {aiLoading && (
+                <div className="relative p-5 flex items-center justify-center gap-3">
+                  <div className="relative">
+                    <Loader2 className="w-4 h-4 animate-spin text-accent" />
+                    <div className="absolute inset-0 animate-ping opacity-20">
+                      <Sparkles className="w-4 h-4 text-accent" />
+                    </div>
+                  </div>
+                  <span className="text-sm text-white/35 font-medium">Searching with AI...</span>
+                </div>
+              )}
+
+              {/* AI error */}
+              {aiError && !aiLoading && (
+                <div className="relative p-4 text-center text-sm text-red-400/80">
+                  {aiError}
+                </div>
+              )}
+
+              {/* AI results */}
+              {aiResults.length > 0 && !aiLoading && (
+                <div className="p-1.5">
+                  <p className="text-[10px] uppercase tracking-[0.15em] text-white/30 px-2.5 py-2 flex items-center gap-2 font-medium">
+                    <Sparkles className="w-3 h-3 text-accent animate-[pulse_3s_ease-in-out_infinite]" />
+                    AI Results
+                    <span className="text-white/15 ml-auto tabular-nums">{aiResults.length}</span>
+                  </p>
+                  {aiResults.map((result, i) => {
+                    const globalIndex = localMatches.length + i;
+                    const c = countries.find((cc) => cc.iso === result.iso);
+                    if (!c) return null;
+                    const isActive = activeIndex === globalIndex;
+                    return (
+                      <motion.button
+                        key={result.iso}
+                        initial={false}
+                        animate={{
+                          backgroundColor: isActive ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0)',
+                        }}
+                        transition={{ duration: 0.15 }}
+                        onClick={() => handleSelect(result.iso)}
+                        onMouseEnter={() => setActiveIndex(globalIndex)}
+                        className={cn(
+                          'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all duration-150 group relative',
+                          isActive
+                            ? 'text-foreground'
+                            : 'text-foreground/80 hover:text-foreground'
+                        )}
+                        role="option"
+                        aria-selected={isActive}
+                      >
+                        {/* Left accent bar */}
+                        <div className={cn(
+                          'absolute left-0 top-1/2 -translate-y-1/2 w-[2px] rounded-full transition-all duration-200',
+                          isActive ? 'h-5 bg-accent shadow-[0_0_8px_rgba(233,69,96,0.5)]' : 'h-0 bg-transparent'
+                        )} />
+                        <span className="text-lg shrink-0 drop-shadow-sm">{c.flag}</span>
+                        <div className="flex-1 min-w-0">
+                          <span className="text-sm font-medium truncate block">
+                            <HighlightMatch text={c.name} query={inputValue} />
+                          </span>
+                          <span className="text-[11px] text-white/25 line-clamp-1">
+                            {result.reason}
+                          </span>
+                        </div>
+                        <ScoreRing score={result.score} />
+                      </motion.button>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* Empty state */}
+              {!aiLoading &&
+                !aiError &&
+                localMatches.length === 0 &&
+                aiResults.length === 0 &&
+                inputValue.trim().length > 0 && (
+                  <div className="relative p-8 text-center">
+                    <div className="relative inline-block mb-4">
+                      <Globe className="w-10 h-10 text-white/[0.06] mx-auto" />
+                      <motion.div
+                        className="absolute -top-1 -right-1"
+                        animate={{ rotate: [0, 15, -15, 0] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                      >
+                        <Sparkles className="w-4 h-4 text-accent/30" />
+                      </motion.div>
+                    </div>
+                    <p className="text-sm font-medium text-white/35 mb-1">
+                      No matches found
+                    </p>
+                    <p className="text-xs text-white/15 mb-4">
+                      Try a different query or let AI find it for you
+                    </p>
+                    <motion.button
+                      onClick={() => triggerAiSearch(inputValue)}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      className={cn(
+                        'inline-flex items-center gap-2 text-xs font-medium transition-all duration-200',
+                        'text-accent hover:text-accent-hover',
+                        'bg-accent/[0.08] hover:bg-accent/[0.14] border border-accent/[0.15] hover:border-accent/[0.25] rounded-lg px-4 py-2',
+                        'shadow-[0_0_16px_rgba(233,69,96,0.15)] hover:shadow-[0_0_24px_rgba(233,69,96,0.25)]'
+                      )}
+                    >
+                      <Sparkles className="w-3.5 h-3.5" />
+                      Search with AI
+                      <kbd className="text-[9px] text-accent/40 bg-accent/[0.06] border border-accent/[0.1] rounded px-1 py-0.5 font-mono ml-1">
+                        <CornerDownLeft className="w-2.5 h-2.5 inline" />
+                      </kbd>
+                    </motion.button>
+                  </div>
+                )}
+            </div>
+
+            {/* Footer hint - always at bottom */}
             {(hasResults || aiLoading) && (
-              <div className="border-t border-white/5 px-3 py-2 flex items-center justify-between text-[10px] text-muted">
-                <div className="flex items-center gap-2">
-                  <span className="flex items-center gap-0.5">
-                    <ArrowUp className="w-3 h-3" />
-                    <ArrowDown className="w-3 h-3" />
-                    navigate
+              <div className="relative border-t border-white/[0.05] bg-[#080818]/60 backdrop-blur-sm px-3 py-2 flex items-center justify-between text-[10px] text-white/25">
+                <div className="flex items-center gap-3">
+                  <span className="flex items-center gap-1">
+                    <kbd className="inline-flex items-center justify-center w-[18px] h-[18px] bg-white/[0.05] border border-white/[0.08] rounded text-[9px] font-mono">
+                      <ArrowUp className="w-2.5 h-2.5" />
+                    </kbd>
+                    <kbd className="inline-flex items-center justify-center w-[18px] h-[18px] bg-white/[0.05] border border-white/[0.08] rounded text-[9px] font-mono">
+                      <ArrowDown className="w-2.5 h-2.5" />
+                    </kbd>
+                    <span className="ml-0.5 text-white/20">navigate</span>
                   </span>
-                  <span>
-                    <kbd className="bg-white/5 border border-white/10 rounded px-1 py-0.5 font-mono">
-                      Enter
-                    </kbd>{' '}
-                    select
+                  <span className="flex items-center gap-1">
+                    <kbd className="bg-white/[0.05] border border-white/[0.08] rounded px-1.5 py-0.5 font-mono text-[9px]">
+                      <CornerDownLeft className="w-2.5 h-2.5 inline" />
+                    </kbd>
+                    <span className="text-white/20">select</span>
                   </span>
-                  <span>
-                    <kbd className="bg-white/5 border border-white/10 rounded px-1 py-0.5 font-mono">
-                      Esc
-                    </kbd>{' '}
-                    close
+                  <span className="flex items-center gap-1">
+                    <kbd className="bg-white/[0.05] border border-white/[0.08] rounded px-1.5 py-0.5 font-mono text-[9px]">
+                      esc
+                    </kbd>
+                    <span className="text-white/20">close</span>
                   </span>
                 </div>
+                <span className="flex items-center gap-1.5 text-accent/35">
+                  <Sparkles className="w-2.5 h-2.5 animate-[pulse_3s_ease-in-out_infinite]" />
+                  <span className="font-medium tracking-wide text-[9px]">AI-powered</span>
+                </span>
               </div>
             )}
           </motion.div>
