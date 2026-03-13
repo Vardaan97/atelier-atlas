@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import { useGlobeStore } from '@/store/useGlobeStore';
 import { FashionGlobe } from '@/components/globe/FashionGlobe';
-import { FlatMap } from '@/components/globe/FlatMap';
 import { GlobeControls } from '@/components/globe/GlobeControls';
 import { GlobeTooltip } from '@/components/globe/GlobeTooltip';
 import { ColorLegend } from '@/components/globe/ColorLegend';
@@ -60,8 +59,8 @@ export function GlobeView() {
         </div>
       </div>
 
-      {/* Globe / FlatMap — wait for isMobile detection to avoid mounting wrong component */}
-      {isMobile === undefined ? null : isMobile ? <FlatMap /> : <FashionGlobe />}
+      {/* Globe — always use 3D globe, wait for isMobile detection to avoid hydration mismatch */}
+      {isMobile === undefined ? null : <FashionGlobe />}
 
       {/* Filter Sidebar */}
       <FilterSidebar />

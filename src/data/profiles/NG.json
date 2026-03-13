@@ -1,0 +1,179 @@
+{
+  "fashionDNA": {
+    "traditionalism": 92,
+    "innovation": 85,
+    "sustainability": 30,
+    "luxuryIndex": 78,
+    "streetwearInfluence": 82,
+    "craftsmanship": 95,
+    "globalInfluence": 88
+  },
+  "eras": [
+    {
+      "id": "pre-colonial-majesty",
+      "name": "Pre-Colonial Dynastic Era",
+      "yearRange": [
+        1400,
+        1850
+      ],
+      "description": "A period defined by status-based dressing where textiles like hand-woven Aso Oke and Akwete signified royalty and lineage. Garments were voluminous, utilizing heavy hand-loomed cotton and silk to project power and wealth.",
+      "keyGarments": [
+        "Agbada",
+        "Buba",
+        "Akwete Wrappers"
+      ],
+      "aiImagePrompt": "Cinematic portrait of a 15th-century Benin Kingdom noble, wearing elaborate coral bead necklaces and high-collared headpieces, draped in heavy hand-woven indigo textiles with intricate geometric patterns, historical accuracy, royal courtyard background."
+    },
+    {
+      "id": "colonial-merging",
+      "name": "Colonial Synthesis",
+      "yearRange": [
+        1851,
+        1959
+      ],
+      "description": "The introduction of Victorian silhouettes and European tailoring merged with indigenous fabrics. Saro and Amaro returnees from Sierra Leone and Brazil influenced a hybrid style of lace, top hats, and traditional wrappers.",
+      "keyGarments": [
+        "Victorian Lace Blouses",
+        "Top Hats",
+        "Tailored Frocks"
+      ],
+      "aiImagePrompt": "1920s Lagos socialite wearing a high-neck Victorian lace blouse paired with a traditional hand-woven Aso Oke wrapper, carrying a parasol, vintage sepia tones, colonial architecture background."
+    },
+    {
+      "id": "independence-glamour",
+      "name": "Independence Golden Age",
+      "yearRange": [
+        1960,
+        1979
+      ],
+      "description": "Post-independence optimism fueled a boom in high-society fashion. The 'Iro and Buba' became a symbol of national pride, often rendered in expensive Swiss lace or George fabric, while the 'Afro' aesthetic emerged.",
+      "keyGarments": [
+        "Oleku",
+        "Swiss Lace Iro",
+        "Double-Gele"
+      ],
+      "aiImagePrompt": "1960s Nigerian woman in a vibrant yellow lace Iro and Buba with a massive, expertly tied skyscraper Gele headtie, mid-century modern furniture, Kodachrome film style."
+    },
+    {
+      "id": "oil-boom-excess",
+      "name": "The Oil Boom & Power Dressing",
+      "yearRange": [
+        1980,
+        1999
+      ],
+      "description": "Economic shifts led to an era of 'more is more.' Nigerian fashion saw exaggerated shoulder pads, heavy embroidery on Agbadas, and the rise of organized fashion shows in Lagos hotels.",
+      "keyGarments": [
+        "Embroidered Agbada",
+        "Power Suits",
+        "Damask Gele"
+      ],
+      "aiImagePrompt": "1980s Nigerian businessman in a voluminous white Agbada with heavy gold silk embroidery, wearing a velvet Fila hat, standing next to a Mercedes-Benz, 80s aesthetic."
+    },
+    {
+      "id": "contemporary-renaissance",
+      "name": "Modern Nigerian Renaissance",
+      "yearRange": [
+        2000,
+        2015
+      ],
+      "description": "The global explosion of Nollywood and Afrobeats exported Nigerian style. Designers began deconstructing traditional silhouettes, leading to the 'Alté' movement and the professionalization of the industry.",
+      "keyGarments": [
+        "Deconstructed Ankara Dresses",
+        "Slim-fit Tunics",
+        "Aso Oke Corsets"
+      ],
+      "aiImagePrompt": "Modern Nigerian runway model wearing a deconstructed Aso Oke gown with structural architectural shoulders, high-fashion editorial lighting, Lagos Fashion Week runway."
+    },
+    {
+      "id": "digital-global-era",
+      "name": "Digital Global Dominance",
+      "yearRange": [
+        2016,
+        2024
+      ],
+      "description": "Nigerian fashion is now a global powerhouse, characterized by high-tech textile manipulation and a blend of streetwear with luxury heritage. It is the era of the 'Global African' identity.",
+      "keyGarments": [
+        "Alté Streetwear",
+        "Silk Adire Kimonos",
+        "Custom Couture"
+      ],
+      "aiImagePrompt": "Contemporary Lagos street style, youth in oversized Adire-print puffer jackets and chunky sneakers, vibrant urban background with neon signs, high-resolution photography."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Aso Oke",
+      "type": "Woven",
+      "description": "A prestigious hand-woven cloth created by the Yoruba people, typically made of silk or cotton.",
+      "origin": "Iseyin, Oyo State",
+      "technique": "Narrow-strip weaving on a horizontal loom"
+    },
+    {
+      "name": "Adire",
+      "type": "Dyed",
+      "description": "Indigo-dyed cloth using resist-dyeing techniques to create intricate patterns.",
+      "origin": "Abeokuta, Ogun State",
+      "technique": "Starch-resist (Adire Eleko) or tie-resist (Adire Oniko)"
+    },
+    {
+      "name": "Ankara",
+      "type": "Printed",
+      "description": "Wax-resist printed cotton fabric known for its vibrant colors and symbolic motifs.",
+      "origin": "Lagos (Imported/Local adaptation)",
+      "technique": "Industrial wax-print roll printing"
+    },
+    {
+      "name": "Akwete",
+      "type": "Woven",
+      "description": "A unique sisal and cotton textile known for its wide width and complex geometric patterns.",
+      "origin": "Akwete, Abia State",
+      "technique": "Vertical broadloom weaving"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical Savanna and Monsoon",
+    "avgTemp": 27,
+    "humidity": "Very High",
+    "fashionImplication": "High humidity dictates the use of breathable natural fibers like cotton and silk; voluminous silhouettes like the Agbada facilitate airflow around the body."
+  },
+  "culturalInfluences": [
+    "Nollywood Cinema",
+    "Afrobeats Music Global Surge",
+    "Yoruba Royal Traditions",
+    "Igbo 'Isi Agu' Heritage",
+    "British Colonial Legacy",
+    "Returnee 'Repat' Culture",
+    "Islamic Modesty in Northern Nigeria",
+    "The Alté Subculture"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Lagos Fashion Week",
+        "city": "Lagos",
+        "month": "October",
+        "tier": "Major"
+      },
+      {
+        "name": "GTBank Fashion Weekend",
+        "city": "Lagos",
+        "month": "November",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Upcycled Adire Streetwear",
+      "Structural Aso Oke Corsetry",
+      "Gender-Fluid Traditional Tunics",
+      "Sustainable Mycelium Leathers",
+      "Digital-Only Ankara Wear"
+    ],
+    "digitalPresence": 90,
+    "ecommercePenetration": 45,
+    "notableEvents": [
+      "AMVCA Red Carpet",
+      "Arise Fashion Week",
+      "Our Homecoming"
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "fashionDNA": {
+    "traditionalism": 85,
+    "innovation": 55,
+    "sustainability": 15,
+    "luxuryIndex": 40,
+    "streetwearInfluence": 65,
+    "craftsmanship": 90,
+    "globalInfluence": 35
+  },
+  "eras": [
+    {
+      "id": "pre-colonial-kingdoms",
+      "name": "Era of Sovereign Kingdoms",
+      "yearRange": [
+        1500,
+        1884
+      ],
+      "description": "Fashion was defined by the complex social hierarchies of the Bamileke, Bamoun, and Tikar kingdoms. High-status individuals wore intricate beadwork and the first iterations of Ndop cloth, symbolizing power and spiritual connection.",
+      "keyGarments": [
+        "Ndop loincloths",
+        "Beaded crowns",
+        "Leopard skin capes"
+      ],
+      "aiImagePrompt": "Historical illustration of a Bamileke Fon (king) in the 1800s wearing a heavy indigo Ndop cloth wrap, massive red coral necklaces, and an intricate beaded conical cap, standing in front of a bamboo palace."
+    },
+    {
+      "id": "german-kamerun-period",
+      "name": "German Kamerun Protectorate",
+      "yearRange": [
+        1884,
+        1916
+      ],
+      "description": "A period of forced cultural syncretism where European military tailoring began to merge with local textiles. Indigenous leaders adopted Western-style jackets but paired them with traditional wrappers to maintain local authority.",
+      "keyGarments": [
+        "High-collar military jackets",
+        "Trade cloth wrappers",
+        "European top hats"
+      ],
+      "aiImagePrompt": "A 1900s Cameroonian noble blending German colonial military aesthetics with local identity, wearing a structured dark wool jacket over a long patterned wrap, holding a carved ceremonial staff."
+    },
+    {
+      "id": "dual-mandate-elegance",
+      "name": "French and British Mandate Era",
+      "yearRange": [
+        1916,
+        1960
+      ],
+      "description": "The 'Kaba' dress became a symbol of resistance and identity for women, evolving from missionary-imposed modesty into a voluminous, stylish garment. Urban centers saw the rise of the 'Sapeur' precursor movements in Douala.",
+      "keyGarments": [
+        "Kaba Ngondo",
+        "Three-piece linen suits",
+        "Fez hats"
+      ],
+      "aiImagePrompt": "A group of Duala women in the 1940s wearing voluminous silk Kaba Ngondo dresses with wide sleeves and matching headscarves, walking through a coastal Douala market."
+    },
+    {
+      "id": "post-independence-pride",
+      "name": "The Golden Age of Authenticity",
+      "yearRange": [
+        1960,
+        1985
+      ],
+      "description": "Post-independence fashion celebrated 'Cameroonization.' The Toghu became a national symbol, and the elite favored tailored suits made from locally printed wax cottons to signal modern African identity.",
+      "keyGarments": [
+        "Embroidered Toghu",
+        "Abacost suits",
+        "Boubous"
+      ],
+      "aiImagePrompt": "A 1970s Cameroonian diplomat wearing a black velvet Toghu gown with vibrant yellow and red hand-embroidery, standing in a modernist architectural setting."
+    },
+    {
+      "id": "economic-crisis-innovation",
+      "name": "The Friperie and DIY Era",
+      "yearRange": [
+        1986,
+        2005
+      ],
+      "description": "Economic downturn led to the dominance of 'Friperie' (second-hand Western clothing). Youth began upcycling these garments, creating a unique street style that blended vintage European finds with local accessories.",
+      "keyGarments": [
+        "Upcycled denim",
+        "Oversized blazers",
+        "Pagnes wraps"
+      ],
+      "aiImagePrompt": "A young man in 1990s Yaoundé wearing an oversized vintage Western blazer paired with locally dyed trousers and chunky leather sandals, leaning against a colorful taxi."
+    },
+    {
+      "id": "modern-renaissance",
+      "name": "The Digital Couture Era",
+      "yearRange": [
+        2006,
+        2024
+      ],
+      "description": "A resurgence of traditional pride fueled by social media. Designers are now modernizing the Toghu and Ndop for global runways, while 'Afro-chic' streetwear dominates the urban youth culture in Douala.",
+      "keyGarments": [
+        "Modernized Toghu jumpsuits",
+        "Wax print sneakers",
+        "Architectural headwraps"
+      ],
+      "aiImagePrompt": "A contemporary fashion model in a high-fashion editorial pose, wearing a neon-colored Toghu-inspired mini dress with 3D embroidery and metallic accessories."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Ndop",
+      "type": "Dyed",
+      "description": "A sacred indigo-dyed fabric featuring white geometric symbols representing Bamileke cosmology.",
+      "origin": "Grassfields (West Region)",
+      "technique": "Stitch-resist dyeing on hand-woven cotton strips"
+    },
+    {
+      "name": "Toghu",
+      "type": "Embroidered",
+      "description": "Heavy black velvet or wool fabric adorned with dense, multi-colored silk thread embroidery in circular patterns.",
+      "origin": "Bamenda (Northwest Region)",
+      "technique": "Hand-guided chain stitch embroidery"
+    },
+    {
+      "name": "Obom",
+      "type": "Felted",
+      "description": "A traditional bark cloth used for ceremonial attire and spiritual protection.",
+      "origin": "Central and South Regions",
+      "technique": "Beating the inner bark of the Aloa tree until soft and pliable"
+    },
+    {
+      "name": "Pagne (Wax Print)",
+      "type": "Printed",
+      "description": "While not indigenous in origin, it is the most ubiquitous fabric used for daily 'tailleur' outfits.",
+      "origin": "Nationwide",
+      "technique": "Industrial wax-resist roller printing"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical/Equatorial",
+    "avgTemp": 25,
+    "humidity": "Very High",
+    "fashionImplication": "High humidity necessitates breathable cotton fabrics and loose silhouettes like the Kaba or Boubou. In the North, lighter colors and head coverings are used for sun protection."
+  },
+  "culturalInfluences": [
+    "Bamileke Chieftaincy hierarchies",
+    "French colonial tailoring",
+    "German military uniforms",
+    "The 'Sapeur' culture of neighboring Congo",
+    "Islamic modesty from the Northern Sahel regions",
+    "Catholic missionary dress codes",
+    "The Ngondo Festival of the Duala people"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Annual Show (Cameroun Fashion Design)",
+        "city": "Yaoundé",
+        "month": "November",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Forum des Métiers de la Mode et du Design",
+        "city": "Douala",
+        "month": "May",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Toghu-Streetwear fusion",
+      "Sustainable upcycling of 'Friperie'",
+      "Digital textile printing of Ndop patterns",
+      "Ethical luxury accessories using local wood and raffia"
+    ],
+    "digitalPresence": 45,
+    "ecommercePenetration": 22,
+    "notableEvents": [
+      "K-Walk (High-end fashion gala)",
+      "Festival National des Arts et de la Culture (FENAC)"
+    ]
+  }
+}

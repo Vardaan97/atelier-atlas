@@ -1,0 +1,171 @@
+{
+  "fashionDNA": {
+    "traditionalism": 75,
+    "innovation": 62,
+    "sustainability": 82,
+    "luxuryIndex": 88,
+    "streetwearInfluence": 45,
+    "craftsmanship": 95,
+    "globalInfluence": 55
+  },
+  "eras": [
+    {
+      "id": "medieval-alpine-pragmatism",
+      "name": "Medieval Alpine Pragmatism",
+      "yearRange": [
+        1291,
+        1500
+      ],
+      "description": "A focus on heavy, durable woolens and linens suited for high-altitude pastoral life. Clothing was strictly functional, emphasizing protection against the elements with minimal ornamentation.",
+      "keyGarments": [
+        "Loden tunic",
+        "Woolen hosen",
+        "Gugel hood"
+      ],
+      "aiImagePrompt": "14th-century Swiss peasant attire, thick dark brown loden wool tunic, heavy woolen leggings, a hood covering the shoulders, rugged leather boots, set against a backdrop of a rustic stone alpine hut."
+    },
+    {
+      "id": "reformation-sobriety",
+      "name": "The Reformation & Sumptuary Laws",
+      "yearRange": [
+        1520,
+        1650
+      ],
+      "description": "Under the influence of Calvin and Zwingli, Swiss fashion became notoriously austere. Dark colors, particularly black, dominated the urban centers of Geneva and Zurich to signal piety and discipline.",
+      "keyGarments": [
+        "Black doublet",
+        "White ruff collar",
+        "Schlappe hat"
+      ],
+      "aiImagePrompt": "16th-century Geneva merchant in a high-quality black wool doublet, a stiff white pleated ruff collar, modest black hat, minimalist and somber aesthetic, oil painting style."
+    },
+    {
+      "id": "st-gallen-embroidery-boom",
+      "name": "The Golden Age of St. Gallen Lace",
+      "yearRange": [
+        1850,
+        1914
+      ],
+      "description": "Switzerland became a global leader in textile machinery and exquisite embroidery. This era saw the rise of intricate lace used in Parisian haute couture, reflecting immense industrial wealth.",
+      "keyGarments": [
+        "Guipure lace gown",
+        "Embroidered bodice",
+        "Silk parasol"
+      ],
+      "aiImagePrompt": "Late 19th-century Victorian gown featuring intricate St. Gallen mechanical embroidery, heavy white lace detailing on sleeves and neckline, silk taffeta skirt, elegant studio portrait."
+    },
+    {
+      "id": "belle-epoque-alpine-tourism",
+      "name": "Belle Époque Alpine Chic",
+      "yearRange": [
+        1890,
+        1920
+      ],
+      "description": "The rise of winter tourism in St. Moritz introduced functional luxury. Traditional Tracht elements were refined for international elites visiting for skiing and health retreats.",
+      "keyGarments": [
+        "Knickerbockers",
+        "Norfolk jacket",
+        "Hand-knit wool sweaters"
+      ],
+      "aiImagePrompt": "Early 20th-century skiers in St. Moritz, wearing heavy tweed Norfolk jackets, wool knickerbockers, thick patterned knit sweaters, and leather lace-up ski boots."
+    },
+    {
+      "id": "post-war-precision-modernism",
+      "name": "Post-War Precision Modernism",
+      "yearRange": [
+        1945,
+        1975
+      ],
+      "description": "Swiss fashion aligned with the 'Swiss Style' of graphic design—clean lines, high-quality fabrics, and a focus on longevity. This period solidified the reputation for high-end ready-to-wear.",
+      "keyGarments": [
+        "Tailored wool suit",
+        "Silk headscarf",
+        "Precision-made leather loafers"
+      ],
+      "aiImagePrompt": "1960s Swiss woman in a perfectly tailored navy blue wool suit, minimalist lines, modernist aesthetic, standing in front of a mid-century modern concrete building in Zurich."
+    },
+    {
+      "id": "contemporary-technical-luxury",
+      "name": "Contemporary Technical Luxury",
+      "yearRange": [
+        1990,
+        2024
+      ],
+      "description": "Modern Swiss fashion merges high-tech textile innovation with understated luxury. There is a strong emphasis on performance wear and sustainable, circular design principles.",
+      "keyGarments": [
+        "Technical shell jacket",
+        "Laser-cut knitwear",
+        "Recycled tarpaulin bag"
+      ],
+      "aiImagePrompt": "Modern Zurich street style, high-tech waterproof minimalist parka, sleek tapered trousers, high-end sneakers, carrying a Freitag-style messenger bag, urban alpine background."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "St. Gallen Lace",
+      "type": "Embroidered",
+      "description": "World-renowned mechanical embroidery and lace that has supplied brands like Chanel and Dior for decades.",
+      "origin": "St. Gallen",
+      "technique": "Schiffli embroidery machine"
+    },
+    {
+      "name": "Swiss Dot",
+      "type": "Woven",
+      "description": "A lightweight cotton fabric characterized by small, raised tufts or 'dots' woven into the surface.",
+      "origin": "Appenzell",
+      "technique": "Swivel weave"
+    },
+    {
+      "name": "Etamine",
+      "type": "Woven",
+      "description": "A fine, gauze-like fabric often used for traditional veils and high-end curtains or summer clothing.",
+      "origin": "Glarus",
+      "technique": "Plain weave with loose tension"
+    }
+  ],
+  "climate": {
+    "zone": "Temperate/Alpine",
+    "avgTemp": 9,
+    "humidity": "Moderate",
+    "fashionImplication": "The variable climate necessitates high-performance layering and durable outerwear, leading to a national preference for 'Quiet Luxury' that prioritizes material quality over flashiness."
+  },
+  "culturalInfluences": [
+    "Alpine Heritage",
+    "Calvinist Minimalism",
+    "Precision Engineering",
+    "Neutrality and Discretion",
+    "High-Altitude Ski Culture",
+    "Italian/French/German Border Fusion",
+    "Sustainability and Circularity",
+    "Watchmaking Craftsmanship"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Mode Suisse",
+        "city": "Zurich",
+        "month": "September",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Fashion Days Zurich",
+        "city": "Zurich",
+        "month": "November",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Circular Textile Economy",
+      "Gorpcore-Luxury Fusion",
+      "Ethical Silk Production",
+      "3D-Printed Accessories"
+    ],
+    "digitalPresence": 85,
+    "ecommercePenetration": 78,
+    "notableEvents": [
+      "Swiss Design Awards",
+      "Blickfang Design Workshop",
+      "Luzerner Design Tage"
+    ]
+  }
+}

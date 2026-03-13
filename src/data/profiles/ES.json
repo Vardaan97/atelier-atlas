@@ -1,0 +1,155 @@
+{
+  "fashionDNA": {
+    "traditionalism": 75,
+    "innovation": 82,
+    "sustainability": 58,
+    "luxuryIndex": 70,
+    "streetwearInfluence": 65,
+    "craftsmanship": 90,
+    "globalInfluence": 85
+  },
+  "eras": [
+    {
+      "id": "golden-age-austrian-influence",
+      "name": "The Spanish Golden Age",
+      "yearRange": [
+        1500,
+        1650
+      ],
+      "description": "Spain dominated European fashion with a somber, rigid, and aristocratic aesthetic. The use of black dye became a status symbol, reflecting the piety and power of the Habsburg court.",
+      "keyGarments": [
+        "Farthingale (Verdugado)",
+        "Ruff (Lechuguilla)",
+        "Doublet"
+      ],
+      "aiImagePrompt": "A high-ranking 16th-century Spanish nobleman wearing a stiff black velvet doublet with gold embroidery, an enormous white pleated ruff, and a short cape, set against a dark moody background in the style of Velázquez."
+    },
+    {
+      "id": "goyaesque-majo-style",
+      "name": "The Majo and Maja Era",
+      "yearRange": [
+        1780,
+        1850
+      ],
+      "description": "A reaction against French fashion, the 'Majo' style celebrated Spanish lower-class flamboyance, characterized by elaborate embroidery and lace. It became a symbol of national identity.",
+      "keyGarments": [
+        "Mantilla",
+        "Short jacket with tassels",
+        "Basquiña"
+      ],
+      "aiImagePrompt": "An 18th-century Spanish woman (Maja) wearing a high-waisted skirt, a silk bodice, and a black lace mantilla held up by a high peineta comb, holding a folding fan, painted with Goya-style brushwork."
+    },
+    {
+      "id": "balenciaga-golden-age",
+      "name": "The Rise of Spanish Couture",
+      "yearRange": [
+        1937,
+        1968
+      ],
+      "description": "Cristóbal Balenciaga revolutionized silhouettes with architectural precision, moving away from the hourglass figure toward sculptural shapes like the sack dress and the envelope dress.",
+      "keyGarments": [
+        "Infanta gown",
+        "Balloon jacket",
+        "Pillbox hat"
+      ],
+      "aiImagePrompt": "A 1950s high-fashion editorial featuring a sculptural silk gazar evening gown by Balenciaga, minimalist architectural background, dramatic lighting emphasizing the structural volume of the fabric."
+    },
+    {
+      "id": "la-movida-madrilena",
+      "name": "La Movida Madrileña",
+      "yearRange": [
+        1975,
+        1985
+      ],
+      "description": "A counter-cultural movement following the transition to democracy, characterized by punk influence, gender-bending, and vibrant, kitschy aesthetics led by figures like Pedro Almodóvar.",
+      "keyGarments": [
+        "Leather jackets",
+        "Neon accessories",
+        "Androgynous tailoring"
+      ],
+      "aiImagePrompt": "A group of young Spanish punks on a Madrid street in 1982, wearing colorful mismatched layers, spiked hair, leather vests, and heavy eyeliner, capturing the energy of post-Franco liberation."
+    },
+    {
+      "id": "fast-fashion-dominance",
+      "name": "The Inditex Revolution",
+      "yearRange": [
+        1990,
+        2010
+      ],
+      "description": "Spain transformed the global fashion industry through the 'Fast Fashion' model, led by Zara, focusing on rapid supply chains and democratizing luxury-inspired trends.",
+      "keyGarments": [
+        "Deconstructed blazers",
+        "High-street denim",
+        "Fast-turnover separates"
+      ],
+      "aiImagePrompt": "A minimalist, modern 1990s retail storefront in A Coruña, featuring sleek mannequins in clean, accessible European tailoring and neutral tones."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Almagro Lace",
+      "type": "Embroidered",
+      "description": "Intricate bobbin lace known for its geometric patterns and durability, historically used for church vestments and mantillas.",
+      "origin": "Almagro, Ciudad Real",
+      "technique": "Bobbin lacemaking (Encaje de bolillos)"
+    },
+    {
+      "name": "Cordovan Leather",
+      "type": "Tanned",
+      "description": "A world-renowned leather made from horsehide, known for its non-porous nature and mirror-like finish.",
+      "origin": "Córdoba",
+      "technique": "Vegetable tanning and hand-polishing"
+    },
+    {
+      "name": "Catalan Cotton",
+      "type": "Woven",
+      "description": "High-quality industrial cotton that fueled the Spanish industrial revolution, used for everything from shirting to heavy canvases.",
+      "origin": "Barcelona",
+      "technique": "Power loom weaving"
+    }
+  ],
+  "climate": {
+    "zone": "Mediterranean and Semi-arid",
+    "avgTemp": 15,
+    "humidity": "Moderate",
+    "fashionImplication": "Lightweight breathable fabrics like linen and cotton are essential for hot summers, while the 'layering' culture is prominent in the central plateau (Meseta) due to sharp temperature drops at night."
+  },
+  "culturalInfluences": [
+    "Catholicism and religious vestments",
+    "Flamenco dance and Andalusian folklore",
+    "Bullfighting aesthetics (Tauromaquia)",
+    "Moorish and Islamic geometric patterns",
+    "Surrealist art (Dalí and Miró)",
+    "The transition from dictatorship to democracy",
+    "Regional diversity (Basque, Catalan, Andalusian)"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Mercedes-Benz Fashion Week Madrid",
+        "city": "Madrid",
+        "month": "February/September",
+        "tier": "Major"
+      },
+      {
+        "name": "080 Barcelona Fashion",
+        "city": "Barcelona",
+        "month": "April/October",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Neo-Artisanal Craftsmanship",
+      "Gender-neutral tailoring",
+      "Upcycled Mediterranean materials",
+      "Voluminous sculptural silhouettes"
+    ],
+    "digitalPresence": 88,
+    "ecommercePenetration": 72,
+    "notableEvents": [
+      "Loewe Foundation Craft Prize",
+      "Who's On Next Spain",
+      "Madrid es Moda"
+    ]
+  }
+}

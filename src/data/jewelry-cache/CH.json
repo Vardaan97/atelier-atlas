@@ -1,0 +1,74 @@
+{
+  "data": {
+    "year": 2025,
+    "totalExports": 648000000,
+    "totalImports": 450000000,
+    "tradeBalance": 198000000,
+    "topProducts": [
+      {
+        "name": "Jewelry Articles",
+        "hsCode": "7113",
+        "exports": 167670624,
+        "imports": 163849310
+      },
+      {
+        "name": "Gold (unwrought)",
+        "hsCode": "7108",
+        "exports": 144045457,
+        "imports": 104696062
+      },
+      {
+        "name": "Diamonds",
+        "hsCode": "7102",
+        "exports": 156465814,
+        "imports": 77703363
+      },
+      {
+        "name": "Precious Stones",
+        "hsCode": "7103",
+        "exports": 103957035,
+        "imports": 44475818
+      },
+      {
+        "name": "Imitation Jewelry",
+        "hsCode": "7117",
+        "exports": 44371621,
+        "imports": 41235887
+      },
+      {
+        "name": "Pearl Articles",
+        "hsCode": "7116",
+        "exports": 31489449,
+        "imports": 18039559
+      }
+    ],
+    "yearlyTrend": [
+      {
+        "year": 2021,
+        "exports": 544251231,
+        "imports": 333808556
+      },
+      {
+        "year": 2022,
+        "exports": 547880030,
+        "imports": 364816895
+      },
+      {
+        "year": 2023,
+        "exports": 588279108,
+        "imports": 396274030
+      },
+      {
+        "year": 2024,
+        "exports": 615936151,
+        "imports": 423689166
+      },
+      {
+        "year": 2025,
+        "exports": 648000000,
+        "imports": 450000000
+      }
+    ]
+  },
+  "cachedAt": 1773390976211
+}
