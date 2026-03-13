@@ -539,8 +539,8 @@ export function FashionGlobe() {
   // Polygon cap color — semi-transparent so Earth texture shows through.
   // The renderer-level material swap (MeshLambertMaterial → MeshBasicMaterial)
   // ensures colors render at exact specified brightness, independent of lighting.
-  // We use moderate alpha to let the satellite Earth texture remain visible,
-  // with colored data overlay tinting countries.
+  // We use high alpha (0.93-0.95) so overlay colors are clearly visible
+  // over the satellite Earth texture.
   const getPolygonColor = useCallback(
     (feat: object): string => {
       const feature = feat as GeoFeature;
@@ -551,7 +551,7 @@ export function FashionGlobe() {
       if (!country) return 'rgba(18, 25, 50, 0.35)';
 
       // Selected country — bright accent
-      if (iso2 === selectedCountry) return 'rgba(233, 69, 96, 0.88)';
+      if (iso2 === selectedCountry) return 'rgba(233, 69, 96, 0.92)';
 
       // Dim non-matching countries when filters/search active
       if (hasActiveFilters && !highlightedIsos.has(iso2)) {
@@ -565,7 +565,7 @@ export function FashionGlobe() {
             score, 0, 100,
             [220, 50, 50],   // low = vivid red
             [0, 230, 140],   // high = vibrant green
-            0.82
+            0.88
           );
         }
 
@@ -573,14 +573,14 @@ export function FashionGlobe() {
           const lat = country.coordinates[0];
           const zone = inferClimateZone(lat, country.subregion);
           const c = CLIMATE_COLORS[zone] || 'rgb(18, 25, 50)';
-          return c.replace('rgb(', 'rgba(').replace(')', ', 0.82)');
+          return c.replace('rgb(', 'rgba(').replace(')', ', 0.88)');
         }
 
         case 'fashionWeek': {
           if (country.fashionWeeks && country.fashionWeeks.length > 0) {
-            return 'rgba(233, 69, 96, 0.85)';
+            return 'rgba(233, 69, 96, 0.90)';
           }
-          return 'rgba(15, 22, 45, 0.35)';
+          return 'rgba(15, 22, 45, 0.38)';
         }
 
         case 'metric':
@@ -594,7 +594,7 @@ export function FashionGlobe() {
             metricRange.max,
             [30, 100, 220],  // low = vivid blue
             [240, 60, 80],   // high = vivid red-pink
-            0.78
+            0.88
           );
         }
       }
