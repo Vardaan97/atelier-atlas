@@ -309,19 +309,43 @@ export function FashionGlobe() {
       cleanup = addSpaceBackground(scene);
       spaceRef.current = cleanup;
 
-      // Fix dark polygon colors: Three.js v0.183+ physically-correct lighting
-      // makes MeshLambertMaterial (three-globe's default) render too dark.
-      // Boost scene lights to compensate, and periodically swap MeshLambertMaterial
-      // for MeshBasicMaterial on polygon meshes.
-      scene.traverse((child: THREE.Object3D) => {
-        if ((child as THREE.Light).isLight) {
-          const light = child as THREE.Light;
-          // Boost existing globe.gl lights (layer 0)
-          if (light.layers.mask & 1) {
-            light.intensity *= 3;
-          }
-        }
-      });
+      // Fix dark polygon colors: Three.js v0.183+ uses physically-correct lighting
+      // which makes MeshLambertMaterial (three-globe's default for polygon caps/sides)
+      // render too dark. Intercept the renderer to swap MeshLambertMaterial →
+      // MeshBasicMaterial before each frame. This is robust against three-globe
+      // recreating materials during its internal update cycle.
+      const rendererObj = typeof globe.renderer === 'function' ? globe.renderer() : null;
+      if (rendererObj) {
+        const originalRender = rendererObj.render.bind(rendererObj);
+        rendererObj.render = function (s: THREE.Scene, c: THREE.Camera) {
+          s.traverse((obj: THREE.Object3D) => {
+            const mesh = obj as THREE.Mesh;
+            if (!mesh.isMesh) return;
+            // Skip objects on layer 2 (space background)
+            if (mesh.layers.mask === 4) return;
+            const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+            let changed = false;
+            const newMats = mats.map((mat) => {
+              if (mat.type === 'MeshLambertMaterial') {
+                changed = true;
+                const basic = new THREE.MeshBasicMaterial();
+                basic.color.copy((mat as THREE.MeshLambertMaterial).color);
+                basic.transparent = mat.transparent;
+                basic.opacity = mat.opacity;
+                basic.side = mat.side;
+                basic.depthWrite = mat.depthWrite;
+                mat.dispose();
+                return basic;
+              }
+              return mat;
+            });
+            if (changed) {
+              mesh.material = Array.isArray(mesh.material) ? newMats : newMats[0];
+            }
+          });
+          originalRender(s, c);
+        };
+      }
 
       // react-globe.gl may re-set scene.background on renders — enforce it frequently
       bgInterval = setInterval(() => {
@@ -332,30 +356,6 @@ export function FashionGlobe() {
         if (camera.layers && !(camera.layers.mask & 4)) {
           camera.layers.enable(2);
         }
-        // Swap MeshLambertMaterial → MeshBasicMaterial on polygon meshes
-        // three-globe recreates materials during updates, so keep patching
-        scene.traverse((obj: THREE.Object3D) => {
-          const mesh = obj as THREE.Mesh;
-          if (!mesh.isMesh) return;
-          const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
-          let changed = false;
-          const newMats = mats.map((mat) => {
-            if (mat.type === 'MeshLambertMaterial') {
-              changed = true;
-              const basic = new THREE.MeshBasicMaterial();
-              basic.color.copy((mat as THREE.MeshLambertMaterial).color);
-              basic.transparent = mat.transparent;
-              basic.opacity = mat.opacity;
-              basic.side = mat.side;
-              basic.depthWrite = mat.depthWrite;
-              return basic;
-            }
-            return mat;
-          });
-          if (changed) {
-            mesh.material = Array.isArray(mesh.material) ? newMats : newMats[0];
-          }
-        });
       }, 500);
     }
 
@@ -536,34 +536,36 @@ export function FashionGlobe() {
     };
   }, [viewingPlanet]);
 
-  // Polygon cap color — semi-transparent so Earth texture shows through
+  // Polygon cap color — semi-transparent so Earth texture shows through.
+  // The renderer-level material swap (MeshLambertMaterial → MeshBasicMaterial)
+  // ensures colors render at exact specified brightness, independent of lighting.
+  // We use moderate alpha to let the satellite Earth texture remain visible,
+  // with colored data overlay tinting countries.
   const getPolygonColor = useCallback(
     (feat: object): string => {
       const feature = feat as GeoFeature;
       const iso3 = feature.properties?.ISO_A3;
-      if (!iso3 || iso3 === '-99') return 'rgba(18, 25, 50, 0.4)';
+      if (!iso3 || iso3 === '-99') return 'rgba(18, 25, 50, 0.35)';
       const iso2 = iso3toIso2(iso3);
       const country = countryMap.get(iso2);
-      if (!country) return 'rgba(18, 25, 50, 0.4)';
+      if (!country) return 'rgba(18, 25, 50, 0.35)';
 
       // Selected country — bright accent
-      if (iso2 === selectedCountry) return 'rgba(233, 69, 96, 0.85)';
+      if (iso2 === selectedCountry) return 'rgba(233, 69, 96, 0.88)';
 
       // Dim non-matching countries when filters/search active
       if (hasActiveFilters && !highlightedIsos.has(iso2)) {
-        return 'rgba(12, 18, 35, 0.6)';
+        return 'rgba(8, 12, 28, 0.6)';
       }
-
-      const OVERLAY_ALPHA = 0.75;
 
       switch (overlayMode) {
         case 'sustainability': {
           const score = country.sustainabilityScore ?? 0;
           return interpolateColor(
             score, 0, 100,
-            [200, 60, 70],   // low = red
-            [0, 220, 160],   // high = green
-            OVERLAY_ALPHA
+            [220, 50, 50],   // low = vivid red
+            [0, 230, 140],   // high = vibrant green
+            0.82
           );
         }
 
@@ -571,15 +573,14 @@ export function FashionGlobe() {
           const lat = country.coordinates[0];
           const zone = inferClimateZone(lat, country.subregion);
           const c = CLIMATE_COLORS[zone] || 'rgb(18, 25, 50)';
-          // Add alpha to climate colors
-          return c.replace('rgb(', 'rgba(').replace(')', `, ${OVERLAY_ALPHA})`);
+          return c.replace('rgb(', 'rgba(').replace(')', ', 0.82)');
         }
 
         case 'fashionWeek': {
           if (country.fashionWeeks && country.fashionWeeks.length > 0) {
-            return `rgba(233, 69, 96, ${OVERLAY_ALPHA})`;
+            return 'rgba(233, 69, 96, 0.85)';
           }
-          return 'rgba(20, 30, 55, 0.4)';
+          return 'rgba(15, 22, 45, 0.35)';
         }
 
         case 'metric':
@@ -591,9 +592,9 @@ export function FashionGlobe() {
             value,
             metricRange.min,
             metricRange.max,
-            [40, 80, 180],   // low = vivid blue
-            [233, 69, 96],   // high = accent red
-            OVERLAY_ALPHA
+            [30, 100, 220],  // low = vivid blue
+            [240, 60, 80],   // high = vivid red-pink
+            0.78
           );
         }
       }
