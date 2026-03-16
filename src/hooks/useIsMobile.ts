@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useSyncExternalStore } from 'react';
+import { useEffect, useState } from 'react';
 
 const MOBILE_BREAKPOINT = 768;
 
@@ -9,10 +9,8 @@ const MOBILE_BREAKPOINT = 768;
  * Prevents hydration mismatch and avoids mounting heavy 3D globe on mobile.
  */
 export function useIsMobile(): boolean | undefined {
-  const [isMobile, setIsMobile] = useState<boolean | undefined>(() => {
-    if (typeof window === 'undefined') return undefined;
-    return window.innerWidth < MOBILE_BREAKPOINT;
-  });
+  // Always start as undefined to match SSR output and prevent hydration mismatch (React #418)
+  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
     const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);

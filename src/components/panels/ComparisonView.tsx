@@ -453,11 +453,11 @@ function CountrySearchDropdown({
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
+            exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.15 }}
-            className="absolute bottom-full mb-2 left-0 w-72 rounded-xl border border-white/10 bg-[#0F1629] shadow-2xl overflow-hidden z-[60]"
+            className="absolute top-full mt-2 left-0 w-72 rounded-xl border border-white/10 bg-[#0F1629] shadow-2xl overflow-hidden z-[60]"
           >
             <div className="p-3 border-b border-white/10">
               <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5">

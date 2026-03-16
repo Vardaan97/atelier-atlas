@@ -43,8 +43,8 @@ export function FashionDNAChart({ dna, size = 'md' }: FashionDNAChartProps) {
     fullMark: 100,
   }));
 
-  const heights = { sm: 150, md: 200, lg: 280 };
-  const radii = { sm: '55%', md: '70%', lg: '70%' };
+  const heights = { sm: 160, md: 200, lg: 280 };
+  const radii = { sm: '48%', md: '70%', lg: '70%' };
 
   return (
     <ResponsiveContainer width="100%" height={heights[size]}>

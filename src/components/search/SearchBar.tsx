@@ -494,7 +494,7 @@ export function SearchBar() {
       ref={containerRef}
       className={cn(
         "absolute top-14 md:top-16 left-1/2 -translate-x-1/2 w-full max-w-[92vw] md:max-w-lg px-2 md:px-4",
-        panelOpen ? "z-20 hidden md:block" : "z-40"
+        panelOpen ? "z-20 hidden" : "z-40"
       )}
     >
       {/* Search Input - Gradient border wrapper on focus */}

@@ -637,6 +637,11 @@ export function FashionGlobe() {
 
   const handlePolygonClick = useCallback(
     (feat: object) => {
+      // If panel is already open, close it instead of switching to a new country
+      if (panelOpen) {
+        setPanelOpen(false);
+        return;
+      }
       const feature = feat as GeoFeature;
       const iso3 = feature.properties?.ISO_A3;
       if (!iso3 || iso3 === '-99') return;
@@ -648,7 +653,7 @@ export function FashionGlobe() {
         selectCountry(iso2);
       }
     },
-    [selectedCountry, selectCountry]
+    [selectedCountry, selectCountry, panelOpen, setPanelOpen]
   );
 
   // Track mouse position for tooltip

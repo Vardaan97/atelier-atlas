@@ -295,9 +295,8 @@ export function CountryPanel() {
           <motion.div
             key="side-panel"
             initial={{ x: '100%', opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: '110%', opacity: 0 }}
-            transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+            animate={{ x: 0, opacity: 1, transition: { type: 'spring', damping: 30, stiffness: 300 } }}
+            exit={{ x: '100%', opacity: 0, transition: { duration: 0.25, ease: 'easeIn' } }}
             className="fixed right-0 top-0 h-full w-full md:w-[65%] lg:w-[50%] z-30 glass-panel border-l border-white/10 overflow-hidden flex flex-col"
           >
             {panelContent}
