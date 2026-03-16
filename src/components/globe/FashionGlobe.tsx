@@ -6,6 +6,7 @@ import * as THREE from 'three';
 import { useGlobeStore } from '@/store/useGlobeStore';
 import { GLOBE, GEOJSON_URL, METRICS, FASHION_CAPITALS, FASHION_ARCS } from '@/lib/constants';
 import { interpolateColor } from '@/lib/utils';
+import { getQualityTier } from '@/lib/deviceCapability';
 import { addSpaceBackground } from './spaceBackground';
 import { PlanetOverlay } from './PlanetOverlay';
 import fashionEventsData from '@/data/fashion-events.json';
@@ -101,6 +102,9 @@ export function FashionGlobe() {
   const viewingPlanet = useGlobeStore((s) => s.viewingPlanet);
   const setViewingPlanet = useGlobeStore((s) => s.setViewingPlanet);
 
+  // Device capability — determines rendering quality
+  const tier = useMemo(() => getQualityTier(), []);
+
   // Filtered & search-highlighted country ISOs
   const highlightedIsos = useMemo(() => {
     const filtered = new Set(getFilteredCountries());
@@ -186,9 +190,9 @@ export function FashionGlobe() {
     }));
   }, [overlayMode, fashionEvents]);
 
-  // Fashion arcs connecting capitals — shown in fashionWeek overlay mode
+  // Fashion arcs connecting capitals — shown in fashionWeek overlay mode (skip on low-end)
   const fashionArcData = useMemo(() => {
-    if (overlayMode !== 'fashionWeek') return [];
+    if (overlayMode !== 'fashionWeek' || tier === 'low') return [];
     return FASHION_ARCS.map((arc) => {
       const start = FASHION_CAPITALS.find((c) => c.city === arc.start);
       const end = FASHION_CAPITALS.find((c) => c.city === arc.end);
@@ -306,16 +310,17 @@ export function FashionGlobe() {
         camera.updateProjectionMatrix();
       }
 
-      cleanup = addSpaceBackground(scene);
+      cleanup = addSpaceBackground(scene, tier);
       spaceRef.current = cleanup;
 
       // Fix dark polygon colors: Three.js v0.183+ uses physically-correct lighting
       // which makes MeshLambertMaterial (three-globe's default for polygon caps/sides)
       // render too dark. Intercept the renderer to swap MeshLambertMaterial →
-      // MeshBasicMaterial before each frame. This is robust against three-globe
-      // recreating materials during its internal update cycle.
+      // MeshBasicMaterial. Uses WeakSet to track already-processed materials so each
+      // material is only swapped once (not every frame like before).
       const rendererObj = typeof globe.renderer === 'function' ? globe.renderer() : null;
       if (rendererObj) {
+        const processedMaterials = new WeakSet<THREE.Material>();
         const originalRender = rendererObj.render.bind(rendererObj);
         rendererObj.render = function (s: THREE.Scene, c: THREE.Camera) {
           s.traverse((obj: THREE.Object3D) => {
@@ -326,6 +331,8 @@ export function FashionGlobe() {
             const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
             let changed = false;
             const newMats = mats.map((mat) => {
+              if (processedMaterials.has(mat)) return mat;
+              processedMaterials.add(mat);
               if (mat.type === 'MeshLambertMaterial') {
                 changed = true;
                 const basic = new THREE.MeshBasicMaterial();
@@ -334,6 +341,7 @@ export function FashionGlobe() {
                 basic.opacity = mat.opacity;
                 basic.side = mat.side;
                 basic.depthWrite = mat.depthWrite;
+                processedMaterials.add(basic);
                 mat.dispose();
                 return basic;
               }
@@ -370,6 +378,31 @@ export function FashionGlobe() {
         cleanup.dispose();
         spaceRef.current = null;
       }
+    };
+  }, [geoData, tier]);
+
+  // WebGL context loss recovery — prevents Android crashes from showing blank screen
+  useEffect(() => {
+    if (!globeRef.current) return;
+    const globe = globeRef.current;
+    const rendererObj = typeof globe.renderer === 'function' ? globe.renderer() : null;
+    const canvas = rendererObj?.domElement as HTMLCanvasElement | undefined;
+    if (!canvas) return;
+
+    function handleContextLost(e: Event) {
+      e.preventDefault();
+      console.warn('[Atelier] WebGL context lost — will restore on recovery');
+    }
+    function handleContextRestored() {
+      console.log('[Atelier] WebGL context restored');
+      // Force globe to re-render by triggering a resize
+      window.dispatchEvent(new Event('resize'));
+    }
+    canvas.addEventListener('webglcontextlost', handleContextLost);
+    canvas.addEventListener('webglcontextrestored', handleContextRestored);
+    return () => {
+      canvas.removeEventListener('webglcontextlost', handleContextLost);
+      canvas.removeEventListener('webglcontextrestored', handleContextRestored);
     };
   }, [geoData]);
 
@@ -755,10 +788,10 @@ export function FashionGlobe() {
         onGlobeClick={() => { if (panelOpen) setPanelOpen(false); }}
         onPolygonClick={handlePolygonClick}
         onPolygonHover={handlePolygonHover}
-        polygonsTransitionDuration={400}
+        polygonsTransitionDuration={tier === 'low' ? 0 : tier === 'medium' ? 200 : 400}
         atmosphereColor={GLOBE.atmosphereColor}
-        atmosphereAltitude={GLOBE.atmosphereAltitude}
-        animateIn={true}
+        atmosphereAltitude={tier === 'low' ? 0 : GLOBE.atmosphereAltitude}
+        animateIn={tier !== 'low'}
         enablePointerInteraction={true}
         // Fashion week city markers
         pointsData={fashionWeekPoints}

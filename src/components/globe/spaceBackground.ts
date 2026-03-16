@@ -2,9 +2,11 @@
  * Immersive solar system background with Milky Way skybox.
  * Full 8-planet system with moons, labels, orbit paths.
  * Planets are clickable — camera flies to them as an Easter egg.
+ * Quality-adaptive: low-end devices get simplified or no space background.
  */
 
 import * as THREE from 'three';
+import type { QualityTier } from '@/lib/deviceCapability';
 
 const BG_LAYER = 2;
 
@@ -176,39 +178,10 @@ const PLANETS: PlanetDef[] = [
   },
 ];
 
-/* ─── Noise for Milky Way structure ─────────────────────────────────────── */
+/* ─── Simple Milky Way Fallback (shown briefly before real texture loads) ─ */
 
-function hash(x: number, y: number): number {
-  const h = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
-  return h - Math.floor(h);
-}
-
-function smoothNoise(x: number, y: number): number {
-  const ix = Math.floor(x);
-  const iy = Math.floor(y);
-  const fx = x - ix;
-  const fy = y - iy;
-  const a = hash(ix, iy);
-  const b = hash(ix + 1, iy);
-  const c = hash(ix, iy + 1);
-  const d = hash(ix + 1, iy + 1);
-  return a + (b - a) * fx + (c - a) * fy + (a - b - c + d) * fx * fy;
-}
-
-function fbm(x: number, y: number, octaves = 4): number {
-  let val = 0, amp = 0.5, freq = 1;
-  for (let i = 0; i < octaves; i++) {
-    val += amp * smoothNoise(x * freq, y * freq);
-    amp *= 0.5;
-    freq *= 2;
-  }
-  return val;
-}
-
-/* ─── Milky Way Texture (procedural) ───────────────────────────────────── */
-
-function createMilkyWayTexture(): THREE.CanvasTexture {
-  const W = 4096, H = 2048;
+function createSimpleFallback(): THREE.CanvasTexture {
+  const W = 1024, H = 512;
   const canvas = document.createElement('canvas');
   canvas.width = W;
   canvas.height = H;
@@ -218,138 +191,24 @@ function createMilkyWayTexture(): THREE.CanvasTexture {
   ctx.fillStyle = '#020209';
   ctx.fillRect(0, 0, W, H);
 
-  const centerY = H / 2;
-
-  // ── Layer 1: Dim background stars ──
-  for (let i = 0; i < 14000; i++) {
-    const x = Math.random() * W;
-    const y = Math.random() * H;
-    const b = 50 + Math.random() * 90;
-    const tint = Math.random();
-    const r = b + (tint > 0.7 ? 30 : 0);
-    const bl = b + (tint < 0.3 ? 25 : 0);
-    ctx.globalAlpha = 0.2 + Math.random() * 0.4;
-    ctx.fillStyle = `rgb(${r}, ${b + 5}, ${bl})`;
-    ctx.fillRect(x, y, Math.random() < 0.04 ? 1.5 : 0.8, Math.random() < 0.04 ? 1.5 : 0.8);
-  }
-  ctx.globalAlpha = 1;
-
-  // ── Layer 2: Milky Way diffuse glow (soft band) ──
-  // Use imageData for pixel-level control
-  const imgData = ctx.getImageData(0, 0, W, H);
-  const pixels = imgData.data;
-
-  for (let py = 0; py < H; py++) {
-    for (let px = 0; px < W; px++) {
-      // Distance from band center with noise-based waviness
-      const waveOffset = fbm(px * 0.002, py * 0.005, 3) * 80 - 40;
-      const bandY = centerY + waveOffset + Math.sin(px * 0.003) * 30;
-      const dist = Math.abs(py - bandY);
-      const bandWidth = 200 + fbm(px * 0.001, 0, 3) * 100;
-
-      if (dist > bandWidth * 1.5) continue;
-
-      // Gaussian falloff
-      const falloff = Math.exp(-(dist * dist) / (2 * bandWidth * bandWidth * 0.15));
-
-      // Noise-based structure (dark lanes, bright patches)
-      const noise = fbm(px * 0.004, py * 0.008, 5);
-      const darkLane = fbm(px * 0.002 + 100, py * 0.01, 3);
-
-      // Galactic center brightness boost (around x ≈ 65%)
-      const gcX = W * 0.65;
-      const gcDist = Math.abs(px - gcX) / (W * 0.25);
-      const gcBoost = Math.max(0, 1 - gcDist * gcDist) * 0.6;
-
-      let brightness = falloff * (0.3 + noise * 0.7 + gcBoost);
-      // Dark lanes cut through the band
-      if (darkLane > 0.55 && dist < bandWidth * 0.3) {
-        brightness *= 0.3 + (darkLane - 0.55) * 2;
-      }
-
-      brightness = Math.min(brightness, 1) * 0.12; // Keep subtle
-
-      const warmth = gcBoost * 20;
-      const idx = (py * W + px) * 4;
-      pixels[idx] = Math.min(255, pixels[idx] + brightness * (160 + warmth));
-      pixels[idx + 1] = Math.min(255, pixels[idx + 1] + brightness * (150 + warmth * 0.5));
-      pixels[idx + 2] = Math.min(255, pixels[idx + 2] + brightness * 155);
-    }
-  }
-  ctx.putImageData(imgData, 0, 0);
-
-  // ── Layer 3: Dense band stars ──
-  for (let i = 0; i < 50000; i++) {
-    const x = Math.random() * W;
-    const u1 = Math.random(), u2 = Math.random();
-    const z = Math.sqrt(-2 * Math.log(Math.max(u1, 0.0001))) * Math.cos(2 * Math.PI * u2);
-    const spread = 160 + Math.random() * 60;
-    const y = centerY + z * spread + Math.sin(x * 0.003) * 25;
-    if (y < 0 || y >= H) continue;
-
-    const distNorm = Math.abs(y - centerY) / spread;
-    const b = 70 + Math.random() * 130 * Math.max(0, 1 - distNorm);
-    const gcX = W * 0.65;
-    const gcDist = Math.abs(x - gcX) / (W * 0.3);
-    const warm = Math.max(0, 1 - gcDist) * 35;
-
-    ctx.globalAlpha = 0.15 + Math.random() * 0.45 * Math.max(0.2, 1 - distNorm);
-    ctx.fillStyle = `rgb(${Math.min(255, b + warm + 15)}, ${Math.min(255, b + warm * 0.4)}, ${b})`;
-    ctx.fillRect(x, y, Math.random() < 0.03 ? 1.5 : 0.7, Math.random() < 0.03 ? 1.5 : 0.7);
-  }
-  ctx.globalAlpha = 1;
-
-  // ── Layer 4: Galactic center radial glow ──
-  const gcGlow = ctx.createRadialGradient(W * 0.65, centerY, 20, W * 0.65, centerY, 350);
-  gcGlow.addColorStop(0, 'rgba(255, 220, 150, 0.06)');
-  gcGlow.addColorStop(0.2, 'rgba(255, 200, 130, 0.035)');
-  gcGlow.addColorStop(0.5, 'rgba(220, 170, 100, 0.015)');
-  gcGlow.addColorStop(1, 'rgba(100, 80, 60, 0)');
-  ctx.fillStyle = gcGlow;
+  // Faint horizontal band (milky way hint)
+  const grad = ctx.createLinearGradient(0, H * 0.3, 0, H * 0.7);
+  grad.addColorStop(0, 'rgba(40, 35, 50, 0)');
+  grad.addColorStop(0.5, 'rgba(40, 35, 50, 0.08)');
+  grad.addColorStop(1, 'rgba(40, 35, 50, 0)');
+  ctx.fillStyle = grad;
   ctx.fillRect(0, 0, W, H);
 
-  // ── Layer 5: Colored nebulae patches ──
-  const nebulae = [
-    { x: W * 0.18, y: centerY - 40, r: 160, c: '80, 30, 120' },
-    { x: W * 0.35, y: centerY + 60, r: 130, c: '30, 50, 120' },
-    { x: W * 0.52, y: centerY - 25, r: 100, c: '120, 40, 50' },
-    { x: W * 0.78, y: centerY + 35, r: 110, c: '180, 60, 40' },
-    { x: W * 0.92, y: centerY - 50, r: 90, c: '40, 90, 90' },
-    { x: W * 0.08, y: centerY + 20, r: 70, c: '60, 40, 110' },
-  ];
-  for (const n of nebulae) {
-    const g = ctx.createRadialGradient(n.x, n.y, 5, n.x, n.y, n.r);
-    g.addColorStop(0, `rgba(${n.c}, 0.05)`);
-    g.addColorStop(0.4, `rgba(${n.c}, 0.02)`);
-    g.addColorStop(1, `rgba(${n.c}, 0)`);
-    ctx.fillStyle = g;
-    ctx.fillRect(0, 0, W, H);
-  }
-
-  // ── Layer 6: Bright prominent stars with glow ──
-  for (let i = 0; i < 200; i++) {
+  // Scatter a few hundred stars
+  for (let i = 0; i < 600; i++) {
     const x = Math.random() * W;
     const y = Math.random() * H;
-    const b = 190 + Math.random() * 65;
-    const size = 0.8 + Math.random() * 2;
-    const tint = Math.random();
-    const r = tint > 0.7 ? b + 30 : b;
-    const bl = tint < 0.3 ? b + 25 : b;
-
-    // Glow
-    const sg = ctx.createRadialGradient(x, y, 0, x, y, size * 4);
-    sg.addColorStop(0, `rgba(${r}, ${b}, ${bl}, 0.6)`);
-    sg.addColorStop(0.3, `rgba(${r}, ${b}, ${bl}, 0.15)`);
-    sg.addColorStop(1, `rgba(${r}, ${b}, ${bl}, 0)`);
-    ctx.fillStyle = sg;
-    ctx.fillRect(x - size * 4, y - size * 4, size * 8, size * 8);
-
-    // Core
-    ctx.fillStyle = `rgba(${Math.min(255, r + 30)}, ${Math.min(255, b + 20)}, ${Math.min(255, bl + 35)}, 0.9)`;
-    ctx.beginPath();
-    ctx.arc(x, y, size * 0.4, 0, Math.PI * 2);
-    ctx.fill();
+    const b = 80 + Math.random() * 120;
+    ctx.globalAlpha = 0.2 + Math.random() * 0.5;
+    ctx.fillStyle = `rgb(${b}, ${b + 5}, ${b + 10})`;
+    ctx.fillRect(x, y, 1, 1);
   }
+  ctx.globalAlpha = 1;
 
   const texture = new THREE.CanvasTexture(canvas);
   texture.mapping = THREE.EquirectangularReflectionMapping;
@@ -429,19 +288,38 @@ function createOrbitRing(
 
 /* ─── Main ──────────────────────────────────────────────────────────────── */
 
-export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
+export function addSpaceBackground(scene: THREE.Scene, tier: QualityTier = 'high'): SpaceCleanup {
+  const loader = new THREE.TextureLoader();
+
+  // ── Low-end devices: just dark bg + async milky way texture, no 3D objects ──
+  if (tier === 'low') {
+    scene.background = new THREE.Color(0x020209);
+    let bgTex: THREE.Texture | null = null;
+    loader.load('/textures/8k_stars_milky_way.jpg', (tex) => {
+      tex.mapping = THREE.EquirectangularReflectionMapping;
+      tex.colorSpace = THREE.SRGBColorSpace;
+      scene.background = tex;
+      bgTex = tex;
+    });
+    return {
+      dispose() { bgTex?.dispose(); scene.background = null; },
+      getClickablePlanets: () => [],
+      getMilkyWayTexture: () => bgTex!,
+    };
+  }
+
   const objects: THREE.Object3D[] = [];
   const clickablePlanets: ClickablePlanet[] = [];
   let frameId: number | null = null;
+  const loadTextures = tier === 'high';
+  const segments = tier === 'medium' ? 20 : 32;
 
   // ── 1. Milky Way background ──
-  // Try loading the real 8K texture first; fall back to procedural if it fails
   let milkyWayTex: THREE.Texture;
-  const loader = new THREE.TextureLoader();
-  milkyWayTex = createMilkyWayTexture(); // instant procedural fallback
+  milkyWayTex = createSimpleFallback(); // fast placeholder
   scene.background = milkyWayTex;
 
-  // Load real texture asynchronously — replaces procedural once loaded
+  // Load real texture asynchronously — replaces placeholder once loaded
   loader.load(
     '/textures/8k_stars_milky_way.jpg',
     (realTex) => {
@@ -453,8 +331,7 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
     },
     undefined,
     () => {
-      // Loading failed — keep procedural (already set)
-      console.warn('Milky Way texture failed to load, using procedural fallback');
+      console.warn('Milky Way texture failed to load, using fallback');
     },
   );
 
@@ -471,13 +348,15 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
   objects.push(sunLight);
 
   // ── 3. Sun ──
-  const sunGeo = new THREE.SphereGeometry(55, 48, 48);
+  const sunGeo = new THREE.SphereGeometry(55, segments + 16, segments + 16);
   const sunMat = new THREE.MeshBasicMaterial({ color: 0xffee55 });
-  loader.load(PLANET_TEXTURES.Sun, (tex) => {
-    tex.colorSpace = THREE.SRGBColorSpace;
-    sunMat.map = tex;
-    sunMat.needsUpdate = true;
-  });
+  if (loadTextures) {
+    loader.load(PLANET_TEXTURES.Sun, (tex) => {
+      tex.colorSpace = THREE.SRGBColorSpace;
+      sunMat.map = tex;
+      sunMat.needsUpdate = true;
+    });
+  }
   const sunMesh = new THREE.Mesh(sunGeo, sunMat);
   sunMesh.position.copy(SUN_POS);
   sunMesh.layers.set(BG_LAYER);
@@ -545,21 +424,23 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
 
   for (const def of PLANETS) {
     // Planet mesh
-    const geo = new THREE.SphereGeometry(def.radius, 32, 32);
+    const geo = new THREE.SphereGeometry(def.radius, segments, segments);
     const mat = new THREE.MeshPhongMaterial({
       color: def.color,
       emissive: def.emissive,
       emissiveIntensity: def.emissiveI,
       shininess: 20,
     });
-    // Load realistic texture if available
-    const texPath = PLANET_TEXTURES[def.name];
-    if (texPath) {
-      loader.load(texPath, (tex) => {
-        tex.colorSpace = THREE.SRGBColorSpace;
-        mat.map = tex;
-        mat.needsUpdate = true;
-      });
+    // Load realistic texture only on high quality
+    if (loadTextures) {
+      const texPath = PLANET_TEXTURES[def.name];
+      if (texPath) {
+        loader.load(texPath, (tex) => {
+          tex.colorSpace = THREE.SRGBColorSpace;
+          mat.map = tex;
+          mat.needsUpdate = true;
+        });
+      }
     }
     const mesh = new THREE.Mesh(geo, mat);
     mesh.layers.set(BG_LAYER);
@@ -569,7 +450,7 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
 
     // Saturn/Uranus rings
     if (def.ring) {
-      const rGeo = new THREE.RingGeometry(def.ring.inner, def.ring.outer, 80);
+      const rGeo = new THREE.RingGeometry(def.ring.inner, def.ring.outer, tier === 'medium' ? 40 : 80);
       // Fix ring UVs so texture maps correctly (radial mapping)
       const ringUvs = rGeo.attributes.uv;
       const ringPos = rGeo.attributes.position;
@@ -585,8 +466,8 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
         transparent: true,
         opacity: def.ring.opacity,
       });
-      // Load Saturn ring texture
-      if (def.name === 'Saturn') {
+      // Load Saturn ring texture (high quality only)
+      if (def.name === 'Saturn' && loadTextures) {
         loader.load(SATURN_RING_TEXTURE, (tex) => {
           tex.colorSpace = THREE.SRGBColorSpace;
           rMat.map = tex;
@@ -614,7 +495,7 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
     // Moons
     const moonMeshes: { mesh: THREE.Mesh; def: MoonDef }[] = [];
     for (const moonDef of def.moons) {
-      const mGeo = new THREE.SphereGeometry(moonDef.radius, 16, 16);
+      const mGeo = new THREE.SphereGeometry(moonDef.radius, tier === 'medium' ? 8 : 16, tier === 'medium' ? 8 : 16);
       const mMat = new THREE.MeshPhongMaterial({
         color: moonDef.color,
         emissive: moonDef.color,
@@ -636,18 +517,20 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
   }
 
   // ── 5. Earth's Moon ──
-  const moonGeo = new THREE.SphereGeometry(13, 32, 32);
+  const moonGeo = new THREE.SphereGeometry(13, segments, segments);
   const moonMat = new THREE.MeshPhongMaterial({
     color: 0xcccccc,
     emissive: 0x556666,
     emissiveIntensity: 0.4,
     shininess: 5,
   });
-  loader.load(PLANET_TEXTURES.Moon, (tex) => {
-    tex.colorSpace = THREE.SRGBColorSpace;
-    moonMat.map = tex;
-    moonMat.needsUpdate = true;
-  });
+  if (loadTextures) {
+    loader.load(PLANET_TEXTURES.Moon, (tex) => {
+      tex.colorSpace = THREE.SRGBColorSpace;
+      moonMat.map = tex;
+      moonMat.needsUpdate = true;
+    });
+  }
   const earthMoon = new THREE.Mesh(moonGeo, moonMat);
   earthMoon.layers.set(BG_LAYER);
   earthMoon.name = 'Moon';
@@ -686,7 +569,7 @@ export function addSpaceBackground(scene: THREE.Scene): SpaceCleanup {
   });
 
   // ── 6. Asteroid belt hint (between Mars and Jupiter) ──
-  const asteroidCount = 300;
+  const asteroidCount = tier === 'medium' ? 100 : 300;
   const astPos = new Float32Array(asteroidCount * 3);
   const astCols = new Float32Array(asteroidCount * 3);
   for (let i = 0; i < asteroidCount; i++) {
