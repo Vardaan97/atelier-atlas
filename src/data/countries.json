@@ -1900,6 +1900,11 @@
         "name": "Kente Green",
         "hex": "#006B3C",
         "meaning": "Growth and harvest"
+      },
+      {
+        "name": "Adinkra Black",
+        "hex": "#2C2C2C",
+        "meaning": "Adinkra cloth stamping, spiritual wisdom"
       }
     ],
     "traditionalGarments": [
@@ -1917,11 +1922,22 @@
       {
         "name": "Smock (Fugu)",
         "imageQuery": "Ghanaian smock fugu handwoven cotton Northern Ghana traditional",
-        "description": "Hand-woven cotton smock from Northern Ghana.",
+        "description": "Hand-woven cotton smock from Northern Ghana with colorful strips.",
         "era": "Traditional - Present",
         "occasion": "Cultural, formal, daily",
         "materials": [
           "Cotton"
+        ]
+      },
+      {
+        "name": "Adinkra Cloth",
+        "imageQuery": "Ghanaian adinkra cloth stamped symbols black mourning fabric",
+        "description": "Cloth stamped with Adinkra symbols using calabash stamps and vegetable dye, conveying proverbs and wisdom.",
+        "era": "19th Century - Present",
+        "occasion": "Funerals, mourning, spiritual events",
+        "materials": [
+          "Cotton",
+          "Vegetable Dye"
         ]
       }
     ],
@@ -1931,6 +1947,12 @@
         "brand": "Ozwald Boateng",
         "era": "Contemporary",
         "specialty": "Savile Row tailoring with African flair"
+      },
+      {
+        "name": "Kofi Ansah",
+        "brand": "Kofi Ansah",
+        "era": "Late 20th Century",
+        "specialty": "Pioneer of Ghanaian haute couture"
       }
     ],
     "industryStats": {
@@ -2171,27 +2193,45 @@
         "name": "Meskel Gold",
         "hex": "#FCDD09",
         "meaning": "Peace and faith"
+      },
+      {
+        "name": "Tibeb Red",
+        "hex": "#C41E3A",
+        "meaning": "Traditional embroidery borders, vitality"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Habesha Kemis",
         "imageQuery": "Ethiopian habesha kemis white cotton dress tibeb embroidery border",
-        "description": "White cotton dress with intricate colored embroidery borders (tibeb).",
+        "description": "White cotton dress with intricate colored embroidery borders (tibeb), the defining garment of Ethiopian culture.",
         "era": "Traditional - Present",
         "occasion": "Holidays, weddings, church",
         "materials": [
-          "Cotton"
+          "Cotton",
+          "Silk Thread"
         ]
       },
       {
         "name": "Netela/Gabi",
         "imageQuery": "Ethiopian netela gabi handwoven cotton shawl blanket traditional",
-        "description": "Handwoven cotton shawl or blanket with decorative borders.",
+        "description": "Handwoven cotton shawl or blanket with decorative borders, worn draped over shoulders.",
         "era": "Traditional - Present",
         "occasion": "Daily, ceremonial",
         "materials": [
           "Cotton"
+        ]
+      },
+      {
+        "name": "Kuta (Warrior's Dress)",
+        "imageQuery": "Ethiopian traditional leather warrior dress Oromo Harar",
+        "description": "Traditional leather garment and jewelry worn by warriors and during coming-of-age ceremonies across Ethiopian ethnic groups.",
+        "era": "Ancient - Present",
+        "occasion": "Ceremonial, cultural rites",
+        "materials": [
+          "Leather",
+          "Cowrie Shells",
+          "Silver"
         ]
       }
     ],
@@ -2201,6 +2241,12 @@
         "brand": "Amsale",
         "era": "Contemporary",
         "specialty": "Bridal gowns, minimalist elegance"
+      },
+      {
+        "name": "Mahlet Afework",
+        "brand": "Mafi Mafi",
+        "era": "Contemporary",
+        "specialty": "Ethiopian luxury ready-to-wear, Addis Ababa fashion"
       }
     ],
     "industryStats": {
@@ -2261,6 +2307,11 @@
         "name": "Javanese Gold",
         "hex": "#C5A02E",
         "meaning": "Royalty and prosperity"
+      },
+      {
+        "name": "Indonesian Red",
+        "hex": "#CE1126",
+        "meaning": "Courage, national flag"
       }
     ],
     "traditionalGarments": [
@@ -2286,6 +2337,18 @@
           "Silk",
           "Cotton"
         ]
+      },
+      {
+        "name": "Songket",
+        "imageQuery": "Indonesian songket woven gold brocade Sumatra Bali ceremonial",
+        "description": "Handwoven brocade fabric interlaced with gold or silver threads, originating from Sumatra and Bali.",
+        "era": "Srivijaya Kingdom - Present",
+        "occasion": "Weddings, royal ceremonies, formal events",
+        "materials": [
+          "Silk",
+          "Gold Thread",
+          "Silver Thread"
+        ]
       }
     ],
     "keyDesigners": [
@@ -2294,6 +2357,12 @@
         "brand": "Biyan",
         "era": "Contemporary",
         "specialty": "Embroidered luxury"
+      },
+      {
+        "name": "Tex Saverio",
+        "brand": "Tex Saverio",
+        "era": "Contemporary",
+        "specialty": "Architectural couture, Lady Gaga collaborator"
       }
     ],
     "industryStats": {
@@ -2444,6 +2513,11 @@
         "name": "Mekong Green",
         "hex": "#228B22",
         "meaning": "Rice paddies, nature"
+      },
+      {
+        "name": "Silk Gold",
+        "hex": "#E8C35A",
+        "meaning": "Vietnamese silk weaving heritage, Hoi An lanterns"
       }
     ],
     "traditionalGarments": [
@@ -2462,12 +2536,23 @@
       {
         "name": "Non La",
         "imageQuery": "Vietnamese non la conical leaf hat palm bamboo traditional",
-        "description": "Conical leaf hat iconic to Vietnamese culture.",
+        "description": "Conical leaf hat iconic to Vietnamese culture, also used as a fan and rain shield.",
         "era": "Ancient - Present",
         "occasion": "Daily wear, sun protection",
         "materials": [
           "Palm Leaves",
           "Bamboo"
+        ]
+      },
+      {
+        "name": "Ao Ba Ba",
+        "imageQuery": "Vietnamese ao ba ba pajama-style shirt Mekong Delta traditional",
+        "description": "Simple collarless shirt of the Mekong Delta region, everyday garment of southern Vietnam.",
+        "era": "Traditional - Present",
+        "occasion": "Daily wear, farming, casual",
+        "materials": [
+          "Cotton",
+          "Silk"
         ]
       }
     ],
@@ -2476,7 +2561,13 @@
         "name": "Cong Tri",
         "brand": "Cong Tri",
         "era": "Contemporary",
-        "specialty": "Modern Vietnamese couture"
+        "specialty": "Modern Vietnamese couture, celebrity red carpet"
+      },
+      {
+        "name": "Phuong My",
+        "brand": "Phuong My",
+        "era": "Contemporary",
+        "specialty": "Bridal and evening wear, Vietnamese new wave"
       }
     ],
     "industryStats": {
@@ -2536,13 +2627,18 @@
         "name": "Andean Red",
         "hex": "#AE2029",
         "meaning": "Earth, Pachamama"
+      },
+      {
+        "name": "Cusco Turquoise",
+        "hex": "#30D5C8",
+        "meaning": "Sacred lakes and Andean mineral pigments"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Poncho",
         "imageQuery": "Peruvian poncho alpaca woven Andean traditional colorful pattern",
-        "description": "Woven cloak with central head opening, iconic Andean garment.",
+        "description": "Woven cloak with central head opening, iconic Andean garment with region-specific patterns.",
         "era": "Pre-Columbian - Present",
         "occasion": "Daily, ceremonial",
         "materials": [
@@ -2560,6 +2656,17 @@
           "Wool",
           "Cotton"
         ]
+      },
+      {
+        "name": "Chullo",
+        "imageQuery": "Peruvian chullo knitted hat earflaps colorful Andean alpaca",
+        "description": "Knitted hat with earflaps and tassels, hand-knit from alpaca or sheep wool with Andean motifs.",
+        "era": "Pre-Columbian - Present",
+        "occasion": "Daily wear, cold weather, festivals",
+        "materials": [
+          "Alpaca",
+          "Wool"
+        ]
       }
     ],
     "keyDesigners": [
@@ -2568,6 +2675,12 @@
         "brand": "Anntarah",
         "era": "Contemporary",
         "specialty": "Alpaca luxury knitwear"
+      },
+      {
+        "name": "Meche Correa",
+        "brand": "Meche Correa",
+        "era": "Contemporary",
+        "specialty": "Peruvian haute couture using ancestral textiles"
       }
     ],
     "industryStats": {
@@ -3082,13 +3195,18 @@
         "name": "Desert Sand",
         "hex": "#EDC9AF",
         "meaning": "Arabian Desert heritage"
+      },
+      {
+        "name": "Arabian Gold",
+        "hex": "#C5961D",
+        "meaning": "Luxury, royal opulence, gold souq tradition"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Thobe",
         "imageQuery": "Saudi thobe white ankle length robe men traditional Arab dress",
-        "description": "White ankle-length robe, the standard dress for Saudi men.",
+        "description": "White ankle-length robe, the standard dress for Saudi men, with subtle regional variations.",
         "era": "Traditional - Present",
         "occasion": "Daily, formal",
         "materials": [
@@ -3099,13 +3217,25 @@
       {
         "name": "Bisht",
         "imageQuery": "Saudi bisht gold trimmed cloak over thobe formal Arabian garment",
-        "description": "Gold-trimmed cloak worn over the thobe for formal occasions.",
+        "description": "Gold-trimmed cloak worn over the thobe for formal occasions by royalty and dignitaries.",
         "era": "Traditional - Present",
         "occasion": "Royal, formal events",
         "materials": [
           "Wool",
           "Camel Hair",
           "Gold Thread"
+        ]
+      },
+      {
+        "name": "Abaya",
+        "imageQuery": "Saudi abaya black embroidered robe women elegant modern Arabian",
+        "description": "Flowing outer robe worn by women, evolving from plain black to high-fashion with embroidery and contemporary cuts.",
+        "era": "Traditional - Present",
+        "occasion": "Daily, formal, all occasions",
+        "materials": [
+          "Crepe",
+          "Silk",
+          "Chiffon"
         ]
       }
     ],
@@ -3115,6 +3245,12 @@
         "brand": "Ashi Studio",
         "era": "Contemporary",
         "specialty": "Couture, dramatic gowns"
+      },
+      {
+        "name": "Honayda Serafi",
+        "brand": "Honayda",
+        "era": "Contemporary",
+        "specialty": "Saudi couture, modern modest fashion"
       }
     ],
     "industryStats": {
@@ -3357,13 +3493,18 @@
         "name": "Sapphire Blue",
         "hex": "#0F52BA",
         "meaning": "Gem heritage"
+      },
+      {
+        "name": "Temple Maroon",
+        "hex": "#800020",
+        "meaning": "Buddhist monks' robes, Kandyan royalty"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Osariya",
         "imageQuery": "Sri Lankan osariya Kandyan style saree draping traditional silk",
-        "description": "Sri Lankan style of draping the saree, distinctive Kandyan style.",
+        "description": "Sri Lankan style of draping the saree with distinctive Kandyan pleat tucked at the front.",
         "era": "Traditional - Present",
         "occasion": "Formal, ceremonial",
         "materials": [
@@ -3374,16 +3515,40 @@
       {
         "name": "Sarong",
         "imageQuery": "Sri Lankan sarong batik wrap garment cotton traditional pattern",
-        "description": "Wrapped garment worn by men and women, often with batik patterns.",
+        "description": "Wrapped garment worn by men and women, often with batik patterns from the south.",
         "era": "Traditional - Present",
         "occasion": "Daily, casual",
         "materials": [
           "Cotton",
           "Batik"
         ]
+      },
+      {
+        "name": "Dumbara Weave",
+        "imageQuery": "Sri Lankan Dumbara mat weave traditional handloom geometric",
+        "description": "UNESCO-listed handloom weaving tradition from the Dumbara valley with intricate geometric and nature motifs.",
+        "era": "Ancient - Present",
+        "occasion": "Ceremonial, home decor, cultural",
+        "materials": [
+          "Cotton",
+          "Natural Fiber"
+        ]
       }
     ],
-    "keyDesigners": [],
+    "keyDesigners": [
+      {
+        "name": "Sonali Dharmawardena",
+        "brand": "Sonali D",
+        "era": "Contemporary",
+        "specialty": "Sri Lankan luxury fashion, modern sari reinterpretation"
+      },
+      {
+        "name": "Darshi Keerthisena",
+        "brand": "Buddhi Batiks",
+        "era": "Late 20th Century - Present",
+        "specialty": "Contemporary batik fashion, sustainable design"
+      }
+    ],
     "industryStats": {
       "marketSizeUSD": 2.5,
       "growthRate": 4,
@@ -3525,13 +3690,18 @@
         "name": "Safari Khaki",
         "hex": "#C3B091",
         "meaning": "Savanna, wildlife"
+      },
+      {
+        "name": "Kenya Black",
+        "hex": "#000000",
+        "meaning": "People of Kenya, national flag"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Maasai Shuka",
         "imageQuery": "Maasai shuka red checked blanket wrap traditional Kenya Africa",
-        "description": "Distinctive red checked blanket/wrap of the Maasai people.",
+        "description": "Distinctive red checked blanket/wrap of the Maasai people, now a global fashion icon.",
         "era": "Traditional - Present",
         "occasion": "Daily, ceremonial",
         "materials": [
@@ -3542,11 +3712,22 @@
       {
         "name": "Kikoy",
         "imageQuery": "Kenyan kikoy woven sarong colorful striped Swahili coast cotton",
-        "description": "Colorful woven sarong from Kenya's coast, originally Swahili.",
+        "description": "Colorful woven sarong from Kenya's Swahili coast, now used in global resort fashion.",
         "era": "Traditional - Present",
         "occasion": "Beach, casual, daily",
         "materials": [
           "Cotton"
+        ]
+      },
+      {
+        "name": "Kanzu",
+        "imageQuery": "Kenyan kanzu white robe Swahili men traditional garment",
+        "description": "Long white robe worn by Swahili men on the Kenyan coast for formal and religious occasions.",
+        "era": "Traditional - Present",
+        "occasion": "Friday prayers, weddings, formal events",
+        "materials": [
+          "Cotton",
+          "Linen"
         ]
       }
     ],
@@ -3556,6 +3737,12 @@
         "brand": "Deepa Dosaja",
         "era": "Contemporary",
         "specialty": "East African luxury"
+      },
+      {
+        "name": "John Kaveke",
+        "brand": "Kaveke",
+        "era": "Contemporary",
+        "specialty": "Kenyan menswear, African contemporary fashion"
       }
     ],
     "industryStats": {
@@ -3685,19 +3872,53 @@
         "name": "Dutch Orange",
         "hex": "#FF6600",
         "meaning": "Royal House of Orange"
+      },
+      {
+        "name": "Delft Blue",
+        "hex": "#003399",
+        "meaning": "Iconic Delft pottery and Dutch canal heritage"
+      },
+      {
+        "name": "Tulip Red",
+        "hex": "#E30B5D",
+        "meaning": "Dutch tulip culture and floral heritage"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Klompen & Klederdracht",
         "imageQuery": "Dutch klederdracht traditional costume wooden clogs cap apron Netherlands",
-        "description": "Traditional regional costumes with wooden clogs, caps and aprons.",
+        "description": "Traditional regional costumes with wooden clogs, lace caps and embroidered aprons.",
         "era": "17th Century - Present",
         "occasion": "Folk events, tourism",
         "materials": [
           "Cotton",
           "Linen",
           "Wood"
+        ]
+      },
+      {
+        "name": "Volendam Costume",
+        "imageQuery": "Volendam traditional Dutch costume pointed lace cap",
+        "description": "Iconic Dutch folk costume from the fishing village of Volendam with distinctive pointed lace cap.",
+        "era": "18th Century - Present",
+        "occasion": "Cultural events, tourism, heritage days",
+        "materials": [
+          "Cotton",
+          "Lace",
+          "Silk"
+        ]
+      },
+      {
+        "name": "Scheveningse Dracht",
+        "imageQuery": "Scheveningen traditional Dutch fishing village costume dress",
+        "description": "Traditional dress of the Scheveningen fishing community with dark fabrics and distinctive headwear.",
+        "era": "18th Century - 20th Century",
+        "occasion": "Daily wear (historical), heritage events",
+        "materials": [
+          "Wool",
+          "Cotton",
+          "Linen"
         ]
       }
     ],
@@ -3707,6 +3928,18 @@
         "brand": "Iris van Herpen",
         "era": "Contemporary",
         "specialty": "3D printed fashion, tech couture"
+      },
+      {
+        "name": "Viktor & Rolf",
+        "brand": "Viktor & Rolf",
+        "era": "Contemporary",
+        "specialty": "Avant-garde conceptual fashion"
+      },
+      {
+        "name": "Jan Taminiau",
+        "brand": "Jan Taminiau",
+        "era": "Contemporary",
+        "specialty": "Dutch royal couturier, sculptural gowns"
       }
     ],
     "industryStats": {
@@ -3760,18 +3993,52 @@
         "name": "Belgian Lace White",
         "hex": "#FAF0E6",
         "meaning": "Lace-making heritage"
+      },
+      {
+        "name": "Antwerp Black",
+        "hex": "#1C1C1C",
+        "meaning": "Antwerp Six avant-garde fashion movement"
+      },
+      {
+        "name": "Belgian Gold",
+        "hex": "#FFD700",
+        "meaning": "Flemish Golden Age and Brussels grandeur"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Bruges Lace Garments",
         "imageQuery": "Belgian Bruges lace handmade bobbin lace white intricate traditional",
-        "description": "Handmade bobbin lace tradition dating to the 16th century.",
+        "description": "Handmade bobbin lace tradition dating to the 16th century, once prized by European royalty.",
         "era": "16th Century - Present",
         "occasion": "Formal, ceremonial",
         "materials": [
           "Linen Thread",
           "Silk"
+        ]
+      },
+      {
+        "name": "Gilles de Binche Costume",
+        "imageQuery": "Gilles Binche carnival costume wax mask ostrich feathers Belgium",
+        "description": "UNESCO-recognized carnival costume with wax mask, linen suit, and towering ostrich feather headdress.",
+        "era": "14th Century - Present",
+        "occasion": "Carnival of Binche, Mardi Gras",
+        "materials": [
+          "Linen",
+          "Wax",
+          "Ostrich Feathers"
+        ]
+      },
+      {
+        "name": "Flemish Folk Dress",
+        "imageQuery": "Flemish folk costume traditional dress lace cap Belgium",
+        "description": "Traditional Flemish costume featuring lace cap, embroidered bodice, and full skirt with apron.",
+        "era": "17th Century - Present",
+        "occasion": "Folk festivals, heritage events",
+        "materials": [
+          "Linen",
+          "Cotton",
+          "Lace"
         ]
       }
     ],
@@ -3781,6 +4048,18 @@
         "brand": "Dries Van Noten",
         "era": "Contemporary",
         "specialty": "Print mixing, Antwerp Six"
+      },
+      {
+        "name": "Martin Margiela",
+        "brand": "Maison Margiela",
+        "era": "Late 20th Century",
+        "specialty": "Deconstruction, anonymous luxury"
+      },
+      {
+        "name": "Ann Demeulemeester",
+        "brand": "Ann Demeulemeester",
+        "era": "Late 20th Century",
+        "specialty": "Gothic romanticism, Antwerp Six"
       }
     ],
     "industryStats": {
@@ -3835,18 +4114,51 @@
         "name": "Danish Red",
         "hex": "#C8102E",
         "meaning": "Flag, hygge warmth"
+      },
+      {
+        "name": "Copenhagen Grey",
+        "hex": "#A9A9A9",
+        "meaning": "Scandinavian minimalism, urban design"
+      },
+      {
+        "name": "Hygge Amber",
+        "hex": "#FFBF00",
+        "meaning": "Candlelight warmth, Danish hygge culture"
       }
     ],
     "traditionalGarments": [
       {
-        "name": "Bunad-style Folk Dress",
+        "name": "Danish Folk Dress",
         "imageQuery": "Danish folk dress traditional costume embroidered regional Scandinavian",
-        "description": "Regional traditional costumes with embroidered details.",
+        "description": "Regional traditional costumes with embroidered bodices, striped skirts, and distinctive regional headdresses.",
         "era": "18th Century - Present",
-        "occasion": "National celebrations",
+        "occasion": "National celebrations, folk festivals",
         "materials": [
           "Wool",
           "Linen"
+        ]
+      },
+      {
+        "name": "Amager Dragt",
+        "imageQuery": "Amager traditional costume Dutch-Danish embroidered folk dress",
+        "description": "Distinctive costume from Amager island near Copenhagen, showing Dutch colonial influence with rich embroidery.",
+        "era": "16th Century - Present",
+        "occasion": "Heritage events, folk dancing",
+        "materials": [
+          "Silk",
+          "Wool",
+          "Silver Ornaments"
+        ]
+      },
+      {
+        "name": "Faroese Knit Sweater",
+        "imageQuery": "Faroese knitted sweater geometric pattern Nordic wool",
+        "description": "Traditional knitted sweater from the Faroe Islands with distinctive geometric patterns and natural wool colors.",
+        "era": "19th Century - Present",
+        "occasion": "Daily wear, cold weather",
+        "materials": [
+          "Wool",
+          "Lanolin-rich Yarn"
         ]
       }
     ],
@@ -3856,6 +4168,18 @@
         "brand": "Ganni",
         "era": "Contemporary",
         "specialty": "Scandi 2.0, responsible fashion"
+      },
+      {
+        "name": "Stine Goya",
+        "brand": "Stine Goya",
+        "era": "Contemporary",
+        "specialty": "Colorful prints, Scandinavian maximalism"
+      },
+      {
+        "name": "Henrik Vibskov",
+        "brand": "Henrik Vibskov",
+        "era": "Contemporary",
+        "specialty": "Avant-garde art-fashion, installation fashion"
       }
     ],
     "industryStats": {
@@ -3911,22 +4235,68 @@
         "name": "Fjord Blue",
         "hex": "#4169E1",
         "meaning": "Fjords, sea heritage"
+      },
+      {
+        "name": "Aurora Green",
+        "hex": "#01796F",
+        "meaning": "Northern Lights, Arctic wilderness"
+      },
+      {
+        "name": "Bunad Red",
+        "hex": "#8B0000",
+        "meaning": "Traditional bunad embroidery, warmth"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Bunad",
         "imageQuery": "Norwegian bunad folk costume embroidered wool silver jewelry national dress",
-        "description": "Norwegian folk costume with regional variations, handmade and passed down.",
+        "description": "Norwegian folk costume with over 400 regional variations, handcrafted with silver filigree jewelry and intricate embroidery.",
         "era": "18th Century - Present",
-        "occasion": "National Day, weddings",
+        "occasion": "National Day (17th May), weddings, confirmations",
         "materials": [
           "Wool",
-          "Silver Jewelry"
+          "Silver Jewelry",
+          "Linen"
+        ]
+      },
+      {
+        "name": "Lusekofte",
+        "imageQuery": "Norwegian lusekofte knitted sweater traditional pattern wool",
+        "description": "Traditional patterned knitted sweater with distinctive lice-stitch motifs in black and white.",
+        "era": "19th Century - Present",
+        "occasion": "Daily wear, winter, skiing",
+        "materials": [
+          "Wool"
+        ]
+      },
+      {
+        "name": "Sami Gakti",
+        "imageQuery": "Norwegian Sami gakti colorful tunic silver belt reindeer",
+        "description": "Traditional tunic of Norway's indigenous Sami people, featuring vivid colors and distinctive silver belt.",
+        "era": "Ancient - Present",
+        "occasion": "Daily, ceremonies, reindeer herding",
+        "materials": [
+          "Wool",
+          "Reindeer Leather",
+          "Silver"
         ]
       }
     ],
-    "keyDesigners": [],
+    "keyDesigners": [
+      {
+        "name": "Peter Dundas",
+        "brand": "Dundas",
+        "era": "Contemporary",
+        "specialty": "Glamorous red carpet, Roberto Cavalli creative director"
+      },
+      {
+        "name": "Edvard Munch (fashion influence)",
+        "brand": null,
+        "era": "Early 20th Century",
+        "specialty": "Expressionist art influencing Norwegian textile design"
+      }
+    ],
     "industryStats": {
       "marketSizeUSD": 4,
       "growthRate": 1.5,
@@ -3982,13 +4352,18 @@
         "name": "Polish Crimson",
         "hex": "#DC143C",
         "meaning": "Valor and sacrifice"
+      },
+      {
+        "name": "Lowicz Floral",
+        "hex": "#FF6347",
+        "meaning": "Vibrant Lowicz paper-cut art and folk embroidery"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Krakowiak Costume",
         "imageQuery": "Polish Krakowiak folk costume Krakow floral embroidery colorful traditional",
-        "description": "Colorful folk dress from the Kraków region with floral embroidery.",
+        "description": "Colorful folk dress from the Krakow region with elaborate floral embroidery, peacock feather cap for men.",
         "era": "18th Century - Present",
         "occasion": "Folk festivals, weddings",
         "materials": [
@@ -3996,9 +4371,46 @@
           "Cotton",
           "Ribbon"
         ]
+      },
+      {
+        "name": "Lowicz Folk Dress",
+        "imageQuery": "Polish Lowicz folk costume striped skirt colorful embroidered",
+        "description": "Strikingly colorful striped skirts and embroidered bodices from the Lowicz region of central Poland.",
+        "era": "18th Century - Present",
+        "occasion": "Corpus Christi processions, folk events",
+        "materials": [
+          "Wool",
+          "Cotton",
+          "Silk Ribbon"
+        ]
+      },
+      {
+        "name": "Kontusz",
+        "imageQuery": "Polish kontusz nobleman robe Sarmatian traditional sash",
+        "description": "Noble outer robe of the Polish-Lithuanian szlachta with distinctive slit sleeves and Kontusz sash belt.",
+        "era": "16th - 18th Century",
+        "occasion": "Court dress, formal ceremonies",
+        "materials": [
+          "Silk",
+          "Wool",
+          "Gold Thread"
+        ]
       }
     ],
-    "keyDesigners": [],
+    "keyDesigners": [
+      {
+        "name": "Gosia Baczynska",
+        "brand": "Gosia Baczynska",
+        "era": "Contemporary",
+        "specialty": "Feminine couture, Warsaw fashion scene"
+      },
+      {
+        "name": "Maciej Zien",
+        "brand": "Maciej Zien",
+        "era": "Contemporary",
+        "specialty": "Polish couture, red carpet gowns"
+      }
+    ],
     "industryStats": {
       "marketSizeUSD": 8,
       "growthRate": 3,
@@ -4050,19 +4462,52 @@
       {
         "name": "Aegean Blue",
         "hex": "#003153",
-        "meaning": "Mediterranean sea"
+        "meaning": "Mediterranean sea and island architecture"
+      },
+      {
+        "name": "Santorini White",
+        "hex": "#F5F5F5",
+        "meaning": "Cycladic whitewashed architecture"
+      },
+      {
+        "name": "Olympian Gold",
+        "hex": "#CFB53B",
+        "meaning": "Ancient Greek laurels and Olympic heritage"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Fustanella",
         "imageQuery": "Greek fustanella white pleated skirt Evzones guard traditional costume",
-        "description": "White pleated skirt worn by Evzones (Greek presidential guard).",
+        "description": "White pleated skirt worn by Evzones (Greek presidential guard), with up to 400 pleats symbolizing years of Ottoman rule.",
         "era": "Ancient - Present",
         "occasion": "Military, ceremonial",
         "materials": [
           "Cotton",
           "Linen"
+        ]
+      },
+      {
+        "name": "Amalia Dress",
+        "imageQuery": "Greek Amalia dress national costume velvet gold embroidery",
+        "description": "Greek national costume featuring a silk dress with embroidered velvet jacket and fez cap, established by Queen Amalia.",
+        "era": "19th Century - Present",
+        "occasion": "National celebrations, formal events",
+        "materials": [
+          "Silk",
+          "Velvet",
+          "Gold Thread"
+        ]
+      },
+      {
+        "name": "Chiton",
+        "imageQuery": "Ancient Greek chiton draped linen tunic classical",
+        "description": "Ancient draped garment that formed the basis of Western fashion and continues to inspire modern designers.",
+        "era": "Ancient Greece",
+        "occasion": "Daily wear, ceremonies (historical)",
+        "materials": [
+          "Linen",
+          "Wool"
         ]
       }
     ],
@@ -4072,6 +4517,12 @@
         "brand": "Mary Katrantzou",
         "era": "Contemporary",
         "specialty": "Digital prints, baroque maximalism"
+      },
+      {
+        "name": "Celia Kritharioti",
+        "brand": "Celia Kritharioti",
+        "era": "Contemporary",
+        "specialty": "Couture bridal and evening gowns"
       }
     ],
     "industryStats": {
@@ -4279,19 +4730,52 @@
         "name": "Filipino Sun Yellow",
         "hex": "#FCD116",
         "meaning": "Freedom and sovereignty"
+      },
+      {
+        "name": "Philippine Blue",
+        "hex": "#0038A8",
+        "meaning": "Peace, truth, and justice"
+      },
+      {
+        "name": "Terno Coral",
+        "hex": "#FF7F50",
+        "meaning": "Tropical flora and festive celebration"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Barong Tagalog",
         "imageQuery": "Filipino barong tagalog sheer embroidered formal shirt pineapple fiber",
-        "description": "National formal shirt made from sheer piña or jusi fabric with intricate embroidery.",
+        "description": "National formal shirt made from sheer pina or jusi fabric with intricate hand-embroidered patterns.",
         "era": "Spanish Colonial - Present",
-        "occasion": "Formal, weddings",
+        "occasion": "Formal, weddings, government events",
         "materials": [
-          "Piña",
+          "Pina",
           "Jusi",
           "Silk"
+        ]
+      },
+      {
+        "name": "Filipiniana Terno",
+        "imageQuery": "Filipino terno butterfly sleeve dress formal gown traditional",
+        "description": "Elegant formal gown with iconic butterfly sleeves, the national dress for Filipino women.",
+        "era": "Spanish Colonial - Present",
+        "occasion": "Formal events, state occasions",
+        "materials": [
+          "Pina",
+          "Silk",
+          "Organza"
+        ]
+      },
+      {
+        "name": "T'nalak Weave",
+        "imageQuery": "T'boli T'nalak dream woven fabric Mindanao Philippines",
+        "description": "Sacred dream-woven abaca cloth of the T'boli people of Mindanao, with patterns revealed in dreams.",
+        "era": "Ancient - Present",
+        "occasion": "Ceremonial, cultural identity",
+        "materials": [
+          "Abaca Fiber",
+          "Natural Dyes"
         ]
       }
     ],
@@ -4300,7 +4784,13 @@
         "name": "Michael Cinco",
         "brand": "Michael Cinco",
         "era": "Contemporary",
-        "specialty": "Couture evening wear"
+        "specialty": "Couture evening wear, red carpet gowns"
+      },
+      {
+        "name": "Monique Lhuillier",
+        "brand": "Monique Lhuillier",
+        "era": "Contemporary",
+        "specialty": "Bridal couture, romantic evening wear"
       }
     ],
     "industryStats": {
@@ -4356,19 +4846,53 @@
         "name": "Batik Blue",
         "hex": "#1B4F72",
         "meaning": "Malaysian batik tradition"
+      },
+      {
+        "name": "Songket Gold",
+        "hex": "#DAA520",
+        "meaning": "Royal Malay woven gold thread textiles"
+      },
+      {
+        "name": "Malaysian Green",
+        "hex": "#006B3F",
+        "meaning": "Islam, tropical rainforest heritage"
       }
     ],
     "traditionalGarments": [
       {
         "name": "Baju Kurung",
         "imageQuery": "Malaysian baju kurung traditional Malay tunic skirt songket fabric",
-        "description": "Traditional Malay costume with a long tunic and matching skirt.",
+        "description": "National dress with a loose-fitting long tunic and matching skirt, worn by women across all ethnic groups.",
         "era": "15th Century - Present",
         "occasion": "Daily, formal, religious",
         "materials": [
           "Cotton",
           "Silk",
           "Songket"
+        ]
+      },
+      {
+        "name": "Baju Melayu",
+        "imageQuery": "Malaysian baju Melayu men traditional tunic sampin songkok",
+        "description": "Traditional Malay men's outfit with loose tunic, trousers, sampin wrap, and songkok cap.",
+        "era": "15th Century - Present",
+        "occasion": "Formal, religious, Hari Raya celebrations",
+        "materials": [
+          "Cotton",
+          "Silk",
+          "Songket"
+        ]
+      },
+      {
+        "name": "Songket Textile",
+        "imageQuery": "Malaysian songket gold thread handwoven fabric royal brocade",
+        "description": "Luxurious hand-woven brocade fabric interlaced with gold or silver threads, reserved for royalty and ceremonies.",
+        "era": "Malacca Sultanate - Present",
+        "occasion": "Royal events, weddings, state ceremonies",
+        "materials": [
+          "Silk",
+          "Gold Thread",
+          "Silver Thread"
         ]
       }
     ],
@@ -4378,6 +4902,12 @@
         "brand": "Jimmy Choo",
         "era": "Late 20th Century",
         "specialty": "Luxury shoes and accessories"
+      },
+      {
+        "name": "Rizalman Ibrahim",
+        "brand": "Rizalman Ibrahim",
+        "era": "Contemporary",
+        "specialty": "Modern Malay couture, bridal wear"
       }
     ],
     "industryStats": {
@@ -4925,25 +5455,107 @@
       14.55
     ],
     "flag": "🇦🇹",
-    "tier": "skeleton",
-    "fashionIndex": 29,
-    "marketSize": 1.1,
-    "textileExports": 0.22,
-    "sustainabilityScore": 35,
-    "fashionWeeks": [],
-    "primaryFabrics": [],
-    "colorPalette": [],
-    "traditionalGarments": [],
-    "keyDesigners": [],
+    "tier": "C",
+    "fashionIndex": 45,
+    "marketSize": 5,
+    "textileExports": 2.5,
+    "sustainabilityScore": 65,
+    "fashionWeeks": [
+      "Vienna Fashion Week"
+    ],
+    "primaryFabrics": [
+      "Loden",
+      "Wool",
+      "Linen",
+      "Cotton"
+    ],
+    "colorPalette": [
+      {
+        "name": "Imperial Red",
+        "hex": "#ED2939",
+        "meaning": "Habsburg dynasty, Austrian flag"
+      },
+      {
+        "name": "Alpine Green",
+        "hex": "#4A7C59",
+        "meaning": "Alpine meadows and Tyrolean heritage"
+      },
+      {
+        "name": "Viennese Gold",
+        "hex": "#CFB53B",
+        "meaning": "Imperial splendor and Baroque architecture"
+      }
+    ],
+    "traditionalGarments": [
+      {
+        "name": "Dirndl",
+        "imageQuery": "Austrian dirndl dress apron bodice traditional alpine",
+        "description": "Traditional Alpine dress with fitted bodice, full skirt, and apron, each region has its own style.",
+        "era": "18th Century - Present",
+        "occasion": "Festivals, Oktoberfest, folk events",
+        "materials": [
+          "Cotton",
+          "Linen",
+          "Silk"
+        ]
+      },
+      {
+        "name": "Lederhosen",
+        "imageQuery": "Austrian lederhosen leather breeches suspenders alpine",
+        "description": "Leather knee-breeches with suspenders, iconic menswear of the Alpine regions.",
+        "era": "18th Century - Present",
+        "occasion": "Festivals, folk events, daily rural wear",
+        "materials": [
+          "Deer Leather",
+          "Goat Leather"
+        ]
+      },
+      {
+        "name": "Loden Mantel",
+        "imageQuery": "Austrian loden coat green wool traditional Alpine cloak",
+        "description": "Heavy waterproof wool coat in distinctive green, developed in the Tyrolean Alps.",
+        "era": "16th Century - Present",
+        "occasion": "Outerwear, hunting, daily wear",
+        "materials": [
+          "Loden Wool",
+          "Felt"
+        ]
+      }
+    ],
+    "keyDesigners": [
+      {
+        "name": "Helmut Lang",
+        "brand": "Helmut Lang",
+        "era": "Late 20th Century",
+        "specialty": "Minimalist deconstruction, avant-garde"
+      },
+      {
+        "name": "Lena Hoschek",
+        "brand": "Lena Hoschek",
+        "era": "Contemporary",
+        "specialty": "Modern dirndl and vintage-inspired fashion"
+      }
+    ],
     "industryStats": {
-      "marketSizeUSD": 1.1,
+      "marketSizeUSD": 5,
       "growthRate": 1.8,
       "employmentMillions": 0.37,
-      "textileExportsUSD": 0.22,
+      "textileExportsUSD": 2.5,
       "textileImportsUSD": 1.9,
-      "topExportPartners": [],
-      "topImportPartners": [],
-      "sustainabilityIndex": 35
+      "topExportPartners": [
+        "Germany",
+        "Italy",
+        "Switzerland",
+        "France"
+      ],
+      "topImportPartners": [
+        "China",
+        "Italy",
+        "Germany",
+        "Turkey"
+      ],
+      "fashionWeekCity": "Vienna",
+      "sustainabilityIndex": 65
     }
   },
   {
@@ -5605,25 +6217,108 @@
       -71.54
     ],
     "flag": "🇨🇱",
-    "tier": "skeleton",
-    "fashionIndex": 28,
-    "marketSize": 0.6,
-    "textileExports": 0.49,
-    "sustainabilityScore": 34,
-    "fashionWeeks": [],
-    "primaryFabrics": [],
-    "colorPalette": [],
-    "traditionalGarments": [],
-    "keyDesigners": [],
+    "tier": "C",
+    "fashionIndex": 30,
+    "marketSize": 3,
+    "textileExports": 0.5,
+    "sustainabilityScore": 50,
+    "fashionWeeks": [
+      "Santiago Fashion Week"
+    ],
+    "primaryFabrics": [
+      "Wool",
+      "Alpaca",
+      "Cotton",
+      "Linen"
+    ],
+    "colorPalette": [
+      {
+        "name": "Atacama Copper",
+        "hex": "#B87333",
+        "meaning": "Copper mining heritage, desert landscape"
+      },
+      {
+        "name": "Chilean Red",
+        "hex": "#D2232A",
+        "meaning": "National flag, copihue flower"
+      },
+      {
+        "name": "Patagonian Blue",
+        "hex": "#4682B4",
+        "meaning": "Glacial lakes and Pacific coastline"
+      }
+    ],
+    "traditionalGarments": [
+      {
+        "name": "Chamanto",
+        "imageQuery": "Chilean chamanto poncho reversible woven horseman traditional",
+        "description": "Finely woven reversible poncho worn by Chilean huasos (horsemen), with contrasting patterns on each side.",
+        "era": "Colonial Era - Present",
+        "occasion": "Equestrian, festivals, Fiestas Patrias",
+        "materials": [
+          "Silk",
+          "Cotton",
+          "Wool"
+        ]
+      },
+      {
+        "name": "Mapuche Trarilonko",
+        "imageQuery": "Mapuche traditional textile woven headband Chile indigenous",
+        "description": "Woven headband and broader textile tradition of Chile's indigenous Mapuche people with geometric symbolism.",
+        "era": "Pre-Columbian - Present",
+        "occasion": "Ceremonial, daily wear, cultural identity",
+        "materials": [
+          "Wool",
+          "Natural Dyes"
+        ]
+      },
+      {
+        "name": "Huaso Outfit",
+        "imageQuery": "Chilean huaso traditional outfit short jacket flat hat horseman",
+        "description": "Traditional horseman's outfit with short bolero jacket, flat-brimmed hat, and leather boots.",
+        "era": "Colonial Era - Present",
+        "occasion": "Rodeos, Fiestas Patrias, equestrian events",
+        "materials": [
+          "Wool",
+          "Leather",
+          "Cotton"
+        ]
+      }
+    ],
+    "keyDesigners": [
+      {
+        "name": "Jorge Acuna Bravo",
+        "brand": "Yono Taola",
+        "era": "Contemporary",
+        "specialty": "Sustainable Chilean fashion, Mapuche textiles"
+      },
+      {
+        "name": "Karla Godoy",
+        "brand": "Karla Godoy",
+        "era": "Contemporary",
+        "specialty": "Contemporary womenswear, Santiago fashion scene"
+      }
+    ],
     "industryStats": {
-      "marketSizeUSD": 0.6,
+      "marketSizeUSD": 3,
       "growthRate": 2.7,
-      "employmentMillions": 0.27,
-      "textileExportsUSD": 0.49,
-      "textileImportsUSD": 0.6,
-      "topExportPartners": [],
-      "topImportPartners": [],
-      "sustainabilityIndex": 34
+      "employmentMillions": 0.05,
+      "textileExportsUSD": 0.5,
+      "textileImportsUSD": 3,
+      "topExportPartners": [
+        "United States",
+        "Peru",
+        "Argentina",
+        "Brazil"
+      ],
+      "topImportPartners": [
+        "China",
+        "Bangladesh",
+        "India",
+        "Peru"
+      ],
+      "fashionWeekCity": "Santiago",
+      "sustainabilityIndex": 50
     }
   },
   {
@@ -5809,25 +6504,108 @@
       15.2
     ],
     "flag": "🇭🇷",
-    "tier": "skeleton",
-    "fashionIndex": 25,
-    "marketSize": 4.2,
-    "textileExports": 0.22,
-    "sustainabilityScore": 15,
-    "fashionWeeks": [],
-    "primaryFabrics": [],
-    "colorPalette": [],
-    "traditionalGarments": [],
-    "keyDesigners": [],
+    "tier": "C",
+    "fashionIndex": 30,
+    "marketSize": 1.5,
+    "textileExports": 0.8,
+    "sustainabilityScore": 45,
+    "fashionWeeks": [
+      "Zagreb Fashion Week"
+    ],
+    "primaryFabrics": [
+      "Linen",
+      "Cotton",
+      "Silk",
+      "Wool"
+    ],
+    "colorPalette": [
+      {
+        "name": "Croatian Red",
+        "hex": "#FF0000",
+        "meaning": "National checkerboard shield, cravat tradition"
+      },
+      {
+        "name": "Adriatic Blue",
+        "hex": "#006994",
+        "meaning": "Adriatic Sea coastline"
+      },
+      {
+        "name": "Slavonian Gold",
+        "hex": "#DAA520",
+        "meaning": "Wheat fields and folk embroidery thread"
+      }
+    ],
+    "traditionalGarments": [
+      {
+        "name": "Cravat (Kravata)",
+        "imageQuery": "Croatian cravat kravata silk necktie origin traditional",
+        "description": "Croatia is the birthplace of the necktie, originally a silk neckcloth worn by Croatian mercenaries in the 17th century.",
+        "era": "17th Century - Present",
+        "occasion": "Formal, daily wear, military origin",
+        "materials": [
+          "Silk",
+          "Cotton",
+          "Linen"
+        ]
+      },
+      {
+        "name": "Narodna Nosnja",
+        "imageQuery": "Croatian folk costume embroidered national dress Slavonia",
+        "description": "Richly embroidered folk costumes varying by region, with elaborate gold-thread Slavonian variants.",
+        "era": "18th Century - Present",
+        "occasion": "Festivals, folk dance, weddings",
+        "materials": [
+          "Linen",
+          "Wool",
+          "Gold Thread"
+        ]
+      },
+      {
+        "name": "Dalmatian Cap (Kapa)",
+        "imageQuery": "Croatian Dalmatian red cap traditional folk hat",
+        "description": "Distinctive red cap worn along the Dalmatian coast, part of the traditional Mediterranean outfit.",
+        "era": "Medieval - Present",
+        "occasion": "Daily wear, folk events, festivals",
+        "materials": [
+          "Wool",
+          "Felt"
+        ]
+      }
+    ],
+    "keyDesigners": [
+      {
+        "name": "Juraj Zigman",
+        "brand": "Juraj Zigman",
+        "era": "Contemporary",
+        "specialty": "Croatian couture, dramatic evening gowns"
+      },
+      {
+        "name": "Martina Vrdoljak-Ranilovic",
+        "brand": "Hippy Garden",
+        "era": "Contemporary",
+        "specialty": "Bohemian luxury, contemporary Croatian fashion"
+      }
+    ],
     "industryStats": {
-      "marketSizeUSD": 4.2,
+      "marketSizeUSD": 1.5,
       "growthRate": 3.8,
-      "employmentMillions": 0.27,
-      "textileExportsUSD": 0.22,
+      "employmentMillions": 0.03,
+      "textileExportsUSD": 0.8,
       "textileImportsUSD": 1.9,
-      "topExportPartners": [],
-      "topImportPartners": [],
-      "sustainabilityIndex": 15
+      "topExportPartners": [
+        "Italy",
+        "Germany",
+        "Slovenia",
+        "Austria"
+      ],
+      "topImportPartners": [
+        "Italy",
+        "China",
+        "Germany",
+        "Turkey"
+      ],
+      "fashionWeekCity": "Zagreb",
+      "sustainabilityIndex": 45
     }
   },
   {
@@ -5877,25 +6655,108 @@
       15.47
     ],
     "flag": "🇨🇿",
-    "tier": "skeleton",
-    "fashionIndex": 12,
-    "marketSize": 1.3,
-    "textileExports": 0.93,
-    "sustainabilityScore": 14,
-    "fashionWeeks": [],
-    "primaryFabrics": [],
-    "colorPalette": [],
-    "traditionalGarments": [],
-    "keyDesigners": [],
+    "tier": "C",
+    "fashionIndex": 35,
+    "marketSize": 4,
+    "textileExports": 2,
+    "sustainabilityScore": 50,
+    "fashionWeeks": [
+      "Mercedes-Benz Prague Fashion Week"
+    ],
+    "primaryFabrics": [
+      "Linen",
+      "Cotton",
+      "Bohemian Glass Beads",
+      "Wool"
+    ],
+    "colorPalette": [
+      {
+        "name": "Bohemian Blue",
+        "hex": "#11457E",
+        "meaning": "Czech national flag, Bohemian heritage"
+      },
+      {
+        "name": "Garnet Red",
+        "hex": "#8B1A1A",
+        "meaning": "Bohemian garnet gemstone tradition"
+      },
+      {
+        "name": "Prague Gold",
+        "hex": "#D4AF37",
+        "meaning": "Golden city of Prague's spires"
+      }
+    ],
+    "traditionalGarments": [
+      {
+        "name": "Kroj",
+        "imageQuery": "Czech kroj folk costume embroidered Moravian traditional",
+        "description": "Elaborately embroidered regional folk costume, especially ornate in Moravia with lace and ribbon.",
+        "era": "17th Century - Present",
+        "occasion": "Folk festivals, weddings, harvest celebrations",
+        "materials": [
+          "Linen",
+          "Cotton",
+          "Silk Ribbon"
+        ]
+      },
+      {
+        "name": "Moravian Embroidered Blouse",
+        "imageQuery": "Moravian embroidered white blouse Czech folk art",
+        "description": "White blouse with intricate regional embroidery patterns unique to each Moravian village.",
+        "era": "18th Century - Present",
+        "occasion": "Folk events, cultural celebrations",
+        "materials": [
+          "Linen",
+          "Cotton Thread"
+        ]
+      },
+      {
+        "name": "Bohemian Vest",
+        "imageQuery": "Czech Bohemian embroidered wool vest folk costume",
+        "description": "Richly decorated wool vest worn as part of traditional Bohemian folk costume.",
+        "era": "18th Century - Present",
+        "occasion": "Festivals, folk dance performances",
+        "materials": [
+          "Wool",
+          "Velvet",
+          "Embroidery Thread"
+        ]
+      }
+    ],
+    "keyDesigners": [
+      {
+        "name": "Blanka Matragi",
+        "brand": "Blanka Matragi",
+        "era": "Contemporary",
+        "specialty": "Haute couture gowns, Lebanese-Czech luxury"
+      },
+      {
+        "name": "Livia Klucinova",
+        "brand": "Chatty",
+        "era": "Contemporary",
+        "specialty": "Sustainable Czech fashion, modern minimalism"
+      }
+    ],
     "industryStats": {
-      "marketSizeUSD": 1.3,
+      "marketSizeUSD": 4,
       "growthRate": 3.3,
       "employmentMillions": 0.13,
-      "textileExportsUSD": 0.93,
-      "textileImportsUSD": 0.3,
-      "topExportPartners": [],
-      "topImportPartners": [],
-      "sustainabilityIndex": 14
+      "textileExportsUSD": 2,
+      "textileImportsUSD": 3,
+      "topExportPartners": [
+        "Germany",
+        "Slovakia",
+        "Poland",
+        "Austria"
+      ],
+      "topImportPartners": [
+        "China",
+        "Germany",
+        "Bangladesh",
+        "Turkey"
+      ],
+      "fashionWeekCity": "Prague",
+      "sustainabilityIndex": 50
     }
   },
   {
@@ -6251,25 +7112,108 @@
       25.75
     ],
     "flag": "🇫🇮",
-    "tier": "skeleton",
-    "fashionIndex": 17,
+    "tier": "C",
+    "fashionIndex": 50,
     "marketSize": 4.5,
-    "textileExports": 0.88,
-    "sustainabilityScore": 12,
-    "fashionWeeks": [],
-    "primaryFabrics": [],
-    "colorPalette": [],
-    "traditionalGarments": [],
-    "keyDesigners": [],
+    "textileExports": 1.5,
+    "sustainabilityScore": 82,
+    "fashionWeeks": [
+      "Helsinki Fashion Week"
+    ],
+    "primaryFabrics": [
+      "Wool",
+      "Linen",
+      "Recycled Textiles",
+      "Cotton"
+    ],
+    "colorPalette": [
+      {
+        "name": "Nordic White",
+        "hex": "#F0F0F0",
+        "meaning": "Snow, purity, Finnish minimalism"
+      },
+      {
+        "name": "Finnish Blue",
+        "hex": "#003580",
+        "meaning": "Thousand lakes, national flag"
+      },
+      {
+        "name": "Birch Green",
+        "hex": "#8DB600",
+        "meaning": "Boreal forests and nature connection"
+      }
+    ],
+    "traditionalGarments": [
+      {
+        "name": "Kansallispuku",
+        "imageQuery": "Finnish national costume kansallispuku embroidered folk dress",
+        "description": "Regional folk costume with striped skirts, embroidered bodices, and distinctive headwear varying by province.",
+        "era": "18th Century - Present",
+        "occasion": "Midsummer, Independence Day, folk events",
+        "materials": [
+          "Wool",
+          "Linen",
+          "Cotton"
+        ]
+      },
+      {
+        "name": "Sami Gakti",
+        "imageQuery": "Sami gakti traditional tunic Finland Lapland reindeer leather",
+        "description": "Traditional tunic of Finland's indigenous Sami people, with distinctive bright colors and silver ornaments.",
+        "era": "Ancient - Present",
+        "occasion": "Daily, ceremonies, reindeer herding",
+        "materials": [
+          "Wool",
+          "Reindeer Leather",
+          "Silver"
+        ]
+      },
+      {
+        "name": "Marimekko Print Dress",
+        "imageQuery": "Marimekko bold print dress Finnish design iconic pattern",
+        "description": "Iconic bold-print dresses by Marimekko that defined Finnish design globally since the 1960s.",
+        "era": "1960s - Present",
+        "occasion": "Daily wear, design statement",
+        "materials": [
+          "Cotton",
+          "Jersey"
+        ]
+      }
+    ],
+    "keyDesigners": [
+      {
+        "name": "Armi Ratia",
+        "brand": "Marimekko",
+        "era": "Mid-20th Century",
+        "specialty": "Bold prints, democratic design"
+      },
+      {
+        "name": "Rolf Ekroth",
+        "brand": "Rolf Ekroth",
+        "era": "Contemporary",
+        "specialty": "Deconstructed menswear, Helsinki avant-garde"
+      }
+    ],
     "industryStats": {
       "marketSizeUSD": 4.5,
       "growthRate": 2.2,
       "employmentMillions": 0.15,
-      "textileExportsUSD": 0.88,
-      "textileImportsUSD": 0.3,
-      "topExportPartners": [],
-      "topImportPartners": [],
-      "sustainabilityIndex": 12
+      "textileExportsUSD": 1.5,
+      "textileImportsUSD": 2,
+      "topExportPartners": [
+        "Sweden",
+        "Germany",
+        "United Kingdom",
+        "United States"
+      ],
+      "topImportPartners": [
+        "China",
+        "Bangladesh",
+        "Sweden",
+        "Germany"
+      ],
+      "fashionWeekCity": "Helsinki",
+      "sustainabilityIndex": 82
     }
   },
   {
@@ -6625,25 +7569,108 @@
       19.5
     ],
     "flag": "🇭🇺",
-    "tier": "skeleton",
-    "fashionIndex": 25,
+    "tier": "C",
+    "fashionIndex": 35,
     "marketSize": 4.7,
-    "textileExports": 0.45,
-    "sustainabilityScore": 33,
-    "fashionWeeks": [],
-    "primaryFabrics": [],
-    "colorPalette": [],
-    "traditionalGarments": [],
-    "keyDesigners": [],
+    "textileExports": 1.5,
+    "sustainabilityScore": 45,
+    "fashionWeeks": [
+      "Budapest Central European Fashion Week"
+    ],
+    "primaryFabrics": [
+      "Linen",
+      "Cotton",
+      "Wool",
+      "Felt"
+    ],
+    "colorPalette": [
+      {
+        "name": "Hungarian Red",
+        "hex": "#CE2939",
+        "meaning": "Strength, national flag, paprika culture"
+      },
+      {
+        "name": "Matyo Blue",
+        "hex": "#1E3F66",
+        "meaning": "Traditional Matyo embroidery background"
+      },
+      {
+        "name": "Puszta Gold",
+        "hex": "#D4A017",
+        "meaning": "Great Plains wheat fields, harvest"
+      }
+    ],
+    "traditionalGarments": [
+      {
+        "name": "Magyar Diszruha",
+        "imageQuery": "Hungarian folk costume embroidered Kalocsa floral traditional",
+        "description": "Richly embroidered folk dress with regional floral patterns, especially famous from Kalocsa and Matyo regions.",
+        "era": "18th Century - Present",
+        "occasion": "Festivals, weddings, folk events",
+        "materials": [
+          "Linen",
+          "Cotton",
+          "Silk Thread"
+        ]
+      },
+      {
+        "name": "Szur",
+        "imageQuery": "Hungarian szur shepherd cloak embroidered felt wool",
+        "description": "Traditional shepherd's cloak made of heavy felt with ornate floral embroidery, a UNESCO intangible heritage.",
+        "era": "17th Century - Present",
+        "occasion": "Herding, ceremonial, cold weather",
+        "materials": [
+          "Felt",
+          "Wool"
+        ]
+      },
+      {
+        "name": "Hussar Dolman",
+        "imageQuery": "Hungarian hussar dolman braided military jacket ornate",
+        "description": "Braided military-style jacket originating from Hungarian cavalry, influencing European military fashion.",
+        "era": "15th - 19th Century",
+        "occasion": "Military, formal, ceremonial",
+        "materials": [
+          "Wool",
+          "Gold Braid",
+          "Velvet"
+        ]
+      }
+    ],
+    "keyDesigners": [
+      {
+        "name": "Tamas Naray",
+        "brand": "Naray Tamas",
+        "era": "Contemporary",
+        "specialty": "Hungarian haute couture, glamorous evening wear"
+      },
+      {
+        "name": "Dora Tomcsanyi",
+        "brand": "Tomcsanyi",
+        "era": "Contemporary",
+        "specialty": "Minimalist contemporary womenswear"
+      }
+    ],
     "industryStats": {
       "marketSizeUSD": 4.7,
       "growthRate": 3.4,
       "employmentMillions": 0.32,
-      "textileExportsUSD": 0.45,
+      "textileExportsUSD": 1.5,
       "textileImportsUSD": 1.4,
-      "topExportPartners": [],
-      "topImportPartners": [],
-      "sustainabilityIndex": 33
+      "topExportPartners": [
+        "Germany",
+        "Austria",
+        "Romania",
+        "Italy"
+      ],
+      "topImportPartners": [
+        "China",
+        "Germany",
+        "Turkey",
+        "Bangladesh"
+      ],
+      "fashionWeekCity": "Budapest",
+      "sustainabilityIndex": 45
     }
   },
   {
@@ -6727,25 +7754,106 @@
       -7.69
     ],
     "flag": "🇮🇪",
-    "tier": "skeleton",
-    "fashionIndex": 28,
-    "marketSize": 1.9,
-    "textileExports": 0.88,
-    "sustainabilityScore": 27,
-    "fashionWeeks": [],
-    "primaryFabrics": [],
-    "colorPalette": [],
-    "traditionalGarments": [],
-    "keyDesigners": [],
+    "tier": "C",
+    "fashionIndex": 40,
+    "marketSize": 3,
+    "textileExports": 1.5,
+    "sustainabilityScore": 60,
+    "fashionWeeks": [
+      "Dublin Fashion Festival"
+    ],
+    "primaryFabrics": [
+      "Tweed",
+      "Linen",
+      "Wool",
+      "Aran Knit"
+    ],
+    "colorPalette": [
+      {
+        "name": "Emerald Green",
+        "hex": "#046A38",
+        "meaning": "Ireland's lush landscape, national identity"
+      },
+      {
+        "name": "Aran Cream",
+        "hex": "#F5F0E1",
+        "meaning": "Natural undyed wool of Aran Islands"
+      },
+      {
+        "name": "Celtic Gold",
+        "hex": "#C5961D",
+        "meaning": "Celtic heritage and ancient metalwork"
+      }
+    ],
+    "traditionalGarments": [
+      {
+        "name": "Aran Sweater",
+        "imageQuery": "Irish Aran sweater cable knit cream wool fisherman",
+        "description": "Iconic cable-knit sweater from the Aran Islands, each stitch pattern carries symbolic meaning.",
+        "era": "19th Century - Present",
+        "occasion": "Daily wear, maritime, cold weather",
+        "materials": [
+          "Wool",
+          "Bainín (undyed wool)"
+        ]
+      },
+      {
+        "name": "Leine",
+        "imageQuery": "Irish leine saffron tunic Celtic historical garment",
+        "description": "Ancient Gaelic tunic traditionally dyed with saffron, the basis of early Irish dress.",
+        "era": "Medieval - 17th Century",
+        "occasion": "Daily wear, ceremonial",
+        "materials": [
+          "Linen",
+          "Wool"
+        ]
+      },
+      {
+        "name": "Donegal Tweed Jacket",
+        "imageQuery": "Donegal tweed jacket Irish handwoven herringbone wool",
+        "description": "Handwoven tweed jacket from County Donegal with distinctive flecked pattern.",
+        "era": "18th Century - Present",
+        "occasion": "Smart casual, countryside, formal",
+        "materials": [
+          "Tweed Wool",
+          "Linen"
+        ]
+      }
+    ],
+    "keyDesigners": [
+      {
+        "name": "Simone Rocha",
+        "brand": "Simone Rocha",
+        "era": "Contemporary",
+        "specialty": "Romantic femininity, tulle and pearls"
+      },
+      {
+        "name": "Paul Costelloe",
+        "brand": "Paul Costelloe",
+        "era": "Late 20th Century - Present",
+        "specialty": "Classic tailoring, Irish linen"
+      }
+    ],
     "industryStats": {
-      "marketSizeUSD": 1.9,
+      "marketSizeUSD": 3,
       "growthRate": 3.5,
-      "employmentMillions": 0.51,
-      "textileExportsUSD": 0.88,
-      "textileImportsUSD": 0.3,
-      "topExportPartners": [],
-      "topImportPartners": [],
-      "sustainabilityIndex": 27
+      "employmentMillions": 0.05,
+      "textileExportsUSD": 1.5,
+      "textileImportsUSD": 2,
+      "topExportPartners": [
+        "United Kingdom",
+        "United States",
+        "Germany",
+        "France"
+      ],
+      "topImportPartners": [
+        "China",
+        "United Kingdom",
+        "Bangladesh",
+        "Germany"
+      ],
+      "fashionWeekCity": "Dublin",
+      "sustainabilityIndex": 60
     }
   },
   {
@@ -8121,25 +9229,108 @@
       -8.22
     ],
     "flag": "🇵🇹",
-    "tier": "skeleton",
-    "fashionIndex": 15,
-    "marketSize": 4.3,
-    "textileExports": 0.19,
-    "sustainabilityScore": 27,
-    "fashionWeeks": [],
-    "primaryFabrics": [],
-    "colorPalette": [],
-    "traditionalGarments": [],
-    "keyDesigners": [],
+    "tier": "C",
+    "fashionIndex": 45,
+    "marketSize": 5,
+    "textileExports": 5.5,
+    "sustainabilityScore": 60,
+    "fashionWeeks": [
+      "ModaLisboa"
+    ],
+    "primaryFabrics": [
+      "Cotton",
+      "Cork Fabric",
+      "Wool",
+      "Linen"
+    ],
+    "colorPalette": [
+      {
+        "name": "Azulejo Blue",
+        "hex": "#1560BD",
+        "meaning": "Iconic Portuguese tile heritage"
+      },
+      {
+        "name": "Port Wine",
+        "hex": "#6C3461",
+        "meaning": "Porto wine culture and tradition"
+      },
+      {
+        "name": "Lisbon Sun",
+        "hex": "#F4C430",
+        "meaning": "Atlantic sunshine and warmth"
+      }
+    ],
+    "traditionalGarments": [
+      {
+        "name": "Traje de Minhota",
+        "imageQuery": "Portuguese Minho folk costume embroidered gold filigree",
+        "description": "Elaborate folk costume from the Minho region featuring gold filigree jewelry and vivid embroidery.",
+        "era": "18th Century - Present",
+        "occasion": "Festivals, Romarias, folk events",
+        "materials": [
+          "Linen",
+          "Wool",
+          "Gold Thread"
+        ]
+      },
+      {
+        "name": "Capote Alentejano",
+        "imageQuery": "Portuguese Alentejo shepherd capote wool cloak traditional",
+        "description": "Traditional shepherd's wool cloak from the Alentejo region with distinctive large collar.",
+        "era": "17th Century - Present",
+        "occasion": "Rural outerwear, ceremonies",
+        "materials": [
+          "Wool",
+          "Felt"
+        ]
+      },
+      {
+        "name": "Capa de Honras",
+        "imageQuery": "Portuguese capa de honras Miranda ceremonial straw cape",
+        "description": "Ceremonial straw and wool cape from Miranda do Douro, worn by stick dancers.",
+        "era": "Medieval - Present",
+        "occasion": "Ceremonies, Pauliteiros dance",
+        "materials": [
+          "Straw",
+          "Wool",
+          "Linen"
+        ]
+      }
+    ],
+    "keyDesigners": [
+      {
+        "name": "Felipe Oliveira Baptista",
+        "brand": "Felipe Oliveira Baptista",
+        "era": "Contemporary",
+        "specialty": "Architectural minimalism, Kenzo creative director"
+      },
+      {
+        "name": "Fatima Lopes",
+        "brand": "Fatima Lopes",
+        "era": "Late 20th Century - Present",
+        "specialty": "Glamorous evening wear, Portuguese couture pioneer"
+      }
+    ],
     "industryStats": {
-      "marketSizeUSD": 4.3,
+      "marketSizeUSD": 5,
       "growthRate": 4.3,
       "employmentMillions": 0.21,
-      "textileExportsUSD": 0.19,
-      "textileImportsUSD": 1.3,
-      "topExportPartners": [],
-      "topImportPartners": [],
-      "sustainabilityIndex": 27
+      "textileExportsUSD": 5.5,
+      "textileImportsUSD": 3,
+      "topExportPartners": [
+        "Spain",
+        "France",
+        "Germany",
+        "United Kingdom"
+      ],
+      "topImportPartners": [
+        "Spain",
+        "China",
+        "Italy",
+        "Germany"
+      ],
+      "fashionWeekCity": "Lisbon",
+      "sustainabilityIndex": 60
     }
   },
   {
@@ -8189,25 +9380,109 @@
       24.97
     ],
     "flag": "🇷🇴",
-    "tier": "skeleton",
-    "fashionIndex": 17,
+    "tier": "C",
+    "fashionIndex": 30,
     "marketSize": 3.6,
-    "textileExports": 0.31,
-    "sustainabilityScore": 28,
-    "fashionWeeks": [],
-    "primaryFabrics": [],
-    "colorPalette": [],
-    "traditionalGarments": [],
-    "keyDesigners": [],
+    "textileExports": 3,
+    "sustainabilityScore": 40,
+    "fashionWeeks": [
+      "Romanian Fashion Week"
+    ],
+    "primaryFabrics": [
+      "Linen",
+      "Cotton",
+      "Wool",
+      "Hemp"
+    ],
+    "colorPalette": [
+      {
+        "name": "Romanian Blue",
+        "hex": "#002B7F",
+        "meaning": "Transylvanian sky, national flag"
+      },
+      {
+        "name": "Ie Crimson",
+        "hex": "#B22222",
+        "meaning": "Traditional ie blouse embroidery, vitality"
+      },
+      {
+        "name": "Carpathian Cream",
+        "hex": "#FFF8DC",
+        "meaning": "Natural linen of traditional ie garments"
+      }
+    ],
+    "traditionalGarments": [
+      {
+        "name": "Ie (Romanian Blouse)",
+        "imageQuery": "Romanian ie blouse embroidered traditional linen folk art",
+        "description": "Iconic embroidered peasant blouse that inspired Matisse and Yves Saint Laurent, each region has unique patterns.",
+        "era": "Medieval - Present",
+        "occasion": "Daily, festivals, national celebrations",
+        "materials": [
+          "Linen",
+          "Cotton",
+          "Silk Thread"
+        ]
+      },
+      {
+        "name": "Opinci & Port Popular",
+        "imageQuery": "Romanian folk costume port popular traditional embroidered vest",
+        "description": "Complete traditional folk costume with embroidered vest, wide belt, and opinci leather footwear.",
+        "era": "Medieval - Present",
+        "occasion": "Festivals, folk dance, weddings",
+        "materials": [
+          "Wool",
+          "Leather",
+          "Linen"
+        ]
+      },
+      {
+        "name": "Sarică",
+        "imageQuery": "Romanian sarica sheepskin vest Transylvania shepherd traditional",
+        "description": "Sheepskin vest worn by Carpathian shepherds, richly decorated with leather appliqué.",
+        "era": "Medieval - Present",
+        "occasion": "Herding, cold weather, ceremonial",
+        "materials": [
+          "Sheepskin",
+          "Leather",
+          "Wool"
+        ]
+      }
+    ],
+    "keyDesigners": [
+      {
+        "name": "Irina Schrotter",
+        "brand": "Irina Schrotter",
+        "era": "Contemporary",
+        "specialty": "Minimalist womenswear, Bucharest fashion pioneer"
+      },
+      {
+        "name": "Rhea Costa",
+        "brand": "Rhea Costa",
+        "era": "Contemporary",
+        "specialty": "Red carpet evening gowns, Romanian glamour"
+      }
+    ],
     "industryStats": {
       "marketSizeUSD": 3.6,
       "growthRate": 3.6,
       "employmentMillions": 0.47,
-      "textileExportsUSD": 0.31,
-      "textileImportsUSD": 0.2,
-      "topExportPartners": [],
-      "topImportPartners": [],
-      "sustainabilityIndex": 28
+      "textileExportsUSD": 3,
+      "textileImportsUSD": 2,
+      "topExportPartners": [
+        "Italy",
+        "Germany",
+        "France",
+        "Hungary"
+      ],
+      "topImportPartners": [
+        "China",
+        "Italy",
+        "Turkey",
+        "Germany"
+      ],
+      "fashionWeekCity": "Bucharest",
+      "sustainabilityIndex": 40
     }
   },
   {

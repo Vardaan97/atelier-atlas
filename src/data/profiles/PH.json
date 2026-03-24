@@ -1,0 +1,168 @@
+{
+  "fashionDNA": {
+    "traditionalism": 72,
+    "innovation": 65,
+    "sustainability": 60,
+    "luxuryIndex": 55,
+    "streetwearInfluence": 70,
+    "craftsmanship": 85,
+    "globalInfluence": 52
+  },
+  "eras": [
+    {
+      "id": "pre-colonial-weaving",
+      "name": "Pre-Colonial Weaving Traditions",
+      "yearRange": [900, 1521],
+      "description": "Indigenous Filipino weaving traditions produced some of Southeast Asia's most sophisticated textiles, from Cordillera backstrap loom fabrics to Mindanao's t'nalak dreamwoven cloth. Tattoo culture, gold jewelry, and woven textiles marked social status across diverse island communities.",
+      "keyGarments": [
+        "Baro't saya (blouse and skirt)",
+        "Bahag (loincloth)",
+        "T'boli t'nalak cloth"
+      ],
+      "aiImagePrompt": "A pre-colonial Filipina weaver in traditional garments adorned with gold ornaments and shell jewelry, sitting at a backstrap loom weaving intricate geometric patterns in abaca fiber, inside a nipa hut with tropical light filtering through bamboo walls."
+    },
+    {
+      "id": "spanish-colonial-mestiza",
+      "name": "Spanish Colonial & Mestiza Dress",
+      "yearRange": [1565, 1898],
+      "description": "Three centuries of Spanish rule transformed Filipino fashion into a unique East-West hybrid. The terno evolved from indigenous baro't saya into an elaborate formal garment featuring butterfly sleeves, while piña cloth became the fabric of colonial high society.",
+      "keyGarments": [
+        "Maria Clara terno",
+        "Barong Tagalog",
+        "Piña jusi blouse"
+      ],
+      "aiImagePrompt": "A Filipina mestiza woman in an exquisite cream piña fiber Maria Clara terno with wide butterfly sleeves, delicate hand-embroidered floral calado openwork, standing in a sunlit colonial-era Manila church courtyard with capiz shell windows."
+    },
+    {
+      "id": "american-period-modernization",
+      "name": "American Period & Modernization",
+      "yearRange": [1898, 1946],
+      "description": "American colonial influence introduced Western ready-to-wear fashion while Filipino designers began modernizing traditional silhouettes. The Barong Tagalog was elevated from everyday wear to formal national dress for men.",
+      "keyGarments": [
+        "Modernized Barong Tagalog",
+        "Americana-influenced dresses",
+        "Filipiniana gown"
+      ],
+      "aiImagePrompt": "A 1930s Manila society gathering with Filipino men in finely embroidered white Barong Tagalog shirts and women in flowing Filipiniana gowns, on a veranda of a neoclassical Intramuros mansion, warm tropical evening light."
+    },
+    {
+      "id": "independence-cultural-pride",
+      "name": "Independence & Cultural Pride",
+      "yearRange": [1946, 1986],
+      "description": "Post-independence Philippines saw fashion become a vehicle for national identity. The Marcos era brought contradictions of Imelda's extravagant international fashion presence alongside homegrown designers elevating Filipino craftsmanship to couture level.",
+      "keyGarments": [
+        "Imelda Marcos terno",
+        "Pitoy Moreno couture gown",
+        "Modernized Filipiniana"
+      ],
+      "aiImagePrompt": "A 1970s Manila fashion show featuring a model in a dramatic modern terno with towering butterfly sleeves in iridescent piña-silk blend, designed by a Filipino couturier, dramatic stage lighting with Art Deco Manila Cultural Center backdrop."
+    },
+    {
+      "id": "global-filipino-talent",
+      "name": "Global Filipino Fashion Talent",
+      "yearRange": [1990, 2015],
+      "description": "Filipino designers gained international recognition, with Monique Lhuillier dressing Hollywood and Michael Cinco creating Middle Eastern couture. The Filipino diaspora spread fashion talent worldwide while Manila's creative scene grew increasingly vibrant.",
+      "keyGarments": [
+        "Monique Lhuillier bridal gown",
+        "Michael Cinco couture dress",
+        "Contemporary Barong reinventions"
+      ],
+      "aiImagePrompt": "A red carpet fashion moment featuring a flowing Monique Lhuillier gown in blush tulle with cascading floral appliqué, modeled against a backdrop of Manila Bay sunset with the city skyline silhouetted, warm golden-hour glamour."
+    },
+    {
+      "id": "manila-fashion-week-era",
+      "name": "Manila Fashion Week & New Wave",
+      "yearRange": [2015, 2026],
+      "description": "A new generation of Filipino designers blends heritage weaving with contemporary streetwear, while Manila Fashion Week showcases both established names and emerging talent. Sustainable fashion using indigenous fibers like abaca and piña gains global attention.",
+      "keyGarments": [
+        "Streetwear Barong hybrid",
+        "Abaca fiber fashion",
+        "Modern piña textile dress"
+      ],
+      "aiImagePrompt": "Manila street style featuring a young Filipino designer in a modern deconstructed Barong Tagalog over streetwear joggers and chunky sneakers, walking through the colorful streets of Poblacion Makati, vibrant tropical daylight with jeepney in background."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Piña Cloth",
+      "type": "Woven",
+      "description": "An exquisitely delicate fabric woven from pineapple leaf fibers, considered one of the world's finest and most labor-intensive textiles, used for the national Barong Tagalog and formal Filipiniana wear.",
+      "origin": "Aklan Province, Visayas",
+      "technique": "Hand-woven from painstakingly extracted pineapple leaf fibers, often with calado embroidery"
+    },
+    {
+      "name": "T'nalak",
+      "type": "Woven",
+      "description": "A sacred abaca cloth of the T'boli people, whose patterns are said to be revealed through dreams. Each design is unique and carries deep spiritual significance within the community.",
+      "origin": "Lake Sebu, South Cotabato, Mindanao",
+      "technique": "Ikat tie-dye resist on abaca fiber, designs received through dream visions"
+    },
+    {
+      "name": "Hablon",
+      "type": "Woven",
+      "description": "A traditional handwoven cotton fabric from the Visayas featuring vibrant striped and plaid patterns, historically used for everyday clothing and now revived for contemporary fashion.",
+      "origin": "Iloilo, Western Visayas",
+      "technique": "Handloom weaving with cotton and sometimes silk, featuring geometric patterns"
+    },
+    {
+      "name": "Inabel",
+      "type": "Woven",
+      "description": "A richly patterned cotton blanket and garment textile from the Ilocos region, featuring complex geometric motifs that encode Ilocano cultural narratives and social status.",
+      "origin": "Ilocos Region, Luzon",
+      "technique": "Backstrap and floor loom weaving with supplementary weft patterns in cotton"
+    },
+    {
+      "name": "Jusi",
+      "type": "Woven",
+      "description": "A lightweight, sheer fabric originally made from raw silk but now often from synthetic fibers, widely used for Barong Tagalog and Filipiniana garments as a more affordable alternative to piña.",
+      "origin": "Throughout the Philippines",
+      "technique": "Plain weave with sheer finish, often combined with piña fiber (piña-jusi blend)"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical Maritime",
+    "avgTemp": 27,
+    "humidity": "Very High",
+    "fashionImplication": "The Philippines' tropical heat and high humidity have driven a fashion culture centered on lightweight, breathable fabrics. The sheer piña and jusi textiles of formal Filipino dress are as much a climate adaptation as a cultural statement, while contemporary fashion embraces loose silhouettes and natural fibers."
+  },
+  "culturalInfluences": [
+    "Austronesian indigenous weaving and tattoo traditions",
+    "Three centuries of Spanish colonial influence",
+    "American colonial period and Hollywood culture",
+    "Filipino diaspora (OFW) global fashion exchange",
+    "Catholic festivals and Filipiniana dress codes",
+    "Southeast Asian tropical craft traditions",
+    "K-pop and Korean beauty influence on youth culture"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Manila Fashion Festival",
+        "city": "Manila",
+        "month": "March, October",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Philippine Fashion Week",
+        "city": "Manila",
+        "month": "May, November",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Heritage textile revival using piña and abaca",
+      "Filipino streetwear with indigenous motifs",
+      "Sustainable tropical fashion from native fibers",
+      "Modern Barong Tagalog for everyday wear",
+      "Filipiniana reimagined for global markets"
+    ],
+    "digitalPresence": 82,
+    "ecommercePenetration": 55,
+    "notableEvents": [
+      "Bench Fashion Week (Manila)",
+      "Sinulog and Ati-Atihan festival costumes",
+      "FILGIFTS and Filipino designer showcases abroad",
+      "Panagbenga Festival floral fashion (Baguio)"
+    ]
+  }
+}

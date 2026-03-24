@@ -1,0 +1,155 @@
+{
+  "fashionDNA": {
+    "traditionalism": 58,
+    "innovation": 68,
+    "sustainability": 65,
+    "luxuryIndex": 45,
+    "streetwearInfluence": 72,
+    "craftsmanship": 70,
+    "globalInfluence": 38
+  },
+  "eras": [
+    {
+      "id": "mapuche-textile-traditions",
+      "name": "Mapuche Textile Traditions",
+      "yearRange": [500, 1541],
+      "description": "The Mapuche people developed one of South America's most sophisticated weaving traditions, using the witral (vertical loom) to create textiles encoded with cosmological symbolism. Their resistance to Inca and later Spanish conquest preserved these textile arts for centuries.",
+      "keyGarments": [
+        "Makuñ (poncho)",
+        "Trarüwe (woven sash belt)",
+        "Küpam (women's wrap dress)"
+      ],
+      "aiImagePrompt": "A Mapuche weaver seated at a traditional witral vertical loom, wearing an indigo-dyed küpam fastened with a silver tupu pin, weaving geometric patterns in natural brown and black wool, set against the backdrop of Araucanía forests and snow-capped volcanoes."
+    },
+    {
+      "id": "colonial-huaso-dress",
+      "name": "Colonial Period & Huaso Culture",
+      "yearRange": [1541, 1818],
+      "description": "Spanish colonization introduced European dress that fused with indigenous and mestizo traditions. The huaso horseman culture of Chile's central valley developed a distinctive equestrian costume that became a symbol of Chilean rural identity.",
+      "keyGarments": [
+        "Chamanto (reversible poncho)",
+        "Huaso hat (flat-crowned sombrero)",
+        "Chamantera riding boots"
+      ],
+      "aiImagePrompt": "A Chilean huaso horseman in a richly woven silk chamanto poncho with intricate reversible geometric patterns, flat-crowned hat, and polished leather boots with silver spurs, mounted on horseback in a central valley vineyard, golden afternoon light."
+    },
+    {
+      "id": "independence-european-influence",
+      "name": "Independence & European Fashion",
+      "yearRange": [1818, 1920],
+      "description": "Independent Chile's elite closely followed Parisian fashion, importing fabrics and styles through Valparaíso's busy port. British and French influences dominated Santiago's high society while rural Chile maintained traditional huaso and Mapuche dress.",
+      "keyGarments": [
+        "Parisian-imported gowns",
+        "British wool suits",
+        "Manta de Castilla (fine wool shawl)"
+      ],
+      "aiImagePrompt": "A late 19th-century Santiago salon scene with Chilean elite women in imported Parisian bustled gowns of silk taffeta, men in British-cut dark wool suits, in an ornate neoclassical drawing room with Chilean landscape paintings on the walls."
+    },
+    {
+      "id": "nueva-cancion-protest",
+      "name": "Nueva Canción & Political Fashion",
+      "yearRange": [1960, 1989],
+      "description": "The turbulent Allende and Pinochet eras politicized clothing in Chile. Arpillera textile art became resistance expression, Mapuche silver jewelry gained solidarity symbolism, and the dictatorship's end brought explosive creative freedom.",
+      "keyGarments": [
+        "Arpillera textile protest art",
+        "Mapuche solidarity jewelry",
+        "Revolutionary folk poncho"
+      ],
+      "aiImagePrompt": "A Chilean arpillerista woman stitching a colorful textile protest scene depicting community life from fabric scraps, wearing a simple cotton dress with a Mapuche silver trapelacucha pendant, in a Santiago workshop with other textile artists, warm interior light."
+    },
+    {
+      "id": "post-dictatorship-creativity",
+      "name": "Post-Dictatorship Creative Boom",
+      "yearRange": [1990, 2012],
+      "description": "Chile's return to democracy unleashed a wave of creative energy in fashion. Santiago emerged as a design hub, with Chilean designers blending Mapuche craft heritage, sustainability principles, and contemporary urban aesthetics into a distinctive national style.",
+      "keyGarments": [
+        "Alpaca wool contemporary designs",
+        "Urban-Mapuche fusion pieces",
+        "Chilean copper jewelry"
+      ],
+      "aiImagePrompt": "A 2000s Santiago boutique featuring Chilean designer garments that blend Mapuche geometric patterns with modern minimalist cuts, displayed alongside artisanal copper and silver jewelry, with exposed brick walls and warm gallery lighting."
+    },
+    {
+      "id": "santiago-fashion-scene",
+      "name": "Santiago Fashion Scene & New Identity",
+      "yearRange": [2012, 2026],
+      "description": "Santiago Fashion Week and a new generation of Chilean designers have put the country on the global fashion map. Sustainable practices using local materials like merino wool, alpaca fiber, and copper textiles define Chile's emerging fashion identity.",
+      "keyGarments": [
+        "Patagonian merino wool coat",
+        "Sustainable alpaca knitwear",
+        "Chilean streetwear brands"
+      ],
+      "aiImagePrompt": "Santiago Fashion Week street style featuring a Chilean designer in a sculptural Patagonian merino wool coat over a copper-threaded woven top, with Andes mountain backdrop visible above the city skyline, crisp autumn light and urban energy."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Mapuche Witral Weaving",
+      "type": "Woven",
+      "description": "Traditional Mapuche textiles woven on the witral vertical loom, featuring geometric patterns that encode cosmological concepts of duality, nature, and spiritual beliefs in naturally dyed wool.",
+      "origin": "Araucanía Region",
+      "technique": "Vertical loom weaving with hand-spun wool, natural dyes from native plants"
+    },
+    {
+      "name": "Chamanto Silk",
+      "type": "Woven",
+      "description": "A reversible poncho textile of extraordinary craftsmanship, woven with silk thread in contrasting colors to create two distinct pattern faces, traditionally worn by Chilean huasos.",
+      "origin": "Doñihue, O'Higgins Region",
+      "technique": "Double-faced silk and wool weaving creating reversible geometric patterns"
+    },
+    {
+      "name": "Chilote Wool",
+      "type": "Knitted",
+      "description": "Robust hand-spun wool from the Chiloé archipelago, traditionally knitted into sweaters and ponchos using techniques that reflect the island's isolation and harsh maritime climate.",
+      "origin": "Chiloé Island, Los Lagos Region",
+      "technique": "Hand-spinning of local sheep wool, natural dyeing with lichens and bark, hand knitting"
+    },
+    {
+      "name": "Arpillera",
+      "type": "Embroidered",
+      "description": "Textile art form born from political resistance during the Pinochet dictatorship, using fabric scraps to create narrative scenes of community life, protest, and hope. Now recognized as a significant textile art tradition.",
+      "origin": "Santiago (poblaciones)",
+      "technique": "Appliqué and embroidery on burlap sacking using recycled fabric scraps"
+    }
+  ],
+  "climate": {
+    "zone": "Mediterranean to Subpolar",
+    "avgTemp": 14,
+    "humidity": "Moderate",
+    "fashionImplication": "Chile's extreme geographic length creates radically different fashion needs, from the Atacama Desert's sun protection to Patagonia's wind-resistant layers. Santiago's Mediterranean climate favors layering for warm days and cool evenings, while southern Chile demands robust wool and weatherproof outerwear."
+  },
+  "culturalInfluences": [
+    "Mapuche indigenous textile and silverwork traditions",
+    "Spanish colonial legacy and mestizo culture",
+    "Huaso equestrian culture of central valley",
+    "Pinochet-era resistance and arpillera art",
+    "Patagonian frontier and outdoor culture",
+    "Chilean wine country pastoral aesthetic",
+    "South American nueva ola and contemporary art movements"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Santiago Fashion Week",
+        "city": "Santiago",
+        "month": "April, October",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Mapuche craft heritage in luxury fashion",
+      "Sustainable Patagonian merino and alpaca",
+      "Chilean copper fiber innovation",
+      "Santiago streetwear and skate culture",
+      "Andean-contemporary fusion design"
+    ],
+    "digitalPresence": 68,
+    "ecommercePenetration": 52,
+    "notableEvents": [
+      "Santiago Fashion Week",
+      "Feria de Diseño Independiente",
+      "ModaParis Chile designer showcase",
+      "We Tripantu Mapuche textile celebrations"
+    ]
+  }
+}

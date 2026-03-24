@@ -1,0 +1,179 @@
+{
+  "fashionDNA": {
+    "traditionalism": 65,
+    "innovation": 78,
+    "sustainability": 92,
+    "luxuryIndex": 55,
+    "streetwearInfluence": 75,
+    "craftsmanship": 80,
+    "globalInfluence": 68
+  },
+  "eras": [
+    {
+      "id": "prussian-military",
+      "name": "Prussian Military Dress",
+      "yearRange": [
+        1701,
+        1871
+      ],
+      "description": "Prussian military uniforms set the template for structured, disciplined tailoring across Europe. The Pickelhaube helmet, spiked and gleaming, became a global symbol, while field grey wool and precise brass buttoning influenced civilian menswear for generations.",
+      "keyGarments": [
+        "Prussian field uniform",
+        "Hussar dolman jacket",
+        "Pickelhaube helmet"
+      ],
+      "aiImagePrompt": "A Prussian military officer in a dark blue wool uniform jacket with gold frogging and brass buttons, white trousers, and a polished Pickelhaube helmet, standing at attention in a Berlin garrison courtyard, oil painting style with dramatic side lighting."
+    },
+    {
+      "id": "bavarian-tracht",
+      "name": "Alpine Tracht Tradition",
+      "yearRange": [
+        1800,
+        1920
+      ],
+      "description": "The Alpine folk costume tradition of Bavaria and Austria became codified as national dress during the Romantic era. Dirndls and lederhosen transformed from peasant workwear into proud symbols of regional identity, later revived as fashionable festival attire.",
+      "keyGarments": [
+        "Dirndl",
+        "Lederhosen",
+        "Janker loden jacket"
+      ],
+      "aiImagePrompt": "A Bavarian village festival scene with a woman in an embroidered dirndl with a silk apron and puffed-sleeve blouse beside a man in hand-stitched leather lederhosen and a grey loden Janker jacket, Alpine meadow and timber-framed houses in the background, warm pastoral lighting."
+    },
+    {
+      "id": "bauhaus-functionalism",
+      "name": "Bauhaus & Functionalism",
+      "yearRange": [
+        1919,
+        1933
+      ],
+      "description": "The Bauhaus school revolutionised design philosophy, applying 'form follows function' to textiles and clothing. Geometric patterns, primary colours, and the rejection of ornament influenced everything from fabric design to the concept of rational, democratic dress.",
+      "keyGarments": [
+        "Geometric print smock",
+        "Tubular jersey dress",
+        "Unisex workshop overall"
+      ],
+      "aiImagePrompt": "A 1920s Bauhaus workshop scene with a designer wearing a minimalist geometric-patterned smock in primary colours, surrounded by textile samples and looms, Dessau Bauhaus building visible through industrial windows, clean documentary photography with strong geometric shadows."
+    },
+    {
+      "id": "wirtschaftswunder-elegance",
+      "name": "Wirtschaftswunder Fashion",
+      "yearRange": [
+        1950,
+        1969
+      ],
+      "description": "Germany's post-war economic miracle brought a return to elegance and quality craftsmanship. German fashion houses revived quality tailoring while synthetic fabric innovation from companies like BASF and Bayer brought new materials to the consumer market.",
+      "keyGarments": [
+        "Fitted wool coat dress",
+        "Nylon stockings",
+        "Structured handbag"
+      ],
+      "aiImagePrompt": "A 1950s West German department store scene with an elegantly dressed woman in a tailored charcoal wool coat dress and leather gloves examining fabric at a counter, Wirtschaftswunder prosperity reflected in gleaming modern interiors, warm Kodachrome colour tones."
+    },
+    {
+      "id": "berlin-wall-subculture",
+      "name": "Divided Berlin & Subculture",
+      "yearRange": [
+        1970,
+        1989
+      ],
+      "description": "West Berlin's isolation made it a magnet for artists, squatters, and draft dodgers, spawning an underground fashion scene blending punk, industrial, and queer aesthetics. East German fashion, meanwhile, operated under socialist planned economy constraints with a surprising culture of DIY ingenuity.",
+      "keyGarments": [
+        "Industrial leather harness",
+        "Second-hand military surplus",
+        "DIY punk vest"
+      ],
+      "aiImagePrompt": "A late 1980s West Berlin nightclub scene with figures in black leather harnesses, military surplus jackets, and DIY punk accessories, graffiti-covered concrete walls and harsh neon lighting, shot in gritty 35mm film noir style with high contrast."
+    },
+    {
+      "id": "berlin-techno-sustainability",
+      "name": "Berlin Techno & Sustainable Fashion",
+      "yearRange": [
+        1995,
+        2025
+      ],
+      "description": "Reunified Berlin became Europe's capital of counterculture and sustainable fashion. The techno scene's all-black, functional aesthetic merged with Germany's engineering heritage to produce a new design philosophy prioritising ethical production, technical fabrics, and anti-fashion minimalism.",
+      "keyGarments": [
+        "Technical all-black ensemble",
+        "Utilitarian cargo pants",
+        "Recycled fibre sneakers"
+      ],
+      "aiImagePrompt": "A contemporary Berlin street style scene at a Kreuzberg intersection, a figure in an all-black technical outfit with a matte nylon anorak, tapered cargo pants, and chunky recycled-sole sneakers, brutalist concrete architecture and street art murals in the background, overcast diffused daylight."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Loden",
+      "type": "Woven",
+      "description": "A dense, water-resistant woollen fabric originally used by Alpine shepherds, characterised by its felted surface and distinctive forest-green colour that has become synonymous with Bavarian identity.",
+      "origin": "Bavaria and Tyrol",
+      "technique": "Heavy fulling and pressing of woven wool to create a dense, water-repellent felted surface"
+    },
+    {
+      "name": "Jacquard Damask (Oberlausitz)",
+      "type": "Woven",
+      "description": "Fine linen and cotton damask from the Saxony-Silesia textile region, historically supplied to European royal courts for table linen and later adapted for fashion fabrics.",
+      "origin": "Oberlausitz, Saxony",
+      "technique": "Jacquard loom weaving with contrasting satin and sateen floats creating reversible patterns"
+    },
+    {
+      "name": "Plauen Lace (Plauener Spitze)",
+      "type": "Embroidered",
+      "description": "Chemical lace produced by embroidering patterns onto a dissolvable base fabric, creating intricate free-standing lace. Plauen became the world centre for this technique in the 19th century.",
+      "origin": "Plauen, Saxony",
+      "technique": "Schiffli embroidery on water-soluble base fabric, which is then dissolved to leave free-standing lace"
+    },
+    {
+      "name": "Swabian Linen",
+      "type": "Woven",
+      "description": "Historically significant flax linen from the Swabian Alb region, known for its exceptional durability and used for both everyday clothing and fine household textiles since the Middle Ages.",
+      "origin": "Swabian Alb, Baden-Württemberg",
+      "technique": "Traditional wet-spun flax linen woven on handlooms, bleached naturally on grass fields"
+    }
+  ],
+  "climate": {
+    "zone": "Temperate Continental",
+    "avgTemp": 9,
+    "humidity": "Moderate",
+    "fashionImplication": "Germany's cold winters and mild summers favour practical, layered wardrobes built around quality outerwear, sturdy boots, and functional knitwear, reinforcing the cultural preference for durable, well-engineered clothing over ephemeral trends."
+  },
+  "culturalInfluences": [
+    "Bauhaus design philosophy and functionalism",
+    "Prussian military precision and uniform tradition",
+    "Post-reunification Berlin counterculture and techno scene",
+    "Environmental movement and Green Party politics",
+    "Engineering culture and technical innovation (Vorsprung durch Technik)",
+    "Alpine folk traditions (Tracht) and regional identities",
+    "German Expressionism and contemporary art scenes"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Berlin Fashion Week",
+        "city": "Berlin",
+        "month": "January, July",
+        "tier": "Major"
+      },
+      {
+        "name": "Frankfurt Fashion Week",
+        "city": "Frankfurt",
+        "month": "January, July",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Circular fashion and closed-loop textile recycling",
+      "Techwear and functional urban outerwear",
+      "Neo-Tracht: modernised folk costume elements",
+      "Carbon-neutral fashion supply chains",
+      "Anti-fashion minimalism and capsule wardrobes"
+    ],
+    "digitalPresence": 82,
+    "ecommercePenetration": 80,
+    "notableEvents": [
+      "Neonyt sustainable fashion trade fair",
+      "Premium Group trade shows in Berlin",
+      "International Textile Machinery Exhibition (ITMA)",
+      "German Sustainability Award (Fashion category)"
+    ]
+  }
+}

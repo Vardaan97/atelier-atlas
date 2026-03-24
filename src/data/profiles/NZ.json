@@ -1,0 +1,155 @@
+{
+  "fashionDNA": {
+    "traditionalism": 55,
+    "innovation": 72,
+    "sustainability": 85,
+    "luxuryIndex": 50,
+    "streetwearInfluence": 48,
+    "craftsmanship": 70,
+    "globalInfluence": 45
+  },
+  "eras": [
+    {
+      "id": "maori-textile-traditions",
+      "name": "Maori Textile Traditions",
+      "yearRange": [1200, 1840],
+      "description": "Maori weavers (primarily women of mana) developed extraordinary textile arts using native flax (harakeke). Their cloaks (kakahu) were among the most technically sophisticated textiles in the Pacific, with feather, dogskin, and taniko-bordered varieties denoting chiefly status.",
+      "keyGarments": [
+        "Korowai (feathered cloak)",
+        "Piupiu (flax skirt)",
+        "Kaitaka (fine flax cloak with taniko border)"
+      ],
+      "aiImagePrompt": "A Maori chief wearing a magnificent korowai cloak of brown kiwi feathers over a woven flax base, with taniko geometric borders, pounamu (greenstone) pendant, standing before a carved wharenui meeting house."
+    },
+    {
+      "id": "colonial-pastoral",
+      "name": "Colonial & Pastoral Era",
+      "yearRange": [1840, 1920],
+      "description": "British settlers brought Victorian fashion to New Zealand, adapted to a rugged pastoral landscape. The wool industry became the backbone of the economy, and practical farming attire evolved alongside formal colonial dress that arrived months behind London trends.",
+      "keyGarments": [
+        "Oilskin bush coat",
+        "Merino wool work shirt",
+        "Canterbury riding dress"
+      ],
+      "aiImagePrompt": "A late Victorian New Zealand sheep station scene with a woman in a practical wool riding habit and oilskin coat, Canterbury Plains with Southern Alps in the background, overcast light."
+    },
+    {
+      "id": "suburban-conformity",
+      "name": "Suburban & DIY Culture",
+      "yearRange": [1950, 1980],
+      "description": "Post-war New Zealand fashion was characterized by British-influenced conservatism and a strong tradition of home sewing. Geographic isolation fostered self-reliance, with most women making their own garments from imported patterns and local wool.",
+      "keyGarments": [
+        "Hand-knit wool jersey",
+        "Home-sewn cotton shift dress",
+        "Swanndri bush shirt"
+      ],
+      "aiImagePrompt": "A 1960s New Zealand suburban scene with a woman in a hand-sewn floral shift dress and hand-knitted cardigan, standing in a garden with a Hills Hoist clothesline, soft overcast southern light."
+    },
+    {
+      "id": "avant-garde-emergence",
+      "name": "NZ Avant-Garde Emergence",
+      "yearRange": [1980, 2000],
+      "description": "New Zealand designers broke free from colonial conformity with radical, dark, and architecturally daring fashion. The Wellington and Dunedin scenes produced designers who channeled the wild landscape and isolation into internationally recognized avant-garde collections.",
+      "keyGarments": [
+        "Deconstructed wool coat",
+        "Sculptural black dress",
+        "Merino layering system"
+      ],
+      "aiImagePrompt": "A moody 1990s New Zealand fashion editorial on a black sand beach, a model in a dramatic deconstructed black wool coat with raw edges, wild hair in the wind, Taranaki coastline, stormy sky."
+    },
+    {
+      "id": "world-stage-breakthrough",
+      "name": "World Stage Breakthrough",
+      "yearRange": [2000, 2015],
+      "description": "NZ designers achieved global recognition: Karen Walker's edgy femininity, Zambesi's dark minimalism, and World's conceptual collections. The Lord of the Rings films brought NZ craftsmanship to global attention, boosting the creative industries.",
+      "keyGarments": [
+        "Karen Walker sunglasses and tailoring",
+        "Merino base-layer fashion",
+        "Conceptual knit dress"
+      ],
+      "aiImagePrompt": "A New Zealand Fashion Week front row scene in Auckland, a model on the runway in a sculptural Karen Walker-style tailored coat in deep forest green, minimalist concrete venue, crisp editorial lighting."
+    },
+    {
+      "id": "sustainable-fashion-leader",
+      "name": "Sustainability & Maori Renaissance",
+      "yearRange": [2015, 2026],
+      "description": "New Zealand has positioned itself at the forefront of sustainable fashion, leveraging its merino wool and natural fiber industries. Simultaneously, Maori design principles of kaitiakitanga (guardianship) are influencing a new wave of culturally grounded, environmentally conscious fashion.",
+      "keyGarments": [
+        "ZQ merino ethical knitwear",
+        "Maori-motif contemporary coat",
+        "Regenerative wool collection"
+      ],
+      "aiImagePrompt": "A contemporary New Zealand fashion shoot in Fiordland, a model in a luxurious oversized merino wool coat with subtle taniko-inspired geometric trim, misty mountains and native bush in the background, soft natural light."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Maori Taniko Weaving",
+      "type": "Woven",
+      "description": "A geometric finger-weaving technique using dyed flax threads to create intricate border patterns on cloaks, with designs encoding tribal identity and spiritual meaning.",
+      "origin": "Nationwide (Maori communities)",
+      "technique": "Finger-weaving (twining) using prepared harakeke (New Zealand flax) strips with natural dyes"
+    },
+    {
+      "name": "New Zealand Merino Wool",
+      "type": "Knitted",
+      "description": "Ultrafine merino wool from high-country sheep stations, prized for its exceptional softness, warmth-to-weight ratio, and natural odor resistance, now a cornerstone of ethical fashion.",
+      "origin": "South Island high country",
+      "technique": "Precision spinning and knitting of 15-20 micron merino fibers into performance and fashion fabrics"
+    },
+    {
+      "name": "Harakeke (NZ Flax) Cloth",
+      "type": "Woven",
+      "description": "Traditional Maori textile woven from prepared native flax, producing a strong, flexible fabric used for cloaks, kits (baskets), and contemporary art pieces.",
+      "origin": "Nationwide (wetland regions)",
+      "technique": "Whatu (hand-twining) of softened harakeke fibers with aho (weft) and whenu (warp) strands"
+    },
+    {
+      "name": "Possum-Merino Blend",
+      "type": "Knitted",
+      "description": "A uniquely New Zealand innovation blending brushtail possum fur (an invasive pest) with merino wool, creating an exceptionally warm, lightweight, and sustainable luxury fiber.",
+      "origin": "Canterbury & Waikato",
+      "technique": "Blending 40% possum fur with 50% merino wool and 10% silk, spun into fine yarn"
+    }
+  ],
+  "climate": {
+    "zone": "Maritime Temperate",
+    "avgTemp": 13,
+    "humidity": "Moderate to High",
+    "fashionImplication": "New Zealand's changeable, four-seasons-in-one-day weather drives a layering-centric wardrobe philosophy. The strong UV index despite mild temperatures creates demand for sun-protective fashion, while cool winds make merino knitwear a daily essential."
+  },
+  "culturalInfluences": [
+    "Maori tikanga (cultural protocols) and weaving traditions",
+    "British colonial heritage and rural practicality",
+    "Pacific Island diaspora communities (Pasifika culture)",
+    "Extreme outdoor and adventure sports culture",
+    "Geographic isolation fostering independent creative identity",
+    "Film and creative industries (Weta Workshop, Peter Jackson)",
+    "Environmental consciousness and clean-green national identity"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "New Zealand Fashion Week (NZFW)",
+        "city": "Auckland",
+        "month": "August",
+        "tier": "Regional"
+      }
+    ],
+    "emergingTrends": [
+      "Regenerative merino wool and circular fashion",
+      "Maori design principles in contemporary fashion",
+      "Performance-luxury crossover using natural fibers",
+      "Pasifika-inspired prints and silhouettes",
+      "Carbon-neutral fashion supply chains"
+    ],
+    "digitalPresence": 60,
+    "ecommercePenetration": 65,
+    "notableEvents": [
+      "New Zealand Fashion Week",
+      "World of WearableArt Awards (WOW)",
+      "iD International Emerging Designer Awards (Dunedin)",
+      "Te Papa Museum textile exhibitions"
+    ]
+  }
+}

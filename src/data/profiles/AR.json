@@ -1,0 +1,161 @@
+{
+  "fashionDNA": {
+    "traditionalism": 68,
+    "innovation": 74,
+    "sustainability": 62,
+    "luxuryIndex": 55,
+    "streetwearInfluence": 70,
+    "craftsmanship": 78,
+    "globalInfluence": 52
+  },
+  "eras": [
+    {
+      "id": "gaucho-traditions",
+      "name": "Gaucho & Rural Traditions",
+      "yearRange": [1750, 1880],
+      "description": "The gaucho horsemen of the Pampas developed a distinctive dress code built for life on the open plains. Their clothing combined Spanish colonial influences with practical innovations, creating enduring symbols of Argentine national identity.",
+      "keyGarments": [
+        "Bombachas (wide riding trousers)",
+        "Poncho pampeano",
+        "Rastra silver belt"
+      ],
+      "aiImagePrompt": "A weathered Argentine gaucho on horseback wearing traditional bombachas tucked into leather boots, a striped wool poncho draped over one shoulder, and a wide-brimmed hat, vast Pampas grassland at golden hour."
+    },
+    {
+      "id": "belle-epoque-portena",
+      "name": "Belle Époque Porteña",
+      "yearRange": [1880, 1930],
+      "description": "Buenos Aires became the 'Paris of South America' as wealthy Argentine elites imported Parisian couture and European tailoring traditions. The tango milieu simultaneously created its own sartorial codes of sharp suits and dramatic dresses.",
+      "keyGarments": [
+        "Tango dress with slit hem",
+        "Three-piece wool suit",
+        "Lace mantilla"
+      ],
+      "aiImagePrompt": "A 1920s Buenos Aires tango salon with a couple dancing, the woman in a beaded silk dress with a dramatic thigh-high slit, the man in a sharp pinstripe suit and fedora, moody amber lighting and marble columns."
+    },
+    {
+      "id": "evita-glamour",
+      "name": "Evita & Post-War Glamour",
+      "yearRange": [1946, 1960],
+      "description": "Eva Perón's transformation from modest actress to impeccably dressed First Lady made her a global fashion icon. Her wardrobe of Dior gowns and tailored suits symbolized both aspiration and political power for the Argentine working class.",
+      "keyGarments": [
+        "Christian Dior New Look suit",
+        "Jeweled evening gown",
+        "Pillbox hat"
+      ],
+      "aiImagePrompt": "A glamorous 1950s portrait of a woman resembling Eva Perón in a structured ivory Dior suit with gold brooch, her blonde hair swept into a chignon, waving from a balcony overlooking a Buenos Aires plaza."
+    },
+    {
+      "id": "di-tella-avant-garde",
+      "name": "Di Tella Avant-Garde",
+      "yearRange": [1960, 1976],
+      "description": "The Instituto Di Tella fostered an explosive countercultural movement in Buenos Aires. Argentine designers and artists embraced pop art, op art, and radical experimentation, creating a brief but intense period of fashion innovation.",
+      "keyGarments": [
+        "Op art print minidress",
+        "Vinyl boots",
+        "Geometric mod coat"
+      ],
+      "aiImagePrompt": "A 1960s Buenos Aires pop-art scene featuring a young woman in a bold black and white op-art print minidress with white vinyl boots, standing in a colorful gallery installation, film grain texture."
+    },
+    {
+      "id": "post-crisis-creativity",
+      "name": "Post-Crisis Creative Boom",
+      "yearRange": [2001, 2015],
+      "description": "The 2001 economic crisis paradoxically unleashed a wave of design creativity. Unable to afford imports, a generation of designers built independent labels using local materials, upcycling, and distinctly Argentine aesthetics.",
+      "keyGarments": [
+        "Deconstructed leather jacket",
+        "Hand-printed cotton dress",
+        "Recycled denim collection"
+      ],
+      "aiImagePrompt": "A Palermo Soho boutique scene with industrial exposed brick, displaying a collection of deconstructed leather jackets and hand-printed cotton garments in muted earth tones, natural afternoon light."
+    },
+    {
+      "id": "new-buenos-aires-wave",
+      "name": "New Buenos Aires Wave",
+      "yearRange": [2015, 2026],
+      "description": "Buenos Aires has cemented its position as South America's fashion capital with designers like Jazmin Chebar, Trosman, and Kostüme gaining international recognition. The city blends European sophistication with Latin American warmth and creative risk-taking.",
+      "keyGarments": [
+        "Oversized gaucho-inspired trousers",
+        "Artisanal leather accessories",
+        "Gender-neutral tailoring"
+      ],
+      "aiImagePrompt": "A Buenos Aires Fashion Week runway with a model wearing oversized pleated gaucho-inspired trousers in cream linen paired with a structured black blazer, industrial warehouse setting with dramatic side lighting."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Poncho Pampeano",
+      "type": "Woven",
+      "description": "A heavy wool poncho with distinctive stripe patterns that vary by province, serving as both garment and blanket on the Pampas.",
+      "origin": "Catamarca Province",
+      "technique": "Criollo loom weaving using hand-spun sheep wool with natural plant dyes"
+    },
+    {
+      "name": "Argentine Leather",
+      "type": "Dyed",
+      "description": "World-renowned for its suppleness and quality, Argentine cowhide leather supports a major fashion and accessories industry.",
+      "origin": "Buenos Aires Province",
+      "technique": "Vegetable tanning using quebracho bark extract, hand-finishing and embossing"
+    },
+    {
+      "name": "Barracán",
+      "type": "Woven",
+      "description": "A thick, waterproof wool cloth used for gaucho ponchos and riding coats, tightly woven to resist Pampas rain and wind.",
+      "origin": "Santiago del Estero",
+      "technique": "Tight plain weave on pedal loom with lanolin-rich unscoured wool for natural water resistance"
+    },
+    {
+      "name": "Andean Aguayo",
+      "type": "Woven",
+      "description": "A vibrantly colored cloth from the northwestern Andean region, used as a carrying cloth, blanket, and decorative textile with pre-Columbian geometric motifs.",
+      "origin": "Jujuy and Salta Provinces",
+      "technique": "Backstrap and pedal loom weaving with complementary warp patterning in llama and sheep wool"
+    }
+  ],
+  "climate": {
+    "zone": "Temperate Pampean",
+    "avgTemp": 17,
+    "humidity": "Moderate",
+    "fashionImplication": "Buenos Aires' mild but changeable climate with cool winters drives demand for leather jackets, layered knitwear, and versatile trans-seasonal pieces, while Patagonian cold inspires rugged outerwear."
+  },
+  "culturalInfluences": [
+    "Gaucho horseman tradition and rural estancia life",
+    "Tango culture and its codes of elegance",
+    "Italian and Spanish immigrant tailoring traditions",
+    "Eva Perón as political fashion icon",
+    "Psychoanalytic culture and intellectual bohemia",
+    "Football culture and casual sportswear influence",
+    "Economic crisis creativity and anti-establishment design"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Buenos Aires Fashion Week (BAFWEEK)",
+        "city": "Buenos Aires",
+        "month": "March, August",
+        "tier": "Major"
+      },
+      {
+        "name": "Argentina Fashion Week",
+        "city": "Buenos Aires",
+        "month": "April, October",
+        "tier": "Regional"
+      }
+    ],
+    "emergingTrends": [
+      "Neo-gaucho aesthetics in urban fashion",
+      "Sustainable leather alternatives from cactus and mushroom",
+      "Palermo Soho independent designer scene",
+      "Gender-fluid tailoring and androgynous collections",
+      "Digital-first fashion brands bypassing traditional retail"
+    ],
+    "digitalPresence": 65,
+    "ecommercePenetration": 48,
+    "notableEvents": [
+      "BAFWEEK emerging designer showcase",
+      "Casa FOA design exhibition",
+      "ArteBA contemporary art fair",
+      "Palermo Design District open studios"
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "fashionDNA": {
+    "traditionalism": 50,
+    "innovation": 95,
+    "sustainability": 75,
+    "luxuryIndex": 80,
+    "streetwearInfluence": 68,
+    "craftsmanship": 90,
+    "globalInfluence": 82
+  },
+  "eras": [
+    {
+      "id": "burgundian-court",
+      "name": "Burgundian Court Splendor",
+      "yearRange": [1363, 1477],
+      "description": "The Burgundian court in the Low Countries was the most fashionable in medieval Europe, rivaling Paris and Milan. Elaborate hennin headdresses, rich Flemish wool, and extravagant pageantry defined an era of unmatched courtly luxury.",
+      "keyGarments": [
+        "Hennin headdress",
+        "Houppelande robe",
+        "Burgundian pointed shoes (poulaines)"
+      ],
+      "aiImagePrompt": "A Burgundian court lady in a towering hennin headdress with flowing silk veil, wearing a deep burgundy velvet houppelande with ermine trim, standing in a Gothic cathedral interior with stained glass, warm candlelight in the style of Jan van Eyck."
+    },
+    {
+      "id": "flemish-textile-trade",
+      "name": "Flemish Textile Empire",
+      "yearRange": [1200, 1600],
+      "description": "Bruges, Ghent, and Ypres became the textile manufacturing capitals of medieval Europe, producing the finest wool cloth and tapestries. Flemish weavers set quality standards that drove international trade for centuries.",
+      "keyGarments": [
+        "Flemish broadcloth garments",
+        "Mechelen lace collar",
+        "Guild master's robe"
+      ],
+      "aiImagePrompt": "A medieval Flemish master weaver in his Bruges workshop, wearing a rich blue wool guild robe, inspecting a vibrant tapestry on a large wooden loom, with bolts of dyed fabric visible, warm interior light through leaded glass windows."
+    },
+    {
+      "id": "art-nouveau-brussels",
+      "name": "Art Nouveau Brussels",
+      "yearRange": [1890, 1914],
+      "description": "Brussels became a world center of Art Nouveau, with Victor Horta's sinuous architecture inspiring fashion's flowing organic lines. Belgian lace reached its artistic peak, and the city's fashion reflected the movement's unity of art and craft.",
+      "keyGarments": [
+        "Art Nouveau tea gown",
+        "Brussels lace evening bodice",
+        "Flowing Liberty-style dress"
+      ],
+      "aiImagePrompt": "An elegant Brussels woman in a flowing Art Nouveau silk tea gown with organic whiplash embroidery, standing in the Horta Museum stairwell with its sinuous iron railings and mosaic floors, soft golden gaslight ambiance."
+    },
+    {
+      "id": "surrealist-magritte",
+      "name": "Surrealism & Belgian Identity",
+      "yearRange": [1920, 1970],
+      "description": "Belgian Surrealism, led by René Magritte, profoundly influenced the conceptual approach to fashion that would later define the Antwerp school. The bowler hat, overcoat, and subverted bourgeois dress became loaded with artistic meaning.",
+      "keyGarments": [
+        "Magritte's bowler hat",
+        "Surrealist-inspired accessories",
+        "Subverted bourgeois overcoat"
+      ],
+      "aiImagePrompt": "A Magritte-inspired fashion portrait of a figure in a perfectly tailored charcoal overcoat and black bowler hat, face obscured by a floating green apple, standing before a Belgian townhouse with a clouded sky backdrop, hyperreal surrealist lighting."
+    },
+    {
+      "id": "antwerp-six-revolution",
+      "name": "The Antwerp Six Revolution",
+      "yearRange": [1986, 2005],
+      "description": "Six graduates of Antwerp's Royal Academy stunned the fashion world with radical deconstructionism that challenged every convention. Dries Van Noten, Ann Demeulemeester, Martin Margiela, and their peers redefined fashion as intellectual art form.",
+      "keyGarments": [
+        "Margiela deconstructed Tabi boot",
+        "Dries Van Noten printed coat",
+        "Ann Demeulemeester draped leather jacket"
+      ],
+      "aiImagePrompt": "A dramatic 1990s Antwerp fashion editorial featuring a model in a Martin Margiela deconstructed white lab coat with exposed seams and raw edges, Tabi split-toe boots, walking through an industrial warehouse space, stark flash photography."
+    },
+    {
+      "id": "belgian-contemporary",
+      "name": "Belgian Conceptual Mastery",
+      "yearRange": [2005, 2026],
+      "description": "Belgium continues to produce visionary designers from the Royal Academy in Antwerp, with alumni shaping creative direction at major houses worldwide. Brussels and Antwerp maintain their status as incubators of fashion's most intellectually rigorous talent.",
+      "keyGarments": [
+        "Raf Simons youth-culture tailoring",
+        "Dries Van Noten textile-art coat",
+        "Marine Serre crescent-moon bodysuit"
+      ],
+      "aiImagePrompt": "Antwerp street style featuring a fashion student in a deconstructed oversized blazer with asymmetric draping, layered over a Marine Serre crescent-print bodysuit, walking past the MoMu fashion museum, moody Belgian overcast light."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Brussels Lace",
+      "type": "Lace",
+      "description": "Among the most prestigious laces in history, Brussels lace features extraordinarily fine bobbin and needle techniques that adorned European royalty for centuries.",
+      "origin": "Brussels",
+      "technique": "Combined bobbin and needle lace with applied motifs on fine tulle ground"
+    },
+    {
+      "name": "Flemish Broadcloth",
+      "type": "Woven",
+      "description": "The gold standard of medieval European textiles, this densely woven and heavily fulled wool was the primary export that built Flanders' extraordinary wealth.",
+      "origin": "Bruges, Ghent, Ypres",
+      "technique": "Dense plain-weave wool, fulled and napped for a smooth, luxurious surface"
+    },
+    {
+      "name": "Mechelen Lace",
+      "type": "Lace",
+      "description": "A delicate bobbin lace known for its characteristic flat, transparent appearance and the silky thread that gives it a distinctive sheen, used extensively for royal trousseaux.",
+      "origin": "Mechelen (Malines)",
+      "technique": "Continuous bobbin lace worked with fine untwisted silk thread"
+    },
+    {
+      "name": "Flemish Tapestry Weave",
+      "type": "Woven",
+      "description": "The pinnacle of European textile art, Flemish tapestries depicted elaborate narratives with thousands of colors, techniques that contemporary Belgian designers still reference.",
+      "origin": "Brussels, Tournai, Oudenaarde",
+      "technique": "Weft-faced tapestry weaving on high-warp vertical looms with dyed wool and silk"
+    },
+    {
+      "name": "Binche Lace",
+      "type": "Lace",
+      "description": "An exceptionally complex bobbin lace featuring a dense snowflake-like ground pattern, considered among the most technically demanding laces ever produced.",
+      "origin": "Binche, Hainaut",
+      "technique": "Continuous bobbin lace with characteristic fond de neige (snowflake ground)"
+    }
+  ],
+  "climate": {
+    "zone": "Temperate Maritime",
+    "avgTemp": 10,
+    "humidity": "High",
+    "fashionImplication": "Belgium's consistently grey, damp climate has profoundly influenced its fashion aesthetic toward dark palettes, structured layering, and a brooding intellectual elegance. The overcast light creates an ideal backdrop for the subdued, deconstructed silhouettes favored by Antwerp designers."
+  },
+  "culturalInfluences": [
+    "Burgundian court culture and medieval textile guilds",
+    "Flemish Old Masters painting tradition",
+    "Belgian Surrealism (Magritte, Delvaux)",
+    "Art Nouveau architecture and decorative arts",
+    "Royal Academy of Fine Arts Antwerp pedagogy",
+    "Brussels as EU capital and cosmopolitan crossroads",
+    "Belgian comic art (Hergé, bande dessinée tradition)"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Antwerp Fashion Weekend",
+        "city": "Antwerp",
+        "month": "June",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Brussels Fashion Days",
+        "city": "Brussels",
+        "month": "October",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Post-deconstructionist tailoring",
+      "Intellectual streetwear fusion",
+      "Heritage lace in avant-garde contexts",
+      "Sustainable luxury from academy graduates",
+      "Cross-disciplinary fashion-art installations"
+    ],
+    "digitalPresence": 75,
+    "ecommercePenetration": 72,
+    "notableEvents": [
+      "MoMu (Fashion Museum Antwerp) exhibitions",
+      "Royal Academy of Fine Arts graduate shows",
+      "Brussels Design September",
+      "Flanders Fashion Institute programs"
+    ]
+  }
+}

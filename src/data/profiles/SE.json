@@ -1,0 +1,162 @@
+{
+  "fashionDNA": {
+    "traditionalism": 40,
+    "innovation": 85,
+    "sustainability": 95,
+    "luxuryIndex": 62,
+    "streetwearInfluence": 70,
+    "craftsmanship": 65,
+    "globalInfluence": 78
+  },
+  "eras": [
+    {
+      "id": "viking-textile-age",
+      "name": "Viking Textile Traditions",
+      "yearRange": [800, 1100],
+      "description": "The Vikings were sophisticated textile producers who used tablet weaving, natural dyes, and fur to create garments suited to Scandinavia's harsh climate. Clothing communicated social rank through color, imported silk trim, and intricate metalwork brooches that secured draped garments.",
+      "keyGarments": [
+        "Hangeroc (apron dress)",
+        "Kyrtill (wool tunic)",
+        "Tablet-woven belt"
+      ],
+      "aiImagePrompt": "A Viking-age Scandinavian woman wearing a blue wool hangeroc apron dress over a linen underdress, secured with paired bronze tortoise brooches and a tablet-woven belt, standing in a misty Nordic birch forest, moody cinematic lighting."
+    },
+    {
+      "id": "gustavian-court",
+      "name": "Gustavian Court Style",
+      "yearRange": [1772, 1809],
+      "description": "King Gustav III introduced a national court dress to reduce French fashion dependence and promote Swedish identity. The Swedish national costume was formalized, blending European court elegance with distinctly Nordic elements like muted color palettes and restrained embellishment.",
+      "keyGarments": [
+        "Swedish national dress",
+        "Court gown with Swedish blue sash",
+        "Dalarna folk vest"
+      ],
+      "aiImagePrompt": "A late 18th century Swedish court portrait of a noblewoman in a structured silk gown with a blue and gold Swedish royal sash, wearing a modest lace cap, set in a pale Gustavian neoclassical interior with white paneled walls."
+    },
+    {
+      "id": "folk-revival",
+      "name": "Folk Costume Revival",
+      "yearRange": [1890, 1950],
+      "description": "Swedish national romanticism sparked a revival of regional folk costumes (folkdräkter), with each province developing distinctive embroidered bodices, striped skirts, and hand-knitted accessories. These garments became powerful symbols of Swedish identity, especially during Midsummer celebrations.",
+      "keyGarments": [
+        "Folkdräkt (regional folk dress)",
+        "Embroidered Dalarna bodice",
+        "Lovikka mittens"
+      ],
+      "aiImagePrompt": "A Midsummer celebration scene with a young Swedish woman wearing a traditional Dalarna folkdräkt with a red embroidered bodice, striped blue and white apron, and a floral wreath crown, dancing around a maypole in a sunlit meadow."
+    },
+    {
+      "id": "scandinavian-modern",
+      "name": "Scandinavian Modern Design",
+      "yearRange": [1950, 1979],
+      "description": "The post-war Scandinavian Modern movement applied principles of democratic design and functionalism to fashion. Clean lines, quality materials, and accessible pricing defined the Swedish approach, laying the ideological groundwork for fast fashion democratization that would follow.",
+      "keyGarments": [
+        "Minimalist wool coat",
+        "Functional outdoor anorak",
+        "Simple cotton jersey dress"
+      ],
+      "aiImagePrompt": "A 1960s Stockholm fashion photograph of a woman in a clean-lined A-line wool coat in muted grey, standing in a modernist concrete interior with Scandinavian furniture, cool natural light from large windows, black and white editorial style."
+    },
+    {
+      "id": "hm-democratization",
+      "name": "H&M & Fashion Democratization",
+      "yearRange": [1980, 2010],
+      "description": "H&M transformed global fashion by making trend-driven clothing affordable and accessible to everyone. Sweden became synonymous with fast fashion, while simultaneously, brands like Filippa K and Acne Studios emerged with a premium Scandinavian aesthetic emphasizing understated elegance.",
+      "keyGarments": [
+        "Designer collaboration pieces",
+        "Raw denim jeans",
+        "Oversized cashmere knit"
+      ],
+      "aiImagePrompt": "A 2000s fashion editorial showing a model in an oversized black cashmere sweater, raw indigo jeans, and white minimalist sneakers, leaning against an exposed brick wall in a converted Stockholm warehouse, cool Scandinavian lighting."
+    },
+    {
+      "id": "sustainable-minimalism",
+      "name": "Sustainable Scandinavian Minimalism",
+      "yearRange": [2010, 2025],
+      "description": "Sweden now leads the global sustainability conversation in fashion, with circular economy initiatives, garment recycling legislation, and brands built on transparency and longevity. The 'Swedish wardrobe' philosophy of fewer, better things has become a worldwide movement influencing luxury and mass-market alike.",
+      "keyGarments": [
+        "Recycled polyester puffer",
+        "Modular capsule wardrobe pieces",
+        "Organic cotton basics"
+      ],
+      "aiImagePrompt": "A contemporary Swedish fashion campaign featuring a model in a minimalist earth-toned outfit of an organic cotton turtleneck and tailored recycled wool trousers, standing in a pristine snowy Stockholm archipelago landscape, clean diffused Nordic light."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Lovikka Mittens Wool",
+      "type": "Knitted",
+      "description": "Thick, felted mittens from the Norrbotten village of Lovikka, hand-knitted with unspun Swedish wool and decorated with embroidered flowers. Recognized as a protected Swedish cultural heritage craft.",
+      "origin": "Lovikka, Norrbotten",
+      "technique": "Hand-knitting with loosely spun Swedish wool, then felted and embroidered with colorful yarn"
+    },
+    {
+      "name": "Dalarna Rosepath Weaving",
+      "type": "Woven",
+      "description": "Traditional overshot weaving technique from Dalarna province, producing intricate rose and star patterns on linen and wool textiles used for folk costumes and home furnishings.",
+      "origin": "Dalarna province",
+      "technique": "Rosepath (rosengång) overshot weaving on floor loom with pattern weft"
+    },
+    {
+      "name": "Sami Tin Thread Embroidery",
+      "type": "Embroidered",
+      "description": "Indigenous Sami craft of embroidering with thin pewter or tin wire braided around sinew, creating gleaming silver patterns on reindeer leather for belts, bags, and traditional gákti tunics.",
+      "origin": "Sápmi (Swedish Lapland)",
+      "technique": "Braiding tin wire around reindeer sinew thread and couching onto leather"
+    },
+    {
+      "name": "Swedish Linen",
+      "type": "Woven",
+      "description": "Fine-quality flax linen with a long Scandinavian heritage, used for everything from folk costume underdresses to contemporary minimalist fashion. Known for exceptional durability and softening with age.",
+      "origin": "Västergötland, Småland",
+      "technique": "Wet-spun flax fiber woven on traditional looms in plain and damask weaves"
+    },
+    {
+      "name": "Halland Embroidery",
+      "type": "Embroidered",
+      "description": "Distinctive wool-on-wool embroidery from the Halland province featuring dense floral motifs in rich reds, blues, and greens on a dark background, traditionally applied to folk costume bodices.",
+      "origin": "Halland province",
+      "technique": "Long-armed cross stitch and stem stitch with polychrome wool yarn on wool fabric"
+    }
+  ],
+  "climate": {
+    "zone": "Subarctic to Temperate Maritime",
+    "avgTemp": 6,
+    "humidity": "Moderate",
+    "fashionImplication": "Long, dark winters and dramatic seasonal shifts demand high-performance layering, insulated outerwear, and water-resistant fabrics, while brief bright summers inspire lighter Scandinavian minimalist pieces in linen and cotton."
+  },
+  "culturalInfluences": [
+    "Viking heritage and Norse craftsmanship traditions",
+    "Lutheran modesty and restraint aesthetics",
+    "Scandinavian Modern design philosophy (form follows function)",
+    "Lagom - the Swedish concept of 'just the right amount'",
+    "Sami indigenous textile and leatherwork traditions",
+    "Social democratic values of equality and accessibility",
+    "Environmental consciousness and outdoor culture (friluftsliv)"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Stockholm Fashion Week",
+        "city": "Stockholm",
+        "month": "January, August",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Circular fashion and garment-to-garment recycling",
+      "Neo-Nordic heritage revival",
+      "Genderless Scandinavian minimalism",
+      "Climate-positive fashion supply chains",
+      "AI-driven personalized sustainable wardrobes"
+    ],
+    "digitalPresence": 88,
+    "ecommercePenetration": 85,
+    "notableEvents": [
+      "H&M Global Change Award",
+      "Stockholm Fashion District initiative",
+      "Swedish Fashion Council sustainability summit",
+      "Hyper Island fashion-tech showcase"
+    ]
+  }
+}

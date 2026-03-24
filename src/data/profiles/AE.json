@@ -1,0 +1,168 @@
+{
+  "fashionDNA": {
+    "traditionalism": 80,
+    "innovation": 78,
+    "sustainability": 40,
+    "luxuryIndex": 95,
+    "streetwearInfluence": 45,
+    "craftsmanship": 82,
+    "globalInfluence": 72
+  },
+  "eras": [
+    {
+      "id": "bedouin-heritage",
+      "name": "Bedouin Desert Traditions",
+      "yearRange": [1600, 1900],
+      "description": "For centuries, the nomadic Bedouin peoples of the Arabian Peninsula wore garments perfectly adapted to the harsh desert climate. Loose-fitting robes, headcloths, and indigo-dyed textiles served both practical and tribal identity purposes, with jewelry and embroidery indicating status and clan affiliation.",
+      "keyGarments": [
+        "Bisht (ceremonial cloak)",
+        "Burqa (face mask)",
+        "Indigo-dyed thobe"
+      ],
+      "aiImagePrompt": "A Bedouin nomad in traditional flowing indigo-dyed robes and a white keffiyeh headdress, standing in the golden Arabian desert at sunset with a camel caravan in the distant background, warm cinematic lighting with sand particles in the air."
+    },
+    {
+      "id": "pearl-trading-era",
+      "name": "Pearl Trading Era",
+      "yearRange": [1900, 1960],
+      "description": "Before oil, the Gulf economy was built on pearl diving and maritime trade. Fashion reflected this cosmopolitan trading network, with Indian, Persian, and East African influences visible in embroidered textiles, imported silks, and the distinctive gold-threaded garments worn for celebrations and weddings.",
+      "keyGarments": [
+        "Thoub Nashil (gold-embroidered dress)",
+        "Pearl-adorned headdress",
+        "Sirwal (loose trousers)"
+      ],
+      "aiImagePrompt": "A 1940s Gulf pearl merchant's wife in a richly gold-embroidered Thoub Nashil dress with pearl jewelry and a silk headscarf, standing on a wooden dhow boat with the turquoise waters of the Persian Gulf behind, warm sepia-toned lighting."
+    },
+    {
+      "id": "oil-era-modernization",
+      "name": "Oil Wealth & Modernization",
+      "yearRange": [1971, 1999],
+      "description": "The discovery of oil and the founding of the UAE in 1971 transformed society rapidly. Traditional dress was maintained as a national symbol while Western luxury brands flooded the new shopping malls. The kandura and abaya became markers of Emirati identity amid a cosmopolitan population boom.",
+      "keyGarments": [
+        "Starched white kandura",
+        "Designer abaya",
+        "Ghutra and agal"
+      ],
+      "aiImagePrompt": "A 1990s Dubai street scene with an Emirati man in a crisp white kandura and ghutra headcloth walking past a gleaming shopping mall, juxtaposed with traditional souq architecture in the background, vibrant commercial lighting."
+    },
+    {
+      "id": "modest-fashion-movement",
+      "name": "Modest Fashion Revolution",
+      "yearRange": [2000, 2015],
+      "description": "The UAE pioneered the global modest fashion movement, transforming the abaya from a plain black garment into a haute couture canvas. Emirati designers fused Islamic dress codes with contemporary luxury, creating a multi-billion-dollar industry that influenced fashion houses from Milan to New York.",
+      "keyGarments": [
+        "Couture abaya",
+        "Embellished sheila",
+        "Jalabiya gown"
+      ],
+      "aiImagePrompt": "A high-fashion editorial photograph of a woman in a sculptural couture abaya with intricate crystal embroidery and dramatic sleeves, paired with an artfully draped sheila headscarf, standing in the atrium of a futuristic Dubai skyscraper, dramatic gallery lighting."
+    },
+    {
+      "id": "dubai-global-hub",
+      "name": "Dubai as Global Fashion Capital",
+      "yearRange": [2015, 2022],
+      "description": "Dubai positioned itself as a global fashion hub bridging East and West, attracting international luxury brands, hosting Arab Fashion Week, and incubating a new generation of regional designers. The city became a testing ground for fashion-tech, experiential retail, and cross-cultural design.",
+      "keyGarments": [
+        "Luxury athleisure abaya",
+        "Statement resort kaftan",
+        "Fusion evening gown"
+      ],
+      "aiImagePrompt": "A Dubai Fashion Week runway scene with a model in a flowing metallic-gold evening gown with Arabic calligraphy laser-cut details, walking against the illuminated Burj Khalifa cityscape at dusk, high-fashion editorial lighting."
+    },
+    {
+      "id": "future-heritage",
+      "name": "Future Heritage & Sustainability",
+      "yearRange": [2022, 2025],
+      "description": "The UAE is now investing in sustainable luxury, desert-adapted performance fabrics, and heritage craft preservation. Young Emirati designers explore their Bedouin roots through a futuristic lens, while initiatives like Dubai Design District nurture a homegrown creative ecosystem beyond oil wealth.",
+      "keyGarments": [
+        "3D-printed couture abaya",
+        "Desert-tech performance wear",
+        "Heritage-inspired menswear"
+      ],
+      "aiImagePrompt": "A futuristic Emirati fashion concept showing a model in a minimalist white abaya with subtle geometric Bedouin embroidery and integrated solar-reactive fabric panels, set in the Dubai desert with a futuristic cityscape on the horizon, blue-hour cinematic lighting."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Talli (Khoos Weaving)",
+      "type": "Embroidered",
+      "description": "Traditional Emirati braided embroidery using gold, silver, and colored threads, used to adorn the cuffs and necklines of women's garments. Recognized by UNESCO as intangible cultural heritage.",
+      "origin": "Al Ain, Abu Dhabi",
+      "technique": "Hand-braiding metallic and silk threads on a weighted cushion using bobbins"
+    },
+    {
+      "name": "Sadu Weaving",
+      "type": "Woven",
+      "description": "Bedouin flat-weave textile traditionally made from camel, sheep, and goat hair, featuring bold geometric patterns in black, white, red, and orange that represent desert life and tribal identity.",
+      "origin": "Arabian Desert, Bedouin communities",
+      "technique": "Ground-loom weaving with handspun animal fibers in traditional geometric motifs"
+    },
+    {
+      "name": "Zari Brocade",
+      "type": "Woven",
+      "description": "Imported from India but deeply integrated into Emirati bridal fashion, this gold and silver metallic thread brocade is used for ceremonial kaftans and wedding gowns.",
+      "origin": "Imported via India and Persia",
+      "technique": "Supplementary weft weaving with metallic zari threads on silk warp"
+    },
+    {
+      "name": "Gulf Cotton Muslin",
+      "type": "Woven",
+      "description": "Lightweight, finely woven cotton used for kanduras, prized for its breathability in extreme desert heat. Modern versions use Swiss cotton with a high thread count.",
+      "origin": "UAE, imported Swiss and Japanese cotton",
+      "technique": "High-thread-count plain weave, often with subtle satin stripe finish"
+    },
+    {
+      "name": "Najdi Embroidery",
+      "type": "Embroidered",
+      "description": "Dense, colorful hand-embroidery found on women's traditional dresses, featuring floral and geometric motifs stitched in vibrant silk threads on dark base fabrics.",
+      "origin": "Gulf region, shared with Saudi Arabia",
+      "technique": "Chain stitch and couching with polychrome silk threads on velvet or cotton"
+    }
+  ],
+  "climate": {
+    "zone": "Hot Desert",
+    "avgTemp": 34,
+    "humidity": "High",
+    "fashionImplication": "Extreme heat and humidity demand lightweight, loose-fitting garments in breathable natural fabrics like cotton and linen, with the white kandura reflecting solar radiation, while heavily air-conditioned indoor spaces enable layered luxury and formal evening wear."
+  },
+  "culturalInfluences": [
+    "Bedouin nomadic heritage and tribal identity",
+    "Islamic principles of modesty and adornment",
+    "Persian Gulf maritime trading networks",
+    "Indian subcontinent textile and jewelry traditions",
+    "Oil wealth and rapid modernization",
+    "Cosmopolitan expatriate culture from 200+ nationalities",
+    "Royal family patronage and nation-building through fashion"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Arab Fashion Week",
+        "city": "Dubai",
+        "month": "March, October",
+        "tier": "Major"
+      },
+      {
+        "name": "Dubai Fashion Week",
+        "city": "Dubai",
+        "month": "November",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Modest fashion luxury segment",
+      "Heritage craft revival with contemporary design",
+      "Fashion-tech and smart textiles for extreme heat",
+      "Gender-fluid Gulf menswear",
+      "Sustainable desert-adapted materials"
+    ],
+    "digitalPresence": 92,
+    "ecommercePenetration": 70,
+    "notableEvents": [
+      "Dubai Design District (d3) Fashion Showcase",
+      "Arab Fashion Council Gala",
+      "Abu Dhabi Fashion Week",
+      "International Modest Fashion Week"
+    ]
+  }
+}

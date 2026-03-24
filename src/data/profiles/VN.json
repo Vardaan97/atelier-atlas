@@ -1,0 +1,161 @@
+{
+  "fashionDNA": {
+    "traditionalism": 75,
+    "innovation": 70,
+    "sustainability": 58,
+    "luxuryIndex": 48,
+    "streetwearInfluence": 78,
+    "craftsmanship": 82,
+    "globalInfluence": 55
+  },
+  "eras": [
+    {
+      "id": "ancient-dong-son-dress",
+      "name": "Dong Son & Ancient Vietnamese Dress",
+      "yearRange": [500, 938],
+      "description": "Ancient Vietnamese dress drew from indigenous Southeast Asian traditions and Chinese Han dynasty influences during a thousand years of Chinese rule. Bronze drum reliefs show feathered headdresses and woven garments reflecting a sophisticated textile culture.",
+      "keyGarments": [
+        "Ao giao lanh (cross-collar robe)",
+        "Yem (halter bodice)",
+        "Turban headdress"
+      ],
+      "aiImagePrompt": "An ancient Vietnamese noblewoman in a flowing cross-collar silk robe with embroidered dragon motifs, wearing a yem halter bodice beneath, hair in an elaborate updo with gold pins, standing in a misty Red River Delta landscape at dawn."
+    },
+    {
+      "id": "imperial-court-dress",
+      "name": "Imperial Court & Nguyen Dynasty",
+      "yearRange": [1802, 1885],
+      "description": "The Nguyen Dynasty codified Vietnamese court dress with elaborate regulations governing colors, fabrics, and embroidery by rank. The ao dai began its evolution during this era, and Hue became the center of Vietnamese fashion and silk weaving.",
+      "keyGarments": [
+        "Ao nhat binh (court robe)",
+        "Five-panel ao dai prototype",
+        "Mandarin square rank badge"
+      ],
+      "aiImagePrompt": "A Vietnamese imperial concubine in a richly embroidered golden ao nhat binh court robe with phoenix motifs, wearing an elaborate headdress with jade ornaments, standing in the Purple Forbidden City of Hue with lotus ponds and red lacquered columns."
+    },
+    {
+      "id": "colonial-ao-dai-refinement",
+      "name": "French Colonial & Ao Dai Refinement",
+      "yearRange": [1885, 1945],
+      "description": "French colonial Indochina transformed Vietnamese fashion as Parisian influences merged with local traditions. Artist Nguyen Cat Tuong modernized the ao dai in the 1930s, creating the form-fitting silhouette that became Vietnam's most iconic garment.",
+      "keyGarments": [
+        "Modern ao dai (Lemur style)",
+        "French colonial pith helmet",
+        "Silk ao tu than"
+      ],
+      "aiImagePrompt": "A 1930s Saigon socialite in a revolutionary modernized ao dai in lavender silk with fitted bodice and flowing panels over white trousers, walking along Rue Catinat's tree-lined boulevard past French colonial buildings, warm sepia-toned light."
+    },
+    {
+      "id": "wartime-ao-dai-symbolism",
+      "name": "Wartime Fashion & National Identity",
+      "yearRange": [1945, 1975],
+      "description": "The ao dai became a powerful symbol of Vietnamese identity during decades of conflict. Madame Nhu's controversial form-fitting ao dai made global headlines, while in the North the garment was set aside for practical revolutionary dress.",
+      "keyGarments": [
+        "Wartime ao dai",
+        "Ao ba ba (black pajama)",
+        "Non la (conical leaf hat)"
+      ],
+      "aiImagePrompt": "A Vietnamese woman in a white ao dai standing among bicycles on a Saigon street in the 1960s, the silk panels flowing in a breeze, non la conical hat in hand, with tamarind trees lining the boulevard, documentary-style black and white photography."
+    },
+    {
+      "id": "doi-moi-reopening",
+      "name": "Doi Moi & Fashion Reopening",
+      "yearRange": [1986, 2010],
+      "description": "Vietnam's economic renovation (Doi Moi) reopened the country to global fashion while sparking a domestic fashion industry. The ao dai was revived for formal occasions, and Vietnam became a major global garment manufacturing hub.",
+      "keyGarments": [
+        "Revived ceremonial ao dai",
+        "Vietnamese fashion designer gowns",
+        "Factory-produced global brands"
+      ],
+      "aiImagePrompt": "A late 1990s Ho Chi Minh City fashion show with a model in a contemporary ao dai in iridescent emerald silk with hand-painted chrysanthemum motifs, walking a runway in a restored French colonial building, dramatic fashion-show lighting."
+    },
+    {
+      "id": "saigon-street-style",
+      "name": "Saigon Street Style & New Generation",
+      "yearRange": [2010, 2026],
+      "description": "Ho Chi Minh City and Hanoi have exploded with young fashion creativity, blending ao dai heritage with global streetwear and K-pop influences. Vietnamese designers gain international attention while local street style becomes a phenomenon on social media.",
+      "keyGarments": [
+        "Deconstructed ao dai streetwear",
+        "Vietnamese-designed sneakers",
+        "Ao ba ba-inspired casual wear"
+      ],
+      "aiImagePrompt": "Saigon street style featuring a young Vietnamese designer in a deconstructed ao dai top worn over wide-leg cargo pants and platform sneakers, against the backdrop of District 1's neon signs and motorbike traffic, vibrant neon-lit night scene."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Ha Dong Silk",
+      "type": "Woven",
+      "description": "Vietnam's most famous silk, produced in the ancient weaving village of Van Phuc near Hanoi for over a thousand years. Prized for its luminous drape and used for the finest ao dai garments.",
+      "origin": "Van Phuc Village, Ha Dong, Hanoi",
+      "technique": "Traditional loom weaving with locally raised mulberry silk, natural dyeing"
+    },
+    {
+      "name": "Brocade (Tho Cam)",
+      "type": "Woven",
+      "description": "Richly patterned brocade textiles woven by ethnic minority groups in Vietnam's northern highlands, each community maintaining distinctive geometric and symbolic motifs.",
+      "origin": "Northern Highlands (Sapa, Ha Giang)",
+      "technique": "Backstrap loom weaving with supplementary weft patterns using cotton and silk"
+    },
+    {
+      "name": "Hue Silk",
+      "type": "Woven",
+      "description": "Imperial-quality silk from the former capital, known for its rich colors and association with court dress. Hue silk represents Vietnam's most refined weaving tradition.",
+      "origin": "Hue, Central Vietnam",
+      "technique": "Jacquard weaving on floor looms with gold and silver thread for ceremonial fabrics"
+    },
+    {
+      "name": "Batik of the Hmong",
+      "type": "Printed",
+      "description": "A wax-resist textile tradition practiced by Hmong communities in northern Vietnam, featuring intricate spirals and geometric patterns in indigo blue on hemp or cotton cloth.",
+      "origin": "Northern Vietnamese highlands",
+      "technique": "Hot beeswax resist application with bamboo pens, followed by indigo vat dyeing"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical Monsoon to Subtropical",
+    "avgTemp": 25,
+    "humidity": "Very High",
+    "fashionImplication": "Vietnam's hot, humid climate shaped the ao dai's brilliant design solution: a form-fitting yet airy garment with open side slits allowing air circulation. The monsoon climate drives demand for lightweight, quick-drying fabrics, while the north-south climate gradient creates distinct regional fashion needs."
+  },
+  "culturalInfluences": [
+    "Confucian social hierarchy and dress codes",
+    "French colonial Indochina and Parisian aesthetics",
+    "Buddhist and Taoist ceremonial traditions",
+    "54 ethnic minority textile cultures",
+    "Vietnamese diaspora (Viet Kieu) global connections",
+    "K-pop and East Asian popular culture influence",
+    "Revolutionary heritage and socialist realism"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Vietnam International Fashion Week",
+        "city": "Ho Chi Minh City",
+        "month": "April, November",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Aquafina Vietnam Fashion Week",
+        "city": "Hanoi",
+        "month": "October",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Ao dai streetwear deconstruction",
+      "Ethnic minority textile revival for luxury market",
+      "Sustainable Vietnamese silk and natural dyes",
+      "Saigon youth streetwear scene",
+      "Vietnamese-designed sneaker culture"
+    ],
+    "digitalPresence": 80,
+    "ecommercePenetration": 60,
+    "notableEvents": [
+      "Ho Chi Minh City Ao Dai Festival",
+      "Hue Festival traditional costume exhibitions",
+      "Vietnam Fashion Design Contest",
+      "Saigon Fabric Market designer collaborations"
+    ]
+  }
+}

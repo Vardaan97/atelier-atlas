@@ -1,0 +1,161 @@
+{
+  "fashionDNA": {
+    "traditionalism": 72,
+    "innovation": 75,
+    "sustainability": 68,
+    "luxuryIndex": 45,
+    "streetwearInfluence": 82,
+    "craftsmanship": 76,
+    "globalInfluence": 55
+  },
+  "eras": [
+    {
+      "id": "indigenous-beadwork",
+      "name": "Indigenous Beadwork & Dress",
+      "yearRange": [1500, 1860],
+      "description": "The Zulu, Xhosa, Ndebele, and other Southern African peoples developed highly sophisticated dress traditions centered on beadwork, animal hides, and body adornment. Each bead color and pattern encoded messages about age, marital status, and clan identity.",
+      "keyGarments": [
+        "Isidwaba (married woman's leather skirt)",
+        "Isicolo (woven hat)",
+        "Beaded love letter necklaces"
+      ],
+      "aiImagePrompt": "A Zulu woman in full ceremonial dress with intricate white and primary-colored beadwork necklaces layered across her chest, beaded headband, and an isidwaba leather skirt, dramatic savanna landscape at sunset."
+    },
+    {
+      "id": "colonial-cape-fashion",
+      "name": "Colonial & Cape Fashion",
+      "yearRange": [1652, 1910],
+      "description": "Dutch and British colonizers brought European fashion traditions that blended with local materials and the Cape's unique climate. The Cape Malay community developed distinctive dress traditions, while Afrikaner women created the kappie bonnet as an icon of frontier life.",
+      "keyGarments": [
+        "Cape Malay bridal outfit",
+        "Voortrekker kappie bonnet",
+        "Victorian colonial dress"
+      ],
+      "aiImagePrompt": "A Cape Town scene circa 1880 with a Cape Malay woman in a bright silk kebaya blouse and batik sarong with lace headscarf, standing in the Bo-Kaap quarter with its pastel-colored houses."
+    },
+    {
+      "id": "resistance-fashion",
+      "name": "Apartheid Resistance & Identity",
+      "yearRange": [1948, 1994],
+      "description": "Under apartheid, fashion became a tool of both oppression and resistance. The Sophiatown jazz scene created sharp urban Black style, while traditional dress became a deliberate assertion of African identity. Anti-apartheid movements adopted distinctive visual symbols.",
+      "keyGarments": [
+        "Sophiatown zoot suit",
+        "Madiba shirt",
+        "Xhosa blanket wrap"
+      ],
+      "aiImagePrompt": "A 1950s Sophiatown jazz club scene with a young Black South African man in a sharp double-breasted zoot suit with wide-brimmed hat, woman in a fitted dress with beaded accessories, smoky atmosphere, jazz band in background."
+    },
+    {
+      "id": "rainbow-nation-emergence",
+      "name": "Rainbow Nation Emergence",
+      "yearRange": [1994, 2010],
+      "description": "Post-apartheid South Africa experienced a cultural renaissance. Nelson Mandela's iconic printed shirts became a global symbol, and designers began creating fashion that celebrated the diversity of South Africa's eleven official cultural groups.",
+      "keyGarments": [
+        "Madiba shirt (batik print)",
+        "Shweshwe print dress",
+        "Ndebele-print blazer"
+      ],
+      "aiImagePrompt": "A post-apartheid South African celebration scene with a model wearing a tailored blazer in bold Ndebele geometric prints over a white turtleneck, vibrant township mural in the background, joyful atmosphere."
+    },
+    {
+      "id": "afro-futurism-streetwear",
+      "name": "Afro-Futurism & Streetwear",
+      "yearRange": [2010, 2020],
+      "description": "South African designers embraced Afro-futurism, blending indigenous aesthetics with futuristic design. Johannesburg and Cape Town became hotbeds for African streetwear, with brands like MaXhosa by Laduma gaining international recognition for Xhosa-pattern knitwear.",
+      "keyGarments": [
+        "MaXhosa geometric knitwear",
+        "Ankara-print sneakers",
+        "Neo-Zulu streetwear"
+      ],
+      "aiImagePrompt": "An Afro-futurist fashion editorial in Johannesburg with a model in MaXhosa-style geometric knitwear in bold primary colors, metallic accessories, Ponte City Tower and urban skyline in the background, dramatic clouds."
+    },
+    {
+      "id": "african-luxury-movement",
+      "name": "African Luxury & Global Stage",
+      "yearRange": [2020, 2026],
+      "description": "South African fashion has entered the global luxury conversation. Designers like Thebe Magugu (LVMH Prize winner), Rich Mnisi, and Sindiso Khumalo are redefining African luxury with collections that honor heritage while innovating sustainably.",
+      "keyGarments": [
+        "Heritage-print tailored suit",
+        "Sustainable cotton print dress",
+        "Beadwork-embellished evening gown"
+      ],
+      "aiImagePrompt": "A South African Fashion Week finale with a model in a flowing evening gown featuring hand-beaded Zulu patterns on sheer fabric over structured tailoring, contemporary gallery space, golden spotlight."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Shweshwe",
+      "type": "Printed",
+      "description": "A stiff, indigo-dyed printed cotton fabric brought by German settlers in the 1840s, now considered the denim of South Africa and central to Sotho, Tswana, and Xhosa ceremonial dress.",
+      "origin": "Eastern Cape (originally from Saxony, Germany)",
+      "technique": "Discharge printing on indigo-dyed cotton using copper rollers, creating geometric patterns"
+    },
+    {
+      "name": "Zulu Beadwork",
+      "type": "Embroidered",
+      "description": "An elaborate tradition of glass bead weaving where color combinations and patterns form a symbolic language encoding messages about love, identity, and social status.",
+      "origin": "KwaZulu-Natal",
+      "technique": "Bead-by-bead threading and weaving on cotton thread or leather substrate"
+    },
+    {
+      "name": "Ndebele Painted Cloth",
+      "type": "Printed",
+      "description": "Inspired by the Ndebele people's famous house-painting tradition, these bold geometric designs in primary colors have been adapted onto fabric for contemporary fashion.",
+      "origin": "Mpumalanga Province",
+      "technique": "Block printing and screen printing translating traditional mural motifs onto cotton and polyester"
+    },
+    {
+      "name": "Xhosa Blanket Cloth",
+      "type": "Woven",
+      "description": "Heavy wool blankets in ochre, white, and black that serve as status garments in Xhosa culture, with specific patterns and colors indicating life stages and social rank.",
+      "origin": "Eastern Cape",
+      "technique": "Industrial wool weaving with specific pattern vocabulary (Umbhaco tradition)"
+    }
+  ],
+  "climate": {
+    "zone": "Subtropical to Mediterranean",
+    "avgTemp": 20,
+    "humidity": "Moderate",
+    "fashionImplication": "South Africa's sunny climate with cool winter mornings encourages colorful, medium-weight fabrics and versatile layering. The strong UV drives sun-protective fashion, while distinct wet and dry seasons influence seasonal collections."
+  },
+  "culturalInfluences": [
+    "Zulu, Xhosa, and Ndebele beadwork and dress traditions",
+    "Anti-apartheid resistance and liberation identity",
+    "Nelson Mandela's Madiba shirt as diplomatic fashion",
+    "Johannesburg street culture and kwaito music",
+    "Pan-African solidarity and Afro-futurist movement",
+    "South African rugby and cricket sporting culture",
+    "Post-colonial reclamation of indigenous aesthetics"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "South African Fashion Week (SAFW)",
+        "city": "Johannesburg",
+        "month": "April, October",
+        "tier": "Major"
+      },
+      {
+        "name": "Cape Town Fashion Week",
+        "city": "Cape Town",
+        "month": "March",
+        "tier": "Regional"
+      }
+    ],
+    "emergingTrends": [
+      "African luxury redefining global fashion narratives",
+      "Heritage beadwork in contemporary streetwear",
+      "Sustainable African cotton and natural fiber fashion",
+      "Afro-futurist design blending tech and tradition",
+      "Pan-African collaboration between continental designers"
+    ],
+    "digitalPresence": 62,
+    "ecommercePenetration": 38,
+    "notableEvents": [
+      "LVMH Prize (Thebe Magugu, 2019 winner)",
+      "Design Indaba Conference",
+      "AFI (African Fashion International) Showcase",
+      "Turbine Art Fair fashion collaborations"
+    ]
+  }
+}

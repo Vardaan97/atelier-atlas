@@ -1,0 +1,168 @@
+{
+  "fashionDNA": {
+    "traditionalism": 78,
+    "innovation": 68,
+    "sustainability": 60,
+    "luxuryIndex": 58,
+    "streetwearInfluence": 75,
+    "craftsmanship": 88,
+    "globalInfluence": 55
+  },
+  "eras": [
+    {
+      "id": "sukhothai-ayutthaya",
+      "name": "Sukhothai & Ayutthaya Kingdoms",
+      "yearRange": [1238, 1767],
+      "description": "The great Thai kingdoms developed a sophisticated textile culture centered on silk weaving and the distinctive wrapped garment traditions. Court dress was strictly codified by royal decree, with specific colors, fabrics, and ornaments designating rank and occasion.",
+      "keyGarments": [
+        "Pha nung (wrapped lower garment)",
+        "Sabai (breast cloth)",
+        "Chut thai phra ratcha niyom"
+      ],
+      "aiImagePrompt": "An Ayutthaya-era Thai court lady wearing a gold-threaded silk pha nung with a draped sabai across one shoulder, ornate gold tiara and arm cuffs, standing in a teak palace with lotus ponds, warm candlelight."
+    },
+    {
+      "id": "rattanakosin-royal-silk",
+      "name": "Rattanakosin & Royal Silk Era",
+      "yearRange": [1782, 1932],
+      "description": "The Bangkok dynasty refined Thai court dress into its most elaborate forms. King Chulalongkorn modernized national dress by blending Western tailoring with Thai silk traditions, while regional weaving centers produced silk of extraordinary quality.",
+      "keyGarments": [
+        "Raj pattern formal wear",
+        "Thai silk chong kraben",
+        "Royal ceremonial robes"
+      ],
+      "aiImagePrompt": "A Siamese nobleman in the court of King Chulalongkorn wearing a white high-collared jacket over a gold brocade chong kraben, jeweled belt and royal decorations, Grand Palace architecture in the background."
+    },
+    {
+      "id": "jim-thompson-revival",
+      "name": "Jim Thompson Silk Revival",
+      "yearRange": [1948, 1975],
+      "description": "American architect Jim Thompson single-handedly revived the dying Thai silk industry, transforming village weaving into an international luxury brand. His efforts brought Thai silk to Hollywood and haute couture, making it synonymous with Southeast Asian luxury.",
+      "keyGarments": [
+        "Thai silk cocktail dress",
+        "Ikat silk sarong",
+        "Brocade evening jacket"
+      ],
+      "aiImagePrompt": "A 1960s fashion editorial in Jim Thompson's Bangkok teak house, featuring a Western model in a jewel-toned Thai silk sheath dress, surrounded by antique Southeast Asian art, lush tropical garden visible through wooden shutters."
+    },
+    {
+      "id": "queen-sirikit-couture",
+      "name": "Queen Sirikit National Dress",
+      "yearRange": [1960, 2000],
+      "description": "Queen Sirikit commissioned designer Pierre Balmain to codify eight official Thai national dress forms in the 1960s. Her patronage elevated Thai fashion diplomacy and ensured traditional garments remained prestigious in the modern era.",
+      "keyGarments": [
+        "Thai Chakkri formal gown",
+        "Thai Dusit evening dress",
+        "Thai Boromphiman court dress"
+      ],
+      "aiImagePrompt": "A Thai woman in the Chakkri formal dress, a floor-length Thai silk gown in royal blue with gold brocade sash draped over one shoulder, tiered diamond jewelry, posing in a gilded throne hall."
+    },
+    {
+      "id": "bangkok-streetwear-rise",
+      "name": "Bangkok Streetwear & Club Culture",
+      "yearRange": [2000, 2018],
+      "description": "Bangkok emerged as Southeast Asia's streetwear capital, driven by Chatuchak Market's indie fashion scene and a booming nightlife culture. Thai designers blended hip-hop influences with Buddhist iconography and tropical aesthetics.",
+      "keyGarments": [
+        "Graphic Thai-script tee",
+        "Oversized utility shorts",
+        "Muay Thai-inspired sportswear"
+      ],
+      "aiImagePrompt": "A Bangkok street style scene at Chatuchak weekend market, a young Thai creative in oversized graphic tee with Thai script, wide-leg cargo pants, chunky sneakers, neon market signs in the background, night atmosphere."
+    },
+    {
+      "id": "thai-fashion-global",
+      "name": "Thai Fashion Goes Global",
+      "yearRange": [2018, 2026],
+      "description": "Thai designers like Sretsis, Asava, and Pipatchara have gained international followings. Bangkok Fashion Week has attracted global buyers, while Thai beauty and fashion content creators dominate Southeast Asian social media.",
+      "keyGarments": [
+        "Tropical-print tailored suit",
+        "Sustainable silk resort dress",
+        "Thai-motif luxury streetwear"
+      ],
+      "aiImagePrompt": "A Bangkok Fashion Week runway moment with a model in a structured tropical-print pantsuit with Thai silk lapels, modern concrete venue with dramatic projection mapping, editorial lighting."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Mudmee (Mat Mii) Silk",
+      "type": "Dyed",
+      "description": "An ancient ikat technique producing Thai silk with geometric patterns created by resist-dyeing the threads before weaving, traditionally in deep jewel tones.",
+      "origin": "Isan (Northeastern Thailand)",
+      "technique": "Warp ikat resist-dyeing with natural dyes, woven on frame looms with continuous weft"
+    },
+    {
+      "name": "Pha Yok Thong",
+      "type": "Woven",
+      "description": "A luxurious gold-brocade silk reserved for royal and ceremonial garments, featuring raised supplementary weft patterns of mythical creatures and floral motifs.",
+      "origin": "Bangkok & Nakhon Si Thammarat",
+      "technique": "Supplementary gold and silver metallic weft weaving on a drawloom"
+    },
+    {
+      "name": "Thai Silk (Jim Thompson)",
+      "type": "Woven",
+      "description": "Internationally renowned handwoven silk characterized by its natural luster, slightly textured surface, and vivid colors achieved through a unique double-shuttle technique.",
+      "origin": "Pak Thong Chai, Nakhon Ratchasima",
+      "technique": "Handloom weaving with two shuttles creating different colored warp and weft for iridescent effect"
+    },
+    {
+      "name": "Pha Khao Ma",
+      "type": "Woven",
+      "description": "A versatile checkered or plaid cotton cloth used as a loincloth, towel, head wrap, and all-purpose garment by Thai men across all social classes.",
+      "origin": "Central Thailand",
+      "technique": "Plain weave cotton with check patterns in indigo, red, and natural white"
+    },
+    {
+      "name": "Yok Dok Brocade",
+      "type": "Woven",
+      "description": "An intricate supplementary weft technique creating raised floral and geometric patterns, used for ceremonial sinh skirts and formal garments.",
+      "origin": "Lamphun, Northern Thailand",
+      "technique": "Continuous supplementary weft brocading on a traditional Northern Thai loom"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical Monsoon",
+    "avgTemp": 28,
+    "humidity": "High (70-80%)",
+    "fashionImplication": "Intense heat and humidity drive preference for lightweight, breathable silks and cottons with loose draping. The monsoon season requires practical layering, while air-conditioned urban interiors create demand for light jackets and wraps."
+  },
+  "culturalInfluences": [
+    "Theravada Buddhism and monastic saffron robes",
+    "Royal court ceremony and dress codification",
+    "Jim Thompson's silk industry revival",
+    "Thai classical dance costume traditions",
+    "Japanese and Korean pop culture (J-pop, K-pop influence)",
+    "Muay Thai martial arts aesthetics",
+    "Southeast Asian night market and street culture"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Bangkok International Fashion Week",
+        "city": "Bangkok",
+        "month": "March, September",
+        "tier": "Regional"
+      },
+      {
+        "name": "Siam Paragon Bangkok Fashion Week",
+        "city": "Bangkok",
+        "month": "April",
+        "tier": "Regional"
+      }
+    ],
+    "emergingTrends": [
+      "Thai silk streetwear fusion",
+      "Sustainable fashion using lotus and pineapple fiber",
+      "K-pop influenced Thai youth fashion",
+      "Buddhist-inspired minimalist design",
+      "Tropical tailoring for international resort markets"
+    ],
+    "digitalPresence": 72,
+    "ecommercePenetration": 58,
+    "notableEvents": [
+      "ELLE Fashion Week Bangkok",
+      "Support Arts & Crafts International Centre of Thailand (SACICT) Craft exhibitions",
+      "Queen Sirikit Museum of Textiles exhibitions",
+      "Chatuchak Market design weekends"
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "fashionDNA": {
+    "traditionalism": 75,
+    "innovation": 55,
+    "sustainability": 65,
+    "luxuryIndex": 52,
+    "streetwearInfluence": 45,
+    "craftsmanship": 80,
+    "globalInfluence": 70
+  },
+  "eras": [
+    {
+      "id": "classical-drapery",
+      "name": "Classical Greek Drapery",
+      "yearRange": [-800, -146],
+      "description": "Ancient Greek dress was defined by the art of draping uncut cloth around the body, creating garments of extraordinary elegance from simple rectangles of fabric. The chiton and himation became foundational to Western fashion vocabulary and continue to inspire designers millennia later.",
+      "keyGarments": [
+        "Chiton (tunic)",
+        "Himation (cloak)",
+        "Peplos"
+      ],
+      "aiImagePrompt": "An ancient Greek woman in a flowing white linen chiton with gold fibulae at the shoulders, draped in an indigo-bordered himation, standing before marble Parthenon columns in warm Mediterranean sunlight."
+    },
+    {
+      "id": "byzantine-imperial",
+      "name": "Byzantine Imperial Splendor",
+      "yearRange": [330, 1453],
+      "description": "The Byzantine Empire centered in Constantinople transformed Greek dress with Oriental luxury. Silk brocades, heavy gold embroidery, and jewel-encrusted imperial garments created a visual language of divine authority that influenced European and Orthodox Christian vestments.",
+      "keyGarments": [
+        "Dalmatic tunic",
+        "Imperial loros sash",
+        "Jeweled tablion panel"
+      ],
+      "aiImagePrompt": "A Byzantine empress in a purple silk dalmatic encrusted with pearls and gold medallions, wearing a gem-studded crown with pendant chains, mosaic-style background in deep blue and gold, sacred atmosphere."
+    },
+    {
+      "id": "ottoman-greek-folk",
+      "name": "Ottoman-Era Folk Dress",
+      "yearRange": [1453, 1821],
+      "description": "Under Ottoman rule, Greek regional folk costumes evolved into extraordinarily elaborate forms. Each island and mainland region developed distinctive dress codes using rich embroidery, metallic thread, and layered garments that preserved Hellenic identity.",
+      "keyGarments": [
+        "Foustanella (pleated skirt)",
+        "Amalia dress",
+        "Embroidered bodice vest"
+      ],
+      "aiImagePrompt": "A Greek island woman in elaborate Dodecanese folk costume with gold-embroidered velvet bodice, white chemise with lace trim, and layered brocade apron, standing on a whitewashed terrace overlooking the Aegean Sea."
+    },
+    {
+      "id": "neoclassical-independence",
+      "name": "Neoclassical Revival & Independence",
+      "yearRange": [1821, 1920],
+      "description": "Greek independence sparked a neoclassical revival that swept European fashion. Queen Amalia created the Amalia dress as a national costume, blending Western court fashion with Greek folk elements, while ancient Greek drapery inspired Parisian couturiers.",
+      "keyGarments": [
+        "Amalia court dress",
+        "Evzone uniform",
+        "Neoclassical muslin gown"
+      ],
+      "aiImagePrompt": "A Greek noblewoman in the Amalia national dress with velvet jacket richly embroidered in gold thread, white silk chemise, and a fez-like cap with gold tassel, posed in a neoclassical Athens mansion."
+    },
+    {
+      "id": "athenian-mid-century",
+      "name": "Athenian Mid-Century Style",
+      "yearRange": [1950, 1980],
+      "description": "Post-war Greek fashion found international recognition through designers like Jean Dessès, who brought Greek drapery techniques to Parisian haute couture. The jet-set era turned Greek islands into style destinations that influenced casual Mediterranean chic worldwide.",
+      "keyGarments": [
+        "Draped goddess gown",
+        "Greek sandals (gladiator style)",
+        "Island resort caftan"
+      ],
+      "aiImagePrompt": "A 1960s jet-set scene on Mykonos with a woman in a flowing white cotton caftan and gold leather gladiator sandals, walking past a whitewashed chapel with bougainvillea, bright Aegean blue sky."
+    },
+    {
+      "id": "modern-mediterranean",
+      "name": "Modern Mediterranean Renaissance",
+      "yearRange": [2010, 2026],
+      "description": "A new generation of Greek designers including Mary Katrantzou, Sophia Kokosalaki, and Zeus+Dione have brought Greek fashion to global prominence. They reinterpret ancient drapery, mythology, and Aegean aesthetics through contemporary luxury lens.",
+      "keyGarments": [
+        "Digital-print structured dress",
+        "Modern draped evening gown",
+        "Handwoven resort wear"
+      ],
+      "aiImagePrompt": "A contemporary Greek fashion editorial on Santorini with a model in a sculptural white gown featuring digital prints of ancient Greek pottery motifs, caldera and volcanic cliffs in the background, golden hour."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Foustanella Cloth",
+      "type": "Woven",
+      "description": "The distinctive pleated white cotton or linen fabric used for the foustanella skirt, with each garment requiring up to 30 meters of cloth pressed into 400 precise pleats.",
+      "origin": "Epirus & Peloponnese",
+      "technique": "Fine cotton weaving followed by intensive hand-pleating and starching"
+    },
+    {
+      "name": "Greek Silk Brocade",
+      "type": "Woven",
+      "description": "A Byzantine heritage textile featuring elaborate patterns of eagles, griffins, and floral medallions woven in gold and silver thread on rich silk ground.",
+      "origin": "Soufli, Thrace",
+      "technique": "Jacquard silk weaving with metallic supplementary weft threads"
+    },
+    {
+      "name": "Cretan Embroidery",
+      "type": "Embroidered",
+      "description": "Bold and colorful embroidery tradition from Crete featuring mermaids, ships, double-headed eagles, and floral scrolls that blend Venetian and Ottoman influences.",
+      "origin": "Crete",
+      "technique": "Cross-stitch and satin stitch on linen using silk threads in crimson, green, and gold"
+    },
+    {
+      "name": "Aegean Cotton",
+      "type": "Woven",
+      "description": "Lightweight, breathable cotton cloth woven for island garments, optimized for the hot Aegean summers and traditionally bleached white by sun exposure.",
+      "origin": "Cyclades Islands",
+      "technique": "Hand-loom plain weave with natural sun bleaching on volcanic rocks"
+    }
+  ],
+  "climate": {
+    "zone": "Mediterranean",
+    "avgTemp": 18,
+    "humidity": "Low to Moderate",
+    "fashionImplication": "Hot, dry summers and mild winters drive a fashion culture centered on lightweight natural fabrics, open sandals, flowing silhouettes, and sun-protective wide hats, with minimal need for heavy outerwear."
+  },
+  "culturalInfluences": [
+    "Ancient Greek philosophy and idealized human form",
+    "Byzantine Orthodox Christian vestment tradition",
+    "Aegean island maritime culture",
+    "Ottoman Empire textile exchange",
+    "Greek diaspora and cosmopolitan identity",
+    "Mediterranean resort and jet-set culture",
+    "Classical mythology as perpetual design inspiration"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Athens Fashion Week (AXDW)",
+        "city": "Athens",
+        "month": "March, October",
+        "tier": "Regional"
+      }
+    ],
+    "emergingTrends": [
+      "Neo-Hellenic drapery in contemporary silhouettes",
+      "Sustainable island resort wear using organic cotton",
+      "Ancient Greek sandal modernization",
+      "Mythological motifs in digital print design",
+      "Aegean artisan revival and slow fashion cooperatives"
+    ],
+    "digitalPresence": 55,
+    "ecommercePenetration": 42,
+    "notableEvents": [
+      "Athens Xclusive Designers Week",
+      "Benaki Museum costume exhibitions",
+      "Greek Jewelry Museum displays",
+      "Thessaloniki International Fair fashion showcases"
+    ]
+  }
+}

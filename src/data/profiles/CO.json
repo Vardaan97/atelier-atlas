@@ -1,0 +1,161 @@
+{
+  "fashionDNA": {
+    "traditionalism": 65,
+    "innovation": 70,
+    "sustainability": 72,
+    "luxuryIndex": 42,
+    "streetwearInfluence": 68,
+    "craftsmanship": 82,
+    "globalInfluence": 48
+  },
+  "eras": [
+    {
+      "id": "pre-columbian-gold-textiles",
+      "name": "Pre-Columbian Gold & Textiles",
+      "yearRange": [500, 1538],
+      "description": "Colombia's Muisca, Quimbaya, and Tairona civilizations were master goldsmiths and weavers. The legend of El Dorado originated from the Muisca practice of covering their chief in gold dust, while intricate cotton textiles with geometric patterns adorned ceremonial garments.",
+      "keyGarments": [
+        "Muisca gold pectoral ornament",
+        "Woven cotton manta (cloak)",
+        "Tairona nose ring and body adornment"
+      ],
+      "aiImagePrompt": "A Muisca chieftain adorned with an elaborate gold pectoral and emerald jewelry, wrapped in a finely woven cotton manta with geometric red and black patterns, sacred lake ceremony, misty Andean highlands."
+    },
+    {
+      "id": "colonial-spanish-baroque",
+      "name": "Colonial Spanish Baroque",
+      "yearRange": [1538, 1819],
+      "description": "Spanish colonial rule brought European fashion to Colombia's elite while indigenous and African textile traditions persisted in rural areas. Cartagena became a major port where Spanish lace, Philippine silk, and local cotton intersected in a rich creole fashion culture.",
+      "keyGarments": [
+        "Pollera (colonial layered skirt)",
+        "Mantilla lace veil",
+        "Ruana wool poncho"
+      ],
+      "aiImagePrompt": "A colonial Cartagena balcony scene with a creole woman in a white lace-trimmed pollera skirt and embroidered blouse, fanning herself with a Spanish fan, bougainvillea-draped colonial architecture in warm afternoon light."
+    },
+    {
+      "id": "cumbia-carnival-dress",
+      "name": "Cumbia & Carnival Traditions",
+      "yearRange": [1800, 1960],
+      "description": "Colombia's Afro-Caribbean coastal culture produced vibrant festival dress traditions tied to cumbia music and carnival celebrations. The pollera colora of Barranquilla and the layered ruffled skirts of Caribbean Colombia became symbols of national joy and cultural fusion.",
+      "keyGarments": [
+        "Pollera colora (ruffled skirt)",
+        "Cumbia dancer white blouse",
+        "Vueltiao sombrero"
+      ],
+      "aiImagePrompt": "A Barranquilla Carnival dancer in a vivid red and yellow pollera colora with cascading ruffles, flower crown, spinning in dance, confetti in the air, colonial street facade, euphoric atmosphere."
+    },
+    {
+      "id": "medellin-textile-industry",
+      "name": "Medellín Textile Boom",
+      "yearRange": [1940, 1990],
+      "description": "Medellín earned the nickname 'the Manchester of South America' as it became the continent's largest textile manufacturing hub. Coltejer and Fabricato supplied Latin America, creating an industrial fashion infrastructure that would later support a design renaissance.",
+      "keyGarments": [
+        "Colombian cotton work shirt",
+        "Mass-produced guayabera",
+        "Polyester disco suit"
+      ],
+      "aiImagePrompt": "A 1970s Medellín textile factory floor with rows of industrial looms producing colorful cotton fabric, workers in white shirts, Art Deco Coltejer tower visible through windows, warm industrial lighting."
+    },
+    {
+      "id": "colombiamoda-rise",
+      "name": "Colombiamoda & Design Identity",
+      "yearRange": [1990, 2015],
+      "description": "The founding of Colombiamoda in 1990 transformed Medellín from a manufacturing center into a design hub. Colombian designers like Silvia Tcherassi and Hernán Zajar gained international recognition, while the country's transformation story attracted global fashion attention.",
+      "keyGarments": [
+        "Tropical-print cocktail dress",
+        "Colombian swimwear",
+        "Modern ruana coat"
+      ],
+      "aiImagePrompt": "A Colombiamoda runway in Medellín with a model in a flowing tropical-print silk dress with ruffled shoulders, botanical garden venue with orchids, evening fashion show lighting, Latin American elegance."
+    },
+    {
+      "id": "colombian-fashion-global",
+      "name": "Colombian Fashion Goes Global",
+      "yearRange": [2015, 2026],
+      "description": "Colombia has emerged as Latin America's most dynamic fashion ecosystem. Johanna Ortiz became an international sensation with her tropical romanticism, while Medellín and Bogotá support a thriving independent designer scene focused on sustainability and indigenous craft revival.",
+      "keyGarments": [
+        "Palm-print statement dress",
+        "Wayúu-inspired woven accessories",
+        "Sustainable cotton co-ord set"
+      ],
+      "aiImagePrompt": "A Johanna Ortiz-style fashion editorial in a Colombian hacienda garden, model in a dramatic off-shoulder dress with oversized tropical leaf print, straw hat, lush greenery and hummingbirds, romantic golden light."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Wayúu Mochila Weaving",
+      "type": "Woven",
+      "description": "Intricate crochet bags and textiles made by the Wayúu people of La Guajira, featuring geometric patterns (kanás) that represent elements of nature and daily life, each taking weeks to complete.",
+      "origin": "La Guajira Peninsula",
+      "technique": "Single-needle crochet using hand-dyed cotton and acrylic threads in complex geometric patterns"
+    },
+    {
+      "name": "Colombian Fique",
+      "type": "Woven",
+      "description": "A natural fiber from the agave plant used for bags, hats, and fashion accessories, increasingly adopted by sustainable fashion brands as an eco-friendly alternative.",
+      "origin": "Santander & Nariño Departments",
+      "technique": "Hand-spinning and weaving of extracted fique fiber, often combined with natural dyes"
+    },
+    {
+      "name": "Vueltiao Palm Weave",
+      "type": "Woven",
+      "description": "The iconic sombrero vueltiao hat weaving tradition using caña flecha palm, producing black and cream geometric patterns recognized as a symbol of Colombian cultural identity.",
+      "origin": "Tuchín, Córdoba",
+      "technique": "Braiding and coiling of dried caña flecha palm strips into tight geometric spiral patterns"
+    },
+    {
+      "name": "Iraca Palm Straw",
+      "type": "Woven",
+      "description": "Fine straw weaving from the iraca palm used for Panama-style hats (which actually originated in Colombia), fans, and fashion accessories prized for their lightness and flexibility.",
+      "origin": "Sandoná, Nariño",
+      "technique": "Hand-weaving of split iraca palm fibers into fine straw cloth with bleaching and shaping"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical with Altitude Variation",
+    "avgTemp": 24,
+    "humidity": "High (Caribbean coast) to Moderate (Andean highlands)",
+    "fashionImplication": "Colombia's altitude-dependent climates create distinct fashion zones: lightweight cottons and vibrant prints on the Caribbean coast, layered ruanas and wool in the cool Andean highlands, and a perpetual spring wardrobe in Medellín's ideal climate."
+  },
+  "culturalInfluences": [
+    "Pre-Columbian Muisca and Tairona goldwork traditions",
+    "African diaspora rhythms (cumbia, salsa) and festival dress",
+    "Spanish colonial Baroque and Catholic procession garments",
+    "Wayúu and indigenous craft cooperatives",
+    "Medellín's reinvention from conflict zone to design capital",
+    "Colombian coffee culture and rural paisley aesthetic",
+    "Latin American telenovela glamour and celebrity culture"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Colombiamoda",
+        "city": "Medellín",
+        "month": "July",
+        "tier": "Major"
+      },
+      {
+        "name": "Bogotá Fashion Week (BFW)",
+        "city": "Bogotá",
+        "month": "May",
+        "tier": "Regional"
+      }
+    ],
+    "emergingTrends": [
+      "Tropical romanticism in international resort wear",
+      "Wayúu craft luxury collaborations",
+      "Sustainable swimwear and activewear manufacturing",
+      "Medellín as fashion-tech hub",
+      "Natural fiber innovation (fique, iraca palm, organic cotton)"
+    ],
+    "digitalPresence": 65,
+    "ecommercePenetration": 45,
+    "notableEvents": [
+      "Colombiamoda trade fair",
+      "Círculo de la Moda Bogotá",
+      "Barranquilla Carnival costume competitions",
+      "Bogotá International Book Fair fashion crossovers"
+    ]
+  }
+}

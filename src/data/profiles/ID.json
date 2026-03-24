@@ -1,0 +1,168 @@
+{
+  "fashionDNA": {
+    "traditionalism": 88,
+    "innovation": 70,
+    "sustainability": 62,
+    "luxuryIndex": 55,
+    "streetwearInfluence": 72,
+    "craftsmanship": 95,
+    "globalInfluence": 60
+  },
+  "eras": [
+    {
+      "id": "ancient-batik-origins",
+      "name": "Ancient Textile Kingdoms",
+      "yearRange": [800, 1500],
+      "description": "The Javanese courts of Majapahit and Mataram developed batik as a sacred art form tied to Hindu-Buddhist cosmology. Each motif carried spiritual significance, and certain patterns were restricted to royalty through sumptuary laws.",
+      "keyGarments": [
+        "Batik kain panjang (wrap cloth)",
+        "Kemben (chest wrap)",
+        "Songket sarong"
+      ],
+      "aiImagePrompt": "A Javanese court dancer from the Majapahit era wearing a finely drawn batik kain panjang in indigo and brown soga dyes, gold kemben chest wrap, elaborate gold crown and jewelry, temple relief carvings in background."
+    },
+    {
+      "id": "spice-trade-textile-exchange",
+      "name": "Spice Trade and Textile Exchange",
+      "yearRange": [1500, 1670],
+      "description": "Indonesia's position at the center of global spice routes brought Indian patola cloth, Chinese silk, and Arab textiles, creating a rich fusion. Sumatra's weavers developed elaborate gold-threaded songket to compete with imported luxury.",
+      "keyGarments": [
+        "Songket brocade sarong",
+        "Indian patola-inspired cloth",
+        "Baju kurung (tunic)"
+      ],
+      "aiImagePrompt": "A 16th-century Sumatran queen in a Minangkabau court wearing a shimmering gold songket sarong with supplementary weft patterns, a silk baju kurung, and towering gold filigree headdress, tropical palace setting."
+    },
+    {
+      "id": "dutch-colonial-nyonya",
+      "name": "Colonial Fusion and Nyonya Style",
+      "yearRange": [1670, 1942],
+      "description": "Dutch colonial rule created hybrid fashion identities. Peranakan (Nyonya) women developed exquisite beaded slippers and kebaya styles, while Javanese court batik reached its artistic peak under the sultanates of Yogyakarta and Solo.",
+      "keyGarments": [
+        "Kebaya (lace blouse)",
+        "Court batik sarong",
+        "Beaded Nyonya slippers"
+      ],
+      "aiImagePrompt": "A Peranakan Nyonya woman in 1920s Semarang wearing a delicate white lace kebaya over a fine tulis batik sarong in the parang pattern, intricate beaded slippers, kerosang brooches at the neckline."
+    },
+    {
+      "id": "independence-national-dress",
+      "name": "National Identity and Batik Diplomacy",
+      "yearRange": [1945, 1980],
+      "description": "After independence, batik was elevated to a symbol of Indonesian nationhood. President Sukarno popularized batik shirts in diplomatic settings, while UNESCO recognized batik as Intangible Cultural Heritage in 2009.",
+      "keyGarments": [
+        "Batik shirt",
+        "Ikat tenun sarong",
+        "Baju bodo (Bugis blouse)"
+      ],
+      "aiImagePrompt": "President Sukarno era 1960s fashion: an Indonesian diplomat in a crisply tailored batik shirt with parang motif in brown and cream, standing in a mid-century modern government building."
+    },
+    {
+      "id": "muslim-modest-fashion-rise",
+      "name": "The Modest Fashion Revolution",
+      "yearRange": [1990, 2015],
+      "description": "Indonesia emerged as the global capital of Muslim modest fashion. Designers transformed the hijab from a simple covering into a high-fashion statement, creating a multi-billion dollar industry serving 200 million consumers.",
+      "keyGarments": [
+        "Designer hijab",
+        "Modest maxi dresses",
+        "Contemporary kebaya with headscarf"
+      ],
+      "aiImagePrompt": "A contemporary Indonesian modest fashion editorial: a model in an elegant flowing pastel abaya-inspired gown with intricate batik-printed hijab, modern architectural mosque interior with geometric light patterns."
+    },
+    {
+      "id": "jakarta-street-style",
+      "name": "Jakarta Street Style and Digital Fashion",
+      "yearRange": [2015, 2025],
+      "description": "Jakarta's youth have created a vibrant streetwear scene blending Japanese, Korean, and local influences. Social media has democratized fashion, making Indonesia one of the world's most influential markets for digital-first brands.",
+      "keyGarments": [
+        "Oversized batik-print streetwear",
+        "Tenun-accented sneakers",
+        "Modest streetwear layers"
+      ],
+      "aiImagePrompt": "Jakarta street style photography: a young Indonesian creative wearing an oversized vintage batik shirt layered over a graphic tee, wide-leg pants, chunky sneakers, standing in a neon-lit South Jakarta alley."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Batik Tulis",
+      "type": "Wax-Resist Dyed",
+      "description": "Hand-drawn wax-resist dyed cloth where molten wax is applied with a canting (pen-like tool) to create intricate patterns before dyeing. A single cloth can take months to complete.",
+      "origin": "Java (Yogyakarta, Solo, Pekalongan)",
+      "technique": "Hand-drawn wax resist applied with copper canting tool, dipped in natural or synthetic dyes, wax removed by boiling"
+    },
+    {
+      "name": "Songket",
+      "type": "Brocade",
+      "description": "A luxurious supplementary-weft brocade woven with gold or silver metallic threads, traditionally worn for weddings and royal ceremonies across Sumatra, Bali, and Kalimantan.",
+      "origin": "Palembang (South Sumatra), Bali",
+      "technique": "Supplementary weft weaving on a backstrap loom with metallic threads inserted by hand between base weft rows"
+    },
+    {
+      "name": "Ikat Tenun",
+      "type": "Woven",
+      "description": "A resist-dyed woven cloth where patterns are created by tying and dyeing the warp or weft threads before weaving, producing characteristic blurred-edge motifs.",
+      "origin": "Flores, Sumba, Timor (East Nusa Tenggara)",
+      "technique": "Warp threads are tied in bundles and resist-dyed before being set on a backstrap loom for weaving"
+    },
+    {
+      "name": "Gringsing (Double Ikat)",
+      "type": "Woven",
+      "description": "One of the world's rarest textiles, where both warp and weft threads are resist-dyed before weaving, producing geometrically precise sacred patterns. Only produced in one village.",
+      "origin": "Tenganan, Bali",
+      "technique": "Both warp and weft threads are individually tied and dyed multiple times, then aligned precisely on the loom"
+    },
+    {
+      "name": "Ulos",
+      "type": "Woven",
+      "description": "Sacred handwoven cloth of the Batak people, given as gifts at important life ceremonies. Different ulos patterns carry specific social and spiritual meanings.",
+      "origin": "Toba Batak region, North Sumatra",
+      "technique": "Backstrap loom weaving with supplementary weft patterning using hand-spun cotton"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical Equatorial",
+    "avgTemp": 27,
+    "humidity": "Very High",
+    "fashionImplication": "Year-round heat and humidity demand breathable natural fibers like cotton and silk. Loose, flowing silhouettes such as the sarong and kebaya are practical staples. The monsoon season influences the dominance of easy-wash, quick-dry fabrics."
+  },
+  "culturalInfluences": [
+    "Hindu-Buddhist temple art and Javanese court ritual",
+    "Islamic modesty principles and Middle Eastern trade",
+    "Dutch colonial hybrid aesthetics",
+    "Peranakan Chinese-Malay cultural fusion",
+    "Japanese and Korean pop culture influence",
+    "300+ ethnic groups with distinct textile traditions",
+    "The concept of 'adat' (customary law) governing dress codes"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Jakarta Fashion Week",
+        "city": "Jakarta",
+        "month": "October",
+        "tier": "Major"
+      },
+      {
+        "name": "Muslim Fashion Festival (MUFFEST)",
+        "city": "Jakarta",
+        "month": "March",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Modest fashion as global luxury export",
+      "Sustainable batik with natural dyes",
+      "Tenun-streetwear crossover collaborations",
+      "Digital-first Muslim fashion e-commerce",
+      "Heritage textile preservation movements"
+    ],
+    "digitalPresence": 82,
+    "ecommercePenetration": 68,
+    "notableEvents": [
+      "National Batik Day (October 2)",
+      "Indonesia Modest Fashion Week",
+      "Inacraft International Handicraft Trade Fair",
+      "Bekraf Festival (Creative Economy Agency)"
+    ]
+  }
+}

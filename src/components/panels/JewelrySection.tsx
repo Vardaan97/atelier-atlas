@@ -382,7 +382,7 @@ function TraditionalJewelryCard({ iso }: { iso: string }) {
           <Crown className="w-3.5 h-3.5 text-yellow-400" />
           Traditional Jewelry
         </h4>
-        {info.marketRank <= 10 && (
+        {info.marketRank != null && info.marketRank <= 10 && (
           <span className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-yellow-400/10 text-yellow-400">
             #{info.marketRank} Global
           </span>

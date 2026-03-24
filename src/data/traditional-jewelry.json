@@ -178,5 +178,227 @@
     "materials": ["Silver", "Lapis Lazuli", "Turquoise", "Carnelian", "Gold"],
     "significance": "World's primary source of lapis lazuli for over 6,000 years; Kuchi nomadic jewelry is iconic tribal art",
     "marketRank": 30
+  },
+  "PT": {
+    "traditions": ["Viana do Castelo Filigree", "Queen's Heart (Coração de Viana)", "Azorean Whale Ivory", "Portuguese Cannetille"],
+    "materials": ["Gold", "Silver", "Filigree Wire", "Cork", "Whale Ivory"],
+    "significance": "Viana do Castelo gold filigree hearts are Portugal's iconic jewelry symbol; filigree tradition dates to Phoenician contact",
+    "marketRank": 31
+  },
+  "CZ": {
+    "traditions": ["Bohemian Garnet", "Czech Glass Beads", "Art Nouveau Bijouterie", "Jablonec Costume Jewelry"],
+    "materials": ["Bohemian Garnets", "Czech Glass", "Silver", "Gold", "Moldavite"],
+    "significance": "Bohemian garnets have been mined for centuries; Jablonec nad Nisou is the historic capital of European costume jewelry",
+    "marketRank": 32
+  },
+  "AT": {
+    "traditions": ["Swarovski Crystal", "Habsburg Court Jewelry", "Tyrolean Filigree", "Dirndl Brooches"],
+    "materials": ["Crystal", "Gold", "Silver", "Enamel", "Garnets"],
+    "significance": "Home of Swarovski, founded 1895 in Wattens; Habsburg imperial jewels rank among Europe's finest royal collections",
+    "marketRank": 33
+  },
+  "BE": {
+    "traditions": ["Antwerp Diamond Cutting", "Art Nouveau Jewelry", "Flemish Goldsmithing"],
+    "materials": ["Diamonds", "Gold", "Platinum", "Silver", "Enamel"],
+    "significance": "Antwerp handles 80% of the world's rough diamonds; Belgian Art Nouveau jewelers like Philippe Wolfers were pioneers",
+    "marketRank": 34
+  },
+  "NL": {
+    "traditions": ["Dutch Klederdracht Jewelry", "Amsterdam Diamond Polishing", "Zeeland Button Ornaments", "Filigree Oorijzer"],
+    "materials": ["Gold", "Silver", "Diamonds", "Coral", "Garnet"],
+    "significance": "Amsterdam was the world's diamond polishing capital from the 16th century; traditional Dutch regional jewelry reflects provincial identity",
+    "marketRank": 35
+  },
+  "DK": {
+    "traditions": ["Georg Jensen Silverwork", "Viking Revival", "Danish Modernist Design", "Amber Jewelry"],
+    "materials": ["Silver", "Gold", "Amber", "Enamel", "Stainless Steel"],
+    "significance": "Georg Jensen's clean-line silverwork defined Scandinavian modernist jewelry; Denmark leads Nordic contemporary design",
+    "marketRank": 36
+  },
+  "SE": {
+    "traditions": ["Viking Arm Rings", "Sami Duodji Silverwork", "Swedish Modernist Design", "Dala Horse Pendants"],
+    "materials": ["Silver", "Gold", "Reindeer Antler", "Pewter", "Iron"],
+    "significance": "Viking-era silver hoards are among the richest in Scandinavia; Sami duodji is UNESCO-recognized intangible heritage",
+    "marketRank": 37
+  },
+  "NO": {
+    "traditions": ["Bunad Silver (Sølje)", "Viking Filigree", "Sami Jewelry", "Rosemaling-Inspired Pendants"],
+    "materials": ["Silver", "Gold", "Enamel", "Pewter", "Reindeer Horn"],
+    "significance": "Silver sølje brooches are essential to Norwegian bunad folk dress; each region has distinctive filigree patterns",
+    "marketRank": 38
+  },
+  "FI": {
+    "traditions": ["Kalevala Koru", "Lapponia Modernist", "Sami Silver Brooches", "Bronze Age Revival"],
+    "materials": ["Silver", "Bronze", "Gold", "Spectrolite", "Reindeer Bone"],
+    "significance": "Kalevala Koru recreates Iron Age and Viking finds as wearable jewelry; Lapponia's modernist designs won global acclaim",
+    "marketRank": 39
+  },
+  "IE": {
+    "traditions": ["Claddagh Ring", "Celtic Knotwork", "Tara Brooch Revival", "Ogham Inscription Jewelry"],
+    "materials": ["Gold", "Silver", "Connemara Marble", "Bog Oak", "Enamel"],
+    "significance": "The Claddagh ring from Galway is one of the world's most recognized jewelry symbols; Celtic interlace designs date to 450 AD",
+    "marketRank": 40
+  },
+  "CH": {
+    "traditions": ["Swiss Watch Jewelry", "Enamel Miniatures", "Chalet Filigree", "Alpine Crystal"],
+    "materials": ["Gold", "Platinum", "Diamonds", "Enamel", "Alpine Quartz"],
+    "significance": "Swiss haute horlogerie houses like Chopard and Piaget are equally renowned for fine jewelry; Geneva enamel painting is a rare art",
+    "marketRank": 41
+  },
+  "RO": {
+    "traditions": ["Maramureș Filigree", "Brâncuși-Inspired Modernism", "Transylvanian Beadwork", "Orthodox Cross Pendants"],
+    "materials": ["Silver", "Gold", "Glass Beads", "Coral", "Garnet"],
+    "significance": "Romanian folk jewelry traditions survive strongest in Maramureș; each village maintains distinct beadwork and filigree patterns",
+    "marketRank": null
+  },
+  "HU": {
+    "traditions": ["Magyar Filigree", "Herend Porcelain Jewelry", "Hussars' Ornamental Clasps", "Matyo Embroidery Pendants"],
+    "materials": ["Gold", "Silver", "Enamel", "Coral", "Turquoise"],
+    "significance": "Hungarian goldsmithing flourished under the Habsburgs; Magyar filigree and enamel techniques are recognized folk arts",
+    "marketRank": null
+  },
+  "HR": {
+    "traditions": ["Morčić Earrings (Rijeka)", "Šibenik Buttons", "Konavle Filigree", "Pag Lace Jewelry"],
+    "materials": ["Gold", "Silver", "Coral", "Filigree Wire", "Enamel"],
+    "significance": "The Morčić (Moor's head) earring of Rijeka is a UNESCO-listed cultural symbol; Šibenik button filigree dates to the 14th century",
+    "marketRank": null
+  },
+  "BG": {
+    "traditions": ["Thracian Goldwork", "Rose Oil Pendants", "Orthodox Enkolpion Crosses", "Rhodope Silver"],
+    "materials": ["Gold", "Silver", "Rose Quartz", "Garnet", "Enamel"],
+    "significance": "The Thracian gold treasures of Panagyurishte and Varna (4600 BC) are among the oldest worked gold artifacts ever found",
+    "marketRank": null
+  },
+  "AR": {
+    "traditions": ["Gaucho Silver", "Mapuche Trapelacucha", "Mate Bombilla Ornaments", "Rhodochrosite Jewelry"],
+    "materials": ["Silver", "Gold", "Rhodochrosite", "Leather", "Alpaca Metal"],
+    "significance": "Argentina's national gemstone is rhodochrosite (Inca Rose); gaucho silver belt buckles and knife handles are iconic folk art",
+    "marketRank": 42
+  },
+  "CL": {
+    "traditions": ["Mapuche Silver (Platería)", "Lapis Lazuli Jewelry", "Rapa Nui Carvings", "Copperwork"],
+    "materials": ["Silver", "Lapis Lazuli", "Copper", "Gold", "Volcanic Stone"],
+    "significance": "Chile is the world's only commercial source of deep blue lapis lazuli outside Afghanistan; Mapuche silver is a living tradition",
+    "marketRank": 43
+  },
+  "EC": {
+    "traditions": ["Tagua Nut Carving", "Otavalo Beadwork", "Pre-Columbian Gold Replica", "Spondylus Shell Ornaments"],
+    "materials": ["Tagua (Vegetable Ivory)", "Silver", "Gold", "Spondylus Shell", "Glass Beads"],
+    "significance": "Tagua nut ('vegetable ivory') carving is a sustainable Ecuadorian specialty; Otavalo artisans are renowned across South America",
+    "marketRank": null
+  },
+  "GT": {
+    "traditions": ["Jade Carving (Maya Revival)", "Huipil-Inspired Beadwork", "Chachal Necklaces", "Silver Repoussé"],
+    "materials": ["Jade", "Silver", "Gold", "Glass Beads", "Obsidian"],
+    "significance": "Guatemala is the primary source of Maya jade; jadeite was more precious than gold to the ancient Maya civilization",
+    "marketRank": null
+  },
+  "BO": {
+    "traditions": ["Tiwanaku Metalwork", "Cholita Filigree", "Aymara Silver Tupu Pins", "Potosí Colonial Silver"],
+    "materials": ["Silver", "Gold", "Tin", "Amethyst", "Ametrine"],
+    "significance": "Bolivia's Potosí silver mines fueled global trade for centuries; the Anahi mine is the world's only source of ametrine",
+    "marketRank": null
+  },
+  "CA": {
+    "traditions": ["Haida Argillite Carving", "Inuit Soapstone", "Northwest Coast Formline", "Canadian Diamond Jewelry"],
+    "materials": ["Gold", "Diamonds", "Silver", "Argillite", "Ammolite"],
+    "significance": "Canada is the world's third-largest diamond producer; ammolite from Alberta is found nowhere else on Earth",
+    "marketRank": 44
+  },
+  "KE": {
+    "traditions": ["Maasai Beadwork", "Swahili Gold Filigree", "Turkana Aluminum", "Kikuyu Brass Coils"],
+    "materials": ["Glass Beads", "Gold", "Silver", "Brass", "Aluminum"],
+    "significance": "Maasai beadwork is among the most recognized African jewelry traditions; bead colors encode age, status, and clan identity",
+    "marketRank": null
+  },
+  "TZ": {
+    "traditions": ["Tanzanite Jewelry", "Maasai Beadwork", "Makonde Ebony Pendants", "Tingatinga-Inspired Designs"],
+    "materials": ["Tanzanite", "Gold", "Silver", "Ebony", "Glass Beads"],
+    "significance": "Tanzania is the world's sole source of tanzanite, discovered in 1967 near Mount Kilimanjaro; it rivals sapphire in value",
+    "marketRank": 45
+  },
+  "SN": {
+    "traditions": ["Wolof Gold Filigree", "Tukulor Amber", "Serer Cowrie Jewelry", "Senegalese Glass Bead Necklaces"],
+    "materials": ["Gold", "Silver", "Amber", "Cowrie Shells", "Glass Beads"],
+    "significance": "West African gold jewelry tradition thrives in Dakar's markets; Senegalese women's gold parure sets mark major life milestones",
+    "marketRank": null
+  },
+  "ML": {
+    "traditions": ["Tuareg Silver Crosses", "Bambara Gold", "Dogon Bronze Casting", "Fulani Twisted Gold Earrings"],
+    "materials": ["Silver", "Gold", "Bronze", "Leather", "Semi-Precious Stones"],
+    "significance": "The Agadez Cross and its variants are iconic Tuareg designs; Dogon lost-wax bronze casting is an ancient art form",
+    "marketRank": null
+  },
+  "CI": {
+    "traditions": ["Baoulé Gold Casting", "Dan Mask Pendants", "Senufo Brass Jewelry", "Akan Goldweights"],
+    "materials": ["Gold", "Brass", "Bronze", "Glass Beads", "Cowrie Shells"],
+    "significance": "Baoulé lost-wax gold casting continues a tradition spanning millennia; Côte d'Ivoire is West Africa's second-largest gold producer",
+    "marketRank": null
+  },
+  "AU": {
+    "traditions": ["Opal Jewelry", "Aboriginal Dot-Art Pendants", "Gold Rush Heritage", "South Sea Pearl Farming"],
+    "materials": ["Opals", "Gold", "South Sea Pearls", "Silver", "Sapphires"],
+    "significance": "Australia produces 95% of the world's precious opals; Lightning Ridge black opals are the most valuable variety",
+    "marketRank": 46
+  },
+  "NZ": {
+    "traditions": ["Māori Pounamu (Greenstone)", "Bone Carving (Koru)", "Hei-Tiki Pendants", "Pāua Shell Inlay"],
+    "materials": ["Pounamu (Nephrite Jade)", "Bone", "Pāua Shell", "Gold", "Silver"],
+    "significance": "Pounamu (greenstone) taonga are treasured Māori heirlooms with spiritual significance; each piece gains mana through its lineage",
+    "marketRank": 47
+  },
+  "PK": {
+    "traditions": ["Peshawari Silver", "Multani Enamelwork", "Balochi Needlework Jewelry", "Swati Emerald Settings"],
+    "materials": ["Silver", "Gold", "Emeralds", "Rubies", "Lapis Lazuli", "Enamel"],
+    "significance": "The Swat Valley produces fine emeralds; Pakistani bridal jewelry sets (jhoomar, matha patti, nath) are elaborate multi-piece ensembles",
+    "marketRank": 48
+  },
+  "NP": {
+    "traditions": ["Newari Filigree", "Tharu Silver", "Tibetan Coral and Turquoise", "Limbu Gold Ornaments"],
+    "materials": ["Gold", "Silver", "Turquoise", "Coral", "Semi-Precious Stones"],
+    "significance": "Newar artisans of Patan are renowned metalworkers; Nepali jewelry blends Hindu, Buddhist, and indigenous tribal traditions",
+    "marketRank": null
+  },
+  "IR": {
+    "traditions": ["Isfahan Minakari Enamel", "Turquoise of Nishapur", "Persian Filigree", "Qajar Goldwork"],
+    "materials": ["Gold", "Silver", "Turquoise", "Enamel", "Pearls", "Carnelian"],
+    "significance": "Nishapur turquoise has been mined for over 2,000 years and is considered the world's finest; Isfahan enamel is a UNESCO-listed craft",
+    "marketRank": 49
+  },
+  "IQ": {
+    "traditions": ["Mesopotamian Revival", "Marsh Arab Silver", "Kurdish Filigree", "Mandaean Silverwork"],
+    "materials": ["Gold", "Silver", "Turquoise", "Lapis Lazuli", "Agate"],
+    "significance": "Mesopotamia was the cradle of goldsmithing; the Royal Tombs of Ur (2600 BC) contained the earliest known fine jewelry",
+    "marketRank": null
+  },
+  "JO": {
+    "traditions": ["Bedouin Silver Amulets", "Circassian Filigree", "Nabataean Revival", "Palestinian Embroidery Pendants"],
+    "materials": ["Silver", "Gold", "Turquoise", "Coral", "Agate"],
+    "significance": "Bedouin jewelry traditions are living heritage; bridal dowry pieces like the saffeh headdress encode family wealth and status",
+    "marketRank": null
+  },
+  "LB": {
+    "traditions": ["Phoenician Revival Goldwork", "Armenian Filigree", "Beirut Art Deco", "Cedar Motif Pendants"],
+    "materials": ["Gold", "Diamonds", "Silver", "Enamel", "Pearls"],
+    "significance": "Phoenicians pioneered glass bead and gold granulation techniques; modern Beirut is the fine jewelry capital of the Arab world",
+    "marketRank": 50
+  },
+  "SA": {
+    "traditions": ["Bedouin Gold Dowry", "Hijazi Filigree", "Najdi Silver Belts", "Islamic Geometric Pendants"],
+    "materials": ["Gold", "Silver", "Pearls", "Turquoise", "Coral"],
+    "significance": "Saudi Arabia is the largest gold jewelry market in the Middle East; traditional bridal gold sets can weigh several kilograms",
+    "marketRank": 9
+  },
+  "OM": {
+    "traditions": ["Omani Khanjar Silver", "Bedouin Hirz Amulets", "Sur Pearl Diving Heritage", "Frankincense Resin Beads"],
+    "materials": ["Silver", "Gold", "Pearls", "Turquoise", "Frankincense Resin"],
+    "significance": "The silver khanjar (dagger) is Oman's national symbol; Omani pearl diving heritage predates the oil era by millennia",
+    "marketRank": null
+  },
+  "UZ": {
+    "traditions": ["Bukhara Goldwork", "Samarkand Filigree", "Uzbek Tumor Pendants", "Khorezm Silverwork"],
+    "materials": ["Gold", "Silver", "Turquoise", "Carnelian", "Lapis Lazuli", "Coral"],
+    "significance": "Silk Road crossroads city of Bukhara was famed for goldsmithing; Uzbek tumor amulet pendants are collected worldwide",
+    "marketRank": null
   }
 }

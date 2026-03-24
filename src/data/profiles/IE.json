@@ -1,0 +1,162 @@
+{
+  "fashionDNA": {
+    "traditionalism": 75,
+    "innovation": 58,
+    "sustainability": 78,
+    "luxuryIndex": 48,
+    "streetwearInfluence": 40,
+    "craftsmanship": 88,
+    "globalInfluence": 52
+  },
+  "eras": [
+    {
+      "id": "celtic-medieval-dress",
+      "name": "Celtic & Medieval Dress",
+      "yearRange": [500, 1600],
+      "description": "Early Irish dress was distinguished by the léine (long linen tunic) and the brat (wool cloak) fastened with elaborate penannular brooches. Celtic metalwork and interlace patterns on accessories reflected a sophisticated artistic tradition that predated Viking and Norman influence.",
+      "keyGarments": [
+        "Léine (linen tunic)",
+        "Brat (wool cloak)",
+        "Tara-style penannular brooch"
+      ],
+      "aiImagePrompt": "A medieval Irish chieftain wearing a saffron-dyed linen léine gathered at the waist, draped in a deep green wool brat fastened with an ornate gold Celtic brooch, standing in a misty ringfort, soft grey light."
+    },
+    {
+      "id": "gaelic-resistance-dress",
+      "name": "Gaelic Dress & Colonial Resistance",
+      "yearRange": [1600, 1845],
+      "description": "English colonial rule attempted to suppress Irish dress through sumptuary laws, making traditional clothing an act of cultural defiance. The Irish mantle cloak was banned by statute, yet persisted in rural areas as a symbol of Gaelic identity.",
+      "keyGarments": [
+        "Irish mantle (fallaing)",
+        "Trews (fitted trousers)",
+        "Homespun wool dress"
+      ],
+      "aiImagePrompt": "An 18th-century rural Irish scene with a woman wrapped in a large wool mantle cloak dyed with natural lichens, standing by a thatched cottage in a green valley, mist rolling over stone walls, painterly atmosphere."
+    },
+    {
+      "id": "celtic-revival-aran",
+      "name": "Celtic Revival & Aran Knitting",
+      "yearRange": [1880, 1940],
+      "description": "The Celtic Revival movement rediscovered and romanticized Irish craft traditions. Aran Island fisherman sweaters, tweed weaving, and lace-making from Carrickmacross and Limerick were elevated from subsistence crafts to symbols of national cultural heritage.",
+      "keyGarments": [
+        "Aran cable-knit sweater",
+        "Donegal tweed jacket",
+        "Carrickmacross lace collar"
+      ],
+      "aiImagePrompt": "An Aran Islands fisherman in a cream cable-knit báinín sweater with honeycomb and diamond patterns, dark wool trousers, standing on a limestone pier with a currach boat, Atlantic waves, overcast silver sky."
+    },
+    {
+      "id": "tweed-linen-industry",
+      "name": "Tweed & Linen Golden Age",
+      "yearRange": [1920, 1970],
+      "description": "Independent Ireland built its textile identity around Donegal tweed, Irish linen, and Aran knitwear. Sybil Connolly became Ireland's first internationally renowned couturier, famously using pleated Irish linen for evening gowns that dressed Jacqueline Kennedy.",
+      "keyGarments": [
+        "Sybil Connolly pleated linen gown",
+        "Donegal tweed walking suit",
+        "Aran cardigan coat"
+      ],
+      "aiImagePrompt": "A 1950s fashion portrait of a woman in a Sybil Connolly-style evening gown of finely pleated white Irish linen, cascading like liquid, emerald jewelry, Georgian Dublin drawing room with candlelight."
+    },
+    {
+      "id": "celtic-tiger-fashion",
+      "name": "Celtic Tiger Modernization",
+      "yearRange": [1995, 2010],
+      "description": "Ireland's economic boom brought international fashion retail and a new generation of Irish designers. Brands like Orla Kiely and Philip Treacy achieved global fame, while Dublin's Temple Bar became a creative hub blending Irish heritage with contemporary European style.",
+      "keyGarments": [
+        "Orla Kiely print dress",
+        "Philip Treacy sculptural hat",
+        "Modern tweed blazer"
+      ],
+      "aiImagePrompt": "A Celtic Tiger era Dublin street style scene in Temple Bar, a woman in a retro Orla Kiely stem-print coat in olive and orange, carrying a structured leather bag, colorful pub facades in the background."
+    },
+    {
+      "id": "contemporary-irish-craft",
+      "name": "Contemporary Craft Revival",
+      "yearRange": [2010, 2026],
+      "description": "Post-recession Ireland saw a return to artisanal values and heritage craft. Designers like Simone Rocha, JW Anderson (from Derry), and Paul Costelloe blend Irish sensibility with international fashion. Sustainable Irish wool and linen are experiencing a renaissance.",
+      "keyGarments": [
+        "Simone Rocha tulle and pearl dress",
+        "Sustainable Irish wool overcoat",
+        "Modern Aran knit in fashion colors"
+      ],
+      "aiImagePrompt": "A contemporary Irish fashion editorial at the Cliffs of Moher, a model in a Simone Rocha-style black tulle dress with pearl embellishments over a chunky cream Aran knit sweater, wild Atlantic wind, dramatic cliff edges."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Aran Cable Knit",
+      "type": "Knitted",
+      "description": "Complex cable, honeycomb, diamond, and basket-stitch patterns hand-knitted in undyed cream báinín wool, originally from the Aran Islands. Each stitch pattern carries symbolic meaning related to fishing, farming, and family.",
+      "origin": "Aran Islands, County Galway",
+      "technique": "Hand-knitting with unscoured lanolin-rich wool using up to 30 distinct cable and texture stitches"
+    },
+    {
+      "name": "Donegal Tweed",
+      "type": "Woven",
+      "description": "A distinctive handwoven wool tweed featuring colorful flecked nubs against heathered backgrounds, reflecting the wild landscape of County Donegal in its color palette.",
+      "origin": "County Donegal",
+      "technique": "Hand-loom twill weaving with hand-spun wool incorporating colored nep fibers for signature flecked texture"
+    },
+    {
+      "name": "Irish Linen",
+      "type": "Woven",
+      "description": "Once the world's finest linen, produced from flax grown in the damp Irish climate. Belfast was the global center of linen production, and Irish linen remains synonymous with quality and luxury.",
+      "origin": "Belfast & Ulster",
+      "technique": "Wet-spinning of retted flax fiber and damask weaving on power looms for fine tableware and dress fabric"
+    },
+    {
+      "name": "Carrickmacross Lace",
+      "type": "Embroidered",
+      "description": "A delicate lace tradition combining appliqué and guipure techniques, developed during the Famine era as a cottage industry. Used for bridal veils, collars, and ecclesiastical vestments.",
+      "origin": "Carrickmacross, County Monaghan",
+      "technique": "Muslin appliqué on net ground with connecting bars and chain-stitch outlining, all done by hand"
+    },
+    {
+      "name": "Crios Belt Weaving",
+      "type": "Woven",
+      "description": "A multicolored finger-woven belt from the Aran Islands, traditionally used to secure the báinín trousers. Each color pattern is unique and the craft requires no loom, only the weaver's fingers.",
+      "origin": "Aran Islands, County Galway",
+      "technique": "Finger-weaving (tablet-less card weaving) using brightly dyed wool yarns in geometric patterns"
+    }
+  ],
+  "climate": {
+    "zone": "Maritime Temperate (Oceanic)",
+    "avgTemp": 10,
+    "humidity": "High (75-85%)",
+    "fashionImplication": "Ireland's persistently damp, mild climate with frequent rain showers has shaped a fashion culture around waterproof outerwear, layered knitwear, and robust tweeds. The lack of extreme temperatures favors versatile, all-season garments."
+  },
+  "culturalInfluences": [
+    "Celtic artistic heritage and illuminated manuscript traditions",
+    "Irish literary tradition (Yeats, Wilde, Joyce) and bohemian style",
+    "Catholic and monastic dress traditions",
+    "Rural farming and fishing community practicality",
+    "Irish diaspora influence (Irish-American fashion feedback)",
+    "Traditional music (trad) and dance costume culture",
+    "Post-colonial identity reclamation through craft"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Irish Fashion Innovation Awards",
+        "city": "Dublin",
+        "month": "November",
+        "tier": "Regional"
+      }
+    ],
+    "emergingTrends": [
+      "Heritage craft revival with modern silhouettes",
+      "Sustainable Irish wool and linen supply chains",
+      "Simone Rocha's romantic Irish femininity on global stage",
+      "Tech-fashion crossover from Dublin's Silicon Docks",
+      "Neo-Aran knitwear in contemporary fashion colors"
+    ],
+    "digitalPresence": 58,
+    "ecommercePenetration": 62,
+    "notableEvents": [
+      "Irish Fashion Innovation Awards",
+      "Design & Crafts Council Ireland showcases",
+      "Showcase Ireland at RDS Dublin",
+      "Galway International Arts Festival fashion events"
+    ]
+  }
+}

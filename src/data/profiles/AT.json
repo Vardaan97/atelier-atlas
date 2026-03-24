@@ -1,0 +1,168 @@
+{
+  "fashionDNA": {
+    "traditionalism": 80,
+    "innovation": 68,
+    "sustainability": 70,
+    "luxuryIndex": 72,
+    "streetwearInfluence": 40,
+    "craftsmanship": 90,
+    "globalInfluence": 55
+  },
+  "eras": [
+    {
+      "id": "habsburg-imperial-splendor",
+      "name": "Habsburg Imperial Splendor",
+      "yearRange": [1500, 1740],
+      "description": "The Habsburg court in Vienna set the standard for Central European dress with Spanish-influenced formality and lavish use of silk, fur, and precious metals. Court protocol dictated fashion with extraordinary rigidity.",
+      "keyGarments": [
+        "Spanish-style doublet",
+        "Ruff collar",
+        "Court train gown"
+      ],
+      "aiImagePrompt": "A 16th-century Habsburg emperor in a black velvet doublet slashed to reveal gold silk underneath, wearing a massive white lace ruff and a jeweled Order of the Golden Fleece pendant, in a Vienna palace throne room."
+    },
+    {
+      "id": "empress-maria-theresa",
+      "name": "Rococo Vienna",
+      "yearRange": [1740, 1800],
+      "description": "Under Empress Maria Theresa, Vienna rivaled Versailles in opulence. Austrian Rococo fashion featured lighter pastel fabrics, elaborate wigs, and jeweled accessories while the empress herself used dress as a tool of statecraft.",
+      "keyGarments": [
+        "Robes à la française",
+        "Powdered wigs",
+        "Embroidered waistcoats"
+      ],
+      "aiImagePrompt": "An 18th-century Viennese court scene: a noblewoman in a wide-skirted pastel pink silk gown with silver embroidery and lace trim, powdered hair adorned with pearls, in a chandelier-lit Schönbrunn Palace ballroom."
+    },
+    {
+      "id": "biedermeier-restraint",
+      "name": "Biedermeier Domesticity",
+      "yearRange": [1815, 1848],
+      "description": "Post-Napoleonic austerity gave rise to the Biedermeier period, emphasizing modest, practical bourgeois dress. Women favored full sleeves and natural waists, while men adopted the frock coat as everyday wear.",
+      "keyGarments": [
+        "Gigot (leg-of-mutton) sleeves",
+        "Frock coat",
+        "Spitzenhäubchen (lace cap)"
+      ],
+      "aiImagePrompt": "A Biedermeier-era Viennese couple in a parlor: the woman in a high-waisted muslin dress with enormous puffed sleeves and a lace cap, the man in a dark frock coat, soft natural window light."
+    },
+    {
+      "id": "fin-de-siecle-vienna",
+      "name": "Fin-de-Siècle Vienna",
+      "yearRange": [1890, 1918],
+      "description": "Vienna became Europe's cultural cauldron. The Wiener Werkstätte revolutionized fashion by merging fine art with clothing design, while Gustav Klimt and Emilie Flöge created avant-garde reform dresses rejecting corsetry.",
+      "keyGarments": [
+        "Wiener Werkstätte printed dress",
+        "Klimt-Flöge reform gown",
+        "Loden cape"
+      ],
+      "aiImagePrompt": "A Secessionist-era woman in 1905 Vienna wearing a flowing, uncorseted Klimt-inspired reform dress with geometric gold and turquoise patterns, standing in a Wiener Werkstätte interior with Josef Hoffmann furniture."
+    },
+    {
+      "id": "alpine-tracht-codification",
+      "name": "Tracht Revival and Alpine Identity",
+      "yearRange": [1920, 1960],
+      "description": "Alpine folk dress was codified and romanticized as a symbol of Austrian identity. The Dirndl and Lederhosen transitioned from rural workwear to national costume, surviving both the interwar period and post-war reconstruction.",
+      "keyGarments": [
+        "Dirndl",
+        "Lederhosen",
+        "Loden Janker (jacket)"
+      ],
+      "aiImagePrompt": "A 1930s Austrian alpine scene: a woman in a traditional Dirndl with checked apron and puffed-sleeve blouse, a man in Lederhosen with embroidered suspenders, standing in a flower-filled Tyrolean meadow with mountain peaks."
+    },
+    {
+      "id": "viennese-design-modernism",
+      "name": "Viennese Design Modernism",
+      "yearRange": [1980, 2025],
+      "description": "A new wave of Austrian designers blends Helmut Lang's radical minimalism with sustainable Alpine materials. Vienna's fashion scene emphasizes intellectual, concept-driven design that bridges heritage craft and contemporary architecture.",
+      "keyGarments": [
+        "Deconstructed tailoring",
+        "Sustainable Loden coats",
+        "Minimalist knitwear"
+      ],
+      "aiImagePrompt": "A contemporary Viennese fashion editorial in a Brutalist museum courtyard: a model in an architecturally cut charcoal Loden coat with asymmetric closure, paired with sleek black trousers, overcast light."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Loden",
+      "type": "Felted",
+      "description": "A dense, waterproof boiled wool fabric originating in the Tyrolean Alps, renowned for its durability and weather resistance. It remains a cornerstone of Austrian outerwear.",
+      "origin": "Tyrol and Salzburg",
+      "technique": "Wool is woven then repeatedly fulled (boiled and beaten) to create a dense, water-repellent felt"
+    },
+    {
+      "name": "Viennese Silk Brocade",
+      "type": "Woven",
+      "description": "Luxurious silk brocade with metallic thread supplementary weft patterns, historically produced for Habsburg court gowns and ecclesiastical vestments.",
+      "origin": "Vienna",
+      "technique": "Jacquard weaving with silk warp and metallic gold or silver supplementary weft"
+    },
+    {
+      "name": "Tyrolean Linen",
+      "type": "Woven",
+      "description": "Crisp, handwoven linen used for Dirndl blouses and traditional shirts, often bleached white and finished with delicate drawn-thread embroidery.",
+      "origin": "Tyrol and Vorarlberg",
+      "technique": "Flax fiber spun and woven on narrow looms, then bleached on alpine meadows"
+    },
+    {
+      "name": "Gmundner Embroidery",
+      "type": "Embroidered",
+      "description": "Intricate whitework embroidery on fine linen, featuring floral and geometric motifs specific to the Salzkammergut lake region.",
+      "origin": "Gmunden, Upper Austria",
+      "technique": "Hand-stitched cutwork and drawn-thread embroidery on fine white linen"
+    },
+    {
+      "name": "Wiener Werkstätte Printed Silk",
+      "type": "Printed",
+      "description": "Bold, geometric and floral printed silks designed by artists of the Wiener Werkstätte, bridging fine art and fashion in the early 20th century.",
+      "origin": "Vienna",
+      "technique": "Hand-printed silk using woodblock and later screen printing with artist-designed patterns"
+    }
+  ],
+  "climate": {
+    "zone": "Continental Alpine",
+    "avgTemp": 7,
+    "humidity": "Moderate",
+    "fashionImplication": "Cold alpine winters and significant snowfall demand heavy wool outerwear, Loden cloaks, and substantial leather boots. The continental climate produces hot summers in eastern lowlands, requiring lighter seasonal wardrobes."
+  },
+  "culturalInfluences": [
+    "Habsburg multi-ethnic empire and court protocol",
+    "Wiener Werkstätte and Secessionist art movement",
+    "Alpine pastoral traditions and Tracht customs",
+    "Viennese coffeehouse intellectual culture",
+    "Classical music and opera costume traditions",
+    "Catholic Baroque ecclesiastical splendor",
+    "Post-war reconstruction and Helmut Lang's minimalism"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Vienna Fashion Week",
+        "city": "Vienna",
+        "month": "September",
+        "tier": "Emerging"
+      },
+      {
+        "name": "MQ Vienna Fashion Week",
+        "city": "Vienna",
+        "month": "September",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Sustainable Loden luxury reinvention",
+      "Neo-Tracht contemporary folk fusion",
+      "Concept-driven intellectual fashion",
+      "Alpine-urban crossover outerwear",
+      "Circular fashion and textile recycling"
+    ],
+    "digitalPresence": 65,
+    "ecommercePenetration": 62,
+    "notableEvents": [
+      "Austrian Fashion Awards",
+      "Vienna Design Week",
+      "Take Festival Linz (fashion + art)",
+      "Salzburg Festival costume exhibitions"
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "fashionDNA": {
+    "traditionalism": 45,
+    "innovation": 90,
+    "sustainability": 88,
+    "luxuryIndex": 58,
+    "streetwearInfluence": 75,
+    "craftsmanship": 70,
+    "globalInfluence": 72
+  },
+  "eras": [
+    {
+      "id": "golden-age-dutch-dress",
+      "name": "Dutch Golden Age",
+      "yearRange": [1588, 1700],
+      "description": "The Dutch Republic's immense mercantile wealth created a distinctive fashion culture that balanced Calvinist restraint with luxurious materials. Black silk, white linen, and elaborate lace collars became the paradoxical uniform of the world's richest merchant class.",
+      "keyGarments": [
+        "Millstone ruff collar",
+        "Black silk huik",
+        "Slashed velvet doublet"
+      ],
+      "aiImagePrompt": "A Dutch Golden Age merchant couple in a Vermeer-style interior, the woman in a black silk gown with white lace millstone ruff and pearl earring, the man in a slashed velvet doublet, warm window light on Delft tiles."
+    },
+    {
+      "id": "colonial-trade-textiles",
+      "name": "VOC & Colonial Trade Textiles",
+      "yearRange": [1602, 1800],
+      "description": "The Dutch East India Company transformed global fashion by importing Indonesian batik, Indian chintz, and Chinese silk. These trade textiles revolutionized European tastes and established Amsterdam as a hub of global textile commerce.",
+      "keyGarments": [
+        "Chintz morning gown (Japonsche rok)",
+        "Batik-influenced fabrics",
+        "Indian cotton prints"
+      ],
+      "aiImagePrompt": "A wealthy 18th-century Dutch merchant wearing an ornate Indian chintz Japonsche rok dressing gown over silk breeches, seated in an Amsterdam canal house study surrounded by VOC trade goods and porcelain, golden Rembrandt lighting."
+    },
+    {
+      "id": "folk-regional-dress",
+      "name": "Regional Folk Costumes",
+      "yearRange": [1700, 1930],
+      "description": "The Netherlands developed remarkably distinct regional costumes, from the winged lace caps of Zeeland to the striped fabrics of Staphorst. Volendam and Marken fishing village dress became internationally recognized symbols of Dutch identity.",
+      "keyGarments": [
+        "Volendam peaked cap",
+        "Zeeland lace bonnet",
+        "Staphorst striped fabric"
+      ],
+      "aiImagePrompt": "A Dutch woman from Volendam in traditional costume with pointed white lace cap, floral chintz bodice, striped apron, and wooden klompen clogs, standing before a drawbridge over a canal with windmills, soft overcast light."
+    },
+    {
+      "id": "de-stijl-modernism",
+      "name": "De Stijl & Modernist Fashion",
+      "yearRange": [1917, 1960],
+      "description": "The De Stijl movement's geometric abstraction and primary color palette influenced Dutch fashion and textile design. Mondrian's compositions would later directly inspire Yves Saint Laurent and continue to shape Dutch design thinking.",
+      "keyGarments": [
+        "Geometric print dress",
+        "Bauhaus-influenced workwear",
+        "Modernist graphic textiles"
+      ],
+      "aiImagePrompt": "A 1930s Dutch woman in a bold geometric dress inspired by Mondrian's color blocks in red, blue, yellow, and white, standing in a De Stijl-designed interior with Rietveld furniture, sharp angular shadows."
+    },
+    {
+      "id": "dutch-avant-garde",
+      "name": "Dutch Avant-Garde & Conceptual Fashion",
+      "yearRange": [1990, 2015],
+      "description": "Dutch fashion exploded onto the global stage with Viktor & Rolf's theatrical couture, Iris van Herpen's 3D-printed innovations, and the conceptual approach taught at Arnhem's ArtEZ academy. The Netherlands became synonymous with fashion-as-art.",
+      "keyGarments": [
+        "Viktor & Rolf upside-down dress",
+        "Iris van Herpen 3D-printed gown",
+        "Conceptual deconstructed garments"
+      ],
+      "aiImagePrompt": "A dramatic fashion show moment featuring a model in an Iris van Herpen sculptural 3D-printed gown with translucent fractal-like panels, walking through a beam of white light in a dark Amsterdam warehouse, haute couture editorial."
+    },
+    {
+      "id": "amsterdam-sustainable-fashion",
+      "name": "Amsterdam & Sustainable Innovation",
+      "yearRange": [2015, 2026],
+      "description": "Amsterdam positioned itself as the global capital of sustainable fashion through initiatives like Fashion for Good and a thriving denim innovation scene. Dutch brands lead in circular fashion, biomaterials, and transparent supply chains.",
+      "keyGarments": [
+        "Recycled denim",
+        "Biomaterial fashion pieces",
+        "Minimalist cycling-friendly wear"
+      ],
+      "aiImagePrompt": "Amsterdam street style featuring a young Dutch designer in recycled indigo denim, a structured linen blazer, and sustainable sneakers, cycling across a canal bridge with narrow gabled houses reflected in the water, bright spring daylight."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Haarlem Linen",
+      "type": "Woven",
+      "description": "The finest bleached linen in Europe for centuries, Haarlem's bleaching fields produced the luminous white fabric that defined Dutch Golden Age fashion and painting.",
+      "origin": "Haarlem, North Holland",
+      "technique": "Flax weaving followed by extended sun-bleaching on grass fields"
+    },
+    {
+      "name": "Staphorst Fabric",
+      "type": "Printed",
+      "description": "Distinctive small-scale dotted and striped cotton prints in deep blue and green, unique to the conservative village of Staphorst and still worn as traditional dress.",
+      "origin": "Staphorst, Overijssel",
+      "technique": "Block-printed and resist-dyed cotton with characteristic dot motifs"
+    },
+    {
+      "name": "Dutch Wax Print",
+      "type": "Printed",
+      "description": "Originally produced in the Netherlands for the Indonesian market, these vibrant batik-inspired prints became iconic across West Africa, creating a complex colonial textile legacy.",
+      "origin": "Helmond (Vlisco factory)",
+      "technique": "Industrial resin-resist wax printing on cotton, producing characteristic crackle patterns"
+    },
+    {
+      "name": "Delft Blue Textile",
+      "type": "Printed",
+      "description": "Fashion textiles inspired by the iconic blue and white Delft pottery patterns, incorporating windmill, tulip, and maritime motifs into contemporary Dutch fashion.",
+      "origin": "Delft, South Holland",
+      "technique": "Screen-printed and digitally printed cotton and silk using traditional Delft tile motifs"
+    }
+  ],
+  "climate": {
+    "zone": "Temperate Maritime",
+    "avgTemp": 10,
+    "humidity": "High",
+    "fashionImplication": "The Netherlands' flat, wind-swept landscape and frequent rain demand practical, weather-resistant clothing. The cycling-first culture has uniquely shaped Dutch fashion toward garments that are both stylish and functional on a bicycle, driving a distinctive urban pragmatism."
+  },
+  "culturalInfluences": [
+    "Dutch Golden Age mercantile wealth and Calvinist restraint",
+    "VOC colonial trade and global textile exchange",
+    "De Stijl movement and geometric abstraction",
+    "Cycling culture and urban pragmatism",
+    "Dutch tolerance and progressive social values",
+    "Indonesian and Surinamese diaspora communities",
+    "Conceptual art and design academy tradition"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Amsterdam Fashion Week",
+        "city": "Amsterdam",
+        "month": "January, September",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Circular denim and jeans innovation",
+      "3D-printed and biomaterial fashion",
+      "Post-colonial textile discourse",
+      "Tech-fashion crossover wearables",
+      "Radical transparency in supply chains"
+    ],
+    "digitalPresence": 85,
+    "ecommercePenetration": 88,
+    "notableEvents": [
+      "Fashion for Good Museum and initiatives",
+      "Dutch Design Week (Eindhoven)",
+      "Modefabriek trade show",
+      "Hague Fashion Alliance programs"
+    ]
+  }
+}

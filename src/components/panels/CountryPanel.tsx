@@ -8,7 +8,7 @@ import { useGlobeStore } from '@/store/useGlobeStore';
 import { PANEL_TABS } from '@/lib/constants';
 import { cn, formatCurrency } from '@/lib/utils';
 import { useAiProfile } from '@/hooks/useAiProfile';
-import { useIsMobile } from '@/hooks/useIsMobile';
+import { useBreakpoint } from '@/hooks/useBreakpoint';
 import { FashionDNAChart } from '@/components/charts/RadarChart';
 import { TraditionalTab } from './TraditionalTab';
 import { IndustryTab } from './IndustryTab';
@@ -27,7 +27,9 @@ export function CountryPanel() {
   const setPanelOpen = useGlobeStore((s) => s.setPanelOpen);
   const activeTab = useGlobeStore((s) => s.activeTab);
   const setActiveTab = useGlobeStore((s) => s.setActiveTab);
-  const isMobile = useIsMobile();
+  const bp = useBreakpoint();
+  const isPhone = bp === 'xs' || bp === 'sm';
+  const isXs = bp === 'xs';
 
   const country = useMemo(
     () => countries.find((c) => c.iso === selectedCountry),
@@ -36,8 +38,8 @@ export function CountryPanel() {
 
   const { profile, loading: profileLoading } = useAiProfile(country || null);
 
-  // Mobile-friendly short tab labels
-  const mobileTabLabels: Record<string, string> = {
+  // Compact tab labels for phones
+  const shortTabLabels: Record<string, string> = {
     traditional: 'Trad.',
     colors: 'Colors',
     timeline: 'Timeline',
@@ -48,18 +50,36 @@ export function CountryPanel() {
     'ai-studio': 'AI',
   };
 
+  // Even shorter labels for small phones (< 640px)
+  const xsTabLabels: Record<string, string> = {
+    traditional: 'Trad',
+    colors: 'Color',
+    timeline: 'Time',
+    industry: 'Biz',
+    jewelry: 'Gem',
+    culture: 'Cult',
+    contemporary: 'Now',
+    'ai-studio': 'AI',
+  };
+
+  const getTabLabel = (tab: { id: string; label: string }) => {
+    if (isXs) return xsTabLabels[tab.id] || tab.label;
+    if (isPhone) return shortTabLabels[tab.id] || tab.label;
+    return tab.label;
+  };
+
   // Shared panel content
   const panelContent = country ? (
     <>
       {/* Drag handle for mobile bottom sheet */}
-      {isMobile && (
+      {isPhone && (
         <div className="flex justify-center pt-3 pb-1 shrink-0">
           <div className="w-10 h-1 rounded-full bg-white/20" />
         </div>
       )}
 
       {/* Header */}
-      <div className={cn('border-b border-white/10 shrink-0 relative overflow-hidden', isMobile ? 'p-4' : 'p-6')}>
+      <div className={cn('border-b border-white/10 shrink-0 relative overflow-hidden', isPhone ? (isXs ? 'p-3' : 'p-4') : 'p-6')}>
         {/* Subtle radial gradient bg */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(233,69,96,0.06),transparent_70%)]" />
 
@@ -67,11 +87,11 @@ export function CountryPanel() {
           {/* Top row: flag + name + close */}
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-3">
-              <span className={cn(isMobile ? 'text-3xl' : 'text-5xl')}>{country.flag}</span>
+              <span className={cn(isXs ? 'text-2xl' : isPhone ? 'text-3xl' : 'text-5xl')}>{country.flag}</span>
               <div>
                 <h2 className={cn(
                   'font-heading font-bold tracking-tight truncate',
-                  isMobile ? 'text-lg' : 'text-2xl'
+                  isXs ? 'text-base' : isPhone ? 'text-lg' : 'text-2xl'
                 )}>
                   {country.name}
                 </h2>
@@ -100,14 +120,14 @@ export function CountryPanel() {
           </div>
 
           {/* Stat cards + Radar */}
-          <div className={cn('flex gap-3 mt-4', isMobile && 'flex-col')}>
-            <div className="flex-1 grid grid-cols-3 gap-2">
+          <div className={cn('flex gap-3 mt-4', isPhone && 'flex-col')}>
+            <div className={cn('flex-1 grid grid-cols-3', isXs ? 'gap-1.5' : 'gap-2')}>
               {/* Fashion Index */}
-              <div className="relative overflow-hidden rounded-xl bg-white/[0.04] border border-white/[0.06] p-3 text-center">
+              <div className={cn('relative overflow-hidden rounded-xl bg-white/[0.04] border border-white/[0.06] text-center', isXs ? 'p-2' : 'p-3')}>
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent/60 to-accent/0" />
                 <div className={cn(
                   'font-mono font-bold bg-gradient-to-r from-accent to-pink-400 bg-clip-text text-transparent',
-                  isMobile ? 'text-xl' : 'text-2xl'
+                  isXs ? 'text-lg' : isPhone ? 'text-xl' : 'text-2xl'
                 )}>
                   {country.fashionIndex}
                 </div>
@@ -117,33 +137,33 @@ export function CountryPanel() {
               </div>
 
               {/* Sustainability — circular progress */}
-              <div className="relative overflow-hidden rounded-xl bg-white/[0.04] border border-white/[0.06] p-3 flex flex-col items-center">
+              <div className={cn('relative overflow-hidden rounded-xl bg-white/[0.04] border border-white/[0.06] flex flex-col items-center', isXs ? 'p-2' : 'p-3')}>
                 <div className="relative">
-                  <svg width={isMobile ? 36 : 44} height={isMobile ? 36 : 44} className="-rotate-90">
+                  <svg width={isPhone ? 36 : 44} height={isPhone ? 36 : 44} className="-rotate-90">
                     <circle
-                      cx={isMobile ? 18 : 22}
-                      cy={isMobile ? 18 : 22}
-                      r={isMobile ? 14 : 18}
+                      cx={isPhone ? 18 : 22}
+                      cy={isPhone ? 18 : 22}
+                      r={isPhone ? 14 : 18}
                       stroke="rgba(255,255,255,0.08)"
                       strokeWidth={3}
                       fill="none"
                     />
                     <circle
-                      cx={isMobile ? 18 : 22}
-                      cy={isMobile ? 18 : 22}
-                      r={isMobile ? 14 : 18}
+                      cx={isPhone ? 18 : 22}
+                      cy={isPhone ? 18 : 22}
+                      r={isPhone ? 14 : 18}
                       stroke="rgb(52,211,153)"
                       strokeWidth={3}
                       fill="none"
-                      strokeDasharray={2 * Math.PI * (isMobile ? 14 : 18)}
-                      strokeDashoffset={2 * Math.PI * (isMobile ? 14 : 18) * (1 - country.sustainabilityScore / 100)}
+                      strokeDasharray={2 * Math.PI * (isPhone ? 14 : 18)}
+                      strokeDashoffset={2 * Math.PI * (isPhone ? 14 : 18) * (1 - country.sustainabilityScore / 100)}
                       strokeLinecap="round"
                       className="transition-all duration-1000"
                     />
                   </svg>
                   <span className={cn(
                     'absolute inset-0 flex items-center justify-center font-mono font-bold text-emerald-400',
-                    isMobile ? 'text-[10px]' : 'text-xs'
+                    isPhone ? 'text-[10px]' : 'text-xs'
                   )}>
                     {country.sustainabilityScore}
                   </span>
@@ -174,12 +194,12 @@ export function CountryPanel() {
             </div>
 
             {/* Mini Radar Chart */}
-            {profile?.fashionDNA && !isMobile && (
+            {profile?.fashionDNA && !isPhone && (
               <div className="w-36 shrink-0">
                 <FashionDNAChart dna={profile.fashionDNA} size="sm" />
               </div>
             )}
-            {profileLoading && !isMobile && (
+            {profileLoading && !isPhone && (
               <div className="w-36 shrink-0 flex items-center justify-center">
                 <Loader2 className="w-5 h-5 text-accent animate-spin" />
               </div>
@@ -213,18 +233,19 @@ export function CountryPanel() {
                 value={tab.id}
                 className={cn(
                   'px-2.5 md:px-3 py-2 text-xs font-medium whitespace-nowrap transition-all border-b-2',
-                  isMobile && 'text-[11px] px-2 py-2.5',
+                  isXs && 'text-[10px] px-1.5 py-2',
+                  isPhone && !isXs && 'text-[11px] px-2 py-2.5',
                   activeTab === tab.id
                     ? 'border-accent text-accent'
                     : 'border-transparent text-muted hover:text-foreground'
                 )}
               >
-                {isMobile ? (mobileTabLabels[tab.id] || tab.label) : tab.label}
+                {getTabLabel(tab)}
               </Tabs.Trigger>
             ))}
           </Tabs.List>
           {/* Scroll fade indicators for mobile */}
-          {isMobile && (
+          {isPhone && (
             <>
               <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-[#0A0A1A]/80 to-transparent pointer-events-none" />
             </>
@@ -269,7 +290,7 @@ export function CountryPanel() {
   return (
     <AnimatePresence mode="wait">
       {panelOpen && country && (
-        isMobile ? (
+        isPhone ? (
           /* ---- Mobile: Bottom sheet ---- */
           <motion.div
             key="bottom-sheet"

@@ -1,0 +1,192 @@
+{
+  "fashionDNA": {
+    "traditionalism": 55,
+    "innovation": 72,
+    "sustainability": 52,
+    "luxuryIndex": 48,
+    "streetwearInfluence": 80,
+    "craftsmanship": 68,
+    "globalInfluence": 65
+  },
+  "eras": [
+    {
+      "id": "colonial-baroque",
+      "name": "Colonial Baroque & Portuguese Influence",
+      "yearRange": [
+        1550,
+        1822
+      ],
+      "description": "Portuguese colonists brought European court fashion to tropical Brazil, where it clashed with the climate and merged with indigenous and African dress traditions. The resulting hybrid style featured lighter fabrics and more relaxed silhouettes adapted to the heat, with Afro-Brazilian textiles and adornments becoming central to cultural identity.",
+      "keyGarments": [
+        "Baiana turban and layered skirts",
+        "Portuguese lace mantilla",
+        "Cotton shift dress"
+      ],
+      "aiImagePrompt": "A colonial Brazilian street scene in Salvador da Bahia with an Afro-Brazilian woman in a traditional white Baiana outfit with layered lace skirts, beaded necklaces, and an elaborate white turban, baroque church facade in the background, warm golden tropical light."
+    },
+    {
+      "id": "belle-epoque-tropical",
+      "name": "Tropical Belle Epoque",
+      "yearRange": [
+        1889,
+        1930
+      ],
+      "description": "The newly declared Republic looked to Paris for cultural legitimacy, and wealthy Brazilians imported Parisian haute couture wholesale. Rio de Janeiro's Rua do Ouvidor became a miniature Rue de la Paix, though the tropical climate forced constant adaptation of heavy European fashions.",
+      "keyGarments": [
+        "Tropical linen suit",
+        "Parisian-style day dress",
+        "Panama hat"
+      ],
+      "aiImagePrompt": "A 1910s Rio de Janeiro Avenida Central scene with a well-dressed gentleman in a cream linen suit and Panama hat alongside a woman in a pastel Parisian-style tea dress with parasol, Art Nouveau storefronts and palm trees lining the boulevard, soft sepia photography tones."
+    },
+    {
+      "id": "tropicalia-bossa",
+      "name": "Tropicalia & Bossa Nova",
+      "yearRange": [
+        1958,
+        1975
+      ],
+      "description": "The bossa nova movement brought global attention to Brazilian cool, while the Tropicalia art movement deliberately mixed high and low, indigenous and imported, creating a distinctly Brazilian modernism. Bikini culture from Ipanema and Copacabana became a global fashion export.",
+      "keyGarments": [
+        "Brazilian bikini",
+        "Flowing caftans",
+        "Havaianas sandals"
+      ],
+      "aiImagePrompt": "A 1960s Ipanema beach scene with a tanned young woman in a vibrant printed Brazilian bikini and oversized sunglasses, bossa nova musicians with guitars in the background, Sugar Loaf mountain visible across the bay, shot in saturated vintage Kodachrome colours."
+    },
+    {
+      "id": "carnival-spectacle",
+      "name": "Carnival as Fashion Spectacle",
+      "yearRange": [
+        1930,
+        2000
+      ],
+      "description": "Rio Carnival's samba schools transformed elaborate costume design into a mass participatory art form. The fantasia became a vehicle for exploring identity, race, mythology, and social commentary through feathers, sequins, and body-celebrating design on an industrial scale.",
+      "keyGarments": [
+        "Carnival fantasia",
+        "Samba queen headdress",
+        "Embellished bodysuit"
+      ],
+      "aiImagePrompt": "A Rio Carnival parade scene with a samba school queen wearing a towering gold and emerald feathered headdress, a crystal-encrusted bodysuit, and sweeping wings of iridescent plumage, confetti and spotlights illuminating the Sambodromo, dynamic motion-blur photography."
+    },
+    {
+      "id": "sao-paulo-fashion-rise",
+      "name": "Rise of Sao Paulo Fashion",
+      "yearRange": [
+        1996,
+        2010
+      ],
+      "description": "Sao Paulo Fashion Week grew to become Latin America's most important fashion event. Brazilian designers like Alexandre Herchcovitch, Osklen, and Carlos Miele gained international recognition for blending tropical sensuality with urban sophistication and Amazonian sustainability narratives.",
+      "keyGarments": [
+        "Eco-luxury resort dress",
+        "Organic cotton basics",
+        "Sculptural knit swimwear"
+      ],
+      "aiImagePrompt": "A Sao Paulo Fashion Week runway scene with a model in a flowing organic silk gown printed with abstract Amazonian botanical motifs in emerald and terracotta, minimalist concrete runway setting with dramatic overhead spotlighting, editorial fashion photography."
+    },
+    {
+      "id": "favela-funk-streetwear",
+      "name": "Favela Funk & Brazilian Streetwear",
+      "yearRange": [
+        2010,
+        2025
+      ],
+      "description": "Brazil's favela communities generated a vibrant street fashion culture driven by baile funk music, mixing bold logomania, neon colours, and sportswear with DIY customisation. Simultaneously, a new wave of Brazilian designers championed Amazonian materials and indigenous craft techniques for the global market.",
+      "keyGarments": [
+        "Customised sportswear jersey",
+        "Neon cycling shorts",
+        "Amazonian seed jewellery"
+      ],
+      "aiImagePrompt": "A vibrant Rio favela rooftop party scene with young Brazilians in neon-coloured customised sportswear, bold graphic prints, and chunky gold accessories, colourful painted buildings cascading down the hillside, warm sunset light mixing with neon party lighting."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Renda Renascenca (Renaissance Lace)",
+      "type": "Embroidered",
+      "description": "A needle lace tradition brought by Portuguese colonists and preserved in the arid northeast of Brazil, used for tablecloths, wedding dresses, and ceremonial garments by communities of women lacemakers.",
+      "origin": "Paraiba and Pernambuco, Northeast Brazil",
+      "technique": "Needle lace worked over a cardboard pattern with cotton thread, creating geometric floral motifs"
+    },
+    {
+      "name": "Chita (Brazilian Chintz)",
+      "type": "Printed",
+      "description": "A brightly coloured, large-scale floral printed cotton fabric that has become an icon of Brazilian popular culture, used in festival costumes, home decor, and contemporary fashion as a symbol of national identity.",
+      "origin": "Sao Paulo and Minas Gerais",
+      "technique": "Roller printing of bold, oversized floral patterns in saturated primary colours on coarse cotton"
+    },
+    {
+      "name": "Buriti Palm Fibre",
+      "type": "Woven",
+      "description": "A sustainable natural fibre harvested from the buriti palm of the Cerrado biome, hand-processed by indigenous and quilombola communities into a golden, linen-like textile increasingly used in eco-fashion.",
+      "origin": "Cerrado region, Central Brazil",
+      "technique": "Hand-stripping and sun-drying of young buriti palm leaves, then hand-spinning and loom-weaving"
+    },
+    {
+      "name": "Tucum Palm Fibre",
+      "type": "Woven",
+      "description": "An Amazonian natural fibre extracted from the tucum palm by indigenous communities, known for its exceptional strength and used for bags, hammocks, and artisanal fashion accessories.",
+      "origin": "Amazon Basin",
+      "technique": "Hand-extraction of fibre from tucum palm leaf stalks, twisted into cordage and woven on backstrap looms"
+    },
+    {
+      "name": "Rede (Hammock Weave)",
+      "type": "Woven",
+      "description": "Traditional hammock weaving from the Brazilian northeast, using cotton in bold stripes and geometric patterns, now adapted by contemporary designers for fashion textiles and accessories.",
+      "origin": "Ceara and Maranhao, Northeast Brazil",
+      "technique": "Hand-loom weaving of thick cotton yarn in horizontal stripes with fringe finishing"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical",
+    "avgTemp": 25,
+    "humidity": "Very High",
+    "fashionImplication": "Brazil's predominantly hot and humid climate drives a fashion culture centred on lightweight natural fabrics, revealing silhouettes, and beach-to-street versatility, making swimwear, sandals, and fluid cotton or linen garments year-round staples."
+  },
+  "culturalInfluences": [
+    "Afro-Brazilian Candomble and Baiana dress traditions",
+    "Carnival samba schools and competitive costume design",
+    "Indigenous Amazonian communities and natural materials",
+    "Bossa nova and Tropicalia artistic movements",
+    "Beach culture of Rio de Janeiro (Ipanema, Copacabana)",
+    "Baile funk and favela DIY creative culture",
+    "Portuguese colonial architectural and textile heritage"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Sao Paulo Fashion Week",
+        "city": "Sao Paulo",
+        "month": "April, October",
+        "tier": "Major"
+      },
+      {
+        "name": "Rio Fashion Week",
+        "city": "Rio de Janeiro",
+        "month": "June",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Casa de Criadores",
+        "city": "Sao Paulo",
+        "month": "March, August",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Amazonian bio-materials and forest-to-fashion supply chains",
+      "Afro-Brazilian heritage fashion and turbante culture",
+      "Favela-born streetwear brands gaining global recognition",
+      "Regenerative cotton farming and traceable textiles",
+      "Body-positive and inclusive Brazilian swimwear design"
+    ],
+    "digitalPresence": 78,
+    "ecommercePenetration": 58,
+    "notableEvents": [
+      "Sao Paulo Fashion Week (SPFW)",
+      "Vogue Ball Rio (ballroom culture)",
+      "Brasil Eco Fashion Week",
+      "Salao Moda Brasil trade fair"
+    ]
+  }
+}

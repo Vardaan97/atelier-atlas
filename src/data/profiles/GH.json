@@ -1,0 +1,161 @@
+{
+  "fashionDNA": {
+    "traditionalism": 85,
+    "innovation": 68,
+    "sustainability": 45,
+    "luxuryIndex": 50,
+    "streetwearInfluence": 70,
+    "craftsmanship": 92,
+    "globalInfluence": 58
+  },
+  "eras": [
+    {
+      "id": "ashanti-kente-origins",
+      "name": "Ashanti Golden Age and Kente Origins",
+      "yearRange": [1600, 1820],
+      "description": "The Ashanti Empire developed Kente weaving into one of Africa's most iconic textile traditions. Originally reserved for royalty, Kente's elaborate patterns encoded proverbs, historical events, and social status into woven silk and cotton.",
+      "keyGarments": [
+        "Kente cloth toga",
+        "Gold regalia and jewelry",
+        "Batakari (smock)"
+      ],
+      "aiImagePrompt": "An Ashanti king (Asantehene) seated on a ceremonial stool wearing a magnificent gold and green silk Kente cloth draped toga-style, heavy gold bracelets, rings, and a gold-studded crown, in a palace with carved wooden pillars."
+    },
+    {
+      "id": "coastal-trade-era",
+      "name": "Coastal Trade and European Contact",
+      "yearRange": [1820, 1900],
+      "description": "The Gold Coast's interaction with European traders introduced printed cotton textiles and Victorian tailoring. Coastal Fante and Ga communities developed a hybrid aesthetic blending imported fabrics with indigenous draping techniques.",
+      "keyGarments": [
+        "Trade cloth wrappers",
+        "Victorian-influenced blouses",
+        "Fante Kente variations"
+      ],
+      "aiImagePrompt": "A Fante chief on the Gold Coast in the 1870s wearing a draped trade cloth wrapper in bold geometric prints, a European-style hat, and elaborate gold pectoral ornaments, standing on a coastal fort balcony."
+    },
+    {
+      "id": "colonial-independence-style",
+      "name": "Independence and Pan-African Fashion",
+      "yearRange": [1957, 1975],
+      "description": "Kwame Nkrumah's independence movement made African cloth a political statement. The wearing of Kente and Northern smocks became acts of Pan-African solidarity, influencing Black diaspora fashion worldwide.",
+      "keyGarments": [
+        "Independence-era Kente wraps",
+        "Diplomatic smock (Batakari)",
+        "Ntoma (wrapper dress)"
+      ],
+      "aiImagePrompt": "A 1960s Accra independence celebration: Ghanaian dignitaries wearing ceremonial Kente cloths draped over one shoulder, Northern fugu smocks, gathered at a modernist convention hall with Ghanaian flag bunting."
+    },
+    {
+      "id": "concert-party-era",
+      "name": "The Concert Party and Highlife Fashion",
+      "yearRange": [1970, 1995],
+      "description": "Ghana's vibrant Highlife music scene created a fashion subculture of flamboyant style. Platform shoes, bell-bottoms, and African-print suits defined the era, while 'Concert Party' theatre performers pushed sartorial boundaries.",
+      "keyGarments": [
+        "African-print bell-bottoms",
+        "Platform shoes",
+        "Embroidered agbada"
+      ],
+      "aiImagePrompt": "A 1970s Ghanaian Highlife musician on stage in Accra wearing a brightly printed wax cloth suit with wide bell-bottom trousers, platform boots, and oversized sunglasses, colorful stage lights and a live band behind."
+    },
+    {
+      "id": "secondhand-kantamanto",
+      "name": "The Kantamanto Economy",
+      "yearRange": [1990, 2015],
+      "description": "Accra's Kantamanto market became the world's largest secondhand clothing market, processing 15 million garments weekly. It spawned a creative economy of tailors, upcyclers, and resellers who transform discarded Western clothing into uniquely Ghanaian fashion.",
+      "keyGarments": [
+        "Upcycled denim",
+        "Restyled vintage Western wear",
+        "Hybrid African-Western suits"
+      ],
+      "aiImagePrompt": "An aerial view of the massive Kantamanto market in central Accra: towering bales of secondhand clothing, narrow alleys filled with tailors cutting and sewing, a young designer holding up a remade jacket."
+    },
+    {
+      "id": "accra-fashion-renaissance",
+      "name": "Accra's Fashion Renaissance",
+      "yearRange": [2015, 2025],
+      "description": "Accra has exploded onto the global fashion scene with a new generation of designers championing African wax prints, sustainable practices, and digital-first brands. International editorials increasingly spotlight Ghanaian designers and street style.",
+      "keyGarments": [
+        "Contemporary Kente-accent tailoring",
+        "Afro-futurist statement pieces",
+        "Wax print streetwear"
+      ],
+      "aiImagePrompt": "A contemporary Accra fashion editorial: a model in a structured blazer made from bold yellow and blue wax print fabric, worn with high-waisted trousers, standing on the rooftop of a modern Osu building at sunset."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Kente",
+      "type": "Woven",
+      "description": "Ghana's most celebrated textile, a silk and cotton strip-woven cloth with intricate geometric patterns, each design carrying a specific name, proverb, or historical meaning.",
+      "origin": "Bonwire, Ashanti Region",
+      "technique": "Narrow-strip weaving on a horizontal treadle loom, strips joined edge-to-edge to form a full cloth"
+    },
+    {
+      "name": "Adinkra Cloth",
+      "type": "Stamped/Printed",
+      "description": "Cotton cloth stamped with Adinkra symbols using carved calabash stamps and vegetable-based ink, each symbol representing a concept, proverb, or aphorism.",
+      "origin": "Ntonso, Ashanti Region",
+      "technique": "Carved calabash gourd stamps dipped in boiled bark dye (adinkera aduro) and pressed onto cotton cloth in grid patterns"
+    },
+    {
+      "name": "Fugu (Smock Cloth)",
+      "type": "Woven",
+      "description": "Hand-woven cotton cloth from Northern Ghana, used to make the traditional Batakari smock worn by chiefs, politicians, and as everyday dress in the savanna regions.",
+      "origin": "Tamale and Bolgatanga, Northern Region",
+      "technique": "Strip weaving on narrow looms using locally grown and hand-spun cotton, sewn into a smock shape"
+    },
+    {
+      "name": "African Wax Print (Ankara)",
+      "type": "Printed",
+      "description": "While industrially produced, wax prints have become deeply embedded in Ghanaian fashion identity. Specific patterns are given local names and associated with events, proverbs, or social commentary.",
+      "origin": "Tema (GTP - Ghana Textiles Printing)",
+      "technique": "Industrial resin-resist roller printing on cotton, producing vibrant double-sided patterns"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical Savanna and Tropical Monsoon",
+    "avgTemp": 27,
+    "humidity": "High",
+    "fashionImplication": "Year-round heat demands breathable cotton and loose-fitting garments. The draped Kente and flowing smock are practical responses to the climate. Light fabrics in bright colors dominate, while the dry harmattan season brings cooler northerly winds."
+  },
+  "culturalInfluences": [
+    "Ashanti Kingdom hierarchy and regalia traditions",
+    "Pan-Africanist independence movement and Nkrumah's legacy",
+    "Adinkra philosophical symbol system",
+    "Highlife and Afrobeats music culture",
+    "Northern Islamic dress traditions (Dagomba, Gonja)",
+    "Ga Homowo and Ewe Hogbetsotso festival costumes",
+    "Global Black diaspora fashion exchange"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Accra Fashion Week",
+        "city": "Accra",
+        "month": "October",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Glitz Africa Fashion Week",
+        "city": "Accra",
+        "month": "November",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Sustainable Kantamanto upcycling movement",
+      "Kente reimagined for global luxury markets",
+      "Afro-futurist fashion design",
+      "Made-in-Ghana wax print revivalism",
+      "Digital-first Ghanaian streetwear labels"
+    ],
+    "digitalPresence": 65,
+    "ecommercePenetration": 35,
+    "notableEvents": [
+      "Chale Wote Street Art Festival (fashion component)",
+      "Accra Fashion Week sustainability summit",
+      "GTBank Fashion Weekend (West Africa)",
+      "ARISE Fashion Week (Pan-African)"
+    ]
+  }
+}

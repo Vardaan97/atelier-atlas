@@ -1,0 +1,186 @@
+{
+  "fashionDNA": {
+    "traditionalism": 88,
+    "innovation": 85,
+    "sustainability": 68,
+    "luxuryIndex": 90,
+    "streetwearInfluence": 82,
+    "craftsmanship": 92,
+    "globalInfluence": 95
+  },
+  "eras": [
+    {
+      "id": "tudor-elizabethan",
+      "name": "Tudor & Elizabethan Splendour",
+      "yearRange": [
+        1485,
+        1603
+      ],
+      "description": "An era of sumptuary laws and theatrical display, where clothing signified rank and allegiance. Ruffs, farthingales, and slashed sleeves defined the silhouette, with Elizabeth I's elaborate wardrobe becoming a tool of statecraft and national identity.",
+      "keyGarments": [
+        "Ruff collar",
+        "Farthingale",
+        "Doublet and hose"
+      ],
+      "aiImagePrompt": "A regal Elizabethan court portrait of a noblewoman wearing a massive starched lace ruff, pearl-encrusted brocade bodice with slashed sleeves, and a wide farthingale skirt in crimson and gold, standing in a Tudor great hall with leaded windows, dramatic chiaroscuro lighting."
+    },
+    {
+      "id": "regency-era",
+      "name": "The Regency Period",
+      "yearRange": [
+        1795,
+        1837
+      ],
+      "description": "Inspired by Neoclassicism, British fashion embraced high-waisted muslin gowns for women and the birth of modern men's tailoring under Beau Brummell. This era established London as the capital of menswear and introduced the concept of understated elegance over aristocratic excess.",
+      "keyGarments": [
+        "Muslin empire gown",
+        "Tailcoat",
+        "Cravat"
+      ],
+      "aiImagePrompt": "A Regency-era fashion illustration showing a gentleman in a perfectly fitted navy tailcoat, cream waistcoat, and white cravat with buff breeches, standing beside a woman in a high-waisted white muslin gown with ribbon sash, in a Georgian drawing room with Wedgwood blue walls."
+    },
+    {
+      "id": "victorian-industrial",
+      "name": "Victorian Industrial Fashion",
+      "yearRange": [
+        1837,
+        1901
+      ],
+      "description": "The Industrial Revolution transformed British textiles, enabling mass production of cotton and wool. The era saw the rise of the crinoline, mourning dress, and the codification of men's formal attire, while the Arts and Crafts movement pushed back against industrialization.",
+      "keyGarments": [
+        "Crinoline dress",
+        "Morning coat",
+        "Bustle skirt"
+      ],
+      "aiImagePrompt": "A Victorian-era London street scene with a woman in a dark taffeta bustle dress with jet beading and high collar, carrying a small parasol, beside a man in a frock coat and top hat, gaslit cobblestone street with horse-drawn carriages in the foggy background."
+    },
+    {
+      "id": "swinging-sixties",
+      "name": "Swinging London",
+      "yearRange": [
+        1960,
+        1969
+      ],
+      "description": "London became the global epicentre of youth culture and fashion revolution. Mary Quant's miniskirt and Carnaby Street boutiques made fashion democratic and youthful, while Mod culture fused sharp Italian tailoring with British pop sensibility.",
+      "keyGarments": [
+        "Mini skirt",
+        "Mod suit",
+        "Chelsea boots"
+      ],
+      "aiImagePrompt": "A 1960s Carnaby Street scene featuring a young woman in a bold geometric mini dress with white tights and patent leather Mary Janes, posing beside a shop window displaying colourful mod fashion, captured in vivid Technicolor style with a Union Jack backdrop."
+    },
+    {
+      "id": "punk-revolution",
+      "name": "Punk & New Wave",
+      "yearRange": [
+        1976,
+        1985
+      ],
+      "description": "Vivienne Westwood and Malcolm McLaren weaponised fashion as rebellion from their King's Road shop SEX. Safety pins, tartan bondage trousers, and DIY aesthetics became a global cultural export, fundamentally challenging the fashion establishment.",
+      "keyGarments": [
+        "Bondage trousers",
+        "Safety pin jewellery",
+        "Leather biker jacket"
+      ],
+      "aiImagePrompt": "A gritty 1977 King's Road London scene showing a punk figure in torn tartan bondage trousers, a ripped band t-shirt with safety pins, studded leather jacket, and spiked mohawk hair dyed green, standing outside a graffiti-covered shopfront, raw flash photography style."
+    },
+    {
+      "id": "cool-britannia-mcqueen",
+      "name": "Cool Britannia & McQueen Era",
+      "yearRange": [
+        1993,
+        2010
+      ],
+      "description": "A new wave of Central Saint Martins graduates, led by Alexander McQueen, John Galliano, and Stella McCartney, brought theatrical conceptualism and emotional storytelling to fashion. British fashion became synonymous with fearless creativity and boundary-pushing runway spectacle.",
+      "keyGarments": [
+        "McQueen bumster trouser",
+        "Burberry trench coat",
+        "Asymmetric tailoring"
+      ],
+      "aiImagePrompt": "A dramatic Alexander McQueen-inspired runway moment featuring a model in a structured ivory gown with exaggerated shoulders and a cascading ruffled train, surrounded by swirling holographic projections, dark theatrical stage lighting with smoke effects."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Harris Tweed",
+      "type": "Woven",
+      "description": "The only fabric in the world protected by its own Act of Parliament, handwoven by islanders in the Outer Hebrides from pure virgin wool dyed and spun on the islands.",
+      "origin": "Outer Hebrides, Scotland",
+      "technique": "Hand-woven on a treadle loom using locally dyed wool in herringbone and houndstooth patterns"
+    },
+    {
+      "name": "Savile Row Worsted",
+      "type": "Woven",
+      "description": "Superfine worsted wool cloth produced in Yorkshire and used by Savile Row tailors, known for its smooth hand, drape, and resistance to creasing.",
+      "origin": "Huddersfield, Yorkshire",
+      "technique": "Combed long-staple wool woven in a tight plain or twill weave, then finished with pressing"
+    },
+    {
+      "name": "Scottish Tartan",
+      "type": "Woven",
+      "description": "A pattern of intersecting horizontal and vertical stripes in multiple colours, with specific 'setts' registered to clans, regiments, and institutions.",
+      "origin": "Scottish Highlands",
+      "technique": "Twill weave with a precise colour sequence repeated in warp and weft to create the check pattern"
+    },
+    {
+      "name": "Nottingham Lace",
+      "type": "Embroidered",
+      "description": "Machine-made lace that democratised a luxury fabric, produced on Leavers lace machines since the Industrial Revolution and used extensively in bridal wear and lingerie.",
+      "origin": "Nottingham, East Midlands",
+      "technique": "Leavers machine lace-making using thousands of individual threads on brass bobbins"
+    },
+    {
+      "name": "Liberty Print Cotton",
+      "type": "Printed",
+      "description": "Iconic Tana Lawn cotton fabric printed with distinctive small-scale floral patterns, closely associated with the Liberty department store since the 1870s.",
+      "origin": "London",
+      "technique": "Rotary screen printing of proprietary designs onto fine combed cotton lawn"
+    }
+  ],
+  "climate": {
+    "zone": "Temperate Maritime",
+    "avgTemp": 10,
+    "humidity": "High",
+    "fashionImplication": "The cool, damp, and unpredictable British climate has made layering an art form, driving the invention of the trench coat, mackintosh, and waxed cotton jacket, while establishing wool, tweed, and waterproof fabrics as wardrobe essentials."
+  },
+  "culturalInfluences": [
+    "The British monarchy and aristocratic dress codes",
+    "Subcultural movements: Mods, Rockers, Punk, Goth, Rave",
+    "Savile Row and the tradition of bespoke tailoring",
+    "British music scenes from the Beatles to grime",
+    "The class system and its sartorial signifiers",
+    "Multicultural diaspora communities in London and Birmingham",
+    "Art schools, especially Central Saint Martins and the Royal College of Art"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "London Fashion Week",
+        "city": "London",
+        "month": "February, September",
+        "tier": "Big Four"
+      },
+      {
+        "name": "London Fashion Week Men's",
+        "city": "London",
+        "month": "January, June",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Post-punk deconstructed tailoring",
+      "Circular fashion and rental platforms",
+      "South Asian-British fusion formalwear",
+      "Genderless streetwear from East London labels",
+      "Heritage brand reinvention through Gen-Z collaborations"
+    ],
+    "digitalPresence": 92,
+    "ecommercePenetration": 85,
+    "notableEvents": [
+      "BFC/Vogue Designer Fashion Fund",
+      "The Fashion Awards at the Royal Albert Hall",
+      "Graduate Fashion Week",
+      "International Woolmark Prize (UK chapter)"
+    ]
+  }
+}

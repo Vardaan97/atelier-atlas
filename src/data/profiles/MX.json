@@ -1,0 +1,162 @@
+{
+  "fashionDNA": {
+    "traditionalism": 82,
+    "innovation": 65,
+    "sustainability": 70,
+    "luxuryIndex": 48,
+    "streetwearInfluence": 72,
+    "craftsmanship": 90,
+    "globalInfluence": 58
+  },
+  "eras": [
+    {
+      "id": "pre-columbian-textiles",
+      "name": "Pre-Columbian Textile Arts",
+      "yearRange": [1200, 1521],
+      "description": "The Aztec and Maya civilizations developed extraordinarily sophisticated textile traditions using backstrap looms. Cotton, agave fiber, and featherwork adorned garments that signified social rank, religious status, and regional identity.",
+      "keyGarments": [
+        "Huipil",
+        "Tilmàtli (cloak)",
+        "Quechquémitl"
+      ],
+      "aiImagePrompt": "A pre-Columbian Aztec noblewoman wearing an intricately woven cotton huipil with geometric patterns in cochineal red and indigo blue, adorned with quetzal featherwork, standing before a stone temple, warm golden light."
+    },
+    {
+      "id": "colonial-mestizo-fusion",
+      "name": "Colonial & Mestizo Fusion",
+      "yearRange": [1521, 1810],
+      "description": "Spanish colonization introduced European fabrics, silhouettes, and embroidery techniques that merged with indigenous textile traditions. This cross-pollination created hybrid garments that remain iconic in Mexican culture.",
+      "keyGarments": [
+        "China Poblana dress",
+        "Rebozo shawl",
+        "Charro suit"
+      ],
+      "aiImagePrompt": "A colonial-era Mexican woman in a richly embroidered China Poblana dress with a sequined red and green skirt, draped with a hand-woven silk rebozo, standing in a Puebla courtyard with blue talavera tiles."
+    },
+    {
+      "id": "revolutionary-identity",
+      "name": "Revolutionary Identity",
+      "yearRange": [1910, 1950],
+      "description": "The Mexican Revolution and the subsequent muralism movement elevated indigenous dress as a symbol of national pride. Frida Kahlo's adoption of Tehuana dress became an international icon of cultural defiance and feminist expression.",
+      "keyGarments": [
+        "Tehuana dress",
+        "Soldadera bandolier outfit",
+        "Embroidered blouse"
+      ],
+      "aiImagePrompt": "A dramatic portrait in the style of Frida Kahlo wearing an elaborate Tehuana headdress with lace huipil grande, heavy jade and coral jewelry, surrounded by tropical flowers, moody cinematic lighting."
+    },
+    {
+      "id": "golden-age-glamour",
+      "name": "Golden Age Cinema & Glamour",
+      "yearRange": [1940, 1965],
+      "description": "Mexico's golden age of cinema brought national fashion to international audiences. Stars like María Félix and Dolores del Río defined a glamorous Mexican aesthetic that blended Hollywood sophistication with distinctly Mexican sensibility.",
+      "keyGarments": [
+        "Fitted ranchera gown",
+        "Fur stole with silver jewelry",
+        "Sequined cocktail dress"
+      ],
+      "aiImagePrompt": "A 1950s Mexican film star in a dramatic black fitted gown with silver filigree jewelry, dark kohl-lined eyes, posed in a Mexico City art deco nightclub, black and white photography with warm tones."
+    },
+    {
+      "id": "artisanal-revival",
+      "name": "Artisanal Revival",
+      "yearRange": [1990, 2015],
+      "description": "A renewed appreciation for indigenous textile arts led designers to collaborate with rural artisan communities. This era also sparked global debates about cultural appropriation versus respectful collaboration in fashion.",
+      "keyGarments": [
+        "Modernized huipil",
+        "Tenango embroidered jacket",
+        "Oaxacan cotton dress"
+      ],
+      "aiImagePrompt": "A contemporary fashion editorial featuring a model in a modern structured silhouette dress covered in vibrant Tenango embroidery of birds and flowers, set against the pale pink walls of a Oaxacan street."
+    },
+    {
+      "id": "contemporary-mexican-design",
+      "name": "New Mexican Wave",
+      "yearRange": [2015, 2026],
+      "description": "A generation of designers including Carla Fernández, Kris Goyri, and Lydia Lavín are building globally recognized brands that root luxury in indigenous craft. Mexico City has emerged as a creative capital rivaling South American fashion hubs.",
+      "keyGarments": [
+        "Deconstructed rebozo coat",
+        "Geometric woven co-ord set",
+        "Artisan-dyed denim"
+      ],
+      "aiImagePrompt": "A Mexico City fashion week runway scene with a model in a sculptural black coat featuring rebozo-inspired draping and Zapotec geometric weaving accents, brutalist concrete architecture backdrop, dramatic spotlight."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Rebozo",
+      "type": "Woven",
+      "description": "A long flat garment woven on a backstrap loom, used as a shawl, baby carrier, and decorative accessory, with intricate tie-dyed (jaspe) patterns.",
+      "origin": "Tenancingo, State of Mexico",
+      "technique": "Backstrap loom weaving with ikat-style warp dyeing and hand-knotted fringe (rapacejo)"
+    },
+    {
+      "name": "Tenango Embroidery",
+      "type": "Embroidered",
+      "description": "Colorful narrative embroidery depicting animals, plants, and daily life scenes, originating from Otomí communities in the Tenango de Doria region.",
+      "origin": "Tenango de Doria, Hidalgo",
+      "technique": "Freehand satin stitch embroidery on muslin cloth using vibrant cotton threads"
+    },
+    {
+      "name": "Cochineal-Dyed Cotton",
+      "type": "Dyed",
+      "description": "A Pre-Columbian dyeing tradition using cochineal insects to produce brilliant crimson, scarlet, and pink hues that were more valuable than gold in colonial trade.",
+      "origin": "Oaxaca Valley",
+      "technique": "Natural dye extraction from Dactylopius coccus insects, with mordant variations for color range"
+    },
+    {
+      "name": "Sarape",
+      "type": "Woven",
+      "description": "A brightly striped blanket-like shawl woven from wool or cotton, originally from Saltillo, recognized worldwide as an icon of Mexican craft.",
+      "origin": "Saltillo, Coahuila",
+      "technique": "Treadle loom weaving with concentric diamond center motif and bold stripe patterns"
+    },
+    {
+      "name": "Huipil Brocade",
+      "type": "Woven",
+      "description": "Elaborately brocaded cloth for ceremonial huipiles, with each community having distinctive motifs encoding cosmological and agricultural symbolism.",
+      "origin": "San Juan Chamula, Chiapas",
+      "technique": "Backstrap loom brocade weaving with supplementary weft patterns"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical to Arid",
+    "avgTemp": 22,
+    "humidity": "Variable (humid coasts, dry highlands)",
+    "fashionImplication": "Mexico's diverse climates encourage lightweight cotton and linen in tropical lowlands, layered wool rebozos in highland regions, and broad-brimmed hats for sun protection across the country."
+  },
+  "culturalInfluences": [
+    "Aztec and Maya cosmological symbolism in textile motifs",
+    "Spanish colonial Baroque aesthetic",
+    "Frida Kahlo and the Mexican muralism movement",
+    "Day of the Dead and religious festival dress traditions",
+    "Lucha libre mask culture and pop art",
+    "US-Mexico border culture and Chicano identity",
+    "Indigenous rights movement and artisan cooperatives"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Mercedes-Benz Fashion Week Mexico City",
+        "city": "Mexico City",
+        "month": "April, October",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Artisan-luxury collaborations with indigenous communities",
+      "Sustainable agave and cactus-based textiles",
+      "Neo-Mexican maximalism in color and pattern",
+      "Chicano streetwear crossing into high fashion",
+      "Digital heritage preservation of endangered weaving techniques"
+    ],
+    "digitalPresence": 68,
+    "ecommercePenetration": 52,
+    "notableEvents": [
+      "Original Design Festival (Festival de Diseño Original)",
+      "Oaxaca Textile Museum exhibitions",
+      "FONART National Artisan Awards",
+      "Mexico City Design Week"
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "fashionDNA": {
+    "traditionalism": 70,
+    "innovation": 62,
+    "sustainability": 55,
+    "luxuryIndex": 42,
+    "streetwearInfluence": 60,
+    "craftsmanship": 78,
+    "globalInfluence": 38
+  },
+  "eras": [
+    {
+      "id": "sarmatian-noble-dress",
+      "name": "Sarmatian Noble Fashion",
+      "yearRange": [1550, 1700],
+      "description": "Polish-Lithuanian Commonwealth nobles adopted an orientalizing aesthetic inspired by Central Asian steppe cultures. The 'kontusz' sash and shaved head with a single topknot became hallmarks of the uniquely Polish 'Sarmatian' identity.",
+      "keyGarments": [
+        "Kontusz (outer robe)",
+        "Żupan (inner coat)",
+        "Pas kontuszowy (sash belt)"
+      ],
+      "aiImagePrompt": "A 17th-century Polish Sarmatian nobleman in a richly embroidered crimson żupan under a flowing gold kontusz, wearing a wide silk pas kontuszowy sash, fur-trimmed cap, and curved szabla saber, in a Baroque manor hall."
+    },
+    {
+      "id": "partition-era-resistance",
+      "name": "Partition-Era Folk Resistance",
+      "yearRange": [1795, 1918],
+      "description": "During the partitions, traditional folk dress became a form of silent resistance against Prussian, Russian, and Austrian cultural domination. Regional costumes from Łowicz, Kraków, and Podhale preserved Polish identity through vibrant embroidery.",
+      "keyGarments": [
+        "Łowicz striped skirt",
+        "Kraków corset vest",
+        "Góral sheepskin trousers"
+      ],
+      "aiImagePrompt": "A 19th-century Polish peasant couple from the Łowicz region: the woman in a hand-embroidered floral blouse with a vivid striped skirt, the man in a white linen shirt and embroidered vest, standing in a field of poppies."
+    },
+    {
+      "id": "interwar-modernism",
+      "name": "Interwar Art Deco Elegance",
+      "yearRange": [1918, 1939],
+      "description": "Newly independent Poland embraced European Art Deco while maintaining folk motifs. Warsaw and Kraków became fashion centers where Parisian couture was adapted with distinctly Polish textile patterns and craftsmanship.",
+      "keyGarments": [
+        "Bias-cut evening gowns",
+        "Fur-trimmed coats",
+        "Kilim-patterned accessories"
+      ],
+      "aiImagePrompt": "A 1930s Art Deco fashion portrait in Warsaw: an elegant Polish woman in a bias-cut emerald satin evening gown with fox fur stole, Art Deco geometric jewelry, standing in a modernist café interior."
+    },
+    {
+      "id": "communist-era-resourcefulness",
+      "name": "Communist-Era DIY Fashion",
+      "yearRange": [1945, 1989],
+      "description": "Under communism, severe material shortages forced extraordinary creativity. Home sewing was universal, and women recreated Western styles from smuggled magazines. The 'Moda Polska' state fashion house attempted to create a socialist couture.",
+      "keyGarments": [
+        "Home-sewn shift dresses",
+        "Moda Polska tailored suits",
+        "Nylon stockings (black market)"
+      ],
+      "aiImagePrompt": "A resourceful 1970s Polish woman in Warsaw wearing a stylish homemade dress copied from a Western fashion magazine, paired with locally made leather shoes, standing by a brutalist apartment building."
+    },
+    {
+      "id": "post-solidarity-transformation",
+      "name": "Post-Solidarity Transformation",
+      "yearRange": [1989, 2005],
+      "description": "The fall of communism unleashed a flood of Western fashion influences. Open-air markets (bazaars) became fashion hubs selling imported and counterfeit goods, while the first Polish fashion designers began establishing independent labels.",
+      "keyGarments": [
+        "Leather jackets",
+        "Denim jeans",
+        "Bazaar-sourced Western brands"
+      ],
+      "aiImagePrompt": "A bustling 1990s Polish open-air bazaar with rows of stalls selling leather jackets, jeans, and imported accessories, young shoppers in oversized denim and colorful windbreakers examining goods."
+    },
+    {
+      "id": "lodz-fashion-revival",
+      "name": "The New Polish Fashion",
+      "yearRange": [2005, 2025],
+      "description": "Łódź, once a textile manufacturing powerhouse, has reinvented itself as Poland's fashion capital. A new generation of designers combines folk heritage with avant-garde aesthetics, gaining recognition at international fashion weeks.",
+      "keyGarments": [
+        "Deconstructed folk-inspired coats",
+        "Minimalist knitwear",
+        "Upcycled industrial textiles"
+      ],
+      "aiImagePrompt": "A contemporary Polish fashion editorial in a converted Łódź textile factory: a model in a deconstructed white wool coat with folk embroidery accents, industrial brick walls and steel beams in background."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Pas Kontuszowy (Sash Belt)",
+      "type": "Woven",
+      "description": "Elaborately woven silk sash belts up to 4 meters long, featuring Persian-inspired floral patterns, originally imported from the Ottoman Empire and later produced in Poland.",
+      "origin": "Słuck (historical), later Kobyłka and Kraków",
+      "technique": "Double-sided silk tapestry weaving with metallic gold and silver threads"
+    },
+    {
+      "name": "Łowicz Cut-Out (Wycinanki)",
+      "type": "Appliqué",
+      "description": "Vibrant paper cut-out designs traditionally used for decorating interiors, now adapted as textile prints and embroidery patterns in contemporary fashion.",
+      "origin": "Łowicz, Masovia",
+      "technique": "Layered paper cutting adapted to textile appliqué and screen printing"
+    },
+    {
+      "name": "Highland Wool (Sukno Góralskie)",
+      "type": "Woven",
+      "description": "Thick, naturally water-resistant wool woven by Góral highlanders, traditionally used for trousers, vests, and cloaks in the Tatra Mountains.",
+      "origin": "Podhale, Tatra Mountains",
+      "technique": "Hand-spun mountain sheep wool, woven on narrow looms and fulled by hand"
+    },
+    {
+      "name": "Silesian Lace",
+      "type": "Lace",
+      "description": "Fine bobbin lace produced in the industrial region of Silesia, influenced by both Germanic and Bohemian lacemaking traditions.",
+      "origin": "Silesia (Upper Silesia)",
+      "technique": "Bobbin lace with geometric patterns on a cylindrical pillow"
+    }
+  ],
+  "climate": {
+    "zone": "Continental Temperate",
+    "avgTemp": 8,
+    "humidity": "Moderate",
+    "fashionImplication": "Cold, snowy winters demand heavy wool coats, fur accessories, and robust leather boots. The short but warm summers allow for lighter linen and cotton. Layering is essential due to dramatic seasonal temperature swings."
+  },
+  "culturalInfluences": [
+    "Sarmatian nobility and orientalizing aesthetics",
+    "Catholic liturgical vestments and pilgrimages",
+    "Partition-era cultural resistance through folk dress",
+    "Communist-era resourcefulness and home sewing",
+    "The Solidarity movement and worker identity",
+    "Łódź textile industry heritage",
+    "Regional folk diversity (Góral, Łowicz, Kaszuby, Silesian)"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Łódź Fashion Week",
+        "city": "Łódź",
+        "month": "April, October",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Fashion Designer Awards",
+        "city": "Warsaw",
+        "month": "May",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Folk-modernist fusion textiles",
+      "Post-industrial upcycling",
+      "Minimalist Slavic tailoring",
+      "Sustainable slow fashion cooperatives",
+      "Digital-first Polish streetwear brands"
+    ],
+    "digitalPresence": 62,
+    "ecommercePenetration": 55,
+    "notableEvents": [
+      "Łódź Young Fashion competition",
+      "Off Fashion in Kielce",
+      "Cracow Fashion Awards",
+      "Warsaw Fashion Film Festival"
+    ]
+  }
+}

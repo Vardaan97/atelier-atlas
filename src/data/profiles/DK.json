@@ -1,0 +1,155 @@
+{
+  "fashionDNA": {
+    "traditionalism": 55,
+    "innovation": 88,
+    "sustainability": 95,
+    "luxuryIndex": 62,
+    "streetwearInfluence": 78,
+    "craftsmanship": 72,
+    "globalInfluence": 75
+  },
+  "eras": [
+    {
+      "id": "viking-age-dress",
+      "name": "Viking Age Dress",
+      "yearRange": [793, 1066],
+      "description": "Norse garments were functional yet richly symbolic, reflecting social rank through brooches, dyes, and imported fabrics. Wool and linen dominated, with elaborate tablet-woven bands and animal-motif metalwork showcasing skilled craftsmanship.",
+      "keyGarments": [
+        "Hangerok (apron dress)",
+        "Kyrtill (tunic)",
+        "Tortoise brooches"
+      ],
+      "aiImagePrompt": "A Viking-era Danish woman wearing a blue wool hangerok apron dress over a white linen underdress, bronze tortoise brooches at the shoulders with bead chains between them, standing on a windswept Jutland coastline, dramatic golden-hour lighting."
+    },
+    {
+      "id": "renaissance-court",
+      "name": "Renaissance & Court Fashion",
+      "yearRange": [1500, 1700],
+      "description": "Danish royalty adopted European court fashion with local adaptations, importing silks and velvets while maintaining robust wool traditions. The reign of Christian IV brought extravagant Baroque styles to Copenhagen's aristocracy.",
+      "keyGarments": [
+        "Slashed doublet",
+        "Ruff collar",
+        "Brocade gown"
+      ],
+      "aiImagePrompt": "A Danish nobleman from the court of Christian IV wearing a richly slashed crimson velvet doublet with gold thread, a starched lace ruff collar, standing in Rosenborg Castle's Great Hall, warm candlelit atmosphere."
+    },
+    {
+      "id": "golden-age-biedermeier",
+      "name": "Danish Golden Age & Biedermeier",
+      "yearRange": [1800, 1860],
+      "description": "The Danish Golden Age in art and culture coincided with restrained Biedermeier fashion that emphasized modest elegance. Copenhagen's bourgeoisie favored clean silhouettes and quality materials over excessive ornamentation.",
+      "keyGarments": [
+        "Biedermeier day dress",
+        "Frock coat",
+        "Paisley shawl"
+      ],
+      "aiImagePrompt": "A Danish Golden Age portrait of a Copenhagen woman in a high-waisted muslin dress with gigot sleeves, draped cashmere shawl, seated in a sunlit parlor with Vilhelm Hammershøi-style muted tones, soft diffused daylight."
+    },
+    {
+      "id": "folk-revival",
+      "name": "National Romantic Folk Revival",
+      "yearRange": [1870, 1920],
+      "description": "Rising Danish nationalism sparked renewed interest in regional folk costumes, particularly the distinctive Amager dress with its elaborate embroidery. This period bridged rural traditions with urban Arts and Crafts sensibilities.",
+      "keyGarments": [
+        "Amager folk costume",
+        "Embroidered bonnet",
+        "Skagen painter's smock"
+      ],
+      "aiImagePrompt": "A Danish woman in a traditional Amager folk costume with richly embroidered bodice, striped wool skirt, and white linen headdress, standing among half-timbered houses on a cobblestone village street, warm autumn light."
+    },
+    {
+      "id": "danish-modern-design",
+      "name": "Danish Modernism & Design",
+      "yearRange": [1950, 1980],
+      "description": "The Danish Modern movement's emphasis on simplicity, function, and natural materials profoundly shaped local fashion aesthetics. Clean lines and honest materials became the DNA of Scandinavian style.",
+      "keyGarments": [
+        "Minimalist wool coat",
+        "Marimekko-influenced prints",
+        "Unstructured knit sweater"
+      ],
+      "aiImagePrompt": "A 1960s Danish woman in a clean-lined camel wool coat and black turtleneck, standing in a modernist interior with Arne Jacobsen Egg chairs and teak furniture, cool Nordic daylight streaming through large windows."
+    },
+    {
+      "id": "copenhagen-fashion-week",
+      "name": "Copenhagen Cool & Scandi Style",
+      "yearRange": [2000, 2026],
+      "description": "Copenhagen Fashion Week became a global leader in sustainable fashion, mandating sustainability requirements for participating brands. Danish street style blends minimalism with playful colors, establishing a new paradigm for responsible fashion.",
+      "keyGarments": [
+        "Oversized blazer",
+        "Cycling-friendly culottes",
+        "Ganni statement dress"
+      ],
+      "aiImagePrompt": "Copenhagen Fashion Week street style featuring a Danish woman in an oversized pastel blazer, wide-leg trousers, and chunky sneakers, cycling past colorful Nyhavn canal houses, bright overcast Scandinavian light, candid editorial shot."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Bornholm Wool",
+      "type": "Woven",
+      "description": "Hardy wool from the Baltic island of Bornholm, known for its durability and warmth, traditionally used for outerwear and blankets.",
+      "origin": "Bornholm Island",
+      "technique": "Traditional loom weaving with natural lanolin-rich fleece"
+    },
+    {
+      "name": "Hedebo Embroidery",
+      "type": "Embroidered",
+      "description": "A distinctive Danish whitework embroidery tradition featuring geometric cutwork and pulled-thread patterns on linen.",
+      "origin": "Hedeby region, Zealand",
+      "technique": "Cutwork and drawn-thread whitework on fine linen"
+    },
+    {
+      "name": "Amager Brocade",
+      "type": "Woven",
+      "description": "Richly patterned silk and wool brocades used in the distinctive folk costumes of Amager island, reflecting Dutch settler influences.",
+      "origin": "Amager Island, Copenhagen",
+      "technique": "Supplementary weft brocading with metallic and silk threads"
+    },
+    {
+      "name": "Organic Danish Hemp",
+      "type": "Woven",
+      "description": "Revived heritage fiber now central to Denmark's sustainable fashion movement, grown without pesticides in Danish soil.",
+      "origin": "Jutland",
+      "technique": "Modern industrial weaving of organically cultivated hemp fiber"
+    }
+  ],
+  "climate": {
+    "zone": "Temperate Maritime",
+    "avgTemp": 8,
+    "humidity": "High",
+    "fashionImplication": "Denmark's cool, damp climate drives demand for functional layering, waterproof outerwear, and cozy hygge-inspired knitwear. The cycling culture of Copenhagen has uniquely shaped fashion toward practical yet stylish garments that work on two wheels."
+  },
+  "culturalInfluences": [
+    "Viking heritage and Norse mythology",
+    "Danish Modern design philosophy (form follows function)",
+    "Hygge culture and cozy minimalism",
+    "Copenhagen cycling culture",
+    "Scandinavian social democracy and egalitarianism",
+    "Hans Christian Andersen and literary romanticism",
+    "Nordic sustainability and environmental consciousness"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Copenhagen Fashion Week",
+        "city": "Copenhagen",
+        "month": "January, August",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Sustainability-first design mandates",
+      "Gender-neutral Scandi minimalism",
+      "Cycling-compatible urban fashion",
+      "Neo-folk pattern revival",
+      "Circular fashion and rental platforms"
+    ],
+    "digitalPresence": 88,
+    "ecommercePenetration": 85,
+    "notableEvents": [
+      "CIFF (Copenhagen International Fashion Fair)",
+      "Revolver Copenhagen trade show",
+      "Danish Fashion Awards (Magasin du Nord)",
+      "Global Fashion Agenda Leadership Forum"
+    ]
+  }
+}

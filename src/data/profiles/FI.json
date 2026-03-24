@@ -1,0 +1,168 @@
+{
+  "fashionDNA": {
+    "traditionalism": 55,
+    "innovation": 82,
+    "sustainability": 88,
+    "luxuryIndex": 58,
+    "streetwearInfluence": 50,
+    "craftsmanship": 75,
+    "globalInfluence": 62
+  },
+  "eras": [
+    {
+      "id": "karelian-folk-traditions",
+      "name": "Karelian and Sámi Folk Dress",
+      "yearRange": [1000, 1700],
+      "description": "Finnish folk dress developed from practical Nordic clothing adapted to extreme cold. Karelian women's embroidered linen garments and Sámi reindeer leather and felt traditions formed two distinct but equally rich textile heritages.",
+      "keyGarments": [
+        "Sámi gákti (tunic)",
+        "Karelian embroidered chemise",
+        "Birch bark shoes"
+      ],
+      "aiImagePrompt": "A Sámi woman in northern Finland wearing a vibrant blue and red wool gákti tunic with woven braided trim, silver brooches, and a tall four-winds hat, standing in a birch forest with snow on the ground."
+    },
+    {
+      "id": "swedish-russian-influence",
+      "name": "Swedish and Russian Imperial Periods",
+      "yearRange": [1700, 1860],
+      "description": "Under Swedish and then Russian rule, Finnish fashion reflected both Scandinavian simplicity and Russian imperial opulence. Urban elites in Turku and Helsinki adopted European styles while rural communities preserved distinct regional folk costumes.",
+      "keyGarments": [
+        "Regional folk dress (kansallispuku)",
+        "Russian-influenced fur cloaks",
+        "Embroidered linen bonnets"
+      ],
+      "aiImagePrompt": "A 19th-century Finnish couple: the woman in a regional folk dress with a woven red and black striped skirt, embroidered bodice, and white linen headscarf, the man in a long wool tunic, standing by a log farmhouse in a birch grove."
+    },
+    {
+      "id": "national-romantic-kalevala",
+      "name": "National Romantic Movement",
+      "yearRange": [1860, 1917],
+      "description": "Finnish artists and designers drew inspiration from the Kalevala epic and Karelian folk art to forge a distinct national aesthetic. Akseli Gallen-Kallela and the Arts and Crafts movement influenced textile design that would later inform Marimekko.",
+      "keyGarments": [
+        "Karelian-inspired art dresses",
+        "Ryijy rug-woven accessories",
+        "Art Nouveau reform gowns"
+      ],
+      "aiImagePrompt": "A Finnish National Romantic era woman in 1900 wearing a flowing linen dress with Karelian folk embroidery motifs in red and blue, standing in a Art Nouveau interior with Gallen-Kallela paintings on the walls."
+    },
+    {
+      "id": "functionalist-modernism",
+      "name": "Functionalism and Nordic Modernism",
+      "yearRange": [1920, 1950],
+      "description": "Independent Finland embraced functionalist design principles. Clean lines, practical materials, and democratic ideals shaped Finnish fashion philosophy. The post-war reconstruction era prioritized durability and universal access to well-designed clothing.",
+      "keyGarments": [
+        "Functional wool coats",
+        "Simple cotton day dresses",
+        "Practical outdoor workwear"
+      ],
+      "aiImagePrompt": "A 1940s Finnish woman in wartime Helsinki wearing a practical, well-tailored charcoal wool coat with minimal detailing, a knitted beret, and sturdy leather boots, standing by an Alvar Aalto-designed building."
+    },
+    {
+      "id": "marimekko-revolution",
+      "name": "The Marimekko Revolution",
+      "yearRange": [1951, 1985],
+      "description": "Armi Ratia founded Marimekko, creating a global icon of democratic design. Its bold, oversized prints and simple silhouettes challenged couture elitism and became synonymous with progressive, egalitarian Finnish identity.",
+      "keyGarments": [
+        "Marimekko Jokapoika shirt",
+        "Unikko print dress",
+        "Vuokko Nurmesniemi A-line dresses"
+      ],
+      "aiImagePrompt": "A 1960s Marimekko fashion shoot in a bright Helsinki studio: a model in a bold Unikko poppy-print cotton shift dress in red and pink, minimalist white backdrop, graphic Scandinavian design aesthetic."
+    },
+    {
+      "id": "helsinki-design-district",
+      "name": "Helsinki Design and Sustainable Fashion",
+      "yearRange": [1990, 2025],
+      "description": "Finland has positioned itself as a global leader in sustainable fashion innovation. Helsinki's design district incubates circular fashion startups, while Finnish brands pioneer textile recycling technologies, bio-based materials, and radically transparent supply chains.",
+      "keyGarments": [
+        "Recycled fiber outerwear",
+        "Minimalist Nordic knitwear",
+        "Technical outdoor fashion"
+      ],
+      "aiImagePrompt": "A contemporary Helsinki Design District editorial: a model in a sculptural coat made from recycled Finnish wood-based fiber in pale grey, architectural Finnish design backdrop, clean Nordic natural light."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Ryijy",
+      "type": "Knotted Pile",
+      "description": "A traditional Finnish knotted-pile textile originally used as bedcovers and wall hangings, featuring bold geometric and floral designs that influenced modern Finnish textile art.",
+      "origin": "Western Finland (Ostrobothnia)",
+      "technique": "Hand-knotted pile on a woven linen or cotton base, using long wool yarns in vibrant colors"
+    },
+    {
+      "name": "Ioncell Fiber",
+      "type": "Regenerated Cellulose",
+      "description": "A revolutionary Finnish-developed regenerated cellulose fiber made from wood pulp and textile waste, representing the future of sustainable fashion materials.",
+      "origin": "Aalto University / VTT (Espoo)",
+      "technique": "Ionic liquid dissolution of cellulose (wood pulp or cotton waste) spun into strong, silky fiber through air-gap spinning"
+    },
+    {
+      "name": "Finnish Linen",
+      "type": "Woven",
+      "description": "High-quality handwoven linen with a long tradition in Finnish folk textiles, used for ritual cloths, towels, and garments with characteristic simple geometric patterns.",
+      "origin": "Häme and Ostrobothnia regions",
+      "technique": "Hand-spun flax fiber woven on traditional treadle looms with twill and overshot patterns"
+    },
+    {
+      "name": "Sámi Braided Trim (Skallebånd)",
+      "type": "Braided",
+      "description": "Narrow woven and braided bands used to trim Sámi gákti garments, featuring intricate geometric patterns in primary colors that indicate regional and family identity.",
+      "origin": "Sápmi (Inari, Utsjoki, Enontekiö)",
+      "technique": "Tablet weaving and finger-braiding using fine wool threads in red, blue, yellow, and green"
+    },
+    {
+      "name": "Birch Bark Textile",
+      "type": "Natural Fiber",
+      "description": "An ancient material being revived by contemporary Finnish designers, thin layers of birch bark processed into flexible sheets for accessories and experimental fashion pieces.",
+      "origin": "Central and Northern Finland",
+      "technique": "Thin inner bark layers soaked, pressed, and treated to create flexible, leather-like sheets"
+    }
+  ],
+  "climate": {
+    "zone": "Subarctic to Continental",
+    "avgTemp": 3,
+    "humidity": "Moderate",
+    "fashionImplication": "Extreme cold (down to -40°C in Lapland) and long, dark winters make thermal layering, wind-resistant outerwear, and moisture-wicking materials essential. The brief but bright summer encourages lightweight linen and cotton in vivid colors to celebrate the midnight sun."
+  },
+  "culturalInfluences": [
+    "The Kalevala epic and Karelian folk mythology",
+    "Sámi indigenous culture and reindeer herding",
+    "Finnish sauna culture and relationship with nature",
+    "Nordic functionalist design philosophy",
+    "Marimekko and democratic design ideals",
+    "Lutheran restraint and egalitarian values",
+    "Extreme seasonal light cycles (midnight sun and polar night)"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Helsinki Fashion Week",
+        "city": "Helsinki",
+        "month": "July",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Fashion Revolution Finland",
+        "city": "Helsinki",
+        "month": "April",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Circular fashion and textile recycling innovation",
+      "Bio-based materials from Finnish wood industry",
+      "Arctic-proof technical fashion",
+      "Neo-Marimekko bold print revival",
+      "Radical transparency and supply chain traceability"
+    ],
+    "digitalPresence": 78,
+    "ecommercePenetration": 72,
+    "notableEvents": [
+      "Helsinki Design Week (fashion component)",
+      "VOGUE Scandinavia Nordic fashion features",
+      "Pre-Helsinki sustainability summit",
+      "Aalto University fashion graduate showcase"
+    ]
+  }
+}

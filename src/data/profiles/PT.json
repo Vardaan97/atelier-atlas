@@ -1,0 +1,168 @@
+{
+  "fashionDNA": {
+    "traditionalism": 72,
+    "innovation": 65,
+    "sustainability": 68,
+    "luxuryIndex": 52,
+    "streetwearInfluence": 55,
+    "craftsmanship": 82,
+    "globalInfluence": 45
+  },
+  "eras": [
+    {
+      "id": "age-of-discoveries",
+      "name": "The Age of Discoveries",
+      "yearRange": [1415, 1580],
+      "description": "Portugal's maritime empire introduced exotic silks, spices, and gemstones from Asia and Africa, profoundly shaping court dress. The Manueline aesthetic—ornate and sea-inspired—translated into fashion through rich brocades and imported textiles.",
+      "keyGarments": [
+        "Silk brocade doublet",
+        "Capa (hooded cape)",
+        "Gibão (padded jacket)"
+      ],
+      "aiImagePrompt": "A 16th-century Portuguese navigator standing on a caravel deck, wearing an ornate crimson silk doublet with gold thread embroidery, a dark velvet capa over one shoulder, cinematic ocean horizon and rope rigging."
+    },
+    {
+      "id": "iberian-union-baroque",
+      "name": "Baroque under Iberian Union",
+      "yearRange": [1580, 1700],
+      "description": "Under Spanish Habsburg rule, Portuguese court fashion adopted the rigid black silhouettes of Spanish dress while maintaining distinct local embroidery traditions. Lace and gold filigree became markers of Portuguese identity.",
+      "keyGarments": [
+        "Ruff collar (Gola de renda)",
+        "Black velvet mantilla",
+        "Filigree jewelry"
+      ],
+      "aiImagePrompt": "A 17th-century Portuguese noblewoman in Lisbon wearing a stiff black velvet gown with white lace ruff collar, gold filigree earrings and necklace, standing in an azulejo-tiled hall with candlelight."
+    },
+    {
+      "id": "pombaline-enlightenment",
+      "name": "Pombaline Reconstruction",
+      "yearRange": [1755, 1820],
+      "description": "After the 1755 earthquake, Portugal rebuilt Lisbon with Enlightenment rationality. Fashion reflected this modernization with cleaner silhouettes influenced by French tastes, while rural folk dress preserved deep regional traditions.",
+      "keyGarments": [
+        "Redingote (riding coat)",
+        "Minho folk costume",
+        "Tricorn hat"
+      ],
+      "aiImagePrompt": "A late 18th-century Portuguese couple in rebuilt Pombaline Lisbon: the man in a French-influenced blue riding coat with brass buttons, the woman in an embroidered regional Minho bodice with gold filigree heart pendant."
+    },
+    {
+      "id": "estado-novo-folk-revival",
+      "name": "Estado Novo National Identity",
+      "yearRange": [1933, 1974],
+      "description": "The Salazar regime promoted idealized folk costumes as symbols of national identity. Regional dress from the Minho, Alentejo, and Azores was codified and displayed at state-sponsored festivals while urban elites followed Parisian fashion.",
+      "keyGarments": [
+        "Minho bride costume",
+        "Alentejo sheepskin vest",
+        "Capote (hooded cloak)"
+      ],
+      "aiImagePrompt": "A 1950s Portuguese folk festival scene: women in colorful Minho costumes with layered gold necklaces and embroidered aprons, dancing in a village square surrounded by whitewashed buildings."
+    },
+    {
+      "id": "carnation-revolution-style",
+      "name": "Post-Revolution Freedom",
+      "yearRange": [1974, 1995],
+      "description": "The 1974 Carnation Revolution liberated Portuguese fashion from conservative norms. Youth embraced denim, leather, and global counterculture aesthetics while a new generation of designers began emerging in Lisbon and Porto.",
+      "keyGarments": [
+        "Denim flares",
+        "Military surplus jackets",
+        "Cork accessories"
+      ],
+      "aiImagePrompt": "Young Portuguese revolutionaries in 1974 Lisbon, wearing olive military jackets with red carnations pinned to lapels, flared jeans and leather boots, walking through a sun-drenched cobblestone street."
+    },
+    {
+      "id": "contemporary-portuguese-design",
+      "name": "The New Portuguese Wave",
+      "yearRange": [2000, 2025],
+      "description": "A renaissance in Portuguese design driven by sustainability, cork innovation, and a new generation of designers gaining international recognition. Lisbon and Porto have become creative hubs blending artisanal heritage with contemporary minimalism.",
+      "keyGarments": [
+        "Cork leather goods",
+        "Deconstructed linen tailoring",
+        "Azulejo-printed textiles"
+      ],
+      "aiImagePrompt": "A contemporary Portuguese fashion editorial on a Lisbon rooftop overlooking the Tagus River, model wearing a minimalist cream linen suit with cork leather bag and sandals, golden hour light."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Burel",
+      "type": "Felted",
+      "description": "A dense, water-resistant wool felt traditionally used by shepherds in the Serra da Estrela mountains, now reimagined for contemporary fashion and design.",
+      "origin": "Serra da Estrela, Beira Interior",
+      "technique": "Wool is woven then fulled through washing and beating to create a dense, weatherproof felt"
+    },
+    {
+      "name": "Arraiolos Tapestry",
+      "type": "Embroidered",
+      "description": "Cross-stitch wool embroidery on linen canvas, featuring Moorish-inspired geometric and floral designs dating back to the 13th century.",
+      "origin": "Arraiolos, Alentejo",
+      "technique": "Hand-stitched cross-stitch embroidery on jute or linen canvas"
+    },
+    {
+      "name": "Cork Fabric",
+      "type": "Laminated",
+      "description": "Portugal produces over half the world's cork, and its thin bark sheets are laminated to fabric backing to create a sustainable, vegan leather alternative.",
+      "origin": "Alentejo and Algarve",
+      "technique": "Thin cork bark is shaved, laminated onto cotton or polyester backing, then treated for flexibility"
+    },
+    {
+      "name": "Linen of Guimarães",
+      "type": "Woven",
+      "description": "Fine handwoven linen with a centuries-old tradition, historically used for elaborate trousseau and ecclesiastical vestments.",
+      "origin": "Guimarães, Minho",
+      "technique": "Traditional shuttle loom weaving with hand-spun flax fiber"
+    },
+    {
+      "name": "Rendas de Bilros (Bobbin Lace)",
+      "type": "Lace",
+      "description": "Delicate bobbin lace with maritime-inspired motifs, traditionally made by fishermen's wives while waiting for boats to return.",
+      "origin": "Peniche, Leiria",
+      "technique": "Pillow lace worked with bobbins on a cylindrical cushion using intricate pin-placement patterns"
+    }
+  ],
+  "climate": {
+    "zone": "Mediterranean and Atlantic Maritime",
+    "avgTemp": 16,
+    "humidity": "Moderate to High",
+    "fashionImplication": "Mild winters and warm summers favor layered linen and cotton ensembles. The Atlantic coast demands weather-resistant outerwear, while the southern Algarve encourages lightweight resort wear year-round."
+  },
+  "culturalInfluences": [
+    "Maritime exploration and global trade routes",
+    "Moorish and Islamic geometric artistry",
+    "Azulejo tile art and decorative traditions",
+    "Fado music and the concept of 'saudade'",
+    "Catholic processions and festive costumes",
+    "Brazilian cultural exchange post-colonization",
+    "Rural folk traditions of Minho, Alentejo, and Azores"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "ModaLisboa",
+        "city": "Lisbon",
+        "month": "March, October",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Portugal Fashion",
+        "city": "Porto",
+        "month": "March, October",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Cork as sustainable luxury material",
+      "Neo-artisanal slow fashion",
+      "Atlantic surf-inspired streetwear",
+      "Heritage textile revival (Burel, bobbin lace)",
+      "Minimalist Mediterranean tailoring"
+    ],
+    "digitalPresence": 68,
+    "ecommercePenetration": 58,
+    "notableEvents": [
+      "Sangue Novo (New Blood) emerging designer competition",
+      "Lisbon Design Week",
+      "FITEC International Festival",
+      "Guimarães International Textile Fair"
+    ]
+  }
+}

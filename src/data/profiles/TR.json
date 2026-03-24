@@ -1,0 +1,168 @@
+{
+  "fashionDNA": {
+    "traditionalism": 75,
+    "innovation": 65,
+    "sustainability": 42,
+    "luxuryIndex": 60,
+    "streetwearInfluence": 50,
+    "craftsmanship": 88,
+    "globalInfluence": 62
+  },
+  "eras": [
+    {
+      "id": "ottoman-imperial",
+      "name": "Ottoman Imperial Splendor",
+      "yearRange": [1453, 1700],
+      "description": "The Ottoman Empire at its zenith produced some of the most opulent textiles in world history. The court workshops (Ehl-i Hiref) in Topkapi Palace created sumptuous silk kaftans, brocades, and velvets regulated by strict sumptuary laws that dictated who could wear which fabrics, colors, and patterns.",
+      "keyGarments": [
+        "Imperial silk kaftan",
+        "Çatma velvet robe",
+        "Jeweled aigrette turban"
+      ],
+      "aiImagePrompt": "A portrait of an Ottoman sultan in a lavish silk kaftan with tulip and pomegranate brocade patterns in crimson and gold, wearing a large jeweled turban with aigrette feathers, set in the gilded interior of Topkapi Palace, rich warm lighting."
+    },
+    {
+      "id": "tulip-period",
+      "name": "The Tulip Period",
+      "yearRange": [1718, 1730],
+      "description": "A brief era of cultural flowering and European-influenced reform, when Ottoman fashion embraced lighter fabrics, floral motifs, and a more relaxed aesthetic. French and Venetian influences merged with Ottoman traditions, creating a distinctive hybrid style visible in both textiles and jewelry.",
+      "keyGarments": [
+        "Floral entari (robe)",
+        "Embroidered şalvar",
+        "Ferace (outdoor cloak)"
+      ],
+      "aiImagePrompt": "An 18th century Ottoman noblewoman in a tulip garden wearing a flowing silk entari robe with delicate floral embroidery over wide şalvar trousers, a sheer yaşmak veil, and jeweled headpiece, soft dappled garden lighting."
+    },
+    {
+      "id": "tanzimat-westernization",
+      "name": "Tanzimat Reforms & Westernization",
+      "yearRange": [1839, 1922],
+      "description": "Ottoman modernization brought Western dress codes to the military and bureaucracy, replacing turbans with the fez and introducing European-cut suits. Women's fashion remained more traditional but gradually incorporated French influences, creating a fascinating period of sartorial hybridity between East and West.",
+      "keyGarments": [
+        "Fez with European suit",
+        "Stambouline frock coat",
+        "Westernized bindallı"
+      ],
+      "aiImagePrompt": "A late 19th century Istanbul scene of an Ottoman gentleman in a black Stambouline frock coat with a red fez, standing on the Galata Bridge with mosques and minarets across the Golden Horn, atmospheric sepia-toned period lighting."
+    },
+    {
+      "id": "republican-revolution",
+      "name": "Republican Fashion Revolution",
+      "yearRange": [1923, 1960],
+      "description": "Atatürk's radical reforms abolished the fez and Islamic veiling, mandating Western dress as part of secular modernization. Turkish fashion underwent the most dramatic government-mandated transformation in modern history, as an entire population adopted European clothing within a single generation.",
+      "keyGarments": [
+        "Western fedora and suit",
+        "European-style women's dress",
+        "Military-inspired coat"
+      ],
+      "aiImagePrompt": "A 1930s Turkish Republic photograph of fashionable women in Western-style knee-length dresses, cloche hats, and T-strap shoes walking along Istiklal Avenue in Istanbul, with Art Deco shopfronts in the background, crisp documentary lighting."
+    },
+    {
+      "id": "textile-powerhouse",
+      "name": "Textile Manufacturing Powerhouse",
+      "yearRange": [1980, 2010],
+      "description": "Turkey transformed into one of the world's largest textile manufacturers, supplying European fashion houses with premium cotton, denim, and knitwear. The domestic fashion industry grew alongside, with Istanbul emerging as a creative hub where designers drew on Ottoman heritage while speaking a global fashion language.",
+      "keyGarments": [
+        "Premium Turkish denim",
+        "Cotton jersey basics",
+        "Ottoman-inspired evening wear"
+      ],
+      "aiImagePrompt": "An Istanbul fashion atelier scene with a Turkish designer draping rich burgundy Ottoman-inspired brocade fabric on a dress form, surrounded by rolls of premium Turkish denim and cotton, warm studio lighting with Bosphorus views through the window."
+    },
+    {
+      "id": "istanbul-fashion-capital",
+      "name": "Istanbul Fashion Week & New Wave",
+      "yearRange": [2010, 2025],
+      "description": "Istanbul Fashion Week has positioned the city as a bridge between European and Middle Eastern fashion markets. A new generation of Turkish designers like Dice Kayek, Bora Aksu, and Hakan Akkaya reinterpret Ottoman motifs through contemporary silhouettes, while Turkey's textile infrastructure supports sustainable innovation.",
+      "keyGarments": [
+        "Deconstructed Ottoman coat",
+        "Calligraphy-print silk dress",
+        "Modern modest wear collection"
+      ],
+      "aiImagePrompt": "A contemporary Istanbul Fashion Week runway scene with a model in a structured midnight-blue coat with subtle Ottoman tulip motifs in metallic thread, walking past ancient columns with the illuminated Hagia Sophia visible through arched windows, dramatic fashion show lighting."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Bursa Silk",
+      "type": "Woven",
+      "description": "The historic silk capital of the Ottoman Empire, Bursa produced exquisite silk brocades and velvets that dressed sultans and were traded across three continents along the Silk Road.",
+      "origin": "Bursa",
+      "technique": "Jacquard and lampas weaving with gold-wrapped silk thread (sırma)"
+    },
+    {
+      "name": "Yazma (Block Print)",
+      "type": "Printed",
+      "description": "Traditional hand-block-printed headscarves and kerchiefs using carved wooden blocks and natural dyes, particularly from the Tokat region, featuring floral and geometric Ottoman motifs.",
+      "origin": "Tokat, Central Anatolia",
+      "technique": "Hand-stamping with carved pearwood blocks using madder, indigo, and walnut dyes"
+    },
+    {
+      "name": "Angora Mohair",
+      "type": "Knitted",
+      "description": "Luxuriously soft fiber from the Angora goat native to the Ankara region, prized worldwide for its luster, warmth, and silky drape in knitwear and suiting fabrics.",
+      "origin": "Ankara province",
+      "technique": "Shearing Angora goats twice yearly and spinning the long, lustrous fiber for blending or pure mohair textiles"
+    },
+    {
+      "name": "Turkish Cotton Terry",
+      "type": "Woven",
+      "description": "World-renowned long-staple Aegean cotton woven into plush terry cloth and peshtemal towels, central to hammam bathing culture and now a global luxury textile export.",
+      "origin": "Denizli, Aegean region",
+      "technique": "Loop-pile weaving with extra-long staple Aegean cotton for maximum absorbency"
+    },
+    {
+      "name": "Çatma Velvet",
+      "type": "Woven",
+      "description": "Ottoman court velvet featuring raised pile patterns in gold and silver metallic thread, used for imperial kaftans and ceremonial hangings. Among the most technically complex textiles ever produced.",
+      "origin": "Bursa, Istanbul",
+      "technique": "Double-warp cut velvet with voided metallic brocade areas, requiring specialized looms"
+    }
+  ],
+  "climate": {
+    "zone": "Mediterranean to Continental",
+    "avgTemp": 15,
+    "humidity": "Moderate",
+    "fashionImplication": "Turkey's diverse climate zones — from the Mediterranean coast to the cold Anatolian plateau — create demand for versatile layering pieces, transitional outerwear, and the country's famous natural fibers including cotton, silk, and mohair."
+  },
+  "culturalInfluences": [
+    "Ottoman Empire's multicultural artistic legacy",
+    "Islamic calligraphy and geometric design traditions",
+    "Byzantine mosaic and textile heritage",
+    "Atatürk's secularization and Western modernization reforms",
+    "Anatolian folk art and nomadic kilim weaving",
+    "Hammam (bathhouse) culture and textile rituals",
+    "Istanbul's position as a crossroads between Europe and Asia"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Istanbul Fashion Week",
+        "city": "Istanbul",
+        "month": "March, October",
+        "tier": "Major"
+      },
+      {
+        "name": "Mercedes-Benz Fashion Week Istanbul",
+        "city": "Istanbul",
+        "month": "April",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Neo-Ottoman maximalist eveningwear",
+      "Sustainable denim innovation",
+      "East-West fusion modest fashion",
+      "Artisanal Anatolian craft revival",
+      "Istanbul streetwear blending calligraphy and urban culture"
+    ],
+    "digitalPresence": 75,
+    "ecommercePenetration": 58,
+    "notableEvents": [
+      "Istanbul Fashion Week",
+      "Fashion Designers Association of Turkey (MTD) Awards",
+      "Contemporary Istanbul art-fashion crossover",
+      "Texhibition Istanbul textile trade fair"
+    ]
+  }
+}

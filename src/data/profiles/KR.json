@@ -1,0 +1,173 @@
+{
+  "fashionDNA": {
+    "traditionalism": 70,
+    "innovation": 94,
+    "sustainability": 60,
+    "luxuryIndex": 72,
+    "streetwearInfluence": 95,
+    "craftsmanship": 78,
+    "globalInfluence": 88
+  },
+  "eras": [
+    {
+      "id": "joseon-hanbok",
+      "name": "Joseon Dynasty Hanbok",
+      "yearRange": [
+        1392,
+        1897
+      ],
+      "description": "Over five centuries of Confucian rule, the hanbok evolved into a refined system of dress encoding social rank, age, and occasion. The jeogori jacket and chima skirt silhouette became iconic, with colours and fabrics strictly regulated by sumptuary laws.",
+      "keyGarments": [
+        "Jeogori jacket",
+        "Chima skirt",
+        "Durumagi overcoat"
+      ],
+      "aiImagePrompt": "A Joseon Dynasty court lady wearing a flowing silk hanbok with a short jade-green jeogori and a voluminous crimson chima skirt, embroidered with golden phoenixes, standing in a traditional wooden hanok courtyard with curved tile roofs, soft golden hour lighting."
+    },
+    {
+      "id": "modern-girl-era",
+      "name": "The Modern Girl (Singnyeoseong)",
+      "yearRange": [
+        1920,
+        1945
+      ],
+      "description": "During Japanese colonial rule, urban Korean women began adopting Western dress alongside the hanbok, creating a hybrid aesthetic. The 'Modern Girl' or singnyeoseong became a symbol of modernity and cultural tension, blending bobbed hair and Western silhouettes with Korean identity.",
+      "keyGarments": [
+        "Modified short jeogori",
+        "Western-style cloche hat",
+        "Shortened hanbok skirt"
+      ],
+      "aiImagePrompt": "A 1930s Seoul street scene showing a young Korean woman in a hybrid outfit of a shortened silk hanbok top with a Western pleated skirt and cloche hat, walking past Japanese-era storefronts, sepia-toned vintage photography style with soft grain."
+    },
+    {
+      "id": "post-war-reconstruction",
+      "name": "Post-War Textile Boom",
+      "yearRange": [
+        1953,
+        1979
+      ],
+      "description": "South Korea's rapid industrialisation turned the nation into a major textile exporter. Korean designers began adapting Western patterns for local production, and nylon and synthetic fabrics became status symbols in a society rebuilding from the devastation of war.",
+      "keyGarments": [
+        "Western-style suit",
+        "Nylon blouse",
+        "A-line skirt"
+      ],
+      "aiImagePrompt": "A 1960s Korean textile factory scene transitioning to a fashion showroom, young women in neat A-line skirts and nylon blouses examining fabric bolts, Seoul cityscape visible through large windows, documentary photography style with warm tungsten tones."
+    },
+    {
+      "id": "dongdaemun-streetwear",
+      "name": "Dongdaemun & Street Fashion",
+      "yearRange": [
+        1990,
+        2009
+      ],
+      "description": "Seoul's Dongdaemun Market became the world's fastest fashion supply chain, producing designs from sketch to rack in three days. Korean street fashion emerged as a distinct aesthetic, mixing oversized silhouettes with meticulous grooming and layering.",
+      "keyGarments": [
+        "Oversized blazer",
+        "Wide-leg trousers",
+        "Platform sneakers"
+      ],
+      "aiImagePrompt": "A late-night Dongdaemun Market scene with neon-lit fabric stalls and young Korean shoppers in oversized layered streetwear, wide-leg trousers and chunky sneakers, stacks of colourful fabric rolls in the background, cinematic neon-noir lighting."
+    },
+    {
+      "id": "hallyu-kfashion",
+      "name": "Hallyu & K-Fashion Wave",
+      "yearRange": [
+        2010,
+        2020
+      ],
+      "description": "The global Korean Wave propelled K-fashion into mainstream consciousness. K-pop idols became fashion icons, Korean beauty standards influenced global aesthetics, and Seoul designers gained recognition at international fashion weeks for their blend of minimalism, maximalism, and technical innovation.",
+      "keyGarments": [
+        "K-pop stage costume",
+        "Oversized hoodie and mini skirt",
+        "Structured cropped jacket"
+      ],
+      "aiImagePrompt": "A Seoul Gangnam district scene featuring a young Korean fashion influencer in a structured oversized blazer with exaggerated shoulders, layered over a pastel mini skirt and chunky white sneakers, neon Hangul signage reflecting off wet pavement, cinematic K-drama lighting."
+    },
+    {
+      "id": "neo-hanbok-revival",
+      "name": "Neo-Hanbok & Digital Fashion",
+      "yearRange": [
+        2018,
+        2025
+      ],
+      "description": "A new generation of designers reimagined the hanbok for contemporary wear, fusing traditional construction with modern fabrics and streetwear sensibilities. Simultaneously, Korea became a leader in digital fashion, virtual garments, and metaverse-ready clothing design.",
+      "keyGarments": [
+        "Neo-hanbok jacket",
+        "Deconstructed jeogori hoodie",
+        "Digital-only couture garment"
+      ],
+      "aiImagePrompt": "A futuristic Seoul fashion show combining traditional and digital, a model wearing a neo-hanbok with holographic organza jeogori over modern black trousers, augmented reality patterns floating around the garment, minimalist white runway with LED floor projections."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Mosi (Ramie Cloth)",
+      "type": "Woven",
+      "description": "UNESCO-recognised Hansan mosi is an ultra-fine ramie cloth prized for its cool, crisp texture and translucency, traditionally used for summer hanbok garments.",
+      "origin": "Hansan, South Chungcheong Province",
+      "technique": "Hand-weaving of hand-split ramie fibres on a traditional back-strap loom"
+    },
+    {
+      "name": "Gapsa Silk Gauze",
+      "type": "Woven",
+      "description": "A delicate, semi-transparent silk fabric used for the finest court hanbok, requiring exceptional skill to produce its even, gossamer-thin weave.",
+      "origin": "Jeonju, North Jeolla Province",
+      "technique": "Plain weave using highly twisted raw silk threads with controlled tension"
+    },
+    {
+      "name": "Nubi (Quilted Fabric)",
+      "type": "Embroidered",
+      "description": "Traditional Korean quilting technique creating densely stitched parallel lines on silk or cotton, used for winter clothing and accessories with natural cotton padding.",
+      "origin": "Tongyeong, South Gyeongsang Province",
+      "technique": "Even parallel running stitches at 3-5mm intervals through layered fabric and cotton batting"
+    },
+    {
+      "name": "Sambe (Hemp Cloth)",
+      "type": "Woven",
+      "description": "Sturdy hemp textile historically worn by commoners and used for mourning dress, valued for its durability and natural antimicrobial properties.",
+      "origin": "Andong, North Gyeongsang Province",
+      "technique": "Hand-spun hemp fibres woven on a floor loom, then bleached and pounded for softness"
+    }
+  ],
+  "climate": {
+    "zone": "Humid Continental",
+    "avgTemp": 12,
+    "humidity": "Moderate",
+    "fashionImplication": "Korea's four distinct seasons with hot, humid summers and cold, dry winters drive strong seasonal wardrobe rotation and layering culture, historically inspiring lightweight ramie and silk for summer and padded quilted garments for winter."
+  },
+  "culturalInfluences": [
+    "Confucian social hierarchy and dress codes",
+    "K-pop and K-drama global cultural exports",
+    "Korean beauty (K-beauty) standards and skincare-fashion intersection",
+    "Rapid post-war industrialisation and economic miracle",
+    "Buddhist temple aesthetics and natural dyeing traditions",
+    "Military service culture and its impact on menswear",
+    "PC bang and internet cafe culture shaping digital fashion"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Seoul Fashion Week",
+        "city": "Seoul",
+        "month": "March, October",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Neo-hanbok streetwear fusion",
+      "Gender-neutral K-fashion minimalism",
+      "Virtual influencer-driven fashion launches",
+      "Sustainable Korean hemp and ramie revival",
+      "Tech-integrated smart fabrics from Korean textile giants"
+    ],
+    "digitalPresence": 96,
+    "ecommercePenetration": 88,
+    "notableEvents": [
+      "Seoul Fashion Week at Dongdaemun Design Plaza",
+      "K-Collection in Paris",
+      "Concept Korea showcase at New York Fashion Week",
+      "Seoul Design Festival"
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "fashionDNA": {
+    "traditionalism": 90,
+    "innovation": 60,
+    "sustainability": 35,
+    "luxuryIndex": 88,
+    "streetwearInfluence": 45,
+    "craftsmanship": 78,
+    "globalInfluence": 55
+  },
+  "eras": [
+    {
+      "id": "pre-islamic-bedouin",
+      "name": "Pre-Islamic and Early Bedouin Dress",
+      "yearRange": [500, 700],
+      "description": "Desert nomadic life shaped a practical wardrobe of loose, flowing garments in natural fibers. Indigo-dyed cotton and wool protected against extreme heat and sandstorms, while Bedouin women developed elaborate silver jewelry traditions.",
+      "keyGarments": [
+        "Izar (body wrap)",
+        "Keffiyeh (headcloth)",
+        "Bedouin silver jewelry"
+      ],
+      "aiImagePrompt": "A pre-Islamic Bedouin woman in the Arabian desert wearing layers of indigo-dyed cotton wraps, heavy silver necklaces with amber and coral, a face veil with silver coins, desert tent camp in the golden hour background."
+    },
+    {
+      "id": "abbasid-trade-influence",
+      "name": "Islamic Golden Age and Trade Routes",
+      "yearRange": [700, 1500],
+      "description": "The rise of Islam established modest dress principles that profoundly shaped Arabian fashion. The Hajj pilgrimage made Mecca and Medina crossroads of textile trade, introducing Persian silks, Indian muslins, and Egyptian linens to the peninsula.",
+      "keyGarments": [
+        "Thobe (long robe)",
+        "Bisht (ceremonial cloak)",
+        "Ihram (pilgrimage garments)"
+      ],
+      "aiImagePrompt": "A medieval Arabian merchant in a bustling Mecca souk wearing a fine white cotton thobe with a gold-trimmed bisht cloak over the shoulders, surrounded by bolts of silk and stacks of Persian carpets."
+    },
+    {
+      "id": "regional-tribal-traditions",
+      "name": "Regional Tribal Dress Traditions",
+      "yearRange": [1500, 1900],
+      "description": "Distinct regional styles developed across the Arabian Peninsula. Hijazi dress showed Ottoman and Egyptian influences, while Najdi styles remained austere. Southern Asir region women developed the most colorful embroidery traditions in Arabia.",
+      "keyGarments": [
+        "Asiri dress (floral embroidered)",
+        "Hijazi turban",
+        "Najdi camel-wool cloak"
+      ],
+      "aiImagePrompt": "An Asiri woman from southern Saudi Arabia wearing a brilliantly embroidered dress with geometric floral patterns in red, green, and yellow, a floral wreath headpiece, standing in front of a painted Asiri stone house."
+    },
+    {
+      "id": "oil-era-luxury",
+      "name": "The Oil Boom and Luxury Consumption",
+      "yearRange": [1950, 2000],
+      "description": "Oil wealth transformed Saudi fashion consumption dramatically. While the thobe and abaya remained daily wear, haute couture from Paris, Milan, and London became coveted for private social occasions. Saudi women became the world's highest per-capita luxury spenders.",
+      "keyGarments": [
+        "Black silk abaya",
+        "Gold-embroidered thobe",
+        "Haute couture evening gowns"
+      ],
+      "aiImagePrompt": "A 1980s Saudi Arabian royal wedding: women in opulent French couture gowns beneath their abayas, heavy gold and diamond jewelry, an interior of marble, crystal chandeliers, and gold leaf, cinematic warm lighting."
+    },
+    {
+      "id": "abaya-evolution",
+      "name": "The Abaya as Fashion Canvas",
+      "yearRange": [2000, 2018],
+      "description": "Saudi designers transformed the utilitarian black abaya into a fashion statement with embroidery, color, structural cuts, and premium fabrics. An entire luxury industry emerged around the garment, with abaya couture houses opening across the Gulf.",
+      "keyGarments": [
+        "Designer abaya with Swarovski crystals",
+        "Colored abaya",
+        "Structured open-front abaya"
+      ],
+      "aiImagePrompt": "A Saudi abaya designer's atelier in Jeddah: mannequins displaying luxury abayas in midnight blue, emerald, and classic black, adorned with gold thread embroidery and crystal beading, draped fabric samples on the walls."
+    },
+    {
+      "id": "vision-2030-fashion",
+      "name": "Vision 2030 Fashion Revolution",
+      "yearRange": [2018, 2025],
+      "description": "Saudi Arabia's Vision 2030 has unleashed a cultural transformation in fashion. The relaxation of dress codes, the rise of entertainment events, and government support for creative industries have created a booming fashion scene in Riyadh and Jeddah.",
+      "keyGarments": [
+        "Modest luxury streetwear",
+        "Contemporary thobes",
+        "Saudi-designed couture"
+      ],
+      "aiImagePrompt": "A cutting-edge Riyadh fashion show at a Vision 2030 cultural event: models walking a runway in AlUla canyon, wearing contemporary Saudi designs blending thobe silhouettes with modern tailoring, dramatic desert canyon lighting."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Al-Sadu Weaving",
+      "type": "Woven",
+      "description": "A Bedouin weaving tradition using sheep, camel, and goat hair to create geometric-patterned textiles for tent dividers, cushions, and camel trappings, recognized by UNESCO as intangible cultural heritage.",
+      "origin": "Najd (central Arabia), Bedouin communities",
+      "technique": "Ground loom weaving using hand-spun animal hair with supplementary weft float patterning"
+    },
+    {
+      "name": "Asir Embroidery",
+      "type": "Embroidered",
+      "description": "Vibrant, densely embroidered textiles from the mountainous Asir region, featuring geometric and floral motifs in bright colors unique among Arabian Peninsula traditions.",
+      "origin": "Asir Province (southwestern Saudi Arabia)",
+      "technique": "Dense hand embroidery in satin stitch and cross-stitch with brightly dyed cotton threads on dark base fabric"
+    },
+    {
+      "name": "Bisht Fabric",
+      "type": "Woven",
+      "description": "Lightweight, semi-transparent ceremonial cloak fabric woven from camel hair or fine wool, trimmed with gold metallic thread (zari), worn over the thobe for formal occasions.",
+      "origin": "Al-Ahsa (Eastern Province)",
+      "technique": "Fine plain weaving of camel hair or merino wool, edges finished with hand-couched gold zari thread"
+    },
+    {
+      "name": "Muzun (Hejazi Cotton)",
+      "type": "Woven",
+      "description": "Finely woven white cotton used for premium thobes, prized for its breathability in extreme heat and its ability to hold crisp, structured folds.",
+      "origin": "Jeddah and Makkah region",
+      "technique": "Tightly woven long-staple cotton, often treated with a light starch finish for structure"
+    }
+  ],
+  "climate": {
+    "zone": "Hot Desert (BWh)",
+    "avgTemp": 33,
+    "humidity": "Very Low",
+    "fashionImplication": "Extreme heat demands loose-fitting, light-colored garments that allow air circulation while providing full sun protection. White thobes and flowing abayas are practical responses to temperatures exceeding 45°C, while the Asir highlands permit slightly heavier textiles."
+  },
+  "culturalInfluences": [
+    "Islamic modesty principles and sharia dress codes",
+    "Bedouin nomadic heritage and tribal identity",
+    "Hajj pilgrimage as global cultural crossroads",
+    "Oil wealth and global luxury consumption",
+    "Royal family and court protocol",
+    "Regional tribal identities (Hijazi, Najdi, Asiri)",
+    "Vision 2030 modernization and entertainment liberalization"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Saudi Fashion Commission events",
+        "city": "Riyadh",
+        "month": "Various",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Red Sea Fashion Week",
+        "city": "Jeddah",
+        "month": "May",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Abaya couture as global modest luxury",
+      "Saudi menswear reinventing the thobe",
+      "Streetwear culture fueled by Vision 2030",
+      "Heritage Sadu and Asir motifs in contemporary design",
+      "Saudi-born luxury brands for global markets"
+    ],
+    "digitalPresence": 85,
+    "ecommercePenetration": 72,
+    "notableEvents": [
+      "Riyadh Season (fashion and entertainment)",
+      "Saudi Fashion Commission launches",
+      "AlUla cultural events (fashion shows in heritage sites)",
+      "Jeddah Art Week (fashion crossover)"
+    ]
+  }
+}

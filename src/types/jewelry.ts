@@ -18,5 +18,5 @@ export interface TraditionalJewelryData {
   traditions: string[];
   materials: string[];
   significance: string;
-  marketRank: number;
+  marketRank: number | null;
 }

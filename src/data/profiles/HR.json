@@ -1,0 +1,155 @@
+{
+  "fashionDNA": {
+    "traditionalism": 68,
+    "innovation": 55,
+    "sustainability": 52,
+    "luxuryIndex": 42,
+    "streetwearInfluence": 58,
+    "craftsmanship": 75,
+    "globalInfluence": 35
+  },
+  "eras": [
+    {
+      "id": "medieval-dubrovnik-splendor",
+      "name": "Medieval Dubrovnik & Dalmatian Dress",
+      "yearRange": [1100, 1500],
+      "description": "The Republic of Ragusa (Dubrovnik) was a major Mediterranean trading power whose sumptuary laws documented the finest fashion of the Adriatic. Venetian, Byzantine, and Ottoman influences merged in Dalmatian court dress alongside distinctive local embroidery traditions.",
+      "keyGarments": [
+        "Ragusan merchant robe",
+        "Dalmatian silk tunic",
+        "Embroidered Adriatic cap"
+      ],
+      "aiImagePrompt": "A medieval Ragusan noblewoman in a Byzantine-influenced silk damask gown with gold embroidery, standing on Dubrovnik's limestone Stradun street with Renaissance palaces and terracotta rooftops, warm Adriatic afternoon light."
+    },
+    {
+      "id": "ottoman-venetian-crossroads",
+      "name": "Ottoman & Venetian Crossroads",
+      "yearRange": [1500, 1800],
+      "description": "Croatia's unique position between the Habsburg, Venetian, and Ottoman empires created a remarkable fusion of Eastern and Western dress. The cravat, one of fashion's most enduring accessories, originated from Croatian military neckwear adopted by French courtiers.",
+      "keyGarments": [
+        "Cravat (kravata)",
+        "Slavonian gold-embroidered vest",
+        "Dalmatian morlak coat"
+      ],
+      "aiImagePrompt": "A 17th-century Croatian cavalryman presenting at the French court wearing a distinctive knotted linen cravat, a richly braided military jacket with silver buttons, standing before the Palace of Versailles, dramatic chiaroscuro lighting."
+    },
+    {
+      "id": "national-illyrian-movement",
+      "name": "Illyrian Movement & Folk Revival",
+      "yearRange": [1835, 1918],
+      "description": "The Croatian national revival movement elevated folk costumes as symbols of cultural identity against Austro-Hungarian assimilation. Each region from Slavonia to Dalmatia to Zagorje maintained distinctive embroidery patterns, textiles, and silhouettes.",
+      "keyGarments": [
+        "Slavonian gold-thread šlinganje vest",
+        "Šestine umbrella",
+        "Lička kapa (red cap)"
+      ],
+      "aiImagePrompt": "A Croatian woman in a richly embroidered Slavonian folk costume with gold-thread šlinganje work on a white linen blouse, colorful woven apron, and elaborate floral headdress, standing in a Slavonian wheat field at golden hour."
+    },
+    {
+      "id": "yugoslav-era-fashion",
+      "name": "Yugoslav Era & Socialist Fashion",
+      "yearRange": [1945, 1991],
+      "description": "Yugoslavia's unique position between East and West gave Croatian fashion more creative freedom than other socialist states. Zagreb developed a reputation for quality tailoring, and Yugoslav fashion magazines introduced Western trends to the Balkans.",
+      "keyGarments": [
+        "Yugoslav ready-to-wear suits",
+        "Adriatic resort wear",
+        "Zagreb tailored coat"
+      ],
+      "aiImagePrompt": "A 1970s Zagreb street scene with a fashionable Croatian woman in a well-tailored wool coat and silk headscarf, walking past Austro-Hungarian architecture on Ilica street, carrying shopping bags, atmospheric Eastern European autumn light."
+    },
+    {
+      "id": "independence-identity",
+      "name": "Independence & Cultural Identity",
+      "yearRange": [1991, 2010],
+      "description": "Croatian independence brought a renewed search for national fashion identity. The cravat was embraced as Croatia's gift to world fashion, while designers began blending Mediterranean ease with Central European tailoring traditions.",
+      "keyGarments": [
+        "Designer cravats",
+        "Mediterranean linen suits",
+        "Contemporary folk-inspired pieces"
+      ],
+      "aiImagePrompt": "A Croatian fashion designer presenting a collection of artisanal silk cravats in the atrium of Dubrovnik's Rector's Palace, displayed alongside Mediterranean linen garments, warm stone walls and dappled courtyard light."
+    },
+    {
+      "id": "zagreb-fashion-week-era",
+      "name": "Zagreb Fashion Week & New Wave",
+      "yearRange": [2010, 2026],
+      "description": "Zagreb Fashion Week established Croatia on the regional fashion calendar, showcasing designers who blend Adriatic lifestyle with contemporary European aesthetics. Croatian fashion increasingly leverages its Mediterranean-meets-Mitteleuropa cultural position.",
+      "keyGarments": [
+        "Adriatic resort-to-city wear",
+        "Croatian linen fashion",
+        "Heritage-inspired contemporary accessories"
+      ],
+      "aiImagePrompt": "Zagreb Fashion Week featuring a model in a flowing Croatian linen dress with subtle Slavonian embroidery details, walking a runway in a converted industrial space, with projected images of the Adriatic coast, modern editorial lighting."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Slavonian Gold Embroidery (Šlinganje)",
+      "type": "Embroidered",
+      "description": "An extraordinarily rich gold and silver thread embroidery tradition from Slavonia, covering entire garment surfaces with dense floral and geometric patterns that signify the wearer's wealth and status.",
+      "origin": "Slavonia (eastern Croatia)",
+      "technique": "Gold and silver metallic thread couching and satin stitch on silk and velvet"
+    },
+    {
+      "name": "Pag Lace",
+      "type": "Lace",
+      "description": "A unique needle lace tradition from the island of Pag, recognized by UNESCO, featuring geometric star and circle patterns inspired by the island's stark landscape and salt crystals.",
+      "origin": "Pag Island, Dalmatia",
+      "technique": "Needle lace using a single thread and needle, worked on a firm cushion with geometric patterns"
+    },
+    {
+      "name": "Lepoglava Lace",
+      "type": "Lace",
+      "description": "A bobbin lace tradition from northern Croatia that has been practiced since the 15th century, originally taught by Pauline monks and now inscribed on UNESCO's Intangible Cultural Heritage list.",
+      "origin": "Lepoglava, Varaždin County",
+      "technique": "Bobbin lace with geometric and floral patterns on a pillow"
+    },
+    {
+      "name": "Croatian Silk Cravat",
+      "type": "Woven",
+      "description": "The original neckwear that spawned the global cravat and necktie tradition, historically made from fine silk or linen and knotted in the distinctive Croatian military style.",
+      "origin": "Croatia (military origin, 17th century)",
+      "technique": "Fine silk weaving, traditionally in red or white, with hand-knotted finishing"
+    }
+  ],
+  "climate": {
+    "zone": "Mediterranean to Continental",
+    "avgTemp": 13,
+    "humidity": "Moderate",
+    "fashionImplication": "Croatia's dual climate creates two distinct fashion zones: the Adriatic coast demands lightweight Mediterranean fabrics, linen, and resort wear, while continental Zagreb favors layered Central European tailoring with wool and structured outerwear for cold Pannonian winters."
+  },
+  "culturalInfluences": [
+    "Republic of Ragusa mercantile heritage",
+    "Venetian and Byzantine artistic traditions",
+    "Habsburg/Austro-Hungarian court culture",
+    "Ottoman frontier cultural exchange",
+    "Mediterranean coastal lifestyle and dolce vita",
+    "Yugoslav-era cross-cultural fusion",
+    "The cravat as Croatia's global fashion legacy"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Zagreb Fashion Week (BIPA Fashion.hr)",
+        "city": "Zagreb",
+        "month": "March, October",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Adriatic resort-wear elevation",
+      "Cravat and accessories heritage branding",
+      "Mediterranean sustainable linen fashion",
+      "Slavonian embroidery in contemporary design",
+      "Balkan-Mediterranean fusion streetwear"
+    ],
+    "digitalPresence": 62,
+    "ecommercePenetration": 48,
+    "notableEvents": [
+      "BIPA Fashion.hr (Zagreb Fashion Week)",
+      "Cravat Day (October 18, international celebration)",
+      "Dubrovnik Fashion Week pop-up events",
+      "Sinjska Alka traditional costume parade"
+    ]
+  }
+}

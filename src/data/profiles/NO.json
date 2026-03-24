@@ -1,0 +1,162 @@
+{
+  "fashionDNA": {
+    "traditionalism": 70,
+    "innovation": 72,
+    "sustainability": 92,
+    "luxuryIndex": 55,
+    "streetwearInfluence": 58,
+    "craftsmanship": 82,
+    "globalInfluence": 45
+  },
+  "eras": [
+    {
+      "id": "viking-norse-dress",
+      "name": "Viking & Norse Dress",
+      "yearRange": [793, 1100],
+      "description": "Norwegian Viking dress combined practicality with wealth display through elaborate metalwork and imported fabrics. Woolen cloaks, fur-lined garments, and intricate oval brooches reflected both harsh climate needs and far-reaching trade networks.",
+      "keyGarments": [
+        "Smokkr (strap dress)",
+        "Fur-lined cloak",
+        "Penannular brooch"
+      ],
+      "aiImagePrompt": "A Norwegian Viking chieftain's wife in a deep blue wool smokkr strap dress with bronze oval brooches, a fur-trimmed red woolen cloak, standing on a dramatic fjord cliff with longships below, moody twilight sky."
+    },
+    {
+      "id": "medieval-hanseatic",
+      "name": "Medieval & Hanseatic Trade",
+      "yearRange": [1200, 1500],
+      "description": "Bergen's role as a Hanseatic trading hub brought Continental European fashions to Norway, blending with sturdy local wool traditions. Imported English broadcloth and Flemish linens mixed with domestic vadmal.",
+      "keyGarments": [
+        "Vadmal tunic",
+        "Hanseatic merchant robe",
+        "Hooded wool cloak"
+      ],
+      "aiImagePrompt": "A medieval Norwegian merchant in Bergen's Bryggen wooden wharf district wearing a dark green wool tunic with leather belt, a heavy hooded cloak, surrounded by stacked timber warehouses, overcast winter light."
+    },
+    {
+      "id": "bunad-tradition",
+      "name": "Bunad & National Romanticism",
+      "yearRange": [1800, 1920],
+      "description": "The Norwegian national romantic movement revived and codified regional folk costumes into the bunad tradition. Each of Norway's regions developed distinct embroidery patterns, silver jewelry, and color schemes that remain vital cultural markers.",
+      "keyGarments": [
+        "Bunad (regional folk costume)",
+        "Sølje (silver filigree brooch)",
+        "Rosemaling-embroidered vest"
+      ],
+      "aiImagePrompt": "A Norwegian woman wearing a richly embroidered Hardanger bunad with red wool skirt, black bodice with floral cross-stitch, ornate silver sølje brooches and chains, standing before a stave church with snow-capped mountains behind."
+    },
+    {
+      "id": "outdoor-functional",
+      "name": "Outdoor & Functional Wear",
+      "yearRange": [1920, 1970],
+      "description": "Norway's extreme climate and outdoor culture drove innovation in functional clothing. The development of modern skiing and polar exploration gear established Norway as a leader in performance outerwear and wool base layers.",
+      "keyGarments": [
+        "Lusekofte (lice pattern sweater)",
+        "Anorak",
+        "Cross-country ski suit"
+      ],
+      "aiImagePrompt": "A 1950s Norwegian skier wearing a hand-knitted black and white Setesdal lusekofte sweater and wool knickers, standing with wooden cross-country skis on a pristine snow-covered mountain plateau, brilliant winter sunshine."
+    },
+    {
+      "id": "oil-boom-modernization",
+      "name": "Oil Boom & Modernization",
+      "yearRange": [1970, 2005],
+      "description": "Norway's petroleum wealth transformed the nation from modest rural roots to one of the world's richest countries. Fashion reflected this shift with increased consumption of international luxury brands alongside continued reverence for traditional bunad culture.",
+      "keyGarments": [
+        "Designer anorak",
+        "Merino wool base layers",
+        "Contemporary bunad reinterpretations"
+      ],
+      "aiImagePrompt": "A 1990s Oslo scene with a well-dressed Norwegian woman in a sleek black wool coat and cashmere scarf, walking past the National Theatre on Karl Johan street, wet cobblestones reflecting city lights, moody Scandinavian dusk."
+    },
+    {
+      "id": "sustainable-nordic",
+      "name": "Sustainable Norwegian Fashion",
+      "yearRange": [2005, 2026],
+      "description": "Norway emerged as a sustainability pioneer, with brands like Holzweiler and Norwegian Rain redefining Scandinavian fashion through ethical production and climate-conscious design. Oslo Runway champions emerging local talent with strong environmental values.",
+      "keyGarments": [
+        "Recycled wool overcoat",
+        "Holzweiler oversized scarf",
+        "Technical sustainable outerwear"
+      ],
+      "aiImagePrompt": "Oslo street style featuring a Norwegian man in a Holzweiler oversized wool scarf, minimalist recycled-fabric jacket, and wide-leg trousers, walking past the Oslo Opera House's angular white marble slope, crisp winter daylight."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Setesdal Wool Knit",
+      "type": "Knitted",
+      "description": "Iconic black and white stranded colorwork knitting from the Setesdal valley, featuring the distinctive 'lice' pattern that has become synonymous with Norwegian knitwear.",
+      "origin": "Setesdal Valley, Agder",
+      "technique": "Two-color stranded knitting (lusekofte technique) with natural undyed wool"
+    },
+    {
+      "name": "Hardanger Embroidery",
+      "type": "Embroidered",
+      "description": "A precise geometric whitework embroidery tradition using counted-thread techniques on even-weave linen, creating intricate lattice-like openwork patterns.",
+      "origin": "Hardanger Fjord region",
+      "technique": "Counted-thread cutwork and satin stitch blocks on even-weave linen"
+    },
+    {
+      "name": "Vadmal",
+      "type": "Woven",
+      "description": "A thick, fulled wool fabric that was Norway's most important textile for centuries, providing essential protection against Arctic winds and rain.",
+      "origin": "Throughout Norway",
+      "technique": "Woven on warp-weighted looms then fulled and felted for waterproofing"
+    },
+    {
+      "name": "Sami Reindeer Leather",
+      "type": "Leather",
+      "description": "Supple, smoke-tanned reindeer hide used by the indigenous Sami people for traditional gákti garments, boots, and accessories.",
+      "origin": "Northern Norway (Sápmi)",
+      "technique": "Smoke-tanning over birch bark fires with traditional Sami methods"
+    },
+    {
+      "name": "Selbu Knit",
+      "type": "Knitted",
+      "description": "Originating from a single mitten knitted by Marit Emstad in 1857, the Selbu star pattern became Norway's most recognized knitting motif and a national cultural symbol.",
+      "origin": "Selbu, Trøndelag",
+      "technique": "Two-color stranded knitting featuring eight-pointed star motifs"
+    }
+  ],
+  "climate": {
+    "zone": "Subarctic to Temperate Maritime",
+    "avgTemp": 6,
+    "humidity": "High",
+    "fashionImplication": "Norway's extreme climate variations from Arctic north to maritime south demand highly functional clothing. This has produced a global 'friluftsliv' (outdoor life) aesthetic where technical outerwear, wool layering systems, and weather-resistant fabrics are daily essentials rather than sportswear."
+  },
+  "culturalInfluences": [
+    "Viking seafaring heritage and Norse sagas",
+    "Friluftsliv (outdoor life) philosophy",
+    "Sami indigenous culture and duodji craft",
+    "National Romantic movement and bunad revival",
+    "Lutheran modesty and egalitarianism",
+    "Oil wealth and sovereign fund prosperity",
+    "Arctic climate and extreme light cycles"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Oslo Runway",
+        "city": "Oslo",
+        "month": "January, August",
+        "tier": "Emerging"
+      }
+    ],
+    "emergingTrends": [
+      "Climate-positive fashion and carbon-neutral production",
+      "Neo-bunad and heritage craft revival",
+      "Technical outdoor-to-urban crossover",
+      "Sami-inspired ethical fashion collaborations",
+      "Slow fashion and capsule wardrobes"
+    ],
+    "digitalPresence": 78,
+    "ecommercePenetration": 82,
+    "notableEvents": [
+      "Oslo Runway presentations",
+      "Norwegian Fashion Hub initiatives",
+      "Bergen International Festival fashion events",
+      "Constitution Day bunad celebrations (May 17)"
+    ]
+  }
+}

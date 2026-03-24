@@ -1,0 +1,161 @@
+{
+  "fashionDNA": {
+    "traditionalism": 82,
+    "innovation": 58,
+    "sustainability": 72,
+    "luxuryIndex": 48,
+    "streetwearInfluence": 45,
+    "craftsmanship": 92,
+    "globalInfluence": 40
+  },
+  "eras": [
+    {
+      "id": "inca-textile-mastery",
+      "name": "Inca Textile Mastery",
+      "yearRange": [1200, 1533],
+      "description": "The Inca Empire regarded textiles as more valuable than gold, using cumbi cloth as currency and tribute. The finest weavers, known as aclla, produced tapestries with up to 200 threads per inch, rivaling any textile tradition on Earth.",
+      "keyGarments": [
+        "Uncu (tunic)",
+        "Lliclla (woman's mantle)",
+        "Chullo (knitted cap)"
+      ],
+      "aiImagePrompt": "An Inca nobleman standing on a Machu Picchu terrace wearing a finely woven cumbi uncu tunic with geometric tocapu symbols in red, gold, and black, a feathered headdress, and gold ear spools, Andean mountain backdrop."
+    },
+    {
+      "id": "colonial-mestizo-baroque",
+      "name": "Colonial Mestizo Baroque",
+      "yearRange": [1533, 1821],
+      "description": "Spanish colonization created a dramatic fusion of European Baroque and indigenous Andean textiles. Mestiza women developed the distinctive 'pollera' layered skirt, blending Spanish silhouettes with native weaving techniques and Andean motifs.",
+      "keyGarments": [
+        "Pollera (layered skirt)",
+        "Manta (shawl)",
+        "Montera (embroidered hat)"
+      ],
+      "aiImagePrompt": "A colonial-era mestiza woman in 18th-century Cusco wearing multiple layered pollera skirts with embroidered borders, a silver-pinned manta shawl, and a wide montera hat, standing in a Baroque church courtyard."
+    },
+    {
+      "id": "tapada-limena",
+      "name": "The Tapada Limeña Era",
+      "yearRange": [1600, 1860],
+      "description": "Lima's colonial women developed the 'saya y manto' style, wrapping themselves to reveal only one eye, creating one of history's most intriguing fashion traditions. The style gave women anonymity and subversive freedom in a patriarchal society.",
+      "keyGarments": [
+        "Saya (tight skirt)",
+        "Manto (face veil)",
+        "Silk stockings"
+      ],
+      "aiImagePrompt": "A Tapada Limeña in 1780s Lima wearing a tight silk saya skirt and a dark manto draped over her head revealing only one eye, walking past colonial balconies in the Plaza de Armas, golden afternoon light."
+    },
+    {
+      "id": "andean-textile-revival",
+      "name": "Andean Textile Revival",
+      "yearRange": [1920, 1970],
+      "description": "Indigenist movements in art and politics led to a revival of pre-Columbian textile techniques. Communities in Chinchero and Taquile maintained unbroken weaving traditions using backstrap looms and natural dyes from cochineal and indigo.",
+      "keyGarments": [
+        "Backstrap-loomed belts",
+        "Knitted chullos",
+        "Bayeta wool skirts"
+      ],
+      "aiImagePrompt": "An indigenous Quechua weaver on Taquile Island in Lake Titicaca, wearing a hand-knitted red chullo cap and woven vest, working on a backstrap loom with vibrant geometric patterns, blue lake and sky behind."
+    },
+    {
+      "id": "alpaca-luxury-emergence",
+      "name": "Alpaca Luxury and Ethical Fiber",
+      "yearRange": [1980, 2010],
+      "description": "Peru positioned alpaca fiber as a sustainable luxury material on the global market. Brands from Arequipa began exporting ultra-fine baby alpaca knitwear and textiles to European and American luxury houses.",
+      "keyGarments": [
+        "Baby alpaca sweaters",
+        "Vicuña scarves",
+        "Pima cotton shirts"
+      ],
+      "aiImagePrompt": "A luxury fashion photograph of a model in a cloud-soft baby alpaca camel-colored overcoat standing against the white sillar stone architecture of Arequipa, a herd of alpacas grazing on the green altiplano behind."
+    },
+    {
+      "id": "lima-fashion-week-era",
+      "name": "Lima Fashion Week and Global Recognition",
+      "yearRange": [2010, 2025],
+      "description": "Lima has emerged as South America's fashion dark horse, with designers blending Andean craft with contemporary global aesthetics. Peruvian designers are gaining international acclaim for ethically sourced alpaca, organic cotton, and indigenous collaboration.",
+      "keyGarments": [
+        "Contemporary alpaca outerwear",
+        "Andean-motif printed dresses",
+        "Organic Pima cotton streetwear"
+      ],
+      "aiImagePrompt": "A Lima Fashion Week runway in a colonial courtyard: a model in a structured alpaca wool coat with geometric Andean-inspired embroidery in earth tones, paired with minimalist white trousers, dramatic evening lighting."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Alpaca Fiber",
+      "type": "Knitted/Woven",
+      "description": "Luxuriously soft fiber from alpacas raised in the Andean highlands, prized for its warmth, hypoallergenic properties, and sustainability. Baby alpaca is finer than cashmere.",
+      "origin": "Puno, Arequipa, Cusco (Andean highlands)",
+      "technique": "Sheared fiber is hand-sorted by fineness, then spun and knitted or woven on both backstrap and industrial looms"
+    },
+    {
+      "name": "Vicuña Wool",
+      "type": "Woven",
+      "description": "The world's most expensive natural fiber, harvested every three years from wild vicuñas through the ancient Inca 'chaku' roundup ceremony. A single scarf can cost thousands of dollars.",
+      "origin": "Pampa Galeras National Reserve, Ayacucho",
+      "technique": "Wild vicuñas are corralled in traditional chaku ceremonies, shorn of ultra-fine fleece, then released"
+    },
+    {
+      "name": "Pima Cotton",
+      "type": "Woven",
+      "description": "Extra-long-staple cotton grown on Peru's northern coast, renowned for its silky hand feel, luster, and durability, used by luxury brands worldwide.",
+      "origin": "Piura and Lambayeque (northern coast)",
+      "technique": "Hand-harvested long-staple cotton bolls, ring-spun for maximum softness and strength"
+    },
+    {
+      "name": "Andean Backstrap Weaving",
+      "type": "Woven",
+      "description": "A 4,000-year-old tradition producing vibrant geometric textiles on portable looms tensioned by the weaver's body, each community maintaining distinct pattern vocabularies.",
+      "origin": "Chinchero, Taquile, Q'ero (Cusco region)",
+      "technique": "Warp-faced plain and complementary-warp weaving on a backstrap loom using hand-spun alpaca or sheep wool"
+    }
+  ],
+  "climate": {
+    "zone": "Tropical Desert to Alpine Tundra",
+    "avgTemp": 19,
+    "humidity": "Low to Moderate",
+    "fashionImplication": "Peru's extreme altitude variation creates radically different dress needs: lightweight cotton and linen on the arid coast, heavy alpaca wool and layered garments in the frigid highlands, and breathable natural fibers in the humid Amazon lowlands."
+  },
+  "culturalInfluences": [
+    "Inca Empire textile traditions and tocapu symbolism",
+    "Spanish colonial Baroque and Catholic vestments",
+    "Quechua and Aymara indigenous weaving communities",
+    "The Tapada Limeña tradition of veiled anonymity",
+    "Japanese Peruvian (Nikkei) and Chinese Peruvian (Tusán) diaspora",
+    "Afro-Peruvian dance and festival costume traditions",
+    "Highland pastoral alpaca herding culture"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Lima Fashion Week",
+        "city": "Lima",
+        "month": "April, November",
+        "tier": "Emerging"
+      },
+      {
+        "name": "Perú Moda (trade show)",
+        "city": "Lima",
+        "month": "April",
+        "tier": "Major"
+      }
+    ],
+    "emergingTrends": [
+      "Alpaca luxury as sustainable alternative to cashmere",
+      "Indigenous artisan collaboration with global brands",
+      "Andean textile motifs in contemporary design",
+      "Organic Pima cotton ethical supply chains",
+      "Pre-Columbian heritage in modern silhouettes"
+    ],
+    "digitalPresence": 55,
+    "ecommercePenetration": 42,
+    "notableEvents": [
+      "Perú Moda International Trade Fair",
+      "Alpaca Fiesta (Arequipa)",
+      "Cusco Textile Museum exhibitions",
+      "Lima Design Week"
+    ]
+  }
+}

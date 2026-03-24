@@ -1,0 +1,161 @@
+{
+  "fashionDNA": {
+    "traditionalism": 35,
+    "innovation": 68,
+    "sustainability": 75,
+    "luxuryIndex": 55,
+    "streetwearInfluence": 72,
+    "craftsmanship": 50,
+    "globalInfluence": 60
+  },
+  "eras": [
+    {
+      "id": "colonial-frontier",
+      "name": "Colonial & Frontier Dress",
+      "yearRange": [1788, 1900],
+      "description": "Early Australian fashion was shaped by British colonial imports and the harsh realities of frontier life. Settlers adapted European garments for the outback climate, giving rise to rugged workwear traditions like moleskin trousers, oilskin coats, and the iconic wide-brimmed hat.",
+      "keyGarments": [
+        "Oilskin riding coat",
+        "Moleskin trousers",
+        "Cabbage tree hat"
+      ],
+      "aiImagePrompt": "A 19th century Australian stockman in the dusty outback wearing a wide-brimmed cabbage tree hat, oilskin coat, and moleskin trousers, standing beside a weathered fence post with eucalyptus trees and red earth behind, golden hour cinematic lighting."
+    },
+    {
+      "id": "federation-edwardian",
+      "name": "Federation & Edwardian Era",
+      "yearRange": [1901, 1929],
+      "description": "Australian federation in 1901 brought a new national identity while fashion still closely followed London and Paris trends. The warm climate led to lighter fabrics and the adoption of white linen suits, straw boaters, and cotton lawn dresses that diverged subtly from heavy European styles.",
+      "keyGarments": [
+        "White linen suit",
+        "Cotton lawn dress",
+        "Straw boater hat"
+      ],
+      "aiImagePrompt": "An Edwardian-era Australian woman in a white cotton lawn dress with pintucked bodice and lace collar, holding a parasol on the verandah of a Queenslander homestead, tropical garden in background, soft warm light."
+    },
+    {
+      "id": "surf-beach-culture",
+      "name": "Surf & Beach Culture",
+      "yearRange": [1950, 1979],
+      "description": "Post-war Australia embraced its coastal identity, and beach culture became the dominant fashion force. Boardshorts, bikinis, and casual sundresses replaced formal European-influenced attire, establishing a uniquely relaxed Australian aesthetic that would influence global resort wear.",
+      "keyGarments": [
+        "Boardshorts",
+        "Bikini",
+        "Terry cloth cover-up"
+      ],
+      "aiImagePrompt": "A 1960s Australian beach scene at Bondi with a sun-bronzed surfer carrying a longboard wearing printed boardshorts, and a woman in a halter-neck bikini and oversized sunglasses, vintage film grain, warm coastal lighting."
+    },
+    {
+      "id": "larrikin-punk",
+      "name": "Larrikin Punk & Street",
+      "yearRange": [1977, 1995],
+      "description": "Australian punk and alternative scenes in Melbourne and Sydney created a raw, irreverent fashion identity. Designers like Jenny Kee and Linda Jackson blended Aboriginal art motifs with bold knitwear, while street culture embraced a distinctly anti-establishment larrikin attitude.",
+      "keyGarments": [
+        "Painted knitwear",
+        "Aboriginal print dress",
+        "Doc Martens with shorts"
+      ],
+      "aiImagePrompt": "A 1980s Australian fashion editorial of a woman wearing a bold hand-knitted sweater with vibrant Aboriginal-inspired patterns by Jenny Kee, paired with a full cotton skirt, set against the Sydney Opera House, vivid saturated film colors."
+    },
+    {
+      "id": "resort-wear-rise",
+      "name": "Resort Wear & Global Luxury",
+      "yearRange": [1996, 2015],
+      "description": "Australian brands like Zimmermann, Sass & Bide, and Collette Dinnigan gained international acclaim, placing Australia on the global luxury map. Resort wear became the country's signature export, blending effortless beach sensibility with high-end craftsmanship and romantic prints.",
+      "keyGarments": [
+        "Printed silk resort dress",
+        "Structured swimwear",
+        "Embroidered maxi dress"
+      ],
+      "aiImagePrompt": "A luxury fashion campaign photograph of a model in a flowing Zimmermann floral silk midi dress with ruffled tiers, standing on a white sand beach with turquoise water at golden hour, wind catching the fabric, editorial cinematic lighting."
+    },
+    {
+      "id": "sustainable-future",
+      "name": "Sustainable & First Nations Renaissance",
+      "yearRange": [2016, 2025],
+      "description": "A new generation of Australian designers leads the global sustainability movement while elevating First Nations art and textile traditions. Brands champion circular fashion, merino wool innovation, and respectful collaboration with Indigenous communities, redefining what Australian fashion means on the world stage.",
+      "keyGarments": [
+        "Recycled merino knit",
+        "Indigenous-print silk scarf",
+        "Gender-neutral linen suit"
+      ],
+      "aiImagePrompt": "A contemporary Australian fashion editorial featuring a model in an earth-toned gender-neutral linen suit with subtle Indigenous dot-painting-inspired embroidery, standing in a minimalist gallery space with red desert landscape visible through floor-to-ceiling windows."
+    }
+  ],
+  "textiles": [
+    {
+      "name": "Australian Merino Wool",
+      "type": "Woven",
+      "description": "Ultra-fine merino wool from Australian sheep, prized worldwide for its softness, breathability, and natural temperature regulation.",
+      "origin": "New South Wales, Victoria",
+      "technique": "Shearing and combing superfine fleece (under 19.5 microns) for luxury suiting and knitwear"
+    },
+    {
+      "name": "Oilskin",
+      "type": "Woven",
+      "description": "Heavy cotton canvas waterproofed with linseed oil or wax, originally developed for stockmen and sailors in the Australian bush.",
+      "origin": "Victoria, New South Wales",
+      "technique": "Cotton canvas coated with multiple layers of linseed oil and beeswax for waterproofing"
+    },
+    {
+      "name": "Aboriginal Printed Fabric",
+      "type": "Printed",
+      "description": "Contemporary textiles featuring traditional Aboriginal dot-painting and Dreamtime motifs, produced through licensed collaborations with First Nations artists.",
+      "origin": "Central Australia, Arnhem Land",
+      "technique": "Screen printing and digital printing of Indigenous artworks onto cotton and silk"
+    },
+    {
+      "name": "Hemp Canvas",
+      "type": "Woven",
+      "description": "Sustainably grown Australian hemp woven into durable canvas for workwear and contemporary fashion, part of the country's push toward eco-textiles.",
+      "origin": "Tasmania, Victoria",
+      "technique": "Plain weave of Australian-grown hemp fiber, often blended with organic cotton"
+    }
+  ],
+  "climate": {
+    "zone": "Arid to Subtropical",
+    "avgTemp": 22,
+    "humidity": "Low",
+    "fashionImplication": "The intense sun and warm climate drive a preference for lightweight, breathable fabrics like linen and cotton, UV-protective hats, and relaxed silhouettes suited to outdoor living and beach culture."
+  },
+  "culturalInfluences": [
+    "Aboriginal and Torres Strait Islander artistic traditions",
+    "British colonial heritage and convict-era workwear",
+    "Surf and beach lifestyle culture",
+    "Multicultural immigration from Southern Europe and Asia",
+    "Larrikin anti-establishment attitude",
+    "Vast outback landscape and connection to the land",
+    "Strong environmental and sustainability consciousness"
+  ],
+  "contemporaryScene": {
+    "fashionWeeks": [
+      {
+        "name": "Australian Fashion Week",
+        "city": "Sydney",
+        "month": "May",
+        "tier": "Major"
+      },
+      {
+        "name": "Melbourne Fashion Festival",
+        "city": "Melbourne",
+        "month": "March",
+        "tier": "Regional"
+      }
+    ],
+    "emergingTrends": [
+      "First Nations fashion collaborations",
+      "Circular fashion and textile recycling",
+      "Resort-to-streetwear crossover",
+      "Regenerative merino wool sourcing",
+      "Pacific Islander-influenced swimwear"
+    ],
+    "digitalPresence": 82,
+    "ecommercePenetration": 75,
+    "notableEvents": [
+      "National Indigenous Fashion Awards",
+      "International Woolmark Prize",
+      "Melbourne Fashion Festival",
+      "PayPal Melbourne Fashion Festival Design Award"
+    ]
+  }
+}
